@@ -145,7 +145,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Developer</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Contact</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Last updated</strong>: 27 August 2026</p>
+        <p><strong>Last updated</strong>: 7 September 2026</p>
       </div>
       <p class="note" data-store-note="ios">Showing the wording for iOS. On an Android device, switch above.</p>
       <p class="note" data-store-note="android" hidden>Showing the wording for Android. On an iPhone or iPad, switch above.</p>
@@ -153,10 +153,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. What we never collect</h2>
       <p>The App does not ask for or collect your name, email address, phone number, contacts, photos or location.</p>
       <h2 class="clause">2. Data kept on your device</h2>
-      <p>Quiz progress, level, Flag Points, favourites, collected cards, settings and whether you own Pro are stored on your device. Settings → Reset Progress erases them. On iOS, when «iCloud Sync» is on (Settings; on by default), a copy of this record is also kept in your own iCloud account so it carries over to your other devices signed in with the same Apple ID. The developer cannot read or delete that copy — it lives inside your account. Android has no such feature.</p>
+      <p>Quiz progress, level, Flag Points, favourites, collected cards, mini-game records, the nickname you chose for the rankings, settings and whether you own Pro are stored on your device. The App also keeps a short log of in-game events on your device — at most 200, such as “levelled up” — to help diagnose problems; it is never sent anywhere.</p>
+      <p>Settings → Reset Progress erases your quiz progress, level, achievements, favourites, collected cards, review queue and best scores. It deliberately keeps your Flag Points, your Pro purchase and your settings: points are earned by watching ads, and a purchase is not progress.</p>
+      <p>On iOS, when «iCloud Sync» is on (Settings; on by default), a copy of this record is also kept in your own iCloud account so it carries over to your other devices signed in with the same Apple ID. The developer cannot read or delete that copy — it lives inside your account. Android has no such feature.</p>
       <h2 class="clause">3. Rankings (optional)</h2>
-      <p>Nothing is sent until you open the rankings and choose a nickname. From then on the App sends to Firebase (the game service): an anonymous player ID created for this app (not your <span class="pf" data-ios="Apple ID" data-android="Google account">Apple ID</span>), the nickname you chose, a country flag derived from your device’s region setting, the display colour and badge you chose for your row (cosmetic only), and your scores. That is the entire record. To have an entry deleted, write to the address in section 9.</p>
-      <h2 class="clause">4. Ads</h2>
+      <p>When the App starts, and when it returns to the foreground, it makes one small request to the game service (Firebase) to see whether the network can be reached. That request carries no account, no identifier and nothing about you; as with any internet request, the receiving server does see your IP address.</p>
+      <p>Your ranking record is created only when you open the rankings and choose a nickname. From then on the App sends to Firebase: an anonymous player ID created for this app (not your <span class="pf" data-ios="Apple ID" data-android="Google account">Apple ID</span>), the nickname you chose, a country flag derived from your device’s region setting, the display colour and badge you chose for your row (cosmetic only), and your scores. When you finish a ranked round it also sends that round’s answers, so that the server rather than your device decides the score; the answers are graded and discarded, and are not stored. That is the entire record. To have an entry deleted, write to the address in section 10.</p>
+      <p>How the game service handles data: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Anthem playback (optional)</h2>
+      <p>When you tap play on a national anthem, the recording is streamed from the Internet Archive (archive.org), the public library that hosts the public-domain U.S. Navy Band collection the App uses. That service receives your IP address and the name of the file requested. Nothing else is sent, and nothing at all is sent if you never tap play.</p>
+      <p>How the Internet Archive handles data: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Ads</h2>
       <p>The free version shows a rewarded ad only when you tap “Watch an ad” to earn Flag Points. There are no banner ads and no full-screen ads. Ads are served by AdMob, which may use an advertising identifier to select and measure them.</p>
       <ul>
         <li>On iOS the App asks your permission before any tracking. If you decline, ads are non-personalised.</li>
@@ -164,15 +171,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Pro users are shown no ads at all.</li>
       </ul>
       <p>How the ad provider handles this data: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Purchases</h2>
+      <h2 class="clause">6. Purchases</h2>
       <p>Purchases are processed by <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. The developer never sees or stores your card number or billing address. The App keeps only a yes/no flag for whether Pro is owned, and checks it against the store.</p>
-      <h2 class="clause">6. Notifications (optional)</h2>
-      <p>If you turn on the daily flag reminder, the App asks for notification permission and then schedules the reminder on your device. Nothing is sent to a server and no push service is involved. You can turn it off at any time.</p>
-      <h2 class="clause">7. Children</h2>
+      <h2 class="clause">7. Notifications (optional)</h2>
+      <p>The daily flag reminder is an iPhone and iPad feature; the Android version does not have it. If you turn it on, the App asks for notification permission and then schedules the reminder on your device. Nothing is sent to a server and no push service is involved. You can turn it off at any time.</p>
+      <h2 class="clause">8. Children</h2>
       <p>The App does not knowingly collect personal data from children. It has no chat, no messaging, and no user-supplied content other than a nickname you choose yourself.</p>
-      <h2 class="clause">8. Retention and deletion</h2>
+      <h2 class="clause">9. Retention and deletion</h2>
       <p>On-device data is kept until you reset it or uninstall the App. Ranking entries live as long as their board: daily boards roll over each day, weekly boards each week. Uninstalling removes the data on the device. If iCloud Sync was on, a copy stays in your own iCloud account and comes back when you reinstall with the same Apple ID; turning the setting off stops any further upload.</p>
-      <h2 class="clause">9. Contact and changes</h2>
+      <h2 class="clause">10. Contact and changes</h2>
       <p>Questions, or a request to delete a ranking entry: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>This policy may change; changes are published with app updates.</p>
       <p><a class="showall" href="#all" data-showall>Show every language</a></p>
@@ -187,7 +194,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>개발자</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>문의</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>최종 업데이트</strong>: 2026년 8월 27일</p>
+        <p><strong>최종 업데이트</strong>: 2026년 9월 7일</p>
       </div>
       <p class="note" data-store-note="ios">iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.</p>
       <p class="note" data-store-note="android" hidden>Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.</p>
@@ -195,10 +202,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. 절대 수집하지 않는 것</h2>
       <p>앱은 이름·이메일·전화번호·연락처·사진·위치를 묻지도, 수집하지도 않습니다.</p>
       <h2 class="clause">2. 기기에 남는 정보</h2>
-      <p>퀴즈 진행도, 레벨, 국기 포인트, 즐겨찾기, 모은 카드, 설정, Pro 보유 여부는 기기에 저장됩니다. 설정 → 기록 초기화로 지울 수 있습니다. iOS에서는 «iCloud 동기화»(설정에서 끌 수 있고 기본은 켬)를 켜 두면 이 기록의 사본이 본인의 iCloud 계정에도 저장되어, 같은 Apple ID를 쓰는 다른 기기로 이어집니다. 개발자는 그 사본을 보지도 지우지도 못합니다 — 사용자 계정 안에 있기 때문입니다. 안드로이드에는 이 기능이 없습니다.</p>
+      <p>퀴즈 진행도, 레벨, 국기 포인트, 즐겨찾기, 모은 카드, 미니게임 기록, 순위표에 쓰려고 직접 고른 닉네임, 설정, Pro 보유 여부는 기기에 저장됩니다. 또 앱은 문제가 생겼을 때 원인을 찾으려고 게임 안에서 일어난 일(예: «레벨 상승»)을 최대 200건까지 기기에 적어 둡니다. 이 기록은 어디로도 전송되지 않습니다.</p>
+      <p>설정 → 진행 초기화는 퀴즈 진행도, 레벨, 업적, 즐겨찾기, 모은 카드, 복습 목록, 최고 점수를 지웁니다. 국기 포인트와 Pro 구매, 설정은 일부러 남깁니다 — 포인트는 광고를 보고 모은 것이고, 구매는 진행도가 아니기 때문입니다.</p>
+      <p>iOS에서는 «iCloud 동기화»(설정에서 끌 수 있고 기본은 켬)를 켜 두면 이 기록의 사본이 본인의 iCloud 계정에도 저장되어, 같은 Apple ID를 쓰는 다른 기기로 이어집니다. 개발자는 그 사본을 보지도 지우지도 못합니다 — 사용자 계정 안에 있기 때문입니다. 안드로이드에는 이 기능이 없습니다.</p>
       <h2 class="clause">3. 순위표(선택)</h2>
-      <p>순위표를 열고 닉네임을 정하기 전까지는 아무것도 전송되지 않습니다. 그 이후 앱이 Firebase(게임 서비스)로 보내는 것은 이 앱을 위해 만들어진 익명 플레이어 ID(<span class="pf" data-ios="Apple ID" data-android="Google 계정">Apple ID</span> 아님), 직접 고른 닉네임, 기기의 지역 설정에서 얻은 국기, 점수, 그리고 내 행에 직접 고른 표시 색상과 배지(꾸미기용)뿐입니다. 기록 삭제를 원하시면 9항의 주소로 알려 주세요.</p>
-      <h2 class="clause">4. 광고</h2>
+      <p>앱을 켤 때, 그리고 다른 앱을 쓰다 돌아왔을 때, 앱은 인터넷에 연결돼 있는지 확인하려고 게임 서비스(Firebase)에 작은 요청을 한 번 보냅니다. 이 요청에는 계정도, 식별자도, 사용자에 관한 정보도 담기지 않습니다. 다만 인터넷 요청이 다 그렇듯, 요청을 받는 서버에는 IP 주소가 보입니다.</p>
+      <p>순위 기록은 순위표를 열고 닉네임을 정할 때 비로소 만들어집니다. 그 이후 앱이 Firebase 로 보내는 것은 이 앱을 위해 만들어진 익명 플레이어 ID(<span class="pf" data-ios="Apple ID" data-android="Google 계정">Apple ID</span> 아님), 직접 고른 닉네임, 기기의 지역 설정에서 얻은 국기, 점수, 그리고 내 행에 직접 고른 표시 색상과 배지(꾸미기용)입니다. 순위에 올라가는 판을 마치면 그 판의 답안도 함께 보냅니다 — 점수를 기기가 아니라 서버가 매기기 위해서입니다. 답안은 채점이 끝나면 곧바로 버려지고, 서버에 저장되지 않습니다. 서버에 남는 것은 앞에 적은 항목이 전부입니다. 기록 삭제를 원하시면 10항의 주소로 알려 주세요.</p>
+      <p>게임 서비스의 데이터 처리 방식은 <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a> 에 설명돼 있습니다.</p>
+      <h2 class="clause">4. 국가(國歌) 재생(선택)</h2>
+      <p>재생 버튼을 누르면 음원이 인터넷 아카이브(archive.org)에서 스트리밍됩니다. 앱이 쓰는 미국 해군 군악대(U.S. Navy Band) 연주 모음은 퍼블릭 도메인 자료이며, 이를 공개 디지털 도서관인 인터넷 아카이브가 보관하고 있습니다. 이때 인터넷 아카이브에는 IP 주소와 요청한 파일 이름이 전달됩니다. 그 밖에 보내는 것은 없으며, 재생 버튼을 한 번도 누르지 않으면 아무것도 전송되지 않습니다.</p>
+      <p>인터넷 아카이브의 데이터 처리 방식은 <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a> 에 설명돼 있습니다.</p>
+      <h2 class="clause">5. 광고</h2>
       <p>무료 버전에서 광고는 «광고 보기»를 눌러 국기 포인트를 받을 때만 나옵니다. 배너 광고도, 전면 광고도 없습니다. 광고는 AdMob 이 제공하며, 광고 선택·측정을 위해 광고 식별자를 쓸 수 있습니다.</p>
       <ul>
         <li>iOS 에서는 추적 전에 반드시 사용자 허락을 먼저 구합니다. 거부하면 비개인화 광고가 표시됩니다.</li>
@@ -206,15 +220,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Pro 사용자에게는 광고가 전혀 나오지 않습니다.</li>
       </ul>
       <p>광고 제공사의 데이터 처리 방식은 <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a> 에 설명돼 있습니다.</p>
-      <h2 class="clause">5. 결제</h2>
+      <h2 class="clause">6. 결제</h2>
       <p>결제는 <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> 가 처리합니다. 개발자는 카드번호나 청구 주소를 보지도, 저장하지도 않습니다. 앱은 Pro 보유 여부(예/아니오)만 들고 있으며 그 값을 스토어에 확인합니다.</p>
-      <h2 class="clause">6. 알림(선택)</h2>
-      <p>«오늘의 국기» 알림을 켜면 앱이 알림 권한을 요청한 뒤 기기 안에서 알림을 예약합니다. 서버로 보내는 것이 없고 푸시 서비스도 쓰지 않습니다. 언제든 끌 수 있습니다.</p>
-      <h2 class="clause">7. 아동</h2>
+      <h2 class="clause">7. 알림(선택)</h2>
+      <p>«오늘의 국기 알림»은 iPhone 과 iPad 에서만 쓸 수 있고, 안드로이드 버전에는 없습니다. 이 알림을 켜면 앱이 알림 권한을 요청한 뒤 기기 안에서 알림을 예약합니다. 서버로 보내는 것이 없고 푸시 서비스도 쓰지 않습니다. 언제든 끌 수 있습니다.</p>
+      <h2 class="clause">8. 아동</h2>
       <p>앱은 아동의 개인정보를 알면서 수집하지 않습니다. 채팅도, 메시지 기능도 없으며, 사용자가 올리는 내용은 직접 고른 닉네임뿐입니다.</p>
-      <h2 class="clause">8. 보관과 삭제</h2>
+      <h2 class="clause">9. 보관과 삭제</h2>
       <p>기기 안의 정보는 직접 초기화하거나 앱을 삭제할 때까지 남습니다. 순위 기록은 해당 순위표가 살아 있는 동안 유지됩니다 — 일간은 하루, 주간은 한 주 단위로 갱신됩니다. 앱을 삭제하면 기기의 정보는 사라집니다. iCloud 동기화를 켜 두었다면 사본이 본인의 iCloud 계정에 남아, 같은 Apple ID로 다시 설치할 때 되살아납니다 — 설정에서 동기화를 끄면 더 이상 올라가지 않습니다.</p>
-      <h2 class="clause">9. 문의와 변경</h2>
+      <h2 class="clause">10. 문의와 변경</h2>
       <p>문의 및 순위 기록 삭제 요청: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>이 방침은 변경될 수 있으며, 변경 사항은 앱 업데이트와 함께 알려 드립니다.</p>
       <p><a class="showall" href="#all" data-showall>모든 언어 보기</a></p>
@@ -229,7 +243,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>開発者</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>お問い合わせ先</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>最終更新日</strong>: 2026年8月27日</p>
+        <p><strong>最終更新日</strong>: 2026年9月7日</p>
       </div>
       <p class="note" data-store-note="ios">iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。</p>
       <p class="note" data-store-note="android" hidden>Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。</p>
@@ -237,10 +251,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. 決して収集しないもの</h2>
       <p>本アプリは氏名・メールアドレス・電話番号・連絡先・写真・位置情報を求めることも収集することもありません。</p>
       <h2 class="clause">2. 端末に残る情報</h2>
-      <p>クイズの進捗、レベル、国旗ポイント、お気に入り、集めたカード、設定、Pro の保有状況は端末に保存されます。設定 → 記録をリセットで消去できます。 iOS では «iCloud 同期»(設定でオフにでき、既定はオン)をオンにしていると、この記録の複製がご自身の iCloud アカウントにも保存され、同じ Apple ID の他の端末へ引き継がれます。開発者はその複製を見ることも消すこともできません — ご自身のアカウントの中にあるためです。Android にこの機能はありません。</p>
+      <p>クイズの進捗、レベル、国旗ポイント、お気に入り、集めたカード、ミニゲームの記録、ランキング用に決めたニックネーム、設定、Pro の保有状況は端末に保存されます。また、不具合の原因を調べるために、アプリ内の出来事（「レベルアップ」など）を直近200件まで端末内に書き留めています。この動作履歴が外部へ送信されることはありません。</p>
+      <p>設定 → 進行状況のリセットで消去されるのは、クイズの進捗、レベル、実績、お気に入り、集めたカード、復習リスト、最高スコアです。国旗ポイント、Pro の購入、設定はあえて残します — ポイントは広告を見て貯めたものであり、購入は学習の進捗ではないためです。</p>
+      <p>iOS では «iCloud 同期»(設定でオフにでき、既定はオン)をオンにしていると、端末に保存されたこれらの情報の複製がご自身の iCloud アカウントにも保存され、同じ Apple ID の他の端末へ引き継がれます。開発者はその複製を見ることも消すこともできません — ご自身のアカウントの中にあるためです。Android にこの機能はありません。</p>
       <h2 class="clause">3. ランキング（任意）</h2>
-      <p>ランキングを開いてニックネームを決めるまで、何も送信されません。それ以降、本アプリが Firebase（ゲームサービス）へ送るのは、このアプリのために作られた匿名のプレイヤー ID（<span class="pf" data-ios="Apple ID" data-android="Google アカウント">Apple ID</span> ではありません）、ご自身で選んだニックネーム、端末の地域設定から得た国旗、ご自身の行に選んだ表示色とバッジ（見た目のみ）、スコアだけです。記録の削除をご希望の場合は第9条の連絡先までご連絡ください。</p>
-      <h2 class="clause">4. 広告</h2>
+      <p>本アプリは、起動したときとバックグラウンドから復帰したときに、ネットワークにつながるかどうかを確かめる短いリクエストをゲームサービス（Firebase）へ1回ずつ送ります。このリクエストにはアカウントも識別子も、ご自身に関する情報も含まれません。ただし、インターネットを通じた通信である以上、接続先のサーバーには IP アドレスが伝わります。</p>
+      <p>ランキングの記録が作られるのは、ランキングを開いてニックネームを決めたときだけです。それ以降、本アプリが Firebase へ送るのは、このアプリのために作られた匿名のプレイヤー ID（<span class="pf" data-ios="Apple ID" data-android="Google アカウント">Apple ID</span> ではありません）、ご自身で選んだニックネーム、端末の地域設定から得た国旗、ご自身の行に選んだ表示色とバッジ（見た目のみ）、スコアだけです。ランキング対象のゲームを終えると、その回の解答も送信されます。スコアを端末ではなくサーバー側で採点するためです。解答は採点後に破棄され、保存されることはありません。記録の削除をご希望の場合は第10条の連絡先までご連絡ください。</p>
+      <p>ゲームサービスによるデータの取り扱いについては <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a> をご覧ください。</p>
+      <h2 class="clause">4. 国歌の再生（任意）</h2>
+      <p>国歌の再生ボタンをタップすると、音源は Internet Archive（archive.org）からストリーミング再生されます。Internet Archive は、本アプリが使用するパブリックドメインの米海軍軍楽隊（U.S. Navy Band）の音源を公開している非営利のデジタル図書館です。同サービスには、IP アドレスと、再生を求めたファイルの名前が伝わります。それ以外に送信されるものはなく、再生ボタンをタップしなければ何も送信されません。</p>
+      <p>Internet Archive によるデータの取り扱いについては <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a> をご覧ください。</p>
+      <h2 class="clause">5. 広告</h2>
       <p>無料版で広告が表示されるのは、「広告を見る」をタップして国旗ポイントを獲得するときだけです。バナー広告も全画面広告もありません。広告は AdMob が配信し、広告の選択と効果測定のために広告識別子を使用する場合があります。</p>
       <ul>
         <li>iOS では追跡の前に必ず許可を求めます。拒否された場合はパーソナライズされていない広告が表示されます。</li>
@@ -248,15 +269,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Pro ユーザーには広告は一切表示されません。</li>
       </ul>
       <p>広告事業者によるデータの取り扱いについては <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a> をご覧ください。</p>
-      <h2 class="clause">5. 購入</h2>
+      <h2 class="clause">6. 購入</h2>
       <p>購入手続きは <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> が行います。開発者がカード番号や請求先住所を見ることも保存することもありません。本アプリが保持するのは Pro を持っているかどうか（はい／いいえ）だけで、その値はストアに照会します。</p>
-      <h2 class="clause">6. 通知（任意）</h2>
-      <p>「今日の国旗」通知をオンにすると、本アプリは通知の許可を求めたうえで、端末内で通知を予約します。サーバーへ送信するものはなく、プッシュサービスも使用しません。いつでもオフにできます。</p>
-      <h2 class="clause">7. お子さまについて</h2>
+      <h2 class="clause">7. 通知（任意）</h2>
+      <p>「今日の国旗」通知は iPhone と iPad でのみ利用でき、Android 版にはありません。オンにすると、本アプリは通知の許可を求めたうえで、端末内で通知を予約します。サーバーへ送信するものはなく、プッシュサービスも使用しません。いつでもオフにできます。</p>
+      <h2 class="clause">8. お子さまについて</h2>
       <p>本アプリはお子さまの個人データを故意に収集しません。チャットもメッセージ機能もなく、ユーザーが入力する内容はご自身で選んだニックネームだけです。</p>
-      <h2 class="clause">8. 保管と削除</h2>
+      <h2 class="clause">9. 保管と削除</h2>
       <p>端末内の情報は、ご自身がリセットするかアプリを削除するまで残ります。ランキングの記録はその集計期間のあいだ保持されます — デイリーは1日ごと、ウィークリーは1週ごとに切り替わります。アプリを削除すると端末内の情報は消えます。iCloud 同期をオンにしていた場合、複製はご自身の iCloud アカウントに残り、同じ Apple ID で再インストールすると復元されます — 設定で同期をオフにすれば以後アップロードされません。</p>
-      <h2 class="clause">9. お問い合わせと変更</h2>
+      <h2 class="clause">10. お問い合わせと変更</h2>
       <p>お問い合わせ、ランキング記録の削除依頼: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>本ポリシーは変更されることがあり、変更はアプリのアップデートとともにお知らせします。</p>
       <p><a class="showall" href="#all" data-showall>すべての言語を表示</a></p>
@@ -271,7 +292,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Entwickler</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Zuletzt aktualisiert</strong>: 27. August 2026</p>
+        <p><strong>Zuletzt aktualisiert</strong>: 7. September 2026</p>
       </div>
       <p class="note" data-store-note="ios">Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.</p>
       <p class="note" data-store-note="android" hidden>Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.</p>
@@ -279,10 +300,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Was wir niemals erheben</h2>
       <p>Die App fragt weder Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer, Kontakte, Fotos noch Ihren Standort ab und erhebt diese auch nicht.</p>
       <h2 class="clause">2. Daten, die auf Ihrem Gerät bleiben</h2>
-      <p>Quizfortschritt, Level, Flaggenpunkte, Favoriten, gesammelte Karten, Einstellungen und der Pro-Besitz werden auf Ihrem Gerät gespeichert. Einstellungen → Fortschritt zurücksetzen löscht sie. Unter iOS wird bei aktivierter «iCloud-Synchronisierung» (in den Einstellungen abschaltbar, standardmäßig an) zusätzlich eine Kopie in Ihrem eigenen iCloud-Konto abgelegt, damit sie auf Ihre anderen Geräte mit derselben Apple-ID übergeht. Der Entwickler kann diese Kopie weder lesen noch löschen — sie liegt in Ihrem Konto. Unter Android gibt es diese Funktion nicht.</p>
+      <p>Quizfortschritt, Level, Flaggenpunkte, Favoriten, gesammelte Karten, Ergebnisse der Minispiele, der von Ihnen für die Ranglisten gewählte Spitzname, Einstellungen und der Pro-Besitz werden auf Ihrem Gerät gespeichert. Außerdem führt die App zur Fehlersuche ein kurzes Protokoll der Spielereignisse (höchstens 200 Einträge, etwa „Levelaufstieg“); es verlässt Ihr Gerät nicht.</p>
+      <p>Einstellungen → Fortschritt zurücksetzen löscht Quizfortschritt, Level, Erfolge, Favoriten, gesammelte Karten, Wiederholungsliste und Bestwerte. Ihre Flaggenpunkte, Ihren Pro-Kauf und Ihre Einstellungen behält die App bewusst: Punkte haben Sie sich mit belohnten Videos verdient, und ein Kauf ist kein Fortschritt.</p>
+      <p>Unter iOS wird bei aktivierter «iCloud-Synchronisierung» (in den Einstellungen abschaltbar, standardmäßig an) zusätzlich eine Kopie in Ihrem eigenen iCloud-Konto abgelegt, damit sie auf Ihre anderen Geräte mit derselben Apple-ID übergeht. Der Entwickler kann diese Kopie weder lesen noch löschen — sie liegt in Ihrem Konto. Unter Android gibt es diese Funktion nicht.</p>
       <h2 class="clause">3. Ranglisten (optional)</h2>
-      <p>Es wird nichts gesendet, bis Sie die Ranglisten öffnen und einen Spitznamen wählen. Ab dann sendet die App an Firebase (den Spieldienst): eine anonyme, eigens für diese App erzeugte Spieler-ID (nicht die Kennung Ihres Store-Kontos – <span class="pf" data-ios="Apple ID" data-android="Google-Konto">Apple ID</span>), den von Ihnen gewählten Spitznamen, eine aus der Regionseinstellung Ihres Geräts abgeleitete Länderflagge, die von Ihnen für Ihre Zeile gewählte Anzeigefarbe und das Abzeichen (rein kosmetisch) sowie Ihre Punktzahlen. Mehr wird nicht gespeichert. Für die Löschung eines Eintrags schreiben Sie an die Adresse in Abschnitt 9.</p>
-      <h2 class="clause">4. Werbung</h2>
+      <p>Beim Start und jedes Mal, wenn Sie zur App zurückkehren, stellt sie eine kurze Anfrage an den Spieldienst (Firebase), um zu prüfen, ob eine Verbindung besteht. Diese Anfrage enthält keine Kontodaten, keine Kennung und nichts, was auf Sie verweist; wie bei jeder Anfrage im Internet sieht der empfangende Server allerdings Ihre IP-Adresse.</p>
+      <p>Ihr Ranglisteneintrag entsteht erst, wenn Sie die Ranglisten öffnen und einen Spitznamen wählen. Ab dann sendet die App an Firebase: eine anonyme, eigens für diese App erzeugte Spieler-ID (nicht die Kennung Ihres Store-Kontos – <span class="pf" data-ios="Apple ID" data-android="Google-Konto">Apple ID</span>), den von Ihnen gewählten Spitznamen, eine aus der Regionseinstellung Ihres Geräts abgeleitete Länderflagge, die von Ihnen für Ihre Zeile gewählte Anzeigefarbe und das Abzeichen (rein kosmetisch) sowie Ihre Punktzahlen. Wenn Sie eine gewertete Runde beenden, werden zusätzlich die Antworten dieser Runde übertragen, damit der Server und nicht Ihr Gerät über die Punktzahl entscheidet; sie werden ausgewertet und sofort verworfen. Mehr wird nicht gespeichert. Für die Löschung eines Eintrags schreiben Sie an die Adresse in Abschnitt 10.</p>
+      <p>Wie der Spieldienst mit Daten umgeht: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Wiedergabe von Nationalhymnen (optional)</h2>
+      <p>Wenn Sie bei einer Nationalhymne auf Wiedergabe tippen, wird die Aufnahme vom Internet Archive (archive.org) gestreamt – der öffentlichen Bibliothek, in der die von der App genutzte gemeinfreie Sammlung der U.S. Navy Band liegt. Dieser Dienst erhält Ihre IP-Adresse und den Namen der angeforderten Datei. Mehr wird nicht gesendet; solange Sie nicht auf Wiedergabe tippen, wird nichts gesendet.</p>
+      <p>Wie das Internet Archive mit Daten umgeht: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Werbung</h2>
       <p>Die kostenlose Version zeigt ein belohntes Video nur dann, wenn Sie auf „Video ansehen“ tippen, um Flaggenpunkte zu erhalten. Es gibt keine Banner- und keine Vollbildwerbung. Die Werbung liefert AdMob aus, das dafür einen Werbe-Identifier zur Auswahl und Messung verwenden kann.</p>
       <ul>
         <li>Unter iOS fragt die App vor jedem Tracking um Ihre Erlaubnis. Lehnen Sie ab, wird nicht personalisierte Werbung ausgeliefert.</li>
@@ -290,15 +318,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Pro-Nutzern wird überhaupt keine Werbung angezeigt.</li>
       </ul>
       <p>Wie der Werbeanbieter mit diesen Daten umgeht: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Käufe</h2>
+      <h2 class="clause">6. Käufe</h2>
       <p>Käufe werden über Ihren Store (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>) abgewickelt. Der Entwickler sieht und speichert weder Ihre Kartennummer noch Ihre Rechnungsadresse. Die App führt lediglich einen Ja/Nein-Vermerk darüber, ob Pro erworben wurde, und gleicht ihn mit dem Store ab.</p>
-      <h2 class="clause">6. Mitteilungen (optional)</h2>
-      <p>Wenn Sie die tägliche Flaggen-Erinnerung einschalten, fragt die App nach der Mitteilungsberechtigung und plant die Erinnerung anschließend auf Ihrem Gerät. Nichts wird an einen Server gesendet, ein Push-Dienst ist nicht beteiligt. Sie können sie jederzeit ausschalten.</p>
-      <h2 class="clause">7. Kinder</h2>
+      <h2 class="clause">7. Mitteilungen (optional)</h2>
+      <p>Die tägliche Flaggen-Erinnerung gibt es nur auf iPhone und iPad; unter Android gibt es diese Funktion nicht. Wenn Sie die Erinnerung einschalten, fragt die App nach der Mitteilungsberechtigung und plant sie anschließend auf Ihrem Gerät. Nichts wird an einen Server gesendet, ein Push-Dienst ist nicht beteiligt. Sie können sie jederzeit ausschalten.</p>
+      <h2 class="clause">8. Kinder</h2>
       <p>Die App erhebt wissentlich keine personenbezogenen Daten von Kindern. Sie hat keinen Chat, keine Nachrichtenfunktion und keine von Nutzern eingestellten Inhalte außer einem selbst gewählten Spitznamen.</p>
-      <h2 class="clause">8. Aufbewahrung und Löschung</h2>
+      <h2 class="clause">9. Aufbewahrung und Löschung</h2>
       <p>Daten auf dem Gerät bleiben, bis Sie sie zurücksetzen oder die App deinstallieren. Ranglisteneinträge bestehen so lange wie ihre Liste: Tagesranglisten wechseln täglich, Wochenranglisten wöchentlich. Beim Deinstallieren werden die Daten auf dem Gerät entfernt. War die iCloud-Synchronisierung aktiv, bleibt eine Kopie in Ihrem eigenen iCloud-Konto und kehrt bei einer Neuinstallation mit derselben Apple-ID zurück; wird die Einstellung ausgeschaltet, wird nichts mehr hochgeladen.</p>
-      <h2 class="clause">9. Kontakt und Änderungen</h2>
+      <h2 class="clause">10. Kontakt und Änderungen</h2>
       <p>Fragen oder Löschung eines Ranglisteneintrags: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Diese Erklärung kann sich ändern; Änderungen werden mit App-Updates veröffentlicht.</p>
       <p><a class="showall" href="#all" data-showall>Alle Sprachen anzeigen</a></p>
@@ -313,7 +341,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Développeur</strong> : 임한수 (Hansoo Lim)</p>
         <p><strong>Contact</strong> : <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Dernière mise à jour</strong> : 27 août 2026</p>
+        <p><strong>Dernière mise à jour</strong> : 7 septembre 2026</p>
       </div>
       <p class="note" data-store-note="ios">Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.</p>
       <p class="note" data-store-note="android" hidden>Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.</p>
@@ -321,10 +349,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Ce que nous ne collectons jamais</h2>
       <p>L’Application ne demande ni ne collecte votre nom, votre adresse e-mail, votre numéro de téléphone, vos contacts, vos photos ou votre position.</p>
       <h2 class="clause">2. Données conservées sur votre appareil</h2>
-      <p>La progression des quiz, le niveau, les Points Drapeau, les favoris, les cartes collectées, les réglages et la possession de Pro sont enregistrés sur votre appareil. Réglages → Réinitialiser la progression les efface. Sur iOS, si la «Synchronisation iCloud» est activée (désactivable dans les réglages, activée par défaut), une copie de ces données est aussi conservée dans votre propre compte iCloud afin de la retrouver sur vos autres appareils utilisant le même identifiant Apple. Le développeur ne peut ni lire ni supprimer cette copie — elle se trouve dans votre compte. Android ne propose pas cette fonction.</p>
+      <p>La progression des quiz, le niveau, les Points Drapeau, les favoris, les cartes collectées, les résultats des mini-jeux, le pseudonyme choisi pour les classements, les réglages et la possession de Pro sont enregistrés sur votre appareil. L’Application conserve aussi sur votre appareil un court journal des événements de jeu — 200 entrées au maximum, par exemple « passage au niveau supérieur » — pour aider à diagnostiquer d’éventuels problèmes ; il n’est envoyé nulle part.</p>
+      <p>Réglages → Réinitialiser la progression efface la progression des quiz, le niveau, les succès, les favoris, les cartes collectées, la file de révision et les meilleurs scores. Cette action conserve délibérément vos Points Drapeau, votre achat Pro et vos réglages : les points s’obtiennent en regardant des publicités, et un achat n’est pas une progression.</p>
+      <p>Sur iOS, si la «Synchronisation iCloud» est activée (désactivable dans les réglages, activée par défaut), une copie de ces données est aussi conservée dans votre propre compte iCloud afin de la retrouver sur vos autres appareils utilisant le même identifiant Apple. Le développeur ne peut ni lire ni supprimer cette copie — elle se trouve dans votre compte. Android ne propose pas cette fonction.</p>
       <h2 class="clause">3. Classements (facultatif)</h2>
-      <p>Rien n’est envoyé tant que vous n’avez pas ouvert les classements et choisi un pseudonyme. À partir de là, l’Application envoie à Firebase (le service de jeu) : un identifiant de joueur anonyme créé pour cette application (et non votre <span class="pf" data-ios="Apple ID" data-android="compte Google">Apple ID</span>), le pseudonyme que vous avez choisi, un drapeau déduit du réglage de région de votre appareil, la couleur et le badge d’affichage que vous avez choisis pour votre ligne (purement décoratifs), et vos scores. C’est l’intégralité de l’enregistrement. Pour faire supprimer une entrée, écrivez à l’adresse indiquée à l’article 9.</p>
-      <h2 class="clause">4. Publicité</h2>
+      <p>À son démarrage, puis à chaque retour au premier plan, l’Application adresse une brève requête au service de jeu (Firebase) afin de vérifier si le réseau est accessible. Cette requête ne contient ni compte, ni identifiant, ni information vous concernant ; comme pour toute requête sur Internet, le serveur destinataire voit toutefois votre adresse IP.</p>
+      <p>Votre entrée de classement n’est créée que lorsque vous ouvrez les classements et choisissez un pseudonyme. À partir de là, l’Application envoie à Firebase : un identifiant de joueur anonyme créé pour cette application (et non votre <span class="pf" data-ios="Apple ID" data-android="compte Google">Apple ID</span>), le pseudonyme que vous avez choisi, un drapeau déduit du réglage de région de votre appareil, la couleur et le badge d’affichage que vous avez choisis pour votre ligne (purement décoratifs), et vos scores. À la fin d’une partie classée, elle envoie également les réponses de cette partie, afin que le score soit établi par le serveur et non par votre appareil ; ces réponses servent uniquement à la correction, puis sont supprimées. C’est l’intégralité de l’enregistrement. Pour faire supprimer une entrée, écrivez à l’adresse indiquée à l’article 10.</p>
+      <p>Le service de jeu décrit le traitement de ces données sur <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Lecture des hymnes (facultatif)</h2>
+      <p>Lorsque vous lancez la lecture d’un hymne national, l’enregistrement est diffusé en continu depuis l’Internet Archive (archive.org). Les hymnes de l’Application proviennent de la collection de l’U.S. Navy Band, relevant du domaine public et hébergée par cette bibliothèque publique. Ce service reçoit votre adresse IP et le nom du fichier demandé. Rien d’autre n’est envoyé, et rien ne l’est si vous ne lancez jamais de lecture.</p>
+      <p>L’Internet Archive décrit le traitement de ces données sur <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Publicité</h2>
       <p>La version gratuite n’affiche une publicité récompensée que lorsque vous touchez « Regarder une pub » pour gagner des Points Drapeau. Il n’y a ni bannière ni publicité plein écran. Les publicités sont diffusées par AdMob, qui peut utiliser un identifiant publicitaire pour les sélectionner et les mesurer.</p>
       <ul>
         <li>Sur iOS, l’Application demande votre autorisation avant tout suivi. Si vous refusez, les publicités sont non personnalisées.</li>
@@ -332,15 +367,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Les utilisateurs Pro ne voient aucune publicité.</li>
       </ul>
       <p>La régie publicitaire décrit le traitement de ces données sur <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Achats</h2>
+      <h2 class="clause">6. Achats</h2>
       <p>Les achats sont traités par la boutique d’applications (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>). Le développeur ne voit ni ne conserve jamais votre numéro de carte ni votre adresse de facturation. L’Application ne conserve qu’un indicateur oui/non indiquant si Pro est acquis, et le vérifie auprès de la boutique.</p>
-      <h2 class="clause">6. Notifications (facultatif)</h2>
-      <p>Si vous activez le rappel quotidien du drapeau, l’Application demande l’autorisation de notification puis planifie le rappel sur votre appareil. Rien n’est envoyé à un serveur et aucun service de notification push n’intervient. Vous pouvez le désactiver à tout moment.</p>
-      <h2 class="clause">7. Enfants</h2>
+      <h2 class="clause">7. Notifications (facultatif)</h2>
+      <p>Le rappel quotidien du drapeau n’existe que sur iPhone et iPad ; Android ne propose pas cette fonction. Si vous l’activez, l’Application demande l’autorisation de notification puis planifie le rappel sur votre appareil. Rien n’est envoyé à un serveur et aucun service de notification push n’intervient. Vous pouvez le désactiver à tout moment.</p>
+      <h2 class="clause">8. Enfants</h2>
       <p>L’Application ne collecte pas sciemment de données personnelles d’enfants. Elle ne comporte ni discussion, ni messagerie, ni contenu fourni par les utilisateurs autre qu’un pseudonyme que vous choisissez vous-même.</p>
-      <h2 class="clause">8. Conservation et suppression</h2>
+      <h2 class="clause">9. Conservation et suppression</h2>
       <p>Les données présentes sur l’appareil sont conservées jusqu’à ce que vous les réinitialisiez ou désinstalliez l’Application. Les entrées de classement vivent le temps de leur tableau : les classements quotidiens sont renouvelés chaque jour, les hebdomadaires chaque semaine. La désinstallation supprime les données présentes sur l’appareil. Si la synchronisation iCloud était activée, une copie demeure dans votre propre compte iCloud et revient lors d’une réinstallation avec le même identifiant Apple ; désactiver le réglage arrête tout nouvel envoi.</p>
-      <h2 class="clause">9. Contact et modifications</h2>
+      <h2 class="clause">10. Contact et modifications</h2>
       <p>Questions ou demande de suppression d’une entrée de classement : <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Cette politique peut évoluer ; les modifications sont publiées avec les mises à jour de l’application.</p>
       <p><a class="showall" href="#all" data-showall>Afficher toutes les langues</a></p>
@@ -355,7 +390,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Sviluppatore</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Contatti</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Ultimo aggiornamento</strong>: 27 agosto 2026</p>
+        <p><strong>Ultimo aggiornamento</strong>: 7 settembre 2026</p>
       </div>
       <p class="note" data-store-note="ios">Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.</p>
       <p class="note" data-store-note="android" hidden>Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.</p>
@@ -363,10 +398,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Ciò che non raccogliamo mai</h2>
       <p>L’App non chiede né raccoglie nome, indirizzo e-mail, numero di telefono, contatti, foto o posizione.</p>
       <h2 class="clause">2. Dati che restano sul tuo dispositivo</h2>
-      <p>Progressi dei quiz, livello, Punti Bandiera, preferiti, carte raccolte, impostazioni e il possesso di Pro sono salvati sul tuo dispositivo. Impostazioni → Azzera progressi li cancella. Su iOS, se la «Sincronizzazione iCloud» è attiva (disattivabile nelle impostazioni, attiva per impostazione predefinita), una copia di questi dati viene conservata anche nel tuo account iCloud, così da ritrovarla sugli altri dispositivi con lo stesso ID Apple. Lo sviluppatore non può leggere né cancellare quella copia — si trova nel tuo account. Su Android questa funzione non esiste.</p>
+      <p>Progressi dei quiz, livello, Punti Bandiera, preferiti, carte raccolte, risultati dei minigiochi, il soprannome scelto per le classifiche, impostazioni e il possesso di Pro sono salvati sul tuo dispositivo. Sul dispositivo l’App tiene anche un breve registro degli eventi di gioco — al massimo 200 voci, ad esempio «passaggio di livello» — che serve a individuare eventuali problemi; non viene mai inviato a un server.</p>
+      <p>Impostazioni → Azzera progressi cancella i progressi dei quiz, il livello, gli obiettivi raggiunti, i preferiti, le carte raccolte, la coda di ripasso e i punteggi migliori. Conserva invece, di proposito, i tuoi Punti Bandiera, l’acquisto di Pro e le impostazioni: i punti si ottengono guardando gli annunci e un acquisto non è un progresso.</p>
+      <p>Su iOS, se la «Sincronizzazione iCloud» è attiva (disattivabile nelle impostazioni, attiva per impostazione predefinita), una copia di questi dati viene conservata anche nel tuo account iCloud, così da ritrovarla sugli altri dispositivi con lo stesso ID Apple. Lo sviluppatore non può leggere né cancellare quella copia — si trova nel tuo account. Su Android questa funzione non esiste.</p>
       <h2 class="clause">3. Classifiche (facoltative)</h2>
-      <p>Nulla viene inviato finché non apri le classifiche e scegli un soprannome. Da quel momento l’App invia a Firebase (il servizio di gioco): un ID giocatore anonimo creato per questa app (non il tuo <span class="pf" data-ios="Apple ID" data-android="account Google">Apple ID</span>), il soprannome che hai scelto, una bandiera ricavata dall’impostazione di regione del dispositivo, il colore e il distintivo che hai scelto per la tua riga (puramente estetici) e i tuoi punteggi. Questo è l’intero record. Per far cancellare una voce, scrivi all’indirizzo indicato al punto 9.</p>
-      <h2 class="clause">4. Pubblicità</h2>
+      <p>Quando l’App si avvia e quando torna in primo piano, invia al servizio di gioco (Firebase) una richiesta minima per verificare se la rete è raggiungibile. Quella richiesta non contiene alcun account, alcun identificatore né alcun dato che ti riguardi; come per qualsiasi richiesta su Internet, il server che la riceve vede il tuo indirizzo IP.</p>
+      <p>La tua voce in classifica viene creata solo quando apri le classifiche e scegli un soprannome. Da quel momento l’App invia a Firebase: un ID giocatore anonimo creato per questa app (non il tuo <span class="pf" data-ios="Apple ID" data-android="account Google">Apple ID</span>), il soprannome che hai scelto, una bandiera ricavata dall’impostazione di regione del dispositivo, il colore e il distintivo che hai scelto per la tua riga (puramente estetici) e i tuoi punteggi. Al termine di una partita valida per la classifica invia anche le risposte che hai dato, così che sia il server e non il tuo dispositivo a stabilire il punteggio; le risposte vengono valutate e poi eliminate: non vengono conservate. Questo è l’intero record. Per far cancellare una voce, scrivi all’indirizzo indicato al punto 10.</p>
+      <p>Come il servizio di gioco tratta i dati: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Riproduzione degli inni (facoltativa)</h2>
+      <p>Quando avvii la riproduzione di un inno nazionale, la registrazione arriva in streaming da Internet Archive (archive.org), la biblioteca digitale che ospita la raccolta di pubblico dominio della U.S. Navy Band da cui l’App attinge. Quel servizio riceve il tuo indirizzo IP e il nome del file richiesto. Nient’altro viene inviato e, se non riproduci mai un inno, non parte alcuna richiesta.</p>
+      <p>Come Internet Archive tratta i dati: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Pubblicità</h2>
       <p>La versione gratuita mostra un annuncio con premio solo quando tocchi «Guarda un annuncio» per ottenere Punti Bandiera. Non ci sono banner né annunci a schermo intero. Gli annunci sono forniti da AdMob, che può usare un identificatore pubblicitario per selezionarli e misurarli.</p>
       <ul>
         <li>Su iOS l’App chiede il tuo permesso prima di qualsiasi tracciamento. Se rifiuti, gli annunci non sono personalizzati.</li>
@@ -374,15 +416,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Agli utenti Pro non viene mostrato alcun annuncio.</li>
       </ul>
       <p>Come il fornitore di annunci tratta questi dati: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Acquisti</h2>
+      <h2 class="clause">6. Acquisti</h2>
       <p>Gli acquisti sono gestiti da <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. Lo sviluppatore non vede né conserva il numero della tua carta o l’indirizzo di fatturazione. L’App conserva solo un indicatore sì/no sul possesso di Pro e lo verifica presso lo store.</p>
-      <h2 class="clause">6. Notifiche (facoltative)</h2>
-      <p>Se attivi il promemoria giornaliero della bandiera, l’App chiede il permesso per le notifiche e poi programma il promemoria sul tuo dispositivo. Nulla viene inviato a un server e non è coinvolto alcun servizio push. Puoi disattivarlo in qualsiasi momento.</p>
-      <h2 class="clause">7. Minori</h2>
+      <h2 class="clause">7. Notifiche (facoltative)</h2>
+      <p>Il promemoria giornaliero della bandiera è una funzione per iPhone e iPad; su Android non esiste. Se lo attivi, l’App chiede il permesso per le notifiche e poi programma il promemoria sul tuo dispositivo. Nulla viene inviato a un server e non è coinvolto alcun servizio push. Puoi disattivarlo in qualsiasi momento.</p>
+      <h2 class="clause">8. Minori</h2>
       <p>L’App non raccoglie consapevolmente dati personali di minori. Non ha chat, né messaggistica, né contenuti forniti dagli utenti oltre a un soprannome scelto da te.</p>
-      <h2 class="clause">8. Conservazione e cancellazione</h2>
+      <h2 class="clause">9. Conservazione e cancellazione</h2>
       <p>I dati sul dispositivo restano finché non li azzeri o disinstalli l’App. Le voci in classifica durano quanto la relativa classifica: quelle giornaliere cambiano ogni giorno, quelle settimanali ogni settimana. La disinstallazione rimuove i dati presenti sul dispositivo. Se la sincronizzazione iCloud era attiva, una copia resta nel tuo account iCloud e torna reinstallando con lo stesso ID Apple; disattivando l’impostazione non viene caricato altro.</p>
-      <h2 class="clause">9. Contatti e modifiche</h2>
+      <h2 class="clause">10. Contatti e modifiche</h2>
       <p>Domande o richiesta di cancellazione di una voce in classifica: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Questa informativa può cambiare; le modifiche sono pubblicate con gli aggiornamenti dell’app.</p>
       <p><a class="showall" href="#all" data-showall>Mostra tutte le lingue</a></p>
@@ -397,7 +439,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>開發者</strong>： 임한수 (Hansoo Lim)</p>
         <p><strong>聯絡方式</strong>： <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>最後更新</strong>： 2026年8月27日</p>
+        <p><strong>最後更新</strong>： 2026年9月7日</p>
       </div>
       <p class="note" data-store-note="ios">目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。</p>
       <p class="note" data-store-note="android" hidden>目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。</p>
@@ -405,10 +447,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. 我們絕不收集的資料</h2>
       <p>本應用程式不會索取或收集您的姓名、電子郵件地址、電話號碼、通訊錄、照片或位置資訊。</p>
       <h2 class="clause">2. 保存在您裝置上的資料</h2>
-      <p>測驗進度、等級、國旗點數、收藏、蒐集的卡片、設定，以及是否擁有 Pro，都儲存在您的裝置上。可於設定 → 重設紀錄清除。 在 iOS 上，若開啟《iCloud 同步》(可於設定關閉，預設開啟)，這些紀錄的副本也會保存在您自己的 iCloud 帳戶中，並延續到使用相同 Apple ID 的其他裝置。開發者無法讀取或刪除該副本 — 它位於您的帳戶內。Android 沒有此功能。</p>
+      <p>測驗進度、等級、國旗點數、收藏、蒐集的卡片、小遊戲紀錄、您為排行榜所選的暱稱、設定，以及是否擁有 Pro，都儲存在您的裝置上。本應用程式另會在您的裝置上保留一份簡要的遊戲事件紀錄（最多 200 筆，例如「升級」），以便出問題時查明原因；這份紀錄不會傳送到任何地方。</p>
+      <p>設定 → 重置進度會清除您的測驗進度、等級、成就、收藏、蒐集的卡片、複習清單與最佳成績。您的國旗點數、Pro 購買與設定則會刻意保留：點數是觀看廣告換來的，購買也不屬於進度。</p>
+      <p>在 iOS 上，若開啟《iCloud 同步》(可於設定關閉，預設開啟)，這些紀錄的副本也會保存在您自己的 iCloud 帳戶中，並延續到使用相同 Apple ID 的其他裝置。開發者無法讀取或刪除該副本 — 它位於您的帳戶內。Android 沒有此功能。</p>
       <h2 class="clause">3. 排行榜（選用）</h2>
-      <p>在您開啟排行榜並選定暱稱之前，不會傳送任何資料。此後本應用程式傳送至 Firebase（遊戲服務）的內容僅有：為本應用程式建立的匿名玩家 ID（並非您的<span class="pf" data-ios="Apple ID" data-android="Google 帳戶">Apple ID</span>）、您所選的暱稱、由裝置地區設定取得的國旗、您為自己的排名列所選的顯示顏色與徽章（僅供外觀），以及您的分數。若需刪除紀錄，請聯絡第9條所載地址。</p>
-      <h2 class="clause">4. 廣告</h2>
+      <p>本應用程式啟動時，以及每次您回到本應用程式時，會向遊戲服務（Firebase）發出一次簡短的請求，以確認網路連線是否正常。該請求不含帳號或任何識別碼，也不含任何與您有關的資料；但與所有網路連線一樣，接收請求的伺服器仍會看到您的 IP 位址。</p>
+      <p>您的排行榜紀錄只有在您開啟排行榜並選定暱稱之後才會建立。此後本應用程式傳送至 Firebase 的內容為：為本應用程式建立的匿名玩家 ID（並非您的<span class="pf" data-ios="Apple ID" data-android="Google 帳戶">Apple ID</span>）、您所選的暱稱、由裝置地區設定取得的國旗、您為自己的排名列所選的顯示顏色與徽章（僅供外觀），以及您的分數。當您完成一局計分的遊戲時，本應用程式也會一併傳送該局的作答內容，由伺服器計算分數，而不是由您的裝置計算；作答內容計分後隨即丟棄，不會保存。以上即為紀錄的全部內容。若需刪除紀錄，請聯絡第10條所載地址。</p>
+      <p>遊戲服務對資料的處理方式：<a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. 國歌播放（選用）</h2>
+      <p>當您點選播放國歌時，該錄音會自 Internet Archive（archive.org）串流播放。這是一座公共圖書館，本應用程式使用的美國海軍軍樂隊錄音（皆為公有領域）就收藏在那裡。該服務會看到您的 IP 位址，以及您所播放的檔案名稱。除此之外，本應用程式不會傳送任何其他資料；若您從未點選播放，就完全不會連線到這項服務。</p>
+      <p>Internet Archive 對資料的處理方式：<a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. 廣告</h2>
       <p>免費版只有在您點選「觀看廣告」以取得國旗點數時才會顯示獎勵廣告。沒有橫幅廣告，也沒有全螢幕廣告。廣告由 AdMob 提供，其可能使用廣告識別碼來選擇及評估廣告成效。</p>
       <ul>
         <li>在 iOS 上，本應用程式會在任何追蹤之前先徵求您的同意。若您拒絕，將顯示非個人化廣告。</li>
@@ -416,15 +465,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Pro 使用者完全不會看到廣告。</li>
       </ul>
       <p>廣告供應商對此類資料的處理方式：<a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. 購買</h2>
+      <h2 class="clause">6. 購買</h2>
       <p>購買由<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>處理。開發者絕不會看到或儲存您的卡號或帳單地址。本應用程式僅保存是否擁有 Pro 的「是／否」標記，並向商店查核該值。</p>
-      <h2 class="clause">6. 通知（選用）</h2>
-      <p>若您開啟「今日國旗」提醒，本應用程式會請求通知權限，然後在您的裝置上排定該提醒。不會傳送任何資料至伺服器，也不使用推播服務。您隨時可以關閉。</p>
-      <h2 class="clause">7. 兒童</h2>
+      <h2 class="clause">7. 通知（選用）</h2>
+      <p>「今日國旗」提醒僅在 iPhone 與 iPad 上提供，Android 沒有此功能。若您開啟該提醒，本應用程式會請求通知權限，然後在您的裝置上排定該提醒。不會傳送任何資料至伺服器，也不使用推播服務。您隨時可以關閉。</p>
+      <h2 class="clause">8. 兒童</h2>
       <p>本應用程式不會在知情的情況下收集兒童的個人資料。本應用程式沒有聊天、沒有訊息功能，使用者提供的內容僅有您自行選擇的暱稱。</p>
-      <h2 class="clause">8. 保存與刪除</h2>
+      <h2 class="clause">9. 保存與刪除</h2>
       <p>裝置上的資料會保留至您重設或解除安裝本應用程式為止。排行榜紀錄於該榜單有效期間內保存 — 每日榜每天更替，每週榜每週更替。解除安裝會移除裝置上的資料。若曾開啟 iCloud 同步，副本仍留在您自己的 iCloud 帳戶中，以相同 Apple ID 重新安裝時會回復 — 於設定關閉同步後便不再上傳。</p>
-      <h2 class="clause">9. 聯絡方式與變更</h2>
+      <h2 class="clause">10. 聯絡方式與變更</h2>
       <p>問題諮詢或排行榜紀錄刪除申請：<a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>本政策可能變更，變更內容將隨應用程式更新一併公告。</p>
       <p><a class="showall" href="#all" data-showall>顯示所有語言</a></p>
@@ -439,7 +488,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Desarrollador</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Contacto</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Última actualización</strong>: 27 de agosto de 2026</p>
+        <p><strong>Última actualización</strong>: 7 de septiembre de 2026</p>
       </div>
       <p class="note" data-store-note="ios">Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.</p>
       <p class="note" data-store-note="android" hidden>Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.</p>
@@ -447,10 +496,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Lo que nunca recopilamos</h2>
       <p>La App no solicita ni recopila tu nombre, correo electrónico, número de teléfono, contactos, fotos ni ubicación.</p>
       <h2 class="clause">2. Datos que se quedan en tu dispositivo</h2>
-      <p>El progreso de los cuestionarios, el nivel, los Puntos de Bandera, los favoritos, las cartas reunidas, los ajustes y si tienes Pro se guardan en tu dispositivo. Ajustes → Restablecer progreso los borra. En iOS, si la «Sincronización con iCloud» está activada (se puede desactivar en Ajustes; viene activada), también se guarda una copia en tu propia cuenta de iCloud para que continúe en tus otros dispositivos con el mismo ID de Apple. El desarrollador no puede leer ni borrar esa copia — está dentro de tu cuenta. En Android no existe esta función.</p>
+      <p>El progreso de los cuestionarios, el nivel, los Puntos de Bandera, los favoritos, las cartas reunidas, los récords de los minijuegos, el apodo que elegiste para las clasificaciones, los ajustes y si tienes Pro se guardan en tu dispositivo. La App también guarda en tu dispositivo un breve registro de sucesos del juego —como máximo 200 sucesos, del tipo «has subido de nivel»— para ayudar a diagnosticar problemas; nunca se envía a ninguna parte.</p>
+      <p>Ajustes → Reiniciar progreso borra el progreso de los cuestionarios, el nivel, los logros, los favoritos, las cartas reunidas, la cola de repaso y las mejores puntuaciones. Conserva deliberadamente tus Puntos de Bandera, tu compra de Pro y tus ajustes: los puntos se ganan viendo anuncios y una compra no es progreso.</p>
+      <p>En iOS, si la «Sincronización con iCloud» está activada (se puede desactivar en Ajustes; viene activada), también se guarda una copia en tu propia cuenta de iCloud para que continúe en tus otros dispositivos con el mismo ID de Apple. El desarrollador no puede leer ni borrar esa copia — está dentro de tu cuenta. En Android no existe esta función.</p>
       <h2 class="clause">3. Clasificaciones (opcional)</h2>
-      <p>No se envía nada hasta que abres las clasificaciones y eliges un apodo. A partir de ahí, la App envía a Firebase (el servicio del juego): un identificador de jugador anónimo creado para esta app (no tu <span class="pf" data-ios="Apple ID" data-android="cuenta de Google">Apple ID</span>), el apodo que elegiste, una bandera derivada del ajuste de región de tu dispositivo, el color y la insignia que elegiste para tu fila (solo decorativos) y tus puntuaciones. Ese es todo el registro. Para eliminar una entrada, escribe a la dirección del apartado 9.</p>
-      <h2 class="clause">4. Publicidad</h2>
+      <p>Al arrancar y cada vez que vuelve a primer plano, la App hace una pequeña petición al servicio del juego (Firebase) para comprobar si hay conexión a internet. Esa petición no incluye ninguna cuenta, ningún identificador ni ningún dato sobre ti; como ocurre con cualquier conexión a internet, el servidor que la recibe sí ve tu dirección IP.</p>
+      <p>Tu entrada en la clasificación solo se crea cuando abres las clasificaciones y eliges un apodo. A partir de ahí, la App envía a Firebase: un identificador de jugador anónimo creado para esta app (no tu <span class="pf" data-ios="Apple ID" data-android="cuenta de Google">Apple ID</span>), el apodo que elegiste, una bandera derivada del ajuste de región de tu dispositivo, el color y la insignia que elegiste para tu fila (solo decorativos) y tus puntuaciones. Cuando terminas una partida que cuenta para la clasificación, envía además las respuestas de esa partida para que sea el servidor, y no tu dispositivo, el que calcule la puntuación; esas respuestas se corrigen y se descartan, no se almacenan. Ese es todo el registro. Para eliminar una entrada, escribe a la dirección del apartado 10.</p>
+      <p>Cómo trata estos datos el servicio del juego: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Reproducción de himnos (opcional)</h2>
+      <p>Cuando pulsas el botón de reproducción de un himno nacional, la grabación se transmite desde Internet Archive (archive.org). Los himnos de la App proceden de la colección de dominio público de la Banda de la Armada de Estados Unidos, alojada en esa biblioteca pública. Internet Archive recibe tu dirección IP y el nombre del archivo solicitado. No se envía nada más y, si no pulsas ese botón, no se envía nada en absoluto.</p>
+      <p>Cómo trata Internet Archive estos datos: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Publicidad</h2>
       <p>La versión gratuita muestra un anuncio con recompensa solo cuando pulsas «Ver un anuncio» para ganar Puntos de Bandera. No hay banners ni anuncios a pantalla completa. Los anuncios los sirve AdMob, que puede usar un identificador publicitario para seleccionarlos y medirlos.</p>
       <ul>
         <li>En iOS la App pide tu permiso antes de cualquier seguimiento. Si lo rechazas, los anuncios no son personalizados.</li>
@@ -458,15 +514,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>A los usuarios Pro no se les muestra ningún anuncio.</li>
       </ul>
       <p>Cómo trata estos datos el proveedor de anuncios: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Compras</h2>
+      <h2 class="clause">6. Compras</h2>
       <p>Las compras las procesa <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. El desarrollador nunca ve ni almacena tu número de tarjeta ni tu dirección de facturación. La App solo guarda un indicador sí/no de si Pro está adquirido, y lo comprueba con la tienda.</p>
-      <h2 class="clause">6. Notificaciones (opcional)</h2>
-      <p>Si activas el recordatorio diario de la bandera, la App pide permiso de notificaciones y luego programa el recordatorio en tu dispositivo. No se envía nada a un servidor y no interviene ningún servicio push. Puedes desactivarlo cuando quieras.</p>
-      <h2 class="clause">7. Menores</h2>
+      <h2 class="clause">7. Notificaciones (opcional)</h2>
+      <p>El recordatorio diario de la bandera solo está disponible en iPhone y iPad; en Android no existe esta función. Si lo activas, la App pide permiso de notificaciones y luego programa el recordatorio en tu dispositivo. No se envía nada a un servidor y no interviene ningún servicio push. Puedes desactivarlo cuando quieras.</p>
+      <h2 class="clause">8. Menores</h2>
       <p>La App no recopila conscientemente datos personales de menores. No tiene chat, ni mensajería, ni contenido aportado por los usuarios más allá de un apodo que tú mismo eliges.</p>
-      <h2 class="clause">8. Conservación y eliminación</h2>
+      <h2 class="clause">9. Conservación y eliminación</h2>
       <p>Los datos del dispositivo se conservan hasta que los restableces o desinstalas la App. Las entradas de clasificación duran lo que su tabla: las diarias cambian cada día y las semanales cada semana. Desinstalar elimina los datos del dispositivo. Si la sincronización con iCloud estaba activada, la copia permanece en tu propia cuenta de iCloud y vuelve al reinstalar con el mismo ID de Apple; al desactivar el ajuste deja de subirse nada.</p>
-      <h2 class="clause">9. Contacto y cambios</h2>
+      <h2 class="clause">10. Contacto y cambios</h2>
       <p>Consultas o solicitud de eliminación de una entrada: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Esta política puede cambiar; los cambios se publican con las actualizaciones de la app.</p>
       <p><a class="showall" href="#all" data-showall>Mostrar todos los idiomas</a></p>
@@ -481,7 +537,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Desenvolvedor</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Contato</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Última atualização</strong>: 27 de agosto de 2026</p>
+        <p><strong>Última atualização</strong>: 7 de setembro de 2026</p>
       </div>
       <p class="note" data-store-note="ios">Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.</p>
       <p class="note" data-store-note="android" hidden>Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.</p>
@@ -489,10 +545,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. O que nunca coletamos</h2>
       <p>O App não pede nem coleta seu nome, e-mail, telefone, contatos, fotos ou localização.</p>
       <h2 class="clause">2. Dados que ficam no seu dispositivo</h2>
-      <p>Progresso dos quizzes, nível, Pontos de Bandeira, favoritos, cartas colecionadas, ajustes e se você tem Pro ficam salvos no seu dispositivo. Ajustes → Redefinir progresso apaga tudo isso. No iOS, se a «Sincronização com iCloud» estiver ligada (pode ser desligada nos Ajustes; vem ligada), uma cópia também fica guardada na sua própria conta iCloud, para continuar nos seus outros aparelhos com o mesmo ID Apple. O desenvolvedor não consegue ler nem apagar essa cópia — ela está dentro da sua conta. No Android não existe esse recurso.</p>
+      <p>Progresso dos quizzes, nível, Pontos de Bandeira, favoritos, cartas colecionadas, resultados dos minijogos, o apelido que você escolheu para os rankings, ajustes e se você tem Pro ficam salvos no seu dispositivo. O App também guarda no seu dispositivo um pequeno histórico de eventos do jogo — no máximo 200 deles, como «subiu de nível» — para ajudar a diagnosticar problemas; esse histórico nunca sai do aparelho.</p>
+      <p>Ajustes → Apagar Progresso remove o progresso dos quizzes, o nível, as conquistas, os favoritos, as cartas colecionadas, a fila de revisão e as melhores pontuações. De propósito, não apaga os seus Pontos de Bandeira, a sua compra do Pro nem os seus ajustes: os pontos você ganha assistindo a anúncios, e uma compra não é progresso.</p>
+      <p>No iOS, se a «Sincronização com iCloud» estiver ligada (pode ser desligada nos Ajustes; vem ligada), uma cópia também fica guardada na sua própria conta iCloud, para continuar nos seus outros aparelhos com o mesmo ID Apple. O desenvolvedor não consegue ler nem apagar essa cópia — ela está dentro da sua conta. No Android não existe esse recurso.</p>
       <h2 class="clause">3. Rankings (opcional)</h2>
-      <p>Nada é enviado até você abrir os rankings e escolher um apelido. A partir daí, o App envia ao Firebase (o serviço do jogo): um ID de jogador anônimo criado para este app (não a sua <span class="pf" data-ios="Apple ID" data-android="conta Google">Apple ID</span>), o apelido que você escolheu, uma bandeira derivada da configuração de região do aparelho, a cor e o emblema de exibição que você escolheu para a sua linha (apenas visuais) e suas pontuações. Esse é o registro inteiro. Para excluir uma entrada, escreva para o endereço da seção 9.</p>
-      <h2 class="clause">4. Anúncios</h2>
+      <p>Quando o App é aberto e quando volta ao primeiro plano, ele faz uma pequena requisição ao serviço do jogo (Firebase) apenas para verificar se a rede está acessível. Essa requisição não inclui nenhuma conta, nenhum identificador e nada sobre você; como em qualquer requisição à internet, o servidor que a recebe vê o seu endereço IP.</p>
+      <p>O seu registro de ranking só é criado quando você abre os rankings e escolhe um apelido. A partir daí, o App envia ao Firebase: um ID de jogador anônimo criado para este app (não a sua conta na loja — <span class="pf" data-ios="Apple ID" data-android="conta Google">Apple ID</span>), o apelido que você escolheu, uma bandeira derivada da configuração de região do aparelho, a cor e o emblema de exibição que você escolheu para a sua linha (apenas visuais) e suas pontuações. Quando você termina uma partida que conta para o ranking, o App também envia as respostas daquela partida, para que a pontuação seja calculada pelo servidor, e não pelo seu aparelho; as respostas são corrigidas e depois descartadas — não ficam armazenadas. Esse é o registro inteiro. Para excluir uma entrada, escreva para o endereço da seção 10.</p>
+      <p>Como o serviço do jogo trata os dados: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Reprodução de hinos (opcional)</h2>
+      <p>Quando você reproduz um hino nacional, a gravação é transmitida a partir do Internet Archive (archive.org), a biblioteca pública onde ficam hospedadas as gravações que o App usa: a coleção de domínio público da Banda da Marinha dos Estados Unidos. Esse serviço recebe o seu endereço IP e o nome do arquivo solicitado. Nada mais é enviado — e, se você nunca reproduzir um hino, nada chega a ser enviado.</p>
+      <p>Como o Internet Archive trata os dados: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Anúncios</h2>
       <p>A versão gratuita exibe um anúncio premiado somente quando você toca em «Assistir a um anúncio» para ganhar Pontos de Bandeira. Não há banners nem anúncios em tela cheia. Os anúncios são veiculados pelo AdMob, que pode usar um identificador de publicidade para selecioná-los e medi-los.</p>
       <ul>
         <li>No iOS o App pede sua permissão antes de qualquer rastreamento. Se você recusar, os anúncios não serão personalizados.</li>
@@ -500,15 +563,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Usuários Pro não veem anúncio algum.</li>
       </ul>
       <p>Como o provedor de anúncios trata esses dados: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Compras</h2>
+      <h2 class="clause">6. Compras</h2>
       <p>As compras são processadas pela loja (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>). O desenvolvedor nunca vê nem armazena o número do seu cartão ou endereço de cobrança. O App guarda apenas um indicador sim/não de posse do Pro e o confere com a loja.</p>
-      <h2 class="clause">6. Notificações (opcional)</h2>
-      <p>Se você ativar o lembrete diário da bandeira, o App pede permissão de notificações e depois agenda o lembrete no seu dispositivo. Nada é enviado a um servidor e nenhum serviço de push é usado. Você pode desativar quando quiser.</p>
-      <h2 class="clause">7. Crianças</h2>
+      <h2 class="clause">7. Notificações (opcional)</h2>
+      <p>O lembrete diário da bandeira só existe no iPhone e no iPad; no Android não existe esse recurso. Se você ativá-lo, o App pede permissão de notificações e depois agenda o lembrete no seu dispositivo. Nada é enviado a um servidor e nenhum serviço de push é usado. Você pode desativar quando quiser.</p>
+      <h2 class="clause">8. Crianças</h2>
       <p>O App não coleta conscientemente dados pessoais de crianças. Não há bate-papo, nem mensagens, nem conteúdo enviado por usuários além de um apelido escolhido por você.</p>
-      <h2 class="clause">8. Retenção e exclusão</h2>
+      <h2 class="clause">9. Retenção e exclusão</h2>
       <p>Os dados no dispositivo permanecem até você redefini-los ou desinstalar o App. As entradas de ranking duram o tempo da sua tabela: as diárias mudam a cada dia e as semanais a cada semana. Desinstalar remove os dados do aparelho. Se a sincronização com iCloud estava ligada, a cópia permanece na sua própria conta iCloud e volta ao reinstalar com o mesmo ID Apple; desligar o ajuste interrompe novos envios.</p>
-      <h2 class="clause">9. Contato e alterações</h2>
+      <h2 class="clause">10. Contato e alterações</h2>
       <p>Dúvidas ou pedido de exclusão de uma entrada de ranking: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Esta política pode mudar; as alterações são publicadas junto com as atualizações do app.</p>
       <p><a class="showall" href="#all" data-showall>Mostrar todos os idiomas</a></p>
@@ -523,7 +586,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>المطوّر</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>التواصل</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>آخر تحديث</strong>: 27 أغسطس 2026</p>
+        <p><strong>آخر تحديث</strong>: 7 سبتمبر 2026</p>
       </div>
       <p class="note" data-store-note="ios">النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.</p>
       <p class="note" data-store-note="android" hidden>النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.</p>
@@ -531,10 +594,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. ما لا نجمعه أبداً</h2>
       <p>لا يطلب التطبيق ولا يجمع اسمك أو بريدك الإلكتروني أو رقم هاتفك أو جهات اتصالك أو صورك أو موقعك.</p>
       <h2 class="clause">2. بيانات تبقى على جهازك</h2>
-      <p>يُحفظ تقدّم الاختبارات والمستوى ونقاط العلم والمفضلات والبطاقات المجمّعة والإعدادات وحالة امتلاك Pro على جهازك. ويمكن محوها من الإعدادات ← إعادة تعيين التقدّم. وفي iOS، عند تشغيل «مزامنة iCloud» (يمكن إيقافها من الإعدادات، وهي مفعّلة افتراضيًا) تُحفظ نسخة من هذه البيانات أيضًا في حساب iCloud الخاص بك لتنتقل إلى أجهزتك الأخرى التي تستخدم معرّف Apple نفسه. ولا يستطيع المطوّر قراءة تلك النسخة ولا حذفها — فهي داخل حسابك أنت. ولا تتوفر هذه الميزة على Android.</p>
+      <p>يُحفظ تقدّم الاختبارات والمستوى ونقاط الأعلام والمفضلات والبطاقات المجمّعة ونتائج الألعاب المصغّرة واللقب الذي اخترته لقوائم المتصدرين والإعدادات وحالة امتلاك Pro على جهازك. كما يحتفظ التطبيق على جهازك بسجل مختصر لأحداث اللعب — مثل «ارتقاء المستوى» — لا يتجاوز 200 حدث، يساعد في تشخيص المشكلات، ولا يُرسَل إلى أي جهة.</p>
+      <p>ويمكنك من الإعدادات ← إعادة ضبط التقدّم محو تقدّم الاختبارات والمستوى والإنجازات والمفضلات والبطاقات المجمّعة وقائمة المراجعة وأفضل النتائج. أما نقاط الأعلام وشراء Pro وإعداداتك فتبقى عمداً: فمن النقاط ما كسبته بمشاهدة الإعلانات، والشراء ليس تقدّماً.</p>
+      <p>وفي iOS، عند تشغيل «مزامنة iCloud» (يمكن إيقافها من الإعدادات، وهي مفعّلة افتراضيًا) تُحفظ نسخة من هذه البيانات أيضًا في حساب iCloud الخاص بك لتنتقل إلى أجهزتك الأخرى التي تستخدم معرّف Apple نفسه. ولا يستطيع المطوّر قراءة تلك النسخة ولا حذفها — فهي داخل حسابك أنت. ولا تتوفر هذه الميزة على Android.</p>
       <h2 class="clause">3. قوائم المتصدرين (اختيارية)</h2>
-      <p>لا يُرسَل أي شيء حتى تفتح قوائم المتصدرين وتختار لقباً. بعد ذلك يرسل التطبيق إلى Firebase (خدمة اللعبة): معرّف لاعب مجهول أُنشئ لهذا التطبيق (وليس <span class="pf" data-ios="معرّف Apple" data-android="حساب Google">معرّف Apple</span> الخاص بك)، واللقب الذي اخترته، وعَلَماً مستنتجاً من إعداد المنطقة في جهازك، ونتائجك، ولون العرض والشارة اللذين اخترتهما لصفّك (عناصر تجميلية فقط). هذا هو السجل بأكمله. ولحذف مدخلة، راسِلنا على العنوان الوارد في البند 9.</p>
-      <h2 class="clause">4. الإعلانات</h2>
+      <p>عند فتح التطبيق، وكلّما عدتَ إليه بعد تركه في الخلفية، يرسل طلباً واحداً موجزاً إلى خدمة اللعبة (Firebase) للتحقق من توفّر الاتصال بالشبكة. ولا يتضمّن هذا الطلب أي حساب ولا أي معرّف ولا أي بيانات عنك؛ وكما هو الحال في أي طلب عبر الإنترنت، يرى الخادم المستقبِل عنوان IP الخاص بك.</p>
+      <p>ولا يُنشأ سجلك في قوائم المتصدرين إلا عندما تفتحها وتختار لقباً. بعد ذلك يرسل التطبيق إلى Firebase: معرّف لاعب مجهول أُنشئ لهذا التطبيق (وليس <span class="pf" data-ios="معرّف Apple" data-android="حساب Google">معرّف Apple</span> الخاص بك)، واللقب الذي اخترته، وعَلَماً مستنتجاً من إعداد المنطقة في جهازك، ونتائجك، ولون العرض والشارة اللذين اخترتهما لصفّك (عناصر تجميلية فقط). وعند إنهائك جولة مصنَّفة يرسل أيضاً إجابات تلك الجولة، ليتولى الخادم — لا جهازك — احتساب النتيجة؛ وتُصحَّح الإجابات ثم تُحذف فوراً، ولا تُخزَّن. هذا هو السجل بأكمله. ولحذف مدخلة، راسِلنا على العنوان الوارد في البند 10.</p>
+      <p>كيفية تعامل خدمة اللعبة مع البيانات: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. تشغيل النشيد الوطني (اختياري)</h2>
+      <p>عندما تضغط زر تشغيل نشيد وطني، يُبثّ التسجيل من أرشيف الإنترنت (archive.org)، وهو مكتبة عامة تستضيف تسجيلات فرقة البحرية الأمريكية الموسيقية التي يستخدمها التطبيق، وهي تسجيلات في الملكية العامة. وتتلقى تلك الخدمة عنوان IP الخاص بك واسم الملف المطلوب. ولا يُرسَل أي شيء آخر، ولا يُرسَل شيء ما لم تضغط زر التشغيل.</p>
+      <p>كيفية تعامل أرشيف الإنترنت مع البيانات: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. الإعلانات</h2>
       <p>لا تعرض النسخة المجانية إعلان مكافأة إلا عندما تضغط «مشاهدة إعلان» لكسب نقاط العلم. لا توجد إعلانات بانر ولا إعلانات ملء الشاشة. تُعرض الإعلانات عبر AdMob، وقد يستخدم معرّف إعلانات لاختيارها وقياسها.</p>
       <ul>
         <li>على iOS يطلب التطبيق إذنك قبل أي تتبّع. وإذا رفضت، تكون الإعلانات غير مخصّصة.</li>
@@ -542,15 +612,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>لا تُعرض أي إعلانات لمستخدمي Pro.</li>
       </ul>
       <p>كيفية تعامل مزوّد الإعلانات مع هذه البيانات: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. المشتريات</h2>
+      <h2 class="clause">6. المشتريات</h2>
       <p>تُعالَج عمليات الشراء عبر <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. لا يرى المطوّر رقم بطاقتك أو عنوان الفوترة ولا يخزّنهما إطلاقاً. ولا يحتفظ التطبيق إلا بمؤشر «نعم/لا» لامتلاك Pro، ويتحقق منه لدى المتجر.</p>
-      <h2 class="clause">6. الإشعارات (اختيارية)</h2>
-      <p>إذا فعّلت تذكير «عَلَم اليوم»، يطلب التطبيق إذن الإشعارات ثم يجدول التذكير على جهازك. لا يُرسَل شيء إلى أي خادم ولا تُستخدم خدمة إشعارات فورية. ويمكنك إيقافه في أي وقت.</p>
-      <h2 class="clause">7. الأطفال</h2>
+      <h2 class="clause">7. الإشعارات (اختيارية)</h2>
+      <p>تذكير «عَلَم اليوم» متاح على iPhone وiPad فقط، ولا يتوفر على Android. وإذا فعّلته، يطلب التطبيق إذن الإشعارات ثم يجدول التذكير على جهازك. لا يُرسَل شيء إلى أي خادم ولا تُستخدم خدمة إشعارات فورية. ويمكنك إيقافه في أي وقت.</p>
+      <h2 class="clause">8. الأطفال</h2>
       <p>لا يجمع التطبيق عن علم بيانات شخصية من الأطفال. ولا يتضمن دردشة ولا رسائل ولا محتوى يقدّمه المستخدمون سوى لقب تختاره بنفسك.</p>
-      <h2 class="clause">8. الاحتفاظ والحذف</h2>
+      <h2 class="clause">9. الاحتفاظ والحذف</h2>
       <p>تبقى البيانات على الجهاز حتى تعيد تعيينها أو تحذف التطبيق. وتبقى مدخلات المتصدرين ما بقيت قائمتها: تتجدد القوائم اليومية كل يوم والأسبوعية كل أسبوع. وحذف التطبيق يزيل البيانات الموجودة على الجهاز. وإذا كانت مزامنة iCloud مفعّلة تبقى نسخة في حساب iCloud الخاص بك وتعود عند إعادة التثبيت بمعرّف Apple نفسه؛ وإيقاف الإعداد يوقف أي رفع لاحق.</p>
-      <h2 class="clause">9. التواصل والتغييرات</h2>
+      <h2 class="clause">10. التواصل والتغييرات</h2>
       <p>للاستفسارات أو طلب حذف مدخلة من المتصدرين: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>قد تتغير هذه السياسة، وتُنشر التغييرات مع تحديثات التطبيق.</p>
       <p><a class="showall" href="#all" data-showall>عرض جميع اللغات</a></p>
@@ -565,7 +635,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Pengembang</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Kontak</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Pembaruan terakhir</strong>: 27 Agustus 2026</p>
+        <p><strong>Pembaruan terakhir</strong>: 7 September 2026</p>
       </div>
       <p class="note" data-store-note="ios">Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.</p>
       <p class="note" data-store-note="android" hidden>Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.</p>
@@ -573,10 +643,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Yang tidak pernah kami kumpulkan</h2>
       <p>Aplikasi tidak meminta atau mengumpulkan nama, alamat email, nomor telepon, kontak, foto, atau lokasi Anda.</p>
       <h2 class="clause">2. Data yang tetap di perangkat Anda</h2>
-      <p>Kemajuan kuis, level, Poin Bendera, favorit, kartu yang terkumpul, pengaturan, dan status kepemilikan Pro disimpan di perangkat Anda. Pengaturan → Atur ulang kemajuan akan menghapusnya. Di iOS, bila «Sinkronisasi iCloud» aktif (dapat dimatikan di Pengaturan; aktif secara bawaan), salinan data ini juga disimpan di akun iCloud Anda sendiri sehingga berlanjut ke perangkat lain dengan Apple ID yang sama. Pengembang tidak dapat membaca maupun menghapus salinan itu — salinan berada di dalam akun Anda. Android tidak memiliki fitur ini.</p>
+      <p>Kemajuan kuis, level, Poin Bendera, favorit, kartu yang terkumpul, rekor mini-gim, nama panggilan yang Anda pilih untuk papan peringkat, pengaturan, dan status kepemilikan Pro disimpan di perangkat Anda. Aplikasi juga menyimpan catatan singkat peristiwa dalam gim di perangkat Anda — paling banyak 200 entri, misalnya “naik level” — untuk membantu menelusuri masalah; catatan itu tidak pernah dikirim ke mana pun.</p>
+      <p>Pengaturan → Reset Progres menghapus kemajuan kuis, level, pencapaian, favorit, kartu yang terkumpul, antrean pengulangan, dan skor terbaik Anda. Poin Bendera, pembelian Pro, dan pengaturan Anda sengaja dipertahankan: poin diperoleh dengan menonton iklan, dan pembelian bukanlah kemajuan.</p>
+      <p>Di iOS, bila «Sinkronisasi iCloud» aktif (dapat dimatikan di Pengaturan; aktif secara bawaan), salinan data ini juga disimpan di akun iCloud Anda sendiri sehingga berlanjut ke perangkat lain dengan Apple ID yang sama. Pengembang tidak dapat membaca maupun menghapus salinan itu — salinan berada di dalam akun Anda. Android tidak memiliki fitur ini.</p>
       <h2 class="clause">3. Papan peringkat (opsional)</h2>
-      <p>Tidak ada yang dikirim sampai Anda membuka papan peringkat dan memilih nama panggilan. Setelah itu Aplikasi mengirim ke Firebase (layanan gim): ID pemain anonim yang dibuat untuk aplikasi ini (bukan <span class="pf" data-ios="Apple ID" data-android="akun Google">Apple ID</span> Anda), nama panggilan pilihan Anda, bendera yang diturunkan dari pengaturan wilayah perangkat, warna tampilan dan lencana yang Anda pilih untuk baris Anda (sekadar hiasan), dan skor Anda. Hanya itu isi catatannya. Untuk menghapus entri, tulislah ke alamat pada bagian 9.</p>
-      <h2 class="clause">4. Iklan</h2>
+      <p>Saat dijalankan dan saat kembali aktif dari latar belakang, Aplikasi mengirim satu permintaan kecil ke layanan gim (Firebase) untuk memeriksa apakah jaringan tersedia. Permintaan itu tidak menyertakan akun, tidak menyertakan pengidentifikasi, dan tidak memuat apa pun tentang Anda; seperti pada permintaan internet mana pun, server penerima memang melihat alamat IP Anda.</p>
+      <p>Catatan peringkat Anda baru dibuat ketika Anda membuka papan peringkat dan memilih nama panggilan. Setelah itu Aplikasi mengirim ke Firebase: ID pemain anonim yang dibuat untuk aplikasi ini (bukan <span class="pf" data-ios="Apple ID" data-android="akun Google">Apple ID</span> Anda), nama panggilan pilihan Anda, bendera yang diturunkan dari pengaturan wilayah perangkat, warna tampilan dan lencana yang Anda pilih untuk baris Anda (sekadar hiasan), dan skor Anda. Ketika Anda menyelesaikan satu putaran berperingkat, Aplikasi juga mengirim jawaban Anda dalam putaran itu agar server, bukan perangkat Anda, yang menentukan skornya; jawaban itu dinilai lalu dibuang, tidak disimpan. Hanya itu isi catatannya. Untuk menghapus entri, tulislah ke alamat pada bagian 10.</p>
+      <p>Cara layanan gim menangani data: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Pemutaran lagu kebangsaan (opsional)</h2>
+      <p>Ketika Anda mengetuk tombol putar pada sebuah lagu kebangsaan, rekamannya diputar langsung dari Internet Archive (archive.org), perpustakaan publik tempat Aplikasi mengambil rekaman U.S. Navy Band yang berstatus domain publik. Layanan itu menerima alamat IP Anda dan nama berkas yang diminta. Tidak ada hal lain yang dikirim — dan bila Anda tidak mengetuk tombol putar, tidak ada yang dikirim sama sekali.</p>
+      <p>Cara Internet Archive menangani data: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Iklan</h2>
       <p>Versi gratis menampilkan iklan berhadiah hanya ketika Anda mengetuk “Tonton iklan” untuk mendapatkan Poin Bendera. Tidak ada iklan spanduk maupun iklan layar penuh. Iklan disajikan oleh AdMob, yang dapat memakai pengidentifikasi iklan untuk memilih dan mengukurnya.</p>
       <ul>
         <li>Di iOS, Aplikasi meminta izin Anda sebelum pelacakan apa pun. Jika Anda menolak, iklan tidak dipersonalisasi.</li>
@@ -584,15 +661,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Pengguna Pro tidak melihat iklan sama sekali.</li>
       </ul>
       <p>Cara penyedia iklan menangani data ini: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Pembelian</h2>
+      <h2 class="clause">6. Pembelian</h2>
       <p>Pembelian diproses oleh <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. Pengembang tidak pernah melihat atau menyimpan nomor kartu maupun alamat penagihan Anda. Aplikasi hanya menyimpan penanda ya/tidak untuk kepemilikan Pro, dan memeriksanya ke toko.</p>
-      <h2 class="clause">6. Notifikasi (opsional)</h2>
-      <p>Jika Anda menyalakan pengingat bendera harian, Aplikasi meminta izin notifikasi lalu menjadwalkan pengingat itu di perangkat Anda. Tidak ada yang dikirim ke server dan tidak ada layanan push yang terlibat. Anda dapat mematikannya kapan saja.</p>
-      <h2 class="clause">7. Anak-anak</h2>
+      <h2 class="clause">7. Notifikasi (opsional)</h2>
+      <p>Pengingat bendera harian hanya tersedia di iPhone dan iPad; versi Android tidak memilikinya. Jika Anda menyalakannya, Aplikasi meminta izin notifikasi lalu menjadwalkan pengingat itu di perangkat Anda. Tidak ada yang dikirim ke server dan tidak ada layanan push yang terlibat. Anda dapat mematikannya kapan saja.</p>
+      <h2 class="clause">8. Anak-anak</h2>
       <p>Aplikasi tidak dengan sengaja mengumpulkan data pribadi anak. Tidak ada obrolan, tidak ada pesan, dan tidak ada konten dari pengguna selain nama panggilan yang Anda pilih sendiri.</p>
-      <h2 class="clause">8. Penyimpanan dan penghapusan</h2>
+      <h2 class="clause">9. Penyimpanan dan penghapusan</h2>
       <p>Data di perangkat tersimpan sampai Anda mengatur ulang atau menghapus Aplikasi. Entri papan peringkat bertahan selama papannya berlaku: papan harian berganti setiap hari, papan mingguan setiap minggu. Menghapus instalasi akan menghapus data di perangkat. Jika Sinkronisasi iCloud aktif, salinannya tetap ada di akun iCloud Anda sendiri dan kembali saat Anda memasang ulang dengan Apple ID yang sama; mematikan pengaturan menghentikan unggahan berikutnya.</p>
-      <h2 class="clause">9. Kontak dan perubahan</h2>
+      <h2 class="clause">10. Kontak dan perubahan</h2>
       <p>Pertanyaan atau permintaan penghapusan entri papan peringkat: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Kebijakan ini dapat berubah; perubahan diumumkan bersama pembaruan aplikasi.</p>
       <p><a class="showall" href="#all" data-showall>Tampilkan semua bahasa</a></p>
@@ -607,7 +684,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Nhà phát triển</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Liên hệ</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Cập nhật lần cuối</strong>: 27 tháng 8 năm 2026</p>
+        <p><strong>Cập nhật lần cuối</strong>: 7 tháng 9 năm 2026</p>
       </div>
       <p class="note" data-store-note="ios">Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.</p>
       <p class="note" data-store-note="android" hidden>Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.</p>
@@ -615,10 +692,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Những gì chúng tôi không bao giờ thu thập</h2>
       <p>Ứng dụng không hỏi và không thu thập tên, địa chỉ email, số điện thoại, danh bạ, ảnh hay vị trí của bạn.</p>
       <h2 class="clause">2. Dữ liệu nằm trên thiết bị của bạn</h2>
-      <p>Tiến độ trắc nghiệm, cấp độ, Điểm Quốc Kỳ, mục yêu thích, thẻ đã sưu tầm, thiết lập và việc bạn có Pro hay không được lưu trên thiết bị của bạn. Cài đặt → Đặt lại tiến độ sẽ xóa chúng. Trên iOS, nếu «Đồng bộ iCloud» đang bật (có thể tắt trong Cài đặt; mặc định bật), một bản sao của các dữ liệu này cũng được lưu trong tài khoản iCloud của chính bạn để tiếp tục trên các thiết bị khác dùng cùng Apple ID. Nhà phát triển không thể đọc hay xóa bản sao đó — nó nằm trong tài khoản của bạn. Android không có tính năng này.</p>
+      <p>Tiến độ trắc nghiệm, cấp độ, Điểm Cờ, mục yêu thích, thẻ đã sưu tầm, kết quả các trò chơi nhỏ, biệt danh bạn đã chọn cho bảng xếp hạng, thiết lập và việc bạn có Pro hay không được lưu trên thiết bị của bạn. Ứng dụng cũng giữ ngay trên thiết bị một nhật ký ngắn về các sự kiện trong trò chơi — nhiều nhất 200 mục, ví dụ “đã lên cấp” — để giúp tìm nguyên nhân khi có trục trặc; nhật ký này không bao giờ rời khỏi thiết bị.</p>
+      <p>Cài đặt → Đặt lại tiến trình sẽ xóa tiến độ trắc nghiệm, cấp độ, thành tích, mục yêu thích, thẻ đã sưu tầm, danh sách ôn tập và điểm cao nhất của bạn. Thao tác này cố ý giữ lại Điểm Cờ, giao dịch mua Pro và các thiết lập của bạn: điểm là do bạn xem quảng cáo mà có, còn giao dịch mua thì không phải là tiến độ.</p>
+      <p>Trên iOS, nếu «Đồng bộ iCloud» đang bật (có thể tắt trong Cài đặt; mặc định bật), một bản sao của các dữ liệu này cũng được lưu trong tài khoản iCloud của chính bạn để tiếp tục trên các thiết bị khác dùng cùng Apple ID. Nhà phát triển không thể đọc hay xóa bản sao đó — nó nằm trong tài khoản của bạn. Android không có tính năng này.</p>
       <h2 class="clause">3. Bảng xếp hạng (tùy chọn)</h2>
-      <p>Không có gì được gửi đi cho tới khi bạn mở bảng xếp hạng và chọn một biệt danh. Từ đó trở đi, Ứng dụng gửi tới Firebase (dịch vụ trò chơi): một mã người chơi ẩn danh tạo riêng cho ứng dụng này (không phải <span class="pf" data-ios="Apple ID" data-android="tài khoản Google">Apple ID</span> của bạn), biệt danh bạn đã chọn, lá cờ suy ra từ thiết lập khu vực của thiết bị, màu hiển thị và huy hiệu bạn chọn cho hàng của mình (chỉ mang tính trang trí), và điểm số của bạn. Đó là toàn bộ bản ghi. Để xóa một mục, hãy viết thư tới địa chỉ ở mục 9.</p>
-      <h2 class="clause">4. Quảng cáo</h2>
+      <p>Khi khởi động và mỗi lần bạn quay lại Ứng dụng, Ứng dụng gửi một yêu cầu nhỏ tới dịch vụ trò chơi (Firebase) để xem có kết nối được mạng hay không. Yêu cầu đó không kèm tài khoản, không kèm mã định danh, không chứa thông tin nào về bạn; như với mọi yêu cầu qua Internet, máy chủ nhận yêu cầu vẫn thấy địa chỉ IP của bạn.</p>
+      <p>Bản ghi xếp hạng của bạn chỉ được tạo khi bạn mở bảng xếp hạng và chọn một biệt danh. Từ đó trở đi, Ứng dụng gửi tới Firebase: một mã người chơi ẩn danh tạo riêng cho ứng dụng này (không phải <span class="pf" data-ios="Apple ID" data-android="tài khoản Google">Apple ID</span> của bạn), biệt danh bạn đã chọn, lá cờ suy ra từ thiết lập khu vực của thiết bị, màu hiển thị và huy hiệu bạn chọn cho hàng của mình (chỉ mang tính trang trí), và điểm số của bạn. Khi bạn kết thúc một ván có tính vào bảng xếp hạng, Ứng dụng còn gửi các câu trả lời của ván đó, để điểm số do máy chủ quyết định chứ không phải do thiết bị của bạn; chấm xong, các câu trả lời bị hủy chứ không được lưu lại. Đó là toàn bộ bản ghi. Để xóa một mục, hãy viết thư tới địa chỉ ở mục 10.</p>
+      <p>Cách dịch vụ trò chơi xử lý dữ liệu: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Phát quốc ca (tùy chọn)</h2>
+      <p>Khi bạn chạm nút phát quốc ca, bản ghi âm được phát trực tuyến từ Internet Archive (archive.org). Đây là thư viện công cộng lưu giữ bộ sưu tập quốc ca mà Ứng dụng dùng: các bản thu của Ban nhạc Hải quân Hoa Kỳ, thuộc phạm vi công cộng. Dịch vụ đó nhận địa chỉ IP của bạn và tên tệp được yêu cầu. Không có gì khác được gửi đi; nếu bạn không chạm nút phát thì không có gì cả.</p>
+      <p>Cách Internet Archive xử lý dữ liệu: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Quảng cáo</h2>
       <p>Bản miễn phí chỉ hiện quảng cáo có thưởng khi bạn chạm “Xem quảng cáo” để nhận Điểm Quốc Kỳ. Không có quảng cáo biểu ngữ và không có quảng cáo toàn màn hình. Quảng cáo do AdMob phân phối; dịch vụ này có thể dùng mã định danh quảng cáo để chọn và đo lường quảng cáo.</p>
       <ul>
         <li>Trên iOS, Ứng dụng xin phép bạn trước bất kỳ hoạt động theo dõi nào. Nếu bạn từ chối, quảng cáo sẽ không được cá nhân hóa.</li>
@@ -626,15 +710,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Người dùng Pro hoàn toàn không thấy quảng cáo.</li>
       </ul>
       <p>Cách nhà cung cấp quảng cáo xử lý dữ liệu này: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Giao dịch mua</h2>
+      <h2 class="clause">6. Giao dịch mua</h2>
       <p>Giao dịch do <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> xử lý. Nhà phát triển không bao giờ nhìn thấy hay lưu số thẻ và địa chỉ thanh toán của bạn. Ứng dụng chỉ giữ một dấu có/không về việc đã mua Pro, và đối chiếu dấu đó với cửa hàng.</p>
-      <h2 class="clause">6. Thông báo (tùy chọn)</h2>
-      <p>Nếu bạn bật lời nhắc quốc kỳ hằng ngày, Ứng dụng sẽ xin quyền thông báo rồi hẹn lời nhắc ngay trên thiết bị của bạn. Không có gì được gửi tới máy chủ và không dùng dịch vụ đẩy thông báo nào. Bạn có thể tắt bất cứ lúc nào.</p>
-      <h2 class="clause">7. Trẻ em</h2>
+      <h2 class="clause">7. Thông báo (tùy chọn)</h2>
+      <p>Lời nhắc quốc kỳ hằng ngày chỉ có trên iPhone và iPad; bản Android không có tính năng này. Nếu bạn bật, Ứng dụng sẽ xin quyền thông báo rồi hẹn lời nhắc ngay trên thiết bị của bạn. Không có gì được gửi tới máy chủ và không dùng dịch vụ đẩy thông báo nào. Bạn có thể tắt bất cứ lúc nào.</p>
+      <h2 class="clause">8. Trẻ em</h2>
       <p>Ứng dụng không cố ý thu thập dữ liệu cá nhân của trẻ em. Ứng dụng không có trò chuyện, không có nhắn tin, và không có nội dung do người dùng cung cấp ngoài biệt danh do chính bạn chọn.</p>
-      <h2 class="clause">8. Lưu giữ và xóa</h2>
+      <h2 class="clause">9. Lưu giữ và xóa</h2>
       <p>Dữ liệu trên thiết bị được giữ cho tới khi bạn đặt lại hoặc gỡ cài đặt Ứng dụng. Mục trong bảng xếp hạng tồn tại theo vòng đời của bảng: bảng hằng ngày đổi mỗi ngày, bảng hằng tuần đổi mỗi tuần. Gỡ cài đặt sẽ xóa dữ liệu trên thiết bị. Nếu Đồng bộ iCloud từng được bật, bản sao vẫn nằm trong tài khoản iCloud của bạn và trở lại khi bạn cài đặt lại bằng cùng Apple ID; tắt thiết lập này sẽ dừng mọi lần tải lên sau đó.</p>
-      <h2 class="clause">9. Liên hệ và thay đổi</h2>
+      <h2 class="clause">10. Liên hệ và thay đổi</h2>
       <p>Thắc mắc hoặc yêu cầu xóa mục xếp hạng: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Chính sách này có thể thay đổi; các thay đổi được công bố cùng bản cập nhật ứng dụng.</p>
       <p><a class="showall" href="#all" data-showall>Hiện tất cả ngôn ngữ</a></p>
@@ -649,7 +733,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Geliştirici</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>İletişim</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Son güncelleme</strong>: 27 Ağustos 2026</p>
+        <p><strong>Son güncelleme</strong>: 7 Eylül 2026</p>
       </div>
       <p class="note" data-store-note="ios">iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.</p>
       <p class="note" data-store-note="android" hidden>Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.</p>
@@ -657,10 +741,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Asla toplamadıklarımız</h2>
       <p>Uygulama adınızı, e-posta adresinizi, telefon numaranızı, kişilerinizi, fotoğraflarınızı veya konumunuzu ne ister ne de toplar.</p>
       <h2 class="clause">2. Cihazınızda kalan veriler</h2>
-      <p>Test ilerlemesi, seviye, Bayrak Puanı, favoriler, toplanan kartlar, ayarlar ve Pro’ya sahip olup olmadığınız cihazınızda saklanır. Ayarlar → İlerlemeyi sıfırla bunları siler. iOS’ta «iCloud eşitleme» açıksa (Ayarlar’dan kapatılabilir; varsayılan olarak açıktır) bu kayıtların bir kopyası kendi iCloud hesabınızda da tutulur; böylece aynı Apple Kimliği’ni kullanan diğer cihazlarınıza taşınır. Geliştirici bu kopyayı ne okuyabilir ne de silebilir — kopya sizin hesabınızın içindedir. Android’de bu özellik yoktur.</p>
+      <p>Test ilerlemesi, seviye, Bayrak Puanı, favoriler, toplanan kartlar, mini oyun sonuçları, sıralamalar için seçtiğiniz takma ad, ayarlar ve Pro’ya sahip olup olmadığınız cihazınızda saklanır. Uygulama ayrıca, bir sorun çıktığında nedenini bulabilmek için oyun içi olayların kısa bir kaydını — en fazla 200 olay, örneğin “seviye atladınız” — cihazınızda tutar; bu kayıt hiçbir yere gönderilmez.</p>
+      <p>Ayarlar → İlerlemeyi Sıfırla; test ilerlemenizi, seviyenizi, başarımlarınızı, favorilerinizi, toplanan kartlarınızı, tekrar listenizi ve en iyi puanlarınızı siler. Bayrak Puanınızı, Pro satın alımınızı ve ayarlarınızı ise bilerek korur: puanlar reklam izlenerek kazanılır ve bir satın alım ilerleme değildir.</p>
+      <p>iOS’ta «iCloud eşitleme» açıksa (Ayarlar’dan kapatılabilir; varsayılan olarak açıktır) bu kayıtların bir kopyası kendi iCloud hesabınızda da tutulur; böylece aynı Apple Kimliği’ni kullanan diğer cihazlarınıza taşınır. Geliştirici bu kopyayı ne okuyabilir ne de silebilir — kopya sizin hesabınızın içindedir. Android’de bu özellik yoktur.</p>
       <h2 class="clause">3. Sıralamalar (isteğe bağlı)</h2>
-      <p>Sıralamaları açıp bir takma ad seçene kadar hiçbir şey gönderilmez. Bundan sonra Uygulama Firebase’e (oyun servisi) şunları gönderir: bu uygulama için oluşturulmuş anonim bir oyuncu kimliği (<span class="pf" data-ios="Apple ID" data-android="Google">Apple ID</span> hesabınız değil), seçtiğiniz takma ad, cihazınızın bölge ayarından türetilen bir ülke bayrağı, puanlarınız ve satırınız için seçtiğiniz görüntü rengi ile rozet (yalnızca görsel). Kaydın tamamı budur. Bir kaydın silinmesi için 9. bölümdeki adrese yazın.</p>
-      <h2 class="clause">4. Reklamlar</h2>
+      <p>Uygulama, her açılışında ve yeniden ön plana geldiğinde, ağ bağlantısı olup olmadığını anlamak için oyun servisine (Firebase) küçük bir istek gönderir. Bu istek hesap bilgisi, tanımlayıcı ya da sizinle ilgili herhangi bir şey içermez; her internet isteğinde olduğu gibi, isteği alan sunucu IP adresinizi görür.</p>
+      <p>Sıralama kaydınız yalnızca sıralamaları açıp bir takma ad seçtiğinizde oluşturulur. Bundan sonra Uygulama Firebase’e şunları gönderir: bu uygulama için oluşturulmuş anonim bir oyuncu kimliği (<span class="pf" data-ios="Apple ID" data-android="Google">Apple ID</span> hesabınız değil), seçtiğiniz takma ad, cihazınızın bölge ayarından türetilen bir ülke bayrağı, puanlarınız ve satırınız için seçtiğiniz görüntü rengi ile rozet (yalnızca görsel). Sıralamaya sayılan bir turu bitirdiğinizde, puanınızın cihazınızda değil sunucuda hesaplanması için o turdaki yanıtlarınızı da gönderir; yanıtlar puanlandıktan sonra silinir, saklanmaz. Kaydın tamamı budur. Bir kaydın silinmesi için 10. bölümdeki adrese yazın.</p>
+      <p>Oyun servisinin verileri nasıl işlediği: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Ulusal marş çalma (isteğe bağlı)</h2>
+      <p>Bir ulusal marşı dinlemek için oynat düğmesine dokunduğunuzda, ses kaydı Internet Archive (archive.org) üzerinden akış yoluyla oynatılır; Uygulamanın kullandığı kamu malı U.S. Navy Band derlemesi bu herkese açık kütüphanede bulunur. Bu servis IP adresinizi ve istenen dosyanın adını alır. Başka hiçbir şey gönderilmez; oynat düğmesine hiç dokunmazsanız bu istek hiç yapılmaz.</p>
+      <p>Internet Archive’in verileri nasıl işlediği: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Reklamlar</h2>
       <p>Ücretsiz sürüm, yalnızca Bayrak Puanı kazanmak için “Reklam izle”ye dokunduğunuzda ödüllü bir reklam gösterir. Banner reklam da tam ekran reklam da yoktur. Reklamlar AdMob tarafından sunulur; AdMob, reklamları seçmek ve ölçmek için bir reklam tanımlayıcısı kullanabilir.</p>
       <ul>
         <li>iOS’ta Uygulama, herhangi bir izlemeden önce izninizi ister. Reddederseniz reklamlar kişiselleştirilmez.</li>
@@ -668,15 +759,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Pro kullanıcılarına hiç reklam gösterilmez.</li>
       </ul>
       <p>Reklam sağlayıcısının bu verileri nasıl işlediği: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Satın alımlar</h2>
+      <h2 class="clause">6. Satın alımlar</h2>
       <p>Satın alımlar <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> tarafından işlenir. Geliştirici kart numaranızı veya fatura adresinizi asla görmez ve saklamaz. Uygulama yalnızca Pro’ya sahip olunup olunmadığına dair evet/hayır bilgisini tutar ve bunu mağazayla doğrular.</p>
-      <h2 class="clause">6. Bildirimler (isteğe bağlı)</h2>
-      <p>Günlük bayrak hatırlatmasını açarsanız Uygulama bildirim izni ister ve hatırlatmayı cihazınızda zamanlar. Hiçbir şey sunucuya gönderilmez ve herhangi bir anlık bildirim hizmeti devreye girmez. İstediğiniz zaman kapatabilirsiniz.</p>
-      <h2 class="clause">7. Çocuklar</h2>
+      <h2 class="clause">7. Bildirimler (isteğe bağlı)</h2>
+      <p>Günlük bayrak hatırlatması yalnızca iPhone ve iPad’de vardır; Android sürümünde bu özellik yoktur. Açarsanız Uygulama bildirim izni ister ve hatırlatmayı cihazınızda zamanlar. Hiçbir şey sunucuya gönderilmez ve herhangi bir anlık bildirim hizmeti devreye girmez. İstediğiniz zaman kapatabilirsiniz.</p>
+      <h2 class="clause">8. Çocuklar</h2>
       <p>Uygulama, çocuklardan bilerek kişisel veri toplamaz. Sohbet yoktur, mesajlaşma yoktur ve kendi seçtiğiniz takma ad dışında kullanıcı tarafından sağlanan içerik yoktur.</p>
-      <h2 class="clause">8. Saklama ve silme</h2>
+      <h2 class="clause">9. Saklama ve silme</h2>
       <p>Cihazdaki veriler, siz sıfırlayana ya da Uygulamayı kaldırana kadar kalır. Sıralama kayıtları ait oldukları liste kadar yaşar: günlük listeler her gün, haftalık listeler her hafta yenilenir. Uygulamayı kaldırmak cihazdaki verileri siler. iCloud eşitleme açıksa kopya kendi iCloud hesabınızda kalır ve aynı Apple Kimliği ile yeniden kurduğunuzda geri gelir; ayarı kapatmak sonraki yüklemeleri durdurur.</p>
-      <h2 class="clause">9. İletişim ve değişiklikler</h2>
+      <h2 class="clause">10. İletişim ve değişiklikler</h2>
       <p>Sorularınız veya bir sıralama kaydının silinmesi talebiniz için: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Bu politika değişebilir; değişiklikler uygulama güncellemeleriyle duyurulur.</p>
       <p><a class="showall" href="#all" data-showall>Bütün dilleri göster</a></p>
@@ -691,7 +782,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <p><strong>Deweloper</strong>: 임한수 (Hansoo Lim)</p>
         <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
 
-        <p><strong>Ostatnia aktualizacja</strong>: 27 sierpnia 2026</p>
+        <p><strong>Ostatnia aktualizacja</strong>: 7 września 2026</p>
       </div>
       <p class="note" data-store-note="ios">Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.</p>
       <p class="note" data-store-note="android" hidden>Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.</p>
@@ -699,10 +790,17 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
       <h2 class="clause">1. Czego nigdy nie zbieramy</h2>
       <p>Aplikacja nie prosi o Twoje imię, adres e-mail, numer telefonu, kontakty, zdjęcia ani lokalizację i ich nie zbiera.</p>
       <h2 class="clause">2. Dane pozostające na Twoim urządzeniu</h2>
-      <p>Postępy w quizach, poziom, Punkty Flagowe, ulubione, zebrane karty, ustawienia oraz informacja o posiadaniu Pro są zapisywane na Twoim urządzeniu. Ustawienia → Zresetuj postępy usuwa je. W systemie iOS, gdy «Synchronizacja iCloud» jest włączona (można ją wyłączyć w Ustawieniach; domyślnie włączona), kopia tych danych jest przechowywana także na Twoim własnym koncie iCloud, dzięki czemu przenosi się na inne urządzenia z tym samym Apple ID. Deweloper nie może odczytać ani usunąć tej kopii — znajduje się ona na Twoim koncie. Android nie ma tej funkcji.</p>
+      <p>Postępy w quizach, poziom, Punkty Flag, ulubione, zebrane karty, wyniki minigier, pseudonim wybrany do rankingów, ustawienia oraz informacja o posiadaniu Pro są zapisywane na Twoim urządzeniu. Aplikacja przechowuje też na Twoim urządzeniu krótki dziennik zdarzeń w grze — najwyżej 200 wpisów, na przykład „awans na wyższy poziom” — który pomaga diagnozować problemy; nigdy nigdzie nie jest wysyłany.</p>
+      <p>Ustawienia → Zresetuj postęp usuwa postępy w quizach, poziom, osiągnięcia, ulubione, zebrane karty, kolejkę powtórek i najlepsze wyniki. Celowo zachowuje natomiast Twoje Punkty Flag, zakup Pro i ustawienia: punkty zdobywa się, oglądając reklamy, a zakup nie jest postępem.</p>
+      <p>W systemie iOS, gdy «Synchronizacja iCloud» jest włączona (można ją wyłączyć w Ustawieniach; domyślnie włączona), kopia tych danych jest przechowywana także na Twoim własnym koncie iCloud, dzięki czemu przenosi się na inne urządzenia z tym samym Apple ID. Deweloper nie może odczytać ani usunąć tej kopii — znajduje się ona na Twoim koncie. Android nie ma tej funkcji.</p>
       <h2 class="clause">3. Rankingi (opcjonalnie)</h2>
-      <p>Nic nie jest wysyłane, dopóki nie otworzysz rankingów i nie wybierzesz pseudonimu. Od tej chwili Aplikacja wysyła do Firebase (usługi gry): anonimowy identyfikator gracza utworzony na potrzeby tej aplikacji (niezależny od Twojego <span class="pf" data-ios="Apple ID" data-android="konta Google">Apple ID</span>), wybrany przez Ciebie pseudonim, flagę wywnioskowaną z ustawienia regionu urządzenia, Twoje wyniki oraz wybrany przez Ciebie kolor i odznakę wyświetlane przy Twoim wpisie (wyłącznie ozdobne). To cały zapis. Aby usunąć wpis, napisz na adres z punktu 9.</p>
-      <h2 class="clause">4. Reklamy</h2>
+      <p>Gdy uruchamiasz Aplikację i gdy wraca ona na pierwszy plan, wysyła jedno niewielkie zapytanie do usługi gry (Firebase), aby sprawdzić, czy jest połączenie z siecią. Zapytanie to nie zawiera żadnego konta, żadnego identyfikatora ani żadnych informacji o Tobie; jak przy każdym połączeniu internetowym, serwer, który je odbiera, widzi Twój adres IP.</p>
+      <p>Twój wpis rankingowy powstaje dopiero wtedy, gdy otworzysz rankingi i wybierzesz pseudonim. Od tej chwili Aplikacja wysyła do Firebase: anonimowy identyfikator gracza utworzony na potrzeby tej aplikacji (niezależny od Twojego <span class="pf" data-ios="Apple ID" data-android="konta Google">Apple ID</span>), wybrany przez Ciebie pseudonim, flagę wywnioskowaną z ustawienia regionu urządzenia, Twoje wyniki oraz wybrany przez Ciebie kolor i odznakę wyświetlane przy Twoim wpisie (wyłącznie ozdobne). Po zakończeniu rundy rankingowej wysyła też odpowiedzi z tej rundy, aby o wyniku decydował serwer, a nie Twoje urządzenie; odpowiedzi są oceniane, a następnie usuwane — nie są przechowywane. To cały zapis. Aby usunąć wpis, napisz na adres z punktu 10.</p>
+      <p>Sposób przetwarzania danych przez usługę gry: <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer" target="_blank">https://firebase.google.com/support/privacy</a></p>
+      <h2 class="clause">4. Odtwarzanie hymnów (opcjonalnie)</h2>
+      <p>Gdy dotkniesz „Odtwórz hymn”, nagranie jest odtwarzane strumieniowo z Internet Archive (archive.org) — publicznej biblioteki, w której znajduje się zbiór nagrań U.S. Navy Band z domeny publicznej, wykorzystywany przez Aplikację. Usługa ta otrzymuje Twój adres IP oraz nazwę żądanego pliku. Nic więcej nie jest wysyłane, a jeśli nigdy nie włączysz odtwarzania, nie jest wysyłane nic.</p>
+      <p>Sposób przetwarzania danych przez Internet Archive: <a href="https://archive.org/about/terms.php" rel="noopener noreferrer" target="_blank">https://archive.org/about/terms.php</a></p>
+      <h2 class="clause">5. Reklamy</h2>
       <p>Wersja bezpłatna wyświetla reklamę z nagrodą tylko wtedy, gdy dotkniesz „Obejrzyj reklamę”, aby zdobyć Punkty Flagowe. Nie ma reklam banerowych ani pełnoekranowych. Reklamy dostarcza AdMob, który może używać identyfikatora reklamowego do ich doboru i pomiaru.</p>
       <ul>
         <li>W systemie iOS Aplikacja prosi o Twoją zgodę przed jakimkolwiek śledzeniem. Jeśli odmówisz, reklamy nie będą spersonalizowane.</li>
@@ -710,15 +808,15 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         <li>Użytkownicy Pro nie widzą żadnych reklam.</li>
       </ul>
       <p>Sposób przetwarzania tych danych przez dostawcę reklam: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
-      <h2 class="clause">5. Zakupy</h2>
+      <h2 class="clause">6. Zakupy</h2>
       <p>Zakupy obsługuje <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. Deweloper nigdy nie widzi ani nie przechowuje numeru Twojej karty ani adresu rozliczeniowego. Aplikacja przechowuje wyłącznie znacznik tak/nie o posiadaniu Pro i weryfikuje go w sklepie.</p>
-      <h2 class="clause">6. Powiadomienia (opcjonalnie)</h2>
-      <p>Jeśli włączysz codzienne przypomnienie o fladze, Aplikacja poprosi o zgodę na powiadomienia, a następnie zaplanuje przypomnienie na Twoim urządzeniu. Nic nie jest wysyłane na serwer i nie bierze w tym udziału żadna usługa push. Możesz je wyłączyć w dowolnej chwili.</p>
-      <h2 class="clause">7. Dzieci</h2>
+      <h2 class="clause">7. Powiadomienia (opcjonalnie)</h2>
+      <p>Codzienne przypomnienie o fladze to funkcja dostępna na iPhonie i iPadzie; wersja na Androida jej nie ma. Jeśli je włączysz, Aplikacja poprosi o zgodę na powiadomienia, a następnie zaplanuje przypomnienie na Twoim urządzeniu. Nic nie jest wysyłane na serwer i nie bierze w tym udziału żadna usługa push. Możesz je wyłączyć w dowolnej chwili.</p>
+      <h2 class="clause">8. Dzieci</h2>
       <p>Aplikacja nie zbiera świadomie danych osobowych dzieci. Nie ma czatu, nie ma wiadomości i nie ma treści dostarczanych przez użytkowników poza pseudonimem, który wybierasz samodzielnie.</p>
-      <h2 class="clause">8. Przechowywanie i usuwanie</h2>
+      <h2 class="clause">9. Przechowywanie i usuwanie</h2>
       <p>Dane na urządzeniu pozostają, dopóki ich nie zresetujesz lub nie odinstalujesz Aplikacji. Wpisy rankingowe żyją tak długo jak ich tabela: rankingi dzienne zmieniają się codziennie, tygodniowe co tydzień. Odinstalowanie usuwa dane z urządzenia. Jeśli synchronizacja iCloud była włączona, kopia pozostaje na Twoim koncie iCloud i wraca po ponownej instalacji z tym samym Apple ID; wyłączenie ustawienia zatrzymuje dalsze przesyłanie.</p>
-      <h2 class="clause">9. Kontakt i zmiany</h2>
+      <h2 class="clause">10. Kontakt i zmiany</h2>
       <p>Pytania lub prośba o usunięcie wpisu rankingowego: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
       <p>Niniejsza polityka może ulec zmianie; zmiany są publikowane wraz z aktualizacjami aplikacji.</p>
       <p><a class="showall" href="#all" data-showall>Pokaż wszystkie języki</a></p>
@@ -726,7 +824,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
   </article>
 </main>
 <footer>© 임한수 (Hansoo Lim) · Flag Master. All rights reserved.</footer>
-<script>window.__UI__ = {"en":{"language":"Language","store":"Your store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Show every language","home":"Home","termsDesc":"Pro upgrade, Flag Points, rankings, content and liability","privacyDesc":"What we never collect, what stays on your device, rankings, ads and deletion","supportDesc":"Contact, frequently asked questions, refunds and data deletion","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Platforms","metaDev":"Developer","metaContact":"Contact","metaUpdated":"Last updated","storeNoteIos":"Showing the wording for iOS. On an Android device, switch above.","storeNoteAndroid":"Showing the wording for Android. On an iPhone or iPad, switch above.","__appName":"Flag Master","appName":"Flag Master","termsTitle":"Terms of Use","privacyTitle":"Privacy Policy","supportTitle":"Support & FAQ","__lastUpdated":"27 August 2026","__updatedLabel":"Last updated","__sep":":"},"ko":{"language":"언어","store":"이용 중인 스토어","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"모든 언어 보기","home":"홈","termsDesc":"Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임","privacyDesc":"수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제","supportDesc":"문의, 자주 묻는 질문, 환불과 데이터 삭제","metaApp":"앱","metaBundle":"번들 ID","metaPlatform":"지원 플랫폼","metaDev":"개발자","metaContact":"문의","metaUpdated":"최종 수정일","storeNoteIos":"iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.","storeNoteAndroid":"Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.","__appName":"국기의 주인","appName":"국기의 주인","termsTitle":"이용약관","privacyTitle":"개인정보 처리방침","supportTitle":"고객 지원 · 자주 묻는 질문","__lastUpdated":"2026년 8월 27일","__updatedLabel":"최종 업데이트","__sep":":"},"ja":{"language":"言語","store":"ご利用のストア","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"すべての言語を表示","home":"ホーム","termsDesc":"Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項","privacyDesc":"収集しない情報、端末内にとどまる情報、ランキング、広告、削除について","supportDesc":"お問い合わせ、よくある質問、返金とデータの削除","metaApp":"アプリ","metaBundle":"バンドルID","metaPlatform":"対応プラットフォーム","metaDev":"開発者","metaContact":"お問い合わせ先","metaUpdated":"最終更新日","storeNoteIos":"iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。","storeNoteAndroid":"Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。","__appName":"国旗マスター","appName":"国旗マスター","termsTitle":"利用規約","privacyTitle":"プライバシーポリシー","supportTitle":"サポート・よくある質問","__lastUpdated":"2026年8月27日","__updatedLabel":"最終更新日","__sep":":"},"de":{"language":"Sprache","store":"Ihr Store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Alle Sprachen anzeigen","home":"Startseite","termsDesc":"Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung","privacyDesc":"Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung","supportDesc":"Kontakt, häufige Fragen, Erstattungen und Datenlöschung","metaApp":"App","metaBundle":"Bundle-ID","metaPlatform":"Plattformen","metaDev":"Entwickler","metaContact":"Kontakt","metaUpdated":"Zuletzt aktualisiert","storeNoteIos":"Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.","storeNoteAndroid":"Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.","__appName":"Flaggenmeister","appName":"Flaggenmeister","termsTitle":"Nutzungsbedingungen","privacyTitle":"Datenschutzerklärung","supportTitle":"Support & FAQ","__lastUpdated":"27. August 2026","__updatedLabel":"Zuletzt aktualisiert","__sep":":"},"fr":{"language":"Langue","store":"Votre boutique","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Afficher toutes les langues","home":"Accueil","termsDesc":"Passage à Pro, Points Drapeau, classements, contenu et responsabilité","privacyDesc":"Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression","supportDesc":"Contact, questions fréquentes, remboursements et suppression des données","metaApp":"Application","metaBundle":"Identifiant du bundle","metaPlatform":"Plateformes","metaDev":"Développeur","metaContact":"Contact","metaUpdated":"Dernière mise à jour","storeNoteIos":"Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.","storeNoteAndroid":"Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.","__appName":"Maître des Drapeaux","appName":"Maître des Drapeaux","termsTitle":"Conditions d’utilisation","privacyTitle":"Politique de confidentialité","supportTitle":"Assistance et FAQ","__lastUpdated":"27 août 2026","__updatedLabel":"Dernière mise à jour","__sep":" :"},"it":{"language":"Lingua","store":"Il tuo store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostra tutte le lingue","home":"Home","termsDesc":"Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità","privacyDesc":"Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione","supportDesc":"Contatti, domande frequenti, rimborsi ed eliminazione dei dati","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Piattaforme","metaDev":"Sviluppatore","metaContact":"Contatti","metaUpdated":"Ultimo aggiornamento","storeNoteIos":"Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.","storeNoteAndroid":"Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.","__appName":"Maestro delle Bandiere","appName":"Maestro delle Bandiere","termsTitle":"Termini d’uso","privacyTitle":"Informativa sulla privacy","supportTitle":"Assistenza e FAQ","__lastUpdated":"27 agosto 2026","__updatedLabel":"Ultimo aggiornamento","__sep":":"},"zh-Hant":{"language":"語言","store":"您使用的商店","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"顯示所有語言","home":"首頁","termsDesc":"Pro 升級、國旗點數、排行榜、內容與責任","privacyDesc":"我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式","supportDesc":"聯絡方式、常見問題、退款與資料刪除","metaApp":"應用程式","metaBundle":"Bundle ID","metaPlatform":"支援平台","metaDev":"開發者","metaContact":"聯絡方式","metaUpdated":"最後更新","storeNoteIos":"目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。","storeNoteAndroid":"目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。","__appName":"國旗大師","appName":"國旗大師","termsTitle":"使用條款","privacyTitle":"隱私權政策","supportTitle":"支援與常見問題","__lastUpdated":"2026年8月27日","__updatedLabel":"最後更新","__sep":"："},"es":{"language":"Idioma","store":"Tu tienda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos los idiomas","home":"Inicio","termsDesc":"Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad","privacyDesc":"Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación","supportDesc":"Contacto, preguntas frecuentes, reembolsos y eliminación de datos","metaApp":"Aplicación","metaBundle":"ID del paquete","metaPlatform":"Plataformas","metaDev":"Desarrollador","metaContact":"Contacto","metaUpdated":"Última actualización","storeNoteIos":"Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.","storeNoteAndroid":"Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.","__appName":"Maestro de Banderas","appName":"Maestro de Banderas","termsTitle":"Términos de uso","privacyTitle":"Política de privacidad","supportTitle":"Soporte y preguntas frecuentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última actualización","__sep":":"},"pt":{"language":"Idioma","store":"Sua loja","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos os idiomas","home":"Início","termsDesc":"Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade","privacyDesc":"O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão","supportDesc":"Contato, perguntas frequentes, reembolsos e exclusão de dados","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Plataformas","metaDev":"Desenvolvedor","metaContact":"Contato","metaUpdated":"Última atualização","storeNoteIos":"Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.","storeNoteAndroid":"Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.","__appName":"Mestre das Bandeiras","appName":"Mestre das Bandeiras","termsTitle":"Termos de uso","privacyTitle":"Política de privacidade","supportTitle":"Suporte e perguntas frequentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última atualização","__sep":":"},"ar":{"language":"اللغة","store":"متجرك","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"عرض جميع اللغات","home":"الرئيسية","termsDesc":"ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية","privacyDesc":"ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف","supportDesc":"التواصل والأسئلة الشائعة والاسترداد وحذف البيانات","metaApp":"التطبيق","metaBundle":"معرّف الحزمة","metaPlatform":"المنصات","metaDev":"المطوّر","metaContact":"التواصل","metaUpdated":"آخر تحديث","storeNoteIos":"النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.","storeNoteAndroid":"النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.","__appName":"سيد الأعلام","appName":"سيد الأعلام","termsTitle":"شروط الاستخدام","privacyTitle":"سياسة الخصوصية","supportTitle":"الدعم والأسئلة الشائعة","__lastUpdated":"27 أغسطس 2026","__updatedLabel":"آخر تحديث","__sep":":"},"id":{"language":"Bahasa","store":"Toko aplikasi Anda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Tampilkan semua bahasa","home":"Beranda","termsDesc":"Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum","privacyDesc":"Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data","supportDesc":"Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data","metaApp":"Aplikasi","metaBundle":"Bundle ID","metaPlatform":"Platform","metaDev":"Pengembang","metaContact":"Kontak","metaUpdated":"Terakhir diperbarui","storeNoteIos":"Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.","storeNoteAndroid":"Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.","__appName":"Master Bendera","appName":"Master Bendera","termsTitle":"Ketentuan Penggunaan","privacyTitle":"Kebijakan Privasi","supportTitle":"Dukungan & FAQ","__lastUpdated":"27 Agustus 2026","__updatedLabel":"Pembaruan terakhir","__sep":":"},"vi":{"language":"Ngôn ngữ","store":"Cửa hàng của bạn","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Hiện tất cả ngôn ngữ","home":"Trang chủ","termsDesc":"Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý","privacyDesc":"Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu","supportDesc":"Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu","metaApp":"Ứng dụng","metaBundle":"Bundle ID","metaPlatform":"Nền tảng","metaDev":"Nhà phát triển","metaContact":"Liên hệ","metaUpdated":"Cập nhật lần cuối","storeNoteIos":"Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.","storeNoteAndroid":"Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.","__appName":"Bậc Thầy Quốc Kỳ","appName":"Bậc Thầy Quốc Kỳ","termsTitle":"Điều khoản sử dụng","privacyTitle":"Chính sách quyền riêng tư","supportTitle":"Hỗ trợ & FAQ","__lastUpdated":"27 tháng 8 năm 2026","__updatedLabel":"Cập nhật lần cuối","__sep":":"},"tr":{"language":"Dil","store":"Mağazanız","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Bütün dilleri göster","home":"Ana sayfa","termsDesc":"Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk","privacyDesc":"Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme","supportDesc":"İletişim, sık sorulan sorular, iadeler ve veri silme","metaApp":"Uygulama","metaBundle":"Paket kimliği","metaPlatform":"Platformlar","metaDev":"Geliştirici","metaContact":"İletişim","metaUpdated":"Son güncelleme","storeNoteIos":"iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.","storeNoteAndroid":"Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.","__appName":"Bayrak Ustası","appName":"Bayrak Ustası","termsTitle":"Kullanım Koşulları","privacyTitle":"Gizlilik Politikası","supportTitle":"Destek ve SSS","__lastUpdated":"27 Ağustos 2026","__updatedLabel":"Son güncelleme","__sep":":"},"pl":{"language":"Język","store":"Twój sklep","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Pokaż wszystkie języki","home":"Strona główna","termsDesc":"Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność","privacyDesc":"Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych","supportDesc":"Kontakt, najczęstsze pytania, zwroty i usuwanie danych","metaApp":"Aplikacja","metaBundle":"Bundle ID","metaPlatform":"Platformy","metaDev":"Deweloper","metaContact":"Kontakt","metaUpdated":"Ostatnia aktualizacja","storeNoteIos":"Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.","storeNoteAndroid":"Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.","__appName":"Mistrz Flag","appName":"Mistrz Flag","termsTitle":"Warunki korzystania","privacyTitle":"Polityka prywatności","supportTitle":"Pomoc i FAQ","__lastUpdated":"27 sierpnia 2026","__updatedLabel":"Ostatnia aktualizacja","__sep":":"}};window.__META__ = {"en":{"t":"Privacy Policy — Flag Master","d":"Flag Master — Privacy Policy: What we never collect, what stays on your device, rankings, ads and deletion"},"ko":{"t":"개인정보 처리방침 — 국기의 주인 (Flag Master)","d":"국기의 주인 (Flag Master) — 개인정보 처리방침: 수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제"},"ja":{"t":"プライバシーポリシー — 国旗マスター (Flag Master)","d":"国旗マスター (Flag Master) — プライバシーポリシー: 収集しない情報、端末内にとどまる情報、ランキング、広告、削除について"},"de":{"t":"Datenschutzerklärung — Flaggenmeister (Flag Master)","d":"Flaggenmeister (Flag Master) — Datenschutzerklärung: Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung"},"fr":{"t":"Politique de confidentialité — Maître des Drapeaux (Flag Master)","d":"Maître des Drapeaux (Flag Master) — Politique de confidentialité : Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression"},"it":{"t":"Informativa sulla privacy — Maestro delle Bandiere (Flag Master)","d":"Maestro delle Bandiere (Flag Master) — Informativa sulla privacy: Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione"},"zh-Hant":{"t":"隱私權政策 — 國旗大師 (Flag Master)","d":"國旗大師 (Flag Master) — 隱私權政策： 我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式"},"es":{"t":"Política de privacidad — Maestro de Banderas (Flag Master)","d":"Maestro de Banderas (Flag Master) — Política de privacidad: Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación"},"pt":{"t":"Política de privacidade — Mestre das Bandeiras (Flag Master)","d":"Mestre das Bandeiras (Flag Master) — Política de privacidade: O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão"},"ar":{"t":"سياسة الخصوصية — سيد الأعلام (Flag Master)","d":"سيد الأعلام (Flag Master) — سياسة الخصوصية: ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف"},"id":{"t":"Kebijakan Privasi — Master Bendera (Flag Master)","d":"Master Bendera (Flag Master) — Kebijakan Privasi: Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data"},"vi":{"t":"Chính sách quyền riêng tư — Bậc Thầy Quốc Kỳ (Flag Master)","d":"Bậc Thầy Quốc Kỳ (Flag Master) — Chính sách quyền riêng tư: Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu"},"tr":{"t":"Gizlilik Politikası — Bayrak Ustası (Flag Master)","d":"Bayrak Ustası (Flag Master) — Gizlilik Politikası: Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme"},"pl":{"t":"Polityka prywatności — Mistrz Flag (Flag Master)","d":"Mistrz Flag (Flag Master) — Polityka prywatności: Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych"}};</script>
+<script>window.__UI__ = {"en":{"language":"Language","store":"Your store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Show every language","home":"Home","termsDesc":"Pro upgrade, Flag Points, rankings, content and liability","privacyDesc":"What we never collect, what stays on your device, rankings, ads and deletion","supportDesc":"Contact, frequently asked questions, refunds and data deletion","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Platforms","metaDev":"Developer","metaContact":"Contact","metaUpdated":"Last updated","storeNoteIos":"Showing the wording for iOS. On an Android device, switch above.","storeNoteAndroid":"Showing the wording for Android. On an iPhone or iPad, switch above.","__appName":"Flag Master","appName":"Flag Master","termsTitle":"Terms of Use","privacyTitle":"Privacy Policy","supportTitle":"Support & FAQ","__lastUpdated":"7 September 2026","__updatedLabel":"Last updated","__sep":":"},"ko":{"language":"언어","store":"이용 중인 스토어","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"모든 언어 보기","home":"홈","termsDesc":"Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임","privacyDesc":"수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제","supportDesc":"문의, 자주 묻는 질문, 환불과 데이터 삭제","metaApp":"앱","metaBundle":"번들 ID","metaPlatform":"지원 플랫폼","metaDev":"개발자","metaContact":"문의","metaUpdated":"최종 수정일","storeNoteIos":"iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.","storeNoteAndroid":"Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.","__appName":"국기의 주인","appName":"국기의 주인","termsTitle":"이용약관","privacyTitle":"개인정보 처리방침","supportTitle":"고객 지원 · 자주 묻는 질문","__lastUpdated":"2026년 9월 7일","__updatedLabel":"최종 업데이트","__sep":":"},"ja":{"language":"言語","store":"ご利用のストア","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"すべての言語を表示","home":"ホーム","termsDesc":"Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項","privacyDesc":"収集しない情報、端末内にとどまる情報、ランキング、広告、削除について","supportDesc":"お問い合わせ、よくある質問、返金とデータの削除","metaApp":"アプリ","metaBundle":"バンドルID","metaPlatform":"対応プラットフォーム","metaDev":"開発者","metaContact":"お問い合わせ先","metaUpdated":"最終更新日","storeNoteIos":"iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。","storeNoteAndroid":"Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。","__appName":"国旗マスター","appName":"国旗マスター","termsTitle":"利用規約","privacyTitle":"プライバシーポリシー","supportTitle":"サポート・よくある質問","__lastUpdated":"2026年9月7日","__updatedLabel":"最終更新日","__sep":":"},"de":{"language":"Sprache","store":"Ihr Store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Alle Sprachen anzeigen","home":"Startseite","termsDesc":"Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung","privacyDesc":"Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung","supportDesc":"Kontakt, häufige Fragen, Erstattungen und Datenlöschung","metaApp":"App","metaBundle":"Bundle-ID","metaPlatform":"Plattformen","metaDev":"Entwickler","metaContact":"Kontakt","metaUpdated":"Zuletzt aktualisiert","storeNoteIos":"Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.","storeNoteAndroid":"Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.","__appName":"Flaggenmeister","appName":"Flaggenmeister","termsTitle":"Nutzungsbedingungen","privacyTitle":"Datenschutzerklärung","supportTitle":"Support & FAQ","__lastUpdated":"7. September 2026","__updatedLabel":"Zuletzt aktualisiert","__sep":":"},"fr":{"language":"Langue","store":"Votre boutique","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Afficher toutes les langues","home":"Accueil","termsDesc":"Passage à Pro, Points Drapeau, classements, contenu et responsabilité","privacyDesc":"Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression","supportDesc":"Contact, questions fréquentes, remboursements et suppression des données","metaApp":"Application","metaBundle":"Identifiant du bundle","metaPlatform":"Plateformes","metaDev":"Développeur","metaContact":"Contact","metaUpdated":"Dernière mise à jour","storeNoteIos":"Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.","storeNoteAndroid":"Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.","__appName":"Maître des Drapeaux","appName":"Maître des Drapeaux","termsTitle":"Conditions d’utilisation","privacyTitle":"Politique de confidentialité","supportTitle":"Assistance et FAQ","__lastUpdated":"7 septembre 2026","__updatedLabel":"Dernière mise à jour","__sep":" :"},"it":{"language":"Lingua","store":"Il tuo store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostra tutte le lingue","home":"Home","termsDesc":"Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità","privacyDesc":"Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione","supportDesc":"Contatti, domande frequenti, rimborsi ed eliminazione dei dati","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Piattaforme","metaDev":"Sviluppatore","metaContact":"Contatti","metaUpdated":"Ultimo aggiornamento","storeNoteIos":"Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.","storeNoteAndroid":"Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.","__appName":"Maestro delle Bandiere","appName":"Maestro delle Bandiere","termsTitle":"Termini d’uso","privacyTitle":"Informativa sulla privacy","supportTitle":"Assistenza e FAQ","__lastUpdated":"7 settembre 2026","__updatedLabel":"Ultimo aggiornamento","__sep":":"},"zh-Hant":{"language":"語言","store":"您使用的商店","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"顯示所有語言","home":"首頁","termsDesc":"Pro 升級、國旗點數、排行榜、內容與責任","privacyDesc":"我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式","supportDesc":"聯絡方式、常見問題、退款與資料刪除","metaApp":"應用程式","metaBundle":"Bundle ID","metaPlatform":"支援平台","metaDev":"開發者","metaContact":"聯絡方式","metaUpdated":"最後更新","storeNoteIos":"目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。","storeNoteAndroid":"目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。","__appName":"國旗大師","appName":"國旗大師","termsTitle":"使用條款","privacyTitle":"隱私權政策","supportTitle":"支援與常見問題","__lastUpdated":"2026年9月7日","__updatedLabel":"最後更新","__sep":"："},"es":{"language":"Idioma","store":"Tu tienda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos los idiomas","home":"Inicio","termsDesc":"Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad","privacyDesc":"Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación","supportDesc":"Contacto, preguntas frecuentes, reembolsos y eliminación de datos","metaApp":"Aplicación","metaBundle":"ID del paquete","metaPlatform":"Plataformas","metaDev":"Desarrollador","metaContact":"Contacto","metaUpdated":"Última actualización","storeNoteIos":"Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.","storeNoteAndroid":"Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.","__appName":"Maestro de Banderas","appName":"Maestro de Banderas","termsTitle":"Términos de uso","privacyTitle":"Política de privacidad","supportTitle":"Soporte y preguntas frecuentes","__lastUpdated":"7 de septiembre de 2026","__updatedLabel":"Última actualización","__sep":":"},"pt":{"language":"Idioma","store":"Sua loja","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos os idiomas","home":"Início","termsDesc":"Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade","privacyDesc":"O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão","supportDesc":"Contato, perguntas frequentes, reembolsos e exclusão de dados","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Plataformas","metaDev":"Desenvolvedor","metaContact":"Contato","metaUpdated":"Última atualização","storeNoteIos":"Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.","storeNoteAndroid":"Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.","__appName":"Mestre das Bandeiras","appName":"Mestre das Bandeiras","termsTitle":"Termos de uso","privacyTitle":"Política de privacidade","supportTitle":"Suporte e perguntas frequentes","__lastUpdated":"7 de setembro de 2026","__updatedLabel":"Última atualização","__sep":":"},"ar":{"language":"اللغة","store":"متجرك","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"عرض جميع اللغات","home":"الرئيسية","termsDesc":"ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية","privacyDesc":"ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف","supportDesc":"التواصل والأسئلة الشائعة والاسترداد وحذف البيانات","metaApp":"التطبيق","metaBundle":"معرّف الحزمة","metaPlatform":"المنصات","metaDev":"المطوّر","metaContact":"التواصل","metaUpdated":"آخر تحديث","storeNoteIos":"النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.","storeNoteAndroid":"النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.","__appName":"سيد الأعلام","appName":"سيد الأعلام","termsTitle":"شروط الاستخدام","privacyTitle":"سياسة الخصوصية","supportTitle":"الدعم والأسئلة الشائعة","__lastUpdated":"7 سبتمبر 2026","__updatedLabel":"آخر تحديث","__sep":":"},"id":{"language":"Bahasa","store":"Toko aplikasi Anda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Tampilkan semua bahasa","home":"Beranda","termsDesc":"Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum","privacyDesc":"Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data","supportDesc":"Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data","metaApp":"Aplikasi","metaBundle":"Bundle ID","metaPlatform":"Platform","metaDev":"Pengembang","metaContact":"Kontak","metaUpdated":"Terakhir diperbarui","storeNoteIos":"Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.","storeNoteAndroid":"Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.","__appName":"Master Bendera","appName":"Master Bendera","termsTitle":"Ketentuan Penggunaan","privacyTitle":"Kebijakan Privasi","supportTitle":"Dukungan & FAQ","__lastUpdated":"7 September 2026","__updatedLabel":"Pembaruan terakhir","__sep":":"},"vi":{"language":"Ngôn ngữ","store":"Cửa hàng của bạn","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Hiện tất cả ngôn ngữ","home":"Trang chủ","termsDesc":"Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý","privacyDesc":"Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu","supportDesc":"Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu","metaApp":"Ứng dụng","metaBundle":"Bundle ID","metaPlatform":"Nền tảng","metaDev":"Nhà phát triển","metaContact":"Liên hệ","metaUpdated":"Cập nhật lần cuối","storeNoteIos":"Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.","storeNoteAndroid":"Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.","__appName":"Bậc Thầy Quốc Kỳ","appName":"Bậc Thầy Quốc Kỳ","termsTitle":"Điều khoản sử dụng","privacyTitle":"Chính sách quyền riêng tư","supportTitle":"Hỗ trợ & FAQ","__lastUpdated":"7 tháng 9 năm 2026","__updatedLabel":"Cập nhật lần cuối","__sep":":"},"tr":{"language":"Dil","store":"Mağazanız","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Bütün dilleri göster","home":"Ana sayfa","termsDesc":"Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk","privacyDesc":"Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme","supportDesc":"İletişim, sık sorulan sorular, iadeler ve veri silme","metaApp":"Uygulama","metaBundle":"Paket kimliği","metaPlatform":"Platformlar","metaDev":"Geliştirici","metaContact":"İletişim","metaUpdated":"Son güncelleme","storeNoteIos":"iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.","storeNoteAndroid":"Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.","__appName":"Bayrak Ustası","appName":"Bayrak Ustası","termsTitle":"Kullanım Koşulları","privacyTitle":"Gizlilik Politikası","supportTitle":"Destek ve SSS","__lastUpdated":"7 Eylül 2026","__updatedLabel":"Son güncelleme","__sep":":"},"pl":{"language":"Język","store":"Twój sklep","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Pokaż wszystkie języki","home":"Strona główna","termsDesc":"Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność","privacyDesc":"Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych","supportDesc":"Kontakt, najczęstsze pytania, zwroty i usuwanie danych","metaApp":"Aplikacja","metaBundle":"Bundle ID","metaPlatform":"Platformy","metaDev":"Deweloper","metaContact":"Kontakt","metaUpdated":"Ostatnia aktualizacja","storeNoteIos":"Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.","storeNoteAndroid":"Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.","__appName":"Mistrz Flag","appName":"Mistrz Flag","termsTitle":"Warunki korzystania","privacyTitle":"Polityka prywatności","supportTitle":"Pomoc i FAQ","__lastUpdated":"7 września 2026","__updatedLabel":"Ostatnia aktualizacja","__sep":":"}};window.__META__ = {"en":{"t":"Privacy Policy — Flag Master","d":"Flag Master — Privacy Policy: What we never collect, what stays on your device, rankings, ads and deletion"},"ko":{"t":"개인정보 처리방침 — 국기의 주인 (Flag Master)","d":"국기의 주인 (Flag Master) — 개인정보 처리방침: 수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제"},"ja":{"t":"プライバシーポリシー — 国旗マスター (Flag Master)","d":"国旗マスター (Flag Master) — プライバシーポリシー: 収集しない情報、端末内にとどまる情報、ランキング、広告、削除について"},"de":{"t":"Datenschutzerklärung — Flaggenmeister (Flag Master)","d":"Flaggenmeister (Flag Master) — Datenschutzerklärung: Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung"},"fr":{"t":"Politique de confidentialité — Maître des Drapeaux (Flag Master)","d":"Maître des Drapeaux (Flag Master) — Politique de confidentialité : Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression"},"it":{"t":"Informativa sulla privacy — Maestro delle Bandiere (Flag Master)","d":"Maestro delle Bandiere (Flag Master) — Informativa sulla privacy: Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione"},"zh-Hant":{"t":"隱私權政策 — 國旗大師 (Flag Master)","d":"國旗大師 (Flag Master) — 隱私權政策： 我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式"},"es":{"t":"Política de privacidad — Maestro de Banderas (Flag Master)","d":"Maestro de Banderas (Flag Master) — Política de privacidad: Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación"},"pt":{"t":"Política de privacidade — Mestre das Bandeiras (Flag Master)","d":"Mestre das Bandeiras (Flag Master) — Política de privacidade: O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão"},"ar":{"t":"سياسة الخصوصية — سيد الأعلام (Flag Master)","d":"سيد الأعلام (Flag Master) — سياسة الخصوصية: ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف"},"id":{"t":"Kebijakan Privasi — Master Bendera (Flag Master)","d":"Master Bendera (Flag Master) — Kebijakan Privasi: Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data"},"vi":{"t":"Chính sách quyền riêng tư — Bậc Thầy Quốc Kỳ (Flag Master)","d":"Bậc Thầy Quốc Kỳ (Flag Master) — Chính sách quyền riêng tư: Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu"},"tr":{"t":"Gizlilik Politikası — Bayrak Ustası (Flag Master)","d":"Bayrak Ustası (Flag Master) — Gizlilik Politikası: Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme"},"pl":{"t":"Polityka prywatności — Mistrz Flag (Flag Master)","d":"Mistrz Flag (Flag Master) — Polityka prywatności: Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych"}};</script>
 <script>
 (function(){
   window.__fmReady = true;
