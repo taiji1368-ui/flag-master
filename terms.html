@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Use — Flag Master</title>
+<meta name="description" content="Terms of Use for Flag Master — one-time Pro purchase, Flag Points, rankings, content and liability. Available in 14 languages.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F6EEDC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14293c" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://taiji1368-ui.github.io/flag-master/terms.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flag Master">
+<meta property="og:url" content="https://taiji1368-ui.github.io/flag-master/terms.html">
+<meta property="og:title" content="Terms of Use — Flag Master">
+<meta property="og:description" content="Terms of Use for Flag Master — one-time Pro purchase, Flag Points, rankings, content and liability. Available in 14 languages.">
+<script>document.documentElement.className="js";setTimeout(function(){if(!window.__fmReady)document.documentElement.className=""},1500)</script>
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#F6EEDC; --bg-accent:#EDE0C6; --card:rgba(255,253,246,.78);
+  --text:#1C2A39; --muted:#6b5c42; --primary:#B03A28; --gold:#7f5e1c;
+  /* 앱의 스탬프 레드는 #C2412D 지만, 밝은 테마의 크림 바탕(#EDE0C6)에서 3.93:1 이라
+     본문 링크와 '현재 문서' 표시가 WCAG AA 에 못 미친다. 웹에서만 한 단계 낮춘다(4.62:1). */
+  --navy:#1C3F5E; --line:#e2d6bd; --divider:#ECE2CC;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14293c; --bg-accent:#0f2130; --card:rgba(255,255,255,.06);
+  --text:#EAE1CC; --muted:#9fb4c8; --primary:#E2725B; --gold:#E7B96b;
+  --navy:#dbe7f2; --line:rgba(234,225,204,.16); --divider:rgba(234,225,204,.12);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.65 "Avenir Next","Pretendard","Apple SD Gothic Neo","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--primary)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg-accent);border-bottom:1px solid var(--line)}
+/* 좁은 화면에서는 고정을 푼다. 브랜드+문서메뉴+스토어토글+14개 언어가 세로로 쌓이면 막대가
+   237px 까지 자라, 812px 짜리 화면의 3할을 긴 약관을 읽는 내내 차지한다(375x812 실측). */
+@media (max-width:760px){
+  .bar{position:static}
+  /* 좁은 화면에선 머리 막대가 첫 화면을 통째로 먹는다 — 14개 언어 목록이 세 줄이다.
+     읽을 글이 첫 화면에 조금이라도 걸리도록 여백과 줄높이를 줄인다. */
+  .bar-in{padding:8px 20px;gap:8px 12px}
+  .langs{padding:0 20px 8px;line-height:1.9;font-size:12.5px}
+  .docnav{gap:12px;font-size:13px}
+  main{padding-top:24px}
+}
+.bar-in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.brand{font-weight:700;letter-spacing:.01em;text-decoration:none;color:var(--navy);margin-inline-end:auto}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;
+  padding:6px 13px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--primary);color:#fff;font-weight:600}
+/* 다크에서 --primary(#E2725B) 위의 흰 글씨는 3.09:1 — 하필 "지금 어느 스토어인가" 를 알리는 글자다. */
+@media (prefers-color-scheme:dark){.seg button[aria-pressed="true"]{background:#B4432C}}
+:where(a,button,summary):focus-visible{outline:2px solid var(--navy);outline-offset:2px;border-radius:6px}
+.docnav{display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+.docnav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+.docnav a:hover{color:var(--primary)}
+.docnav a[aria-current="page"]{color:var(--primary);font-weight:600}
+.langs{max-width:760px;margin:0 auto;padding:0 20px 10px;font-size:13px;line-height:2.1}
+.langs a{color:var(--muted);text-decoration:none;padding:3px 8px;border-radius:8px;border:1px solid transparent}
+.langs a:hover{color:var(--primary)}
+.langs a[aria-current="true"]{color:var(--primary);font-weight:600;background:var(--card);border-color:var(--line)}
+main{max-width:760px;margin:0 auto;padding:34px 20px 96px}
+/* 언어 필터. html.js 는 <head> 인라인 스크립트가 붙인다 — 스크립트가 없으면
+   이 규칙이 통째로 죽어 14개 언어가 그대로 다 보인다. 법적 문서가 스크립트
+   하나 때문에 백지가 되는 쪽이 훨씬 큰 사고다. */
+html.js .doc{display:none}
+html.js .doc.is-on{display:block}
+h1{font-size:29px;line-height:1.28;margin:0 0 6px;color:var(--navy)}
+h2{font-size:20px;margin:34px 0 10px;color:var(--navy)}
+h2.clause{font-size:16.5px;margin:26px 0 6px;color:var(--gold);letter-spacing:.01em}
+.faq summary h3{display:inline;font:inherit;color:inherit;margin:0}
+p{margin:9px 0}
+ul{margin:9px 0;padding-inline-start:1.25em}
+li{margin:5px 0}
+.url{word-break:break-all}
+main a{overflow-wrap:break-word}
+.meta{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 17px;margin:16px 0 26px;font-size:13.5px;color:var(--muted)}
+.meta p{margin:3px 0}
+.meta strong{color:var(--text);font-weight:600}
+.note{font-size:13px;color:var(--muted);margin:0 0 22px}
+.cards{display:grid;gap:13px;margin:22px 0 30px}
+a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:17px 19px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+a.card:hover{border-color:var(--primary);transform:translateY(-1px)}
+a.card strong{display:block;font-size:17px;color:var(--primary);margin-bottom:3px}
+a.card span{color:var(--muted);font-size:14px}
+.faq{border-top:1px solid var(--divider);margin-top:8px}
+.faq details{border-bottom:1px solid var(--divider)}
+.faq summary{cursor:pointer;padding:14px 2px;font-weight:600;color:var(--navy);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:inline-end;color:var(--muted);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 2px 16px;color:var(--text)}
+footer{max-width:760px;margin:0 auto;padding:0 20px 60px;color:var(--muted);font-size:13px}
+.showall{display:inline-block;margin-top:34px;font-size:13px;color:var(--muted)}
+hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
+[dir="rtl"] .brand{letter-spacing:0}
+@media (max-width:520px){h1{font-size:24px}main{padding-top:26px}}
+</style>
+<noscript><style>.seg,[data-store-note]{display:none}</style></noscript>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html"><small>Flag Master</small><span data-ui="appName">Flag Master</span></a>
+    <nav class="docnav" aria-label="Documents">
+      <a href="terms.html" aria-current="page" data-ui="termsTitle">Terms of Use</a>
+      <a href="privacy.html" data-ui="privacyTitle">Privacy Policy</a>
+      <a href="support.html" data-ui="supportTitle">Support</a>
+    </nav>
+    <div class="seg" role="group" aria-label="Store">
+      <button type="button" data-store-btn="ios" aria-pressed="true" data-ui="storeIos">iOS · App Store</button>
+      <button type="button" data-store-btn="android" aria-pressed="false" data-ui="storeAndroid">Android · Google Play</button>
+    </div>
+  </div>
+  <nav class="langs" id="langs" aria-label="Language">
+      <a href="#en" hreflang="en" data-go="en" aria-current="false">English</a>
+      <a href="#ko" hreflang="ko" data-go="ko" aria-current="false">한국어</a>
+      <a href="#ja" hreflang="ja" data-go="ja" aria-current="false">日本語</a>
+      <a href="#de" hreflang="de" data-go="de" aria-current="false">Deutsch</a>
+      <a href="#fr" hreflang="fr" data-go="fr" aria-current="false">Français</a>
+      <a href="#it" hreflang="it" data-go="it" aria-current="false">Italiano</a>
+      <a href="#zh-Hant" hreflang="zh-Hant" data-go="zh-Hant" aria-current="false">繁體中文</a>
+      <a href="#es" hreflang="es" data-go="es" aria-current="false">Español</a>
+      <a href="#pt" hreflang="pt" data-go="pt" aria-current="false">Português</a>
+      <a href="#ar" hreflang="ar" data-go="ar" aria-current="false">العربية</a>
+      <a href="#id" hreflang="id" data-go="id" aria-current="false">Bahasa Indonesia</a>
+      <a href="#vi" hreflang="vi" data-go="vi" aria-current="false">Tiếng Việt</a>
+      <a href="#tr" hreflang="tr" data-go="tr" aria-current="false">Türkçe</a>
+      <a href="#pl" hreflang="pl" data-go="pl" aria-current="false">Polski</a>
+  </nav>
+</header>
+<main>
+  <article class="doc" id="en" lang="en" data-lang="en">
+      <h1>Terms of Use</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platforms</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Developer</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Last updated</strong>: 27 August 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Showing the wording for iOS. On an Android device, switch above.</p>
+      <p class="note" data-store-note="android" hidden>Showing the wording for Android. On an iPhone or iPad, switch above.</p>
+      <p>These Terms apply to your use of Flag Master (the “App”). By using the App you agree to them.</p>
+      <h2 class="clause">1. What the App is</h2>
+      <p>Flag Master is a learning game about the flags, emblems and geography of the world. Apart from the optional online features — the rankings in section 5, anthem playback, rewarded ads and purchases — the App works offline.</p>
+      <h2 class="clause">2. No account</h2>
+      <p>The App has no sign-up and no login. Your progress is stored on your device.</p>
+      <h2 class="clause">3. Pro upgrade</h2>
+      <ul>
+        <li>Pro is a ONE-TIME purchase (a non-consumable in-app purchase). It is NOT a subscription and never renews.</li>
+        <li>Payment is charged to your <span class="pf" data-ios="Apple ID" data-android="Google account">Apple ID</span> when you confirm the purchase.</li>
+        <li>The price shown on the upgrade screen is the price your store charges in your currency.</li>
+        <li>Pro removes ads and makes every game mode free to enter.</li>
+        <li>You are not charged twice for the same <span class="pf" data-ios="Apple ID" data-android="Google account">Apple ID</span>. Use “Restore purchase” on the upgrade screen to bring Pro back on a new device or after reinstalling.</li>
+        <li>Refunds are handled by <span class="pf" data-ios="Apple" data-android="Google">Apple</span> under its own policies, not by the developer.</li>
+      </ul>
+      <h2 class="clause">4. Flag Points</h2>
+      <p>Flag Points are an in-app play currency. You earn them by playing or by choosing to watch a rewarded ad. They are NOT sold for money, have no cash value, and cannot be transferred, exchanged or refunded.</p>
+      <h2 class="clause">5. Rankings and nicknames</h2>
+      <p>Taking part in the rankings is optional. Do not choose a nickname that is offensive, impersonates another person, or contains personal information. Entries that break this rule, and scores obtained by tampering with the App, may be removed.</p>
+      <h2 class="clause">6. Content</h2>
+      <p>Country and region information is compiled from open data sources, credited in Settings → Credits. Flags, emblems and place names are shown for educational purposes and are not political statements. The data may contain errors; corrections are welcome at the address below.</p>
+      <h2 class="clause">7. Disclaimer</h2>
+      <p>The App is provided “as is” as a learning aid. To the extent permitted by law, the developer is not liable for damage arising from its use.</p>
+      <h2 class="clause">8. Contact</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Purchases made through the App Store are additionally governed by Apple’s Standard End User License Agreement:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Show every language</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ko" lang="ko" data-lang="ko">
+      <h1>이용약관</h1>
+      <div class="meta">
+        <p><strong>앱</strong>: 국기의 주인 · Flag Master</p>
+        <p><strong>번들 ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>지원 플랫폼</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>개발자</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>문의</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>최종 업데이트</strong>: 2026년 8월 27일</p>
+      </div>
+      <p class="note" data-store-note="ios">iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.</p>
+      <p class="note" data-store-note="android" hidden>Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.</p>
+      <p>이 약관은 «국기의 주인»(이하 «앱») 이용에 적용됩니다. 앱을 사용하시면 약관에 동의한 것으로 봅니다.</p>
+      <h2 class="clause">1. 앱 소개</h2>
+      <p>«국기의 주인»은 세계의 국기·상징·지리를 익히는 학습 게임입니다. 순위표(5항)·국가(國歌) 재생·보상형 광고·구매 같은 선택적 온라인 기능을 제외하면 앱은 오프라인에서 동작합니다.</p>
+      <h2 class="clause">2. 계정 없음</h2>
+      <p>앱에는 회원가입도 로그인도 없습니다. 학습 기록은 기기에 저장됩니다.</p>
+      <h2 class="clause">3. Pro 업그레이드</h2>
+      <ul>
+        <li>Pro 는 한 번만 결제하는 비소모성 인앱 구매입니다. 구독이 아니며 자동 갱신되지 않습니다.</li>
+        <li>결제 확정 시 <span class="pf" data-ios="Apple ID" data-android="Google 계정">Apple ID</span>에 청구됩니다.</li>
+        <li>업그레이드 화면에 표시되는 금액이 스토어가 해당 통화로 청구하는 실제 금액입니다.</li>
+        <li>Pro 는 광고를 없애고, 모든 게임 모드를 포인트 없이 입장하게 합니다.</li>
+        <li>같은 <span class="pf" data-ios="Apple ID" data-android="Google 계정">Apple ID</span>에 두 번 청구되지 않습니다. 기기를 바꾸거나 앱을 다시 설치했다면 업그레이드 화면의 «구매 복원»을 눌러 되찾으세요.</li>
+        <li>환불은 개발자가 아니라 <span class="pf" data-ios="Apple" data-android="Google">Apple</span> 의 정책에 따라 처리됩니다.</li>
+      </ul>
+      <h2 class="clause">4. 국기 포인트</h2>
+      <p>국기 포인트는 앱 안에서만 쓰는 플레이 재화입니다. 플레이하거나 사용자가 직접 선택해 보상형 광고를 볼 때 얻습니다. 현금으로 판매하지 않으며, 현금 가치가 없고, 양도·교환·환불되지 않습니다.</p>
+      <h2 class="clause">5. 순위표와 닉네임</h2>
+      <p>순위표 참여는 선택입니다. 모욕적이거나, 타인을 사칭하거나, 개인정보가 담긴 닉네임은 사용하지 마세요. 이를 어긴 기록과 앱을 변조해 얻은 점수는 삭제될 수 있습니다.</p>
+      <h2 class="clause">6. 콘텐츠</h2>
+      <p>국가·지역 정보는 공개 데이터를 정리한 것이며 출처는 설정 → 자료 출처에 밝혀 두었습니다. 국기·상징·지명은 학습 목적으로 표시하며 정치적 입장을 나타내지 않습니다. 오류가 있을 수 있으니 아래 주소로 알려 주시면 고맙겠습니다.</p>
+      <h2 class="clause">7. 면책</h2>
+      <p>앱은 학습 보조 도구로서 «있는 그대로» 제공됩니다. 법이 허용하는 범위에서 개발자는 앱 사용으로 생긴 손해에 책임지지 않습니다.</p>
+      <h2 class="clause">8. 문의</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">App Store 를 통한 구매에는 Apple 표준 사용자 라이선스 계약(EULA)이 함께 적용됩니다:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>모든 언어 보기</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ja" lang="ja" data-lang="ja">
+      <h1>利用規約</h1>
+      <div class="meta">
+        <p><strong>アプリ</strong>: 国旗マスター · Flag Master</p>
+        <p><strong>バンドルID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>対応プラットフォーム</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開発者</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>お問い合わせ先</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>最終更新日</strong>: 2026年8月27日</p>
+      </div>
+      <p class="note" data-store-note="ios">iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。</p>
+      <p class="note" data-store-note="android" hidden>Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。</p>
+      <p>本規約は「国旗マスター」（以下「本アプリ」）のご利用に適用されます。本アプリをご利用いただくことで本規約に同意したものとみなします。</p>
+      <h2 class="clause">1. 本アプリについて</h2>
+      <p>本アプリは世界の国旗・紋章・地理を学ぶ学習ゲームです。任意のオンライン機能（第5条のランキング、国歌の再生、リワード広告、購入）を除き、本アプリはオフラインで動作します。</p>
+      <h2 class="clause">2. アカウントなし</h2>
+      <p>本アプリに会員登録もログインもありません。学習記録はお使いの端末に保存されます。</p>
+      <h2 class="clause">3. Pro アップグレード</h2>
+      <ul>
+        <li>Pro は一度だけ支払う非消耗型アプリ内課金です。サブスクリプションではなく、自動更新はされません。</li>
+        <li>購入確定時に <span class="pf" data-ios="Apple ID" data-android="Google アカウント">Apple ID</span> へ請求されます。</li>
+        <li>アップグレード画面に表示される金額が、ストアがその通貨で請求する実際の金額です。</li>
+        <li>Pro は広告をなくし、すべてのゲームモードをポイントなしで遊べるようにします。</li>
+        <li>同じ <span class="pf" data-ios="Apple ID" data-android="Google アカウント">Apple ID</span> に二重請求されることはありません。機種変更や再インストール後はアップグレード画面の「購入を復元」をご利用ください。</li>
+        <li>返金は開発者ではなく <span class="pf" data-ios="Apple" data-android="Google">Apple</span> のポリシーに従って処理されます。</li>
+      </ul>
+      <h2 class="clause">4. 国旗ポイント</h2>
+      <p>国旗ポイントはアプリ内だけで使うプレイ用の通貨です。プレイするか、ご自身で選んでリワード広告を視聴すると獲得できます。現金で販売しておらず、現金価値はなく、譲渡・交換・返金はできません。</p>
+      <h2 class="clause">5. ランキングとニックネーム</h2>
+      <p>ランキングへの参加は任意です。侮辱的なもの、他人になりすますもの、個人情報を含むニックネームは使用しないでください。これに反する記録や、アプリを改変して得たスコアは削除されることがあります。</p>
+      <h2 class="clause">6. コンテンツ</h2>
+      <p>国・地域の情報はオープンデータをまとめたもので、出典は設定 → 出典に記載しています。国旗・紋章・地名は学習目的で表示するものであり、政治的立場を示すものではありません。誤りが含まれる可能性がありますので、下記の連絡先までお知らせください。</p>
+      <h2 class="clause">7. 免責</h2>
+      <p>本アプリは学習補助として「現状のまま」提供されます。法律が認める範囲において、開発者は本アプリの利用により生じた損害について責任を負いません。</p>
+      <h2 class="clause">8. お問い合わせ</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">App Store 経由の購入には、Apple の標準エンドユーザー使用許諾契約（EULA）も適用されます:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>すべての言語を表示</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="de" lang="de" data-lang="de">
+      <h1>Nutzungsbedingungen</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Flaggenmeister · Flag Master</p>
+        <p><strong>Bundle-ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plattformen</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Entwickler</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Zuletzt aktualisiert</strong>: 27. August 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.</p>
+      <p class="note" data-store-note="android" hidden>Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.</p>
+      <p>Diese Bedingungen gelten für Ihre Nutzung von Flaggenmeister (die „App“). Mit der Nutzung der App stimmen Sie ihnen zu.</p>
+      <h2 class="clause">1. Was die App ist</h2>
+      <p>Flaggenmeister ist ein Lernspiel über Flaggen, Wappen und Geografie der Welt. Abgesehen von den optionalen Online-Funktionen – den Ranglisten in Abschnitt 5, der Wiedergabe von Nationalhymnen, belohnten Videos und Käufen – funktioniert die App offline.</p>
+      <h2 class="clause">2. Kein Konto</h2>
+      <p>Die App hat keine Registrierung und keine Anmeldung. Ihr Fortschritt wird auf Ihrem Gerät gespeichert.</p>
+      <h2 class="clause">3. Pro-Upgrade</h2>
+      <ul>
+        <li>Pro ist ein EINMALIGER Kauf (ein nicht verbrauchbarer In-App-Kauf). Es ist KEIN Abonnement und verlängert sich nicht.</li>
+        <li>Die Zahlung wird bei Bestätigung des Kaufs Ihrem Store-Konto (<span class="pf" data-ios="Apple ID" data-android="Google-Konto">Apple ID</span>) belastet.</li>
+        <li>Der auf dem Upgrade-Bildschirm angezeigte Preis ist der Preis, den Ihr Store in Ihrer Währung berechnet.</li>
+        <li>Pro entfernt Werbung und macht alle Spielmodi ohne Punkte spielbar.</li>
+        <li>Für dasselbe Konto (<span class="pf" data-ios="Apple ID" data-android="Google-Konto">Apple ID</span>) wird kein zweites Mal abgerechnet. Nutzen Sie „Kauf wiederherstellen“ auf dem Upgrade-Bildschirm, um Pro auf einem neuen Gerät oder nach einer Neuinstallation zurückzuholen.</li>
+        <li>Erstattungen werden von <span class="pf" data-ios="Apple" data-android="Google">Apple</span> nach dessen eigenen Richtlinien abgewickelt, nicht durch den Entwickler.</li>
+      </ul>
+      <h2 class="clause">4. Flaggenpunkte</h2>
+      <p>Flaggenpunkte sind eine reine In-App-Spielwährung. Sie erhalten sie durch Spielen oder indem Sie sich freiwillig ein belohntes Video ansehen. Sie werden NICHT gegen Geld verkauft, haben keinen Barwert und können nicht übertragen, getauscht oder erstattet werden.</p>
+      <h2 class="clause">5. Ranglisten und Spitznamen</h2>
+      <p>Die Teilnahme an den Ranglisten ist freiwillig. Wählen Sie keinen Spitznamen, der beleidigend ist, sich als eine andere Person ausgibt oder personenbezogene Daten enthält. Einträge, die dagegen verstoßen, sowie durch Manipulation der App erzielte Punktzahlen können entfernt werden.</p>
+      <h2 class="clause">6. Inhalte</h2>
+      <p>Länder- und Regionsinformationen stammen aus offenen Datenquellen; die Nachweise finden Sie unter Einstellungen → Quellen. Flaggen, Wappen und Ortsnamen werden zu Lernzwecken gezeigt und stellen keine politische Aussage dar. Die Daten können Fehler enthalten; Korrekturen sind unter der unten genannten Adresse willkommen.</p>
+      <h2 class="clause">7. Haftungsausschluss</h2>
+      <p>Die App wird als Lernhilfe „wie besehen“ bereitgestellt. Soweit gesetzlich zulässig haftet der Entwickler nicht für Schäden, die aus ihrer Nutzung entstehen.</p>
+      <h2 class="clause">8. Kontakt</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Für Käufe über den App Store gilt zusätzlich Apples Standard-Endbenutzer-Lizenzvertrag:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Alle Sprachen anzeigen</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="fr" lang="fr" data-lang="fr">
+      <h1>Conditions d’utilisation</h1>
+      <div class="meta">
+        <p><strong>Application</strong> : Maître des Drapeaux · Flag Master</p>
+        <p><strong>Identifiant du bundle</strong> : com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plateformes</strong> : iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Développeur</strong> : 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong> : <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Dernière mise à jour</strong> : 27 août 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.</p>
+      <p class="note" data-store-note="android" hidden>Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.</p>
+      <p>Les présentes conditions s’appliquent à votre utilisation de Maître des Drapeaux (l’« Application »). En utilisant l’Application, vous les acceptez.</p>
+      <h2 class="clause">1. Présentation</h2>
+      <p>Maître des Drapeaux est un jeu d’apprentissage consacré aux drapeaux, aux emblèmes et à la géographie du monde. En dehors des fonctions en ligne facultatives — les classements décrits à l’article 5, la lecture des hymnes nationaux, les publicités récompensées et les achats — l’Application fonctionne hors ligne.</p>
+      <h2 class="clause">2. Aucun compte</h2>
+      <p>L’Application ne comporte ni inscription ni connexion. Votre progression est enregistrée sur votre appareil.</p>
+      <h2 class="clause">3. Passage à Pro</h2>
+      <ul>
+        <li>Pro est un achat UNIQUE (un achat intégré non consommable). Ce n’est PAS un abonnement et il ne se renouvelle jamais.</li>
+        <li>Le paiement est débité de votre <span class="pf" data-ios="Apple ID" data-android="compte Google">Apple ID</span> au moment de la confirmation de l’achat.</li>
+        <li>Le prix affiché sur l’écran de mise à niveau est celui que votre boutique facture dans votre devise.</li>
+        <li>Pro supprime les publicités et rend tous les modes de jeu gratuits d’accès.</li>
+        <li>Un même <span class="pf" data-ios="Apple ID" data-android="compte Google">Apple ID</span> n’est jamais débité deux fois. Utilisez « Restaurer l’achat » sur l’écran de mise à niveau pour retrouver Pro sur un nouvel appareil ou après une réinstallation.</li>
+        <li>Les remboursements sont gérés par <span class="pf" data-ios="Apple" data-android="Google">Apple</span> selon ses propres politiques, et non par le développeur.</li>
+      </ul>
+      <h2 class="clause">4. Points Drapeau</h2>
+      <p>Les Points Drapeau sont une monnaie de jeu utilisable uniquement dans l’Application. Vous les obtenez en jouant ou en choisissant de regarder une publicité récompensée. Ils ne sont PAS vendus contre de l’argent, n’ont aucune valeur monétaire et ne peuvent être ni transférés, ni échangés, ni remboursés.</p>
+      <h2 class="clause">5. Classements et pseudonymes</h2>
+      <p>La participation aux classements est facultative. Ne choisissez pas un pseudonyme injurieux, usurpant l’identité d’autrui ou contenant des données personnelles. Les entrées contrevenant à cette règle, ainsi que les scores obtenus en altérant l’Application, peuvent être supprimés.</p>
+      <h2 class="clause">6. Contenu</h2>
+      <p>Les informations sur les pays et régions proviennent de sources de données ouvertes, créditées dans Réglages → Sources. Les drapeaux, emblèmes et toponymes sont présentés à des fins pédagogiques et ne constituent pas des prises de position politiques. Les données peuvent comporter des erreurs ; les corrections sont bienvenues à l’adresse ci-dessous.</p>
+      <h2 class="clause">7. Avertissement</h2>
+      <p>L’Application est fournie « en l’état » comme aide à l’apprentissage. Dans les limites permises par la loi, le développeur n’est pas responsable des dommages résultant de son utilisation.</p>
+      <h2 class="clause">8. Contact</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Les achats effectués via l’App Store sont en outre régis par le contrat de licence utilisateur final standard d’Apple :<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Afficher toutes les langues</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="it" lang="it" data-lang="it">
+      <h1>Termini d’uso</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Maestro delle Bandiere · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Piattaforme</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Sviluppatore</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contatti</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Ultimo aggiornamento</strong>: 27 agosto 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.</p>
+      <p class="note" data-store-note="android" hidden>Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.</p>
+      <p>I presenti Termini si applicano all’uso di Maestro delle Bandiere (l’«App»). Usando l’App li accetti.</p>
+      <h2 class="clause">1. Che cos’è l’App</h2>
+      <p>Maestro delle Bandiere è un gioco didattico su bandiere, emblemi e geografia del mondo. A parte le funzioni online facoltative — le classifiche del punto 5, la riproduzione degli inni, gli annunci con premio e gli acquisti — l’App funziona offline.</p>
+      <h2 class="clause">2. Nessun account</h2>
+      <p>L’App non prevede registrazione né accesso. I tuoi progressi restano sul tuo dispositivo.</p>
+      <h2 class="clause">3. Aggiornamento a Pro</h2>
+      <ul>
+        <li>Pro è un acquisto UNA TANTUM (acquisto in-app non consumabile). NON è un abbonamento e non si rinnova mai.</li>
+        <li>Il pagamento viene addebitato sul tuo <span class="pf" data-ios="Apple ID" data-android="account Google">Apple ID</span> alla conferma dell’acquisto.</li>
+        <li>Il prezzo mostrato nella schermata di upgrade è quello che il tuo store addebita nella tua valuta.</li>
+        <li>Pro rimuove la pubblicità e rende gratuito l’accesso a tutte le modalità di gioco.</li>
+        <li>Lo stesso <span class="pf" data-ios="Apple ID" data-android="account Google">Apple ID</span> non viene mai addebitato due volte. Usa «Ripristina acquisto» nella schermata di upgrade per riavere Pro su un nuovo dispositivo o dopo una reinstallazione.</li>
+        <li>I rimborsi sono gestiti da <span class="pf" data-ios="Apple" data-android="Google">Apple</span> secondo le sue politiche, non dallo sviluppatore.</li>
+      </ul>
+      <h2 class="clause">4. Punti Bandiera</h2>
+      <p>I Punti Bandiera sono una valuta di gioco utilizzabile solo nell’App. Si ottengono giocando o scegliendo di guardare un annuncio con premio. NON sono venduti in cambio di denaro, non hanno valore monetario e non possono essere trasferiti, scambiati o rimborsati.</p>
+      <h2 class="clause">5. Classifiche e soprannomi</h2>
+      <p>La partecipazione alle classifiche è facoltativa. Non scegliere un soprannome offensivo, che finga di essere un’altra persona o che contenga dati personali. Le voci che violano questa regola e i punteggi ottenuti alterando l’App possono essere rimossi.</p>
+      <h2 class="clause">6. Contenuti</h2>
+      <p>Le informazioni su Paesi e regioni provengono da fonti di dati aperte, indicate in Impostazioni → Fonti. Bandiere, emblemi e toponimi sono mostrati a fini didattici e non costituiscono prese di posizione politiche. I dati possono contenere errori; le correzioni sono benvenute all’indirizzo qui sotto.</p>
+      <h2 class="clause">7. Esclusione di responsabilità</h2>
+      <p>L’App è fornita «così com’è» come ausilio all’apprendimento. Nei limiti consentiti dalla legge, lo sviluppatore non è responsabile dei danni derivanti dal suo utilizzo.</p>
+      <h2 class="clause">8. Contatti</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Gli acquisti effettuati tramite l’App Store sono inoltre regolati dal Contratto di licenza con l’utente finale standard di Apple:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Mostra tutte le lingue</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">
+      <h1>使用條款</h1>
+      <div class="meta">
+        <p><strong>應用程式</strong>： 國旗大師 · Flag Master</p>
+        <p><strong>Bundle ID</strong>： com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>支援平台</strong>： iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開發者</strong>： 임한수 (Hansoo Lim)</p>
+        <p><strong>聯絡方式</strong>： <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>最後更新</strong>： 2026年8月27日</p>
+      </div>
+      <p class="note" data-store-note="ios">目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。</p>
+      <p class="note" data-store-note="android" hidden>目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。</p>
+      <p>本條款適用於您對「國旗大師」（以下稱「本應用程式」）的使用。使用本應用程式即表示您同意本條款。</p>
+      <h2 class="clause">1. 關於本應用程式</h2>
+      <p>本應用程式是學習世界各國國旗、徽章與地理的學習遊戲。除選用的線上功能（第5條的排行榜、國歌播放、獎勵廣告與購買）外，本應用程式皆可離線使用。</p>
+      <h2 class="clause">2. 無需帳號</h2>
+      <p>本應用程式沒有註冊，也沒有登入。您的學習紀錄儲存在您的裝置上。</p>
+      <h2 class="clause">3. Pro 升級</h2>
+      <ul>
+        <li>Pro 是一次性付費的非消耗型應用程式內購買。它不是訂閱，也不會自動續訂。</li>
+        <li>確認購買時將向您的<span class="pf" data-ios="Apple ID" data-android="Google 帳戶">Apple ID</span>收費。</li>
+        <li>升級畫面上顯示的金額，即為商店以您的幣別實際收取的金額。</li>
+        <li>Pro 會移除廣告，並讓所有遊戲模式免點數進入。</li>
+        <li>同一個<span class="pf" data-ios="Apple ID" data-android="Google 帳戶">Apple ID</span>不會被重複收費。更換裝置或重新安裝後，請在升級畫面點選「回復購買」。</li>
+        <li>退款依<span class="pf" data-ios="Apple" data-android="Google">Apple</span>自身的政策處理，而非由開發者處理。</li>
+      </ul>
+      <h2 class="clause">4. 國旗點數</h2>
+      <p>國旗點數是僅限應用程式內使用的遊玩貨幣。您可透過遊玩，或自行選擇觀看獎勵廣告來取得。點數不對外販售、不具現金價值，且無法轉讓、兌換或退款。</p>
+      <h2 class="clause">5. 排行榜與暱稱</h2>
+      <p>參加排行榜是選擇性的。請勿使用具冒犯性、假冒他人或含有個人資訊的暱稱。違反此規定的紀錄，以及透過竄改應用程式取得的分數，可能會被移除。</p>
+      <h2 class="clause">6. 內容</h2>
+      <p>國家與地區資訊整理自開放資料，來源列於設定 → 資料來源。國旗、徽章與地名僅供學習用途顯示，不代表任何政治立場。資料可能有誤，歡迎透過下方聯絡方式指正。</p>
+      <h2 class="clause">7. 免責聲明</h2>
+      <p>本應用程式以「現狀」提供，作為學習輔助工具。在法律允許的範圍內，開發者不對因使用本應用程式而產生的損害負責。</p>
+      <h2 class="clause">8. 聯絡方式</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">透過 App Store 進行的購買另適用 Apple 標準使用者授權合約（EULA）：<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>顯示所有語言</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="es" lang="es" data-lang="es">
+      <h1>Términos de uso</h1>
+      <div class="meta">
+        <p><strong>Aplicación</strong>: Maestro de Banderas · Flag Master</p>
+        <p><strong>ID del paquete</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desarrollador</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contacto</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Última actualización</strong>: 27 de agosto de 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.</p>
+      <p class="note" data-store-note="android" hidden>Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.</p>
+      <p>Estos Términos se aplican a tu uso de Maestro de Banderas (la «App»). Al usar la App los aceptas.</p>
+      <h2 class="clause">1. Qué es la App</h2>
+      <p>Maestro de Banderas es un juego de aprendizaje sobre banderas, emblemas y geografía del mundo. Salvo las funciones en línea opcionales —las clasificaciones del apartado 5, la reproducción de himnos, los anuncios con recompensa y las compras—, la App funciona sin conexión.</p>
+      <h2 class="clause">2. Sin cuenta</h2>
+      <p>La App no tiene registro ni inicio de sesión. Tu progreso se guarda en tu dispositivo.</p>
+      <h2 class="clause">3. Mejora a Pro</h2>
+      <ul>
+        <li>Pro es una compra ÚNICA (una compra dentro de la app no consumible). NO es una suscripción y nunca se renueva.</li>
+        <li>El pago se carga a tu <span class="pf" data-ios="Apple ID" data-android="cuenta de Google">Apple ID</span> al confirmar la compra.</li>
+        <li>El precio que aparece en la pantalla de mejora es el que tu tienda cobra en tu moneda.</li>
+        <li>Pro elimina los anuncios y hace gratuito el acceso a todos los modos de juego.</li>
+        <li>Nunca se cobra dos veces a tu <span class="pf" data-ios="Apple ID" data-android="cuenta de Google">Apple ID</span>. Usa «Restaurar compra» en la pantalla de mejora para recuperar Pro en un dispositivo nuevo o tras reinstalar.</li>
+        <li>Los reembolsos los gestiona <span class="pf" data-ios="Apple" data-android="Google">Apple</span> según sus propias políticas, no el desarrollador.</li>
+      </ul>
+      <h2 class="clause">4. Puntos de Bandera</h2>
+      <p>Los Puntos de Bandera son una moneda de juego que solo sirve dentro de la App. Se obtienen jugando o eligiendo ver un anuncio con recompensa. NO se venden por dinero, no tienen valor monetario y no pueden transferirse, canjearse ni reembolsarse.</p>
+      <h2 class="clause">5. Clasificaciones y apodos</h2>
+      <p>Participar en las clasificaciones es opcional. No elijas un apodo ofensivo, que suplante a otra persona o que contenga datos personales. Las entradas que incumplan esta norma y las puntuaciones obtenidas alterando la App pueden eliminarse.</p>
+      <h2 class="clause">6. Contenido</h2>
+      <p>La información sobre países y regiones procede de fuentes de datos abiertas, acreditadas en Ajustes → Fuentes. Las banderas, los emblemas y los topónimos se muestran con fines educativos y no constituyen posturas políticas. Los datos pueden contener errores; agradecemos las correcciones en la dirección indicada abajo.</p>
+      <h2 class="clause">7. Exención de responsabilidad</h2>
+      <p>La App se ofrece «tal cual» como ayuda para el aprendizaje. En la medida en que lo permita la ley, el desarrollador no se hace responsable de los daños derivados de su uso.</p>
+      <h2 class="clause">8. Contacto</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Las compras realizadas a través del App Store se rigen además por el Contrato de licencia de usuario final estándar de Apple:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos los idiomas</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="pt" lang="pt" data-lang="pt">
+      <h1>Termos de uso</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Mestre das Bandeiras · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desenvolvedor</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contato</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Última atualização</strong>: 27 de agosto de 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.</p>
+      <p class="note" data-store-note="android" hidden>Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.</p>
+      <p>Estes Termos aplicam-se ao seu uso do Mestre das Bandeiras (o «App»). Ao usar o App, você os aceita.</p>
+      <h2 class="clause">1. O que é o App</h2>
+      <p>Mestre das Bandeiras é um jogo de aprendizagem sobre bandeiras, emblemas e geografia do mundo. Exceto os recursos on-line opcionais — os rankings da seção 5, a reprodução de hinos, os anúncios premiados e as compras —, o App funciona off-line.</p>
+      <h2 class="clause">2. Sem conta</h2>
+      <p>O App não tem cadastro nem login. Seu progresso fica salvo no seu dispositivo.</p>
+      <h2 class="clause">3. Upgrade para Pro</h2>
+      <ul>
+        <li>Pro é uma compra ÚNICA (compra no app não consumível). NÃO é uma assinatura e nunca é renovada.</li>
+        <li>O pagamento é cobrado na sua conta (<span class="pf" data-ios="Apple ID" data-android="conta Google">Apple ID</span>) ao confirmar a compra.</li>
+        <li>O preço exibido na tela de upgrade é o que a sua loja cobra na sua moeda.</li>
+        <li>O Pro remove os anúncios e torna gratuito o acesso a todos os modos de jogo.</li>
+        <li>A mesma conta (<span class="pf" data-ios="Apple ID" data-android="conta Google">Apple ID</span>) nunca é cobrada duas vezes. Use «Restaurar compra» na tela de upgrade para recuperar o Pro em um novo aparelho ou após reinstalar.</li>
+        <li>Reembolsos são tratados pela operadora da loja (<span class="pf" data-ios="Apple" data-android="Google">Apple</span>) segundo suas próprias políticas, não pelo desenvolvedor.</li>
+      </ul>
+      <h2 class="clause">4. Pontos de Bandeira</h2>
+      <p>Os Pontos de Bandeira são uma moeda de jogo usada apenas dentro do App. Você os ganha jogando ou escolhendo assistir a um anúncio premiado. NÃO são vendidos por dinheiro, não têm valor monetário e não podem ser transferidos, trocados nem reembolsados.</p>
+      <h2 class="clause">5. Rankings e apelidos</h2>
+      <p>Participar dos rankings é opcional. Não escolha um apelido ofensivo, que se passe por outra pessoa ou que contenha dados pessoais. Entradas que violem esta regra e pontuações obtidas alterando o App podem ser removidas.</p>
+      <h2 class="clause">6. Conteúdo</h2>
+      <p>As informações sobre países e regiões vêm de fontes de dados abertas, creditadas em Ajustes → Fontes. Bandeiras, emblemas e topônimos são exibidos com finalidade educativa e não constituem posições políticas. Os dados podem conter erros; correções são bem-vindas no endereço abaixo.</p>
+      <h2 class="clause">7. Isenção de responsabilidade</h2>
+      <p>O App é fornecido «no estado em que se encontra» como auxílio ao aprendizado. Na medida permitida por lei, o desenvolvedor não se responsabiliza por danos decorrentes do seu uso.</p>
+      <h2 class="clause">8. Contato</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">As compras feitas pela App Store também são regidas pelo Contrato de Licença de Usuário Final padrão da Apple:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos os idiomas</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ar" lang="ar" data-lang="ar" dir="rtl">
+      <h1>شروط الاستخدام</h1>
+      <div class="meta">
+        <p><strong>التطبيق</strong>: سيد الأعلام · Flag Master</p>
+        <p><strong>معرّف الحزمة</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>المنصات</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>المطوّر</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>التواصل</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>آخر تحديث</strong>: 27 أغسطس 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.</p>
+      <p class="note" data-store-note="android" hidden>النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.</p>
+      <p>تنطبق هذه الشروط على استخدامك لتطبيق «سيد الأعلام» (ويُشار إليه بـ«التطبيق»). باستخدامك للتطبيق فإنك توافق عليها.</p>
+      <h2 class="clause">1. ما هو التطبيق</h2>
+      <p>«سيد الأعلام» لعبة تعليمية عن أعلام العالم وشعاراته وجغرافيته. باستثناء الميزات الاختيارية عبر الإنترنت — قوائم المتصدرين المذكورة في البند 5، وتشغيل النشيد الوطني، وإعلانات المكافأة، والمشتريات — يعمل التطبيق دون اتصال بالإنترنت.</p>
+      <h2 class="clause">2. بلا حساب</h2>
+      <p>لا يتضمن التطبيق تسجيلاً ولا تسجيل دخول. يُحفظ تقدّمك على جهازك.</p>
+      <h2 class="clause">3. الترقية إلى Pro</h2>
+      <ul>
+        <li>Pro عملية شراء لمرة واحدة (شراء داخل التطبيق غير قابل للاستهلاك). وهي ليست اشتراكاً ولا تتجدد أبداً.</li>
+        <li>يُخصم المبلغ من <span class="pf" data-ios="معرّف Apple" data-android="حساب Google">معرّف Apple</span> عند تأكيد الشراء.</li>
+        <li>السعر المعروض في شاشة الترقية هو ما يتقاضاه متجرك بعملتك.</li>
+        <li>تزيل Pro الإعلانات وتجعل الدخول إلى جميع أنماط اللعب مجانياً.</li>
+        <li>لا يُخصم المبلغ مرتين من <span class="pf" data-ios="معرّف Apple" data-android="حساب Google">معرّف Apple</span> نفسه. استخدم «استعادة الشراء» في شاشة الترقية لاستعادة Pro على جهاز جديد أو بعد إعادة التثبيت.</li>
+        <li>تتولى <span class="pf" data-ios="Apple" data-android="Google">Apple</span> معالجة طلبات الاسترداد وفق سياساتها، لا المطوّر.</li>
+      </ul>
+      <h2 class="clause">4. نقاط العلم</h2>
+      <p>نقاط العلم عملة لعب تُستخدم داخل التطبيق فقط. تحصل عليها باللعب أو باختيارك مشاهدة إعلان مكافأة. وهي لا تُباع مقابل المال، وليست لها قيمة نقدية، ولا يمكن نقلها أو مبادلتها أو استردادها.</p>
+      <h2 class="clause">5. قوائم المتصدرين والألقاب</h2>
+      <p>المشاركة في قوائم المتصدرين اختيارية. لا تختر لقباً مسيئاً أو ينتحل شخصية غيرك أو يتضمن بيانات شخصية. قد تُحذف المدخلات المخالفة لهذه القاعدة والنتائج التي يتم الحصول عليها بالعبث بالتطبيق.</p>
+      <h2 class="clause">6. المحتوى</h2>
+      <p>جُمعت معلومات الدول والمناطق من مصادر بيانات مفتوحة، وهي موثّقة في الإعدادات ← المصادر. تُعرض الأعلام والشعارات وأسماء الأماكن لأغراض تعليمية ولا تمثل مواقف سياسية. قد تحتوي البيانات على أخطاء، ونرحّب بالتصحيحات على العنوان أدناه.</p>
+      <h2 class="clause">7. إخلاء المسؤولية</h2>
+      <p>يُقدَّم التطبيق «كما هو» كأداة مساعدة للتعلّم. وفي حدود ما يسمح به القانون، لا يتحمل المطوّر المسؤولية عن الأضرار الناشئة عن استخدامه.</p>
+      <h2 class="clause">8. التواصل</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">تخضع المشتريات التي تتم عبر App Store أيضاً لاتفاقية ترخيص المستخدم النهائي القياسية من Apple:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>عرض جميع اللغات</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="id" lang="id" data-lang="id">
+      <h1>Ketentuan Penggunaan</h1>
+      <div class="meta">
+        <p><strong>Aplikasi</strong>: Master Bendera · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platform</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Pengembang</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontak</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Pembaruan terakhir</strong>: 27 Agustus 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.</p>
+      <p class="note" data-store-note="android" hidden>Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.</p>
+      <p>Ketentuan ini berlaku untuk penggunaan Anda atas Master Bendera (“Aplikasi”). Dengan menggunakan Aplikasi, Anda menyetujuinya.</p>
+      <h2 class="clause">1. Tentang Aplikasi</h2>
+      <p>Master Bendera adalah gim belajar tentang bendera, lambang, dan geografi dunia. Selain fitur daring opsional — papan peringkat pada bagian 5, pemutaran lagu kebangsaan, iklan berhadiah, dan pembelian — Aplikasi berjalan luring.</p>
+      <h2 class="clause">2. Tanpa akun</h2>
+      <p>Aplikasi tidak memiliki pendaftaran maupun proses masuk. Kemajuan Anda disimpan di perangkat Anda.</p>
+      <h2 class="clause">3. Peningkatan ke Pro</h2>
+      <ul>
+        <li>Pro adalah pembelian SATU KALI (pembelian dalam aplikasi non-konsumsi). Ini BUKAN langganan dan tidak pernah diperpanjang.</li>
+        <li>Pembayaran dibebankan ke <span class="pf" data-ios="Apple ID" data-android="akun Google">Apple ID</span> Anda saat pembelian dikonfirmasi.</li>
+        <li>Harga yang tampil di layar peningkatan adalah harga yang ditagihkan toko Anda dalam mata uang Anda.</li>
+        <li>Pro menghapus iklan dan membuat semua mode permainan gratis dimasuki.</li>
+        <li>Tidak pernah ada tagihan dua kali untuk <span class="pf" data-ios="Apple ID" data-android="akun Google">Apple ID</span> yang sama. Gunakan “Pulihkan pembelian” di layar peningkatan untuk mengembalikan Pro di perangkat baru atau setelah instal ulang.</li>
+        <li>Pengembalian dana ditangani oleh <span class="pf" data-ios="Apple" data-android="Google">Apple</span> sesuai kebijakannya sendiri, bukan oleh pengembang.</li>
+      </ul>
+      <h2 class="clause">4. Poin Bendera</h2>
+      <p>Poin Bendera adalah mata uang permainan yang hanya berlaku di dalam Aplikasi. Anda memperolehnya dengan bermain atau dengan memilih menonton iklan berhadiah. Poin TIDAK dijual dengan uang, tidak memiliki nilai tunai, serta tidak dapat dipindahtangankan, ditukar, atau dikembalikan.</p>
+      <h2 class="clause">5. Papan peringkat dan nama panggilan</h2>
+      <p>Ikut serta dalam papan peringkat bersifat opsional. Jangan memilih nama panggilan yang menghina, menyamar sebagai orang lain, atau memuat data pribadi. Entri yang melanggar aturan ini, serta skor yang diperoleh dengan mengubah Aplikasi, dapat dihapus.</p>
+      <h2 class="clause">6. Konten</h2>
+      <p>Informasi negara dan wilayah dihimpun dari sumber data terbuka yang dicantumkan di Pengaturan → Sumber. Bendera, lambang, dan nama tempat ditampilkan untuk tujuan pendidikan dan bukan pernyataan politik. Data dapat memuat kekeliruan; koreksi kami terima di alamat di bawah.</p>
+      <h2 class="clause">7. Penafian</h2>
+      <p>Aplikasi disediakan “apa adanya” sebagai alat bantu belajar. Sejauh diizinkan hukum, pengembang tidak bertanggung jawab atas kerugian yang timbul dari penggunaannya.</p>
+      <h2 class="clause">8. Kontak</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Pembelian melalui App Store juga tunduk pada Perjanjian Lisensi Pengguna Akhir Standar Apple:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Tampilkan semua bahasa</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="vi" lang="vi" data-lang="vi">
+      <h1>Điều khoản sử dụng</h1>
+      <div class="meta">
+        <p><strong>Ứng dụng</strong>: Bậc Thầy Quốc Kỳ · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Nền tảng</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Nhà phát triển</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Liên hệ</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Cập nhật lần cuối</strong>: 27 tháng 8 năm 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.</p>
+      <p class="note" data-store-note="android" hidden>Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.</p>
+      <p>Các Điều khoản này áp dụng cho việc bạn sử dụng Bậc Thầy Quốc Kỳ (“Ứng dụng”). Khi sử dụng Ứng dụng, bạn đồng ý với chúng.</p>
+      <h2 class="clause">1. Ứng dụng là gì</h2>
+      <p>Bậc Thầy Quốc Kỳ là trò chơi học tập về quốc kỳ, huy hiệu và địa lý thế giới. Ngoài các tính năng trực tuyến tùy chọn — bảng xếp hạng nêu ở mục 5, phát quốc ca, quảng cáo có thưởng và giao dịch mua — Ứng dụng hoạt động ngoại tuyến.</p>
+      <h2 class="clause">2. Không cần tài khoản</h2>
+      <p>Ứng dụng không có đăng ký và không có đăng nhập. Tiến độ của bạn được lưu trên thiết bị của bạn.</p>
+      <h2 class="clause">3. Nâng cấp Pro</h2>
+      <ul>
+        <li>Pro là khoản mua MỘT LẦN (mua trong ứng dụng loại không tiêu hao). Đây KHÔNG phải gói thuê bao và không bao giờ tự gia hạn.</li>
+        <li>Khoản thanh toán được tính vào <span class="pf" data-ios="Apple ID" data-android="tài khoản Google">Apple ID</span> của bạn khi bạn xác nhận mua.</li>
+        <li>Giá hiển thị trên màn hình nâng cấp chính là mức cửa hàng thu theo đơn vị tiền tệ của bạn.</li>
+        <li>Pro loại bỏ quảng cáo và cho vào mọi chế độ chơi miễn phí.</li>
+        <li>Cùng một <span class="pf" data-ios="Apple ID" data-android="tài khoản Google">Apple ID</span> sẽ không bị tính phí hai lần. Hãy dùng “Khôi phục giao dịch” trên màn hình nâng cấp để lấy lại Pro trên máy mới hoặc sau khi cài lại.</li>
+        <li>Việc hoàn tiền do <span class="pf" data-ios="Apple" data-android="Google">Apple</span> xử lý theo chính sách riêng của họ, không phải do nhà phát triển.</li>
+      </ul>
+      <h2 class="clause">4. Điểm Quốc Kỳ</h2>
+      <p>Điểm Quốc Kỳ là loại tiền trong trò chơi, chỉ dùng bên trong Ứng dụng. Bạn nhận được khi chơi hoặc khi tự chọn xem một quảng cáo có thưởng. Điểm KHÔNG được bán lấy tiền, không có giá trị quy đổi tiền mặt, và không thể chuyển nhượng, trao đổi hay hoàn lại.</p>
+      <h2 class="clause">5. Bảng xếp hạng và biệt danh</h2>
+      <p>Tham gia bảng xếp hạng là tùy chọn. Đừng chọn biệt danh xúc phạm, mạo danh người khác hoặc chứa thông tin cá nhân. Các mục vi phạm quy tắc này, cũng như điểm số đạt được bằng cách can thiệp vào Ứng dụng, có thể bị xóa.</p>
+      <h2 class="clause">6. Nội dung</h2>
+      <p>Thông tin về quốc gia và khu vực được tổng hợp từ các nguồn dữ liệu mở, ghi rõ trong Cài đặt → Nguồn dữ liệu. Quốc kỳ, huy hiệu và địa danh được hiển thị vì mục đích giáo dục và không thể hiện lập trường chính trị. Dữ liệu có thể có sai sót; rất mong nhận được góp ý tại địa chỉ bên dưới.</p>
+      <h2 class="clause">7. Miễn trừ trách nhiệm</h2>
+      <p>Ứng dụng được cung cấp “nguyên trạng” như một công cụ hỗ trợ học tập. Trong phạm vi pháp luật cho phép, nhà phát triển không chịu trách nhiệm về thiệt hại phát sinh từ việc sử dụng.</p>
+      <h2 class="clause">8. Liên hệ</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Các giao dịch mua qua App Store còn chịu sự điều chỉnh của Thỏa thuận Cấp phép Người dùng cuối Tiêu chuẩn của Apple:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Hiện tất cả ngôn ngữ</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="tr" lang="tr" data-lang="tr">
+      <h1>Kullanım Koşulları</h1>
+      <div class="meta">
+        <p><strong>Uygulama</strong>: Bayrak Ustası · Flag Master</p>
+        <p><strong>Paket kimliği</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformlar</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Geliştirici</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>İletişim</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Son güncelleme</strong>: 27 Ağustos 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.</p>
+      <p class="note" data-store-note="android" hidden>Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.</p>
+      <p>Bu Koşullar, Bayrak Ustası’nı (“Uygulama”) kullanımınız için geçerlidir. Uygulamayı kullanarak bunları kabul edersiniz.</p>
+      <h2 class="clause">1. Uygulama nedir</h2>
+      <p>Bayrak Ustası; dünyanın bayrakları, armaları ve coğrafyası üzerine bir öğrenme oyunudur. İsteğe bağlı çevrimiçi özellikler — 5. bölümdeki sıralamalar, ulusal marş çalma, ödüllü reklamlar ve satın alımlar — dışında Uygulama çevrimdışı çalışır.</p>
+      <h2 class="clause">2. Hesap yok</h2>
+      <p>Uygulamada kayıt da giriş de yoktur. İlerlemeniz cihazınızda saklanır.</p>
+      <h2 class="clause">3. Pro yükseltmesi</h2>
+      <ul>
+        <li>Pro TEK SEFERLİK bir satın alımdır (tüketilemeyen uygulama içi satın alma). Abonelik DEĞİLDİR ve asla yenilenmez.</li>
+        <li>Ödeme, satın alımı onayladığınızda <span class="pf" data-ios="Apple ID" data-android="Google">Apple ID</span> hesabınıza yansıtılır.</li>
+        <li>Yükseltme ekranında görünen fiyat, mağazanızın kendi para biriminizde tahsil ettiği fiyattır.</li>
+        <li>Pro reklamları kaldırır ve tüm oyun modlarına girişi ücretsiz yapar.</li>
+        <li>Aynı <span class="pf" data-ios="Apple ID" data-android="Google">Apple ID</span> hesabından asla iki kez ücret alınmaz. Yeni bir cihazda ya da yeniden kurulumdan sonra Pro’yu geri getirmek için yükseltme ekranındaki “Satın alımı geri yükle” seçeneğini kullanın.</li>
+        <li>İadeler geliştirici tarafından değil, <span class="pf" data-ios="Apple" data-android="Google">Apple</span> tarafından kendi politikalarına göre yürütülür.</li>
+      </ul>
+      <h2 class="clause">4. Bayrak Puanı</h2>
+      <p>Bayrak Puanı, yalnızca Uygulama içinde kullanılan bir oyun para birimidir. Oynayarak ya da ödüllü bir reklamı izlemeyi kendiniz seçerek kazanırsınız. Para karşılığı SATILMAZ, nakit değeri yoktur; devredilemez, takas edilemez ve iade edilemez.</p>
+      <h2 class="clause">5. Sıralamalar ve takma adlar</h2>
+      <p>Sıralamalara katılmak isteğe bağlıdır. Saldırgan, başkasının kimliğine bürünen ya da kişisel bilgi içeren bir takma ad seçmeyin. Bu kurala aykırı kayıtlar ve Uygulama kurcalanarak elde edilen puanlar kaldırılabilir.</p>
+      <h2 class="clause">6. İçerik</h2>
+      <p>Ülke ve bölge bilgileri açık veri kaynaklarından derlenmiştir; kaynaklar Ayarlar → Kaynaklar bölümünde belirtilir. Bayraklar, armalar ve yer adları eğitim amacıyla gösterilir ve siyasi bir tutum ifade etmez. Veriler hata içerebilir; düzeltmeleriniz için aşağıdaki adres açıktır.</p>
+      <h2 class="clause">7. Sorumluluk reddi</h2>
+      <p>Uygulama, bir öğrenme yardımcısı olarak “olduğu gibi” sunulur. Yasaların izin verdiği ölçüde geliştirici, kullanımından doğan zararlardan sorumlu değildir.</p>
+      <h2 class="clause">8. İletişim</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">App Store üzerinden yapılan satın alımlar ayrıca Apple’ın Standart Son Kullanıcı Lisans Sözleşmesi’ne tabidir:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Bütün dilleri göster</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="pl" lang="pl" data-lang="pl">
+      <h1>Warunki korzystania</h1>
+      <div class="meta">
+        <p><strong>Aplikacja</strong>: Mistrz Flag · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformy</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Deweloper</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Ostatnia aktualizacja</strong>: 27 sierpnia 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.</p>
+      <p class="note" data-store-note="android" hidden>Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.</p>
+      <p>Niniejsze Warunki dotyczą korzystania z aplikacji Mistrz Flag („Aplikacja”). Korzystając z Aplikacji, akceptujesz je.</p>
+      <h2 class="clause">1. Czym jest Aplikacja</h2>
+      <p>Mistrz Flag to gra edukacyjna o flagach, herbach i geografii świata. Poza opcjonalnymi funkcjami sieciowymi — rankingami z punktu 5, odtwarzaniem hymnów, reklamami z nagrodą i zakupami — Aplikacja działa offline.</p>
+      <h2 class="clause">2. Brak konta</h2>
+      <p>Aplikacja nie ma rejestracji ani logowania. Twoje postępy są zapisywane na Twoim urządzeniu.</p>
+      <h2 class="clause">3. Ulepszenie do Pro</h2>
+      <ul>
+        <li>Pro to zakup JEDNORAZOWY (niekonsumowalny zakup w aplikacji). NIE jest to subskrypcja i nigdy się nie odnawia.</li>
+        <li>Płatność jest pobierana z Twojego <span class="pf" data-ios="Apple ID" data-android="konta Google">Apple ID</span> w chwili potwierdzenia zakupu.</li>
+        <li>Cena widoczna na ekranie ulepszenia to cena pobierana przez Twój sklep w Twojej walucie.</li>
+        <li>Pro usuwa reklamy i udostępnia wszystkie tryby gry bez opłat punktowych.</li>
+        <li>Z tego samego <span class="pf" data-ios="Apple ID" data-android="konta Google">Apple ID</span> opłata nigdy nie zostanie pobrana dwa razy. Aby odzyskać Pro na nowym urządzeniu lub po ponownej instalacji, użyj przycisku „Przywróć zakup” na ekranie ulepszenia.</li>
+        <li>Zwroty rozpatruje <span class="pf" data-ios="Apple" data-android="Google">Apple</span> zgodnie z własnymi zasadami, a nie deweloper.</li>
+      </ul>
+      <h2 class="clause">4. Punkty Flagowe</h2>
+      <p>Punkty Flagowe to waluta rozgrywki używana wyłącznie w Aplikacji. Zdobywasz je, grając lub decydując się obejrzeć reklamę z nagrodą. NIE są sprzedawane za pieniądze, nie mają wartości pieniężnej i nie podlegają przekazaniu, wymianie ani zwrotowi.</p>
+      <h2 class="clause">5. Rankingi i pseudonimy</h2>
+      <p>Udział w rankingach jest dobrowolny. Nie wybieraj pseudonimu obraźliwego, podszywającego się pod inną osobę ani zawierającego dane osobowe. Wpisy naruszające tę zasadę oraz wyniki uzyskane przez ingerencję w Aplikację mogą zostać usunięte.</p>
+      <h2 class="clause">6. Treści</h2>
+      <p>Informacje o krajach i regionach pochodzą z otwartych źródeł danych, wskazanych w Ustawienia → Źródła. Flagi, herby i nazwy miejsc pokazywane są w celach edukacyjnych i nie stanowią stanowiska politycznego. Dane mogą zawierać błędy; poprawki mile widziane pod adresem poniżej.</p>
+      <h2 class="clause">7. Zastrzeżenie</h2>
+      <p>Aplikacja jest udostępniana „w stanie, w jakim jest”, jako pomoc w nauce. W zakresie dozwolonym przez prawo deweloper nie odpowiada za szkody wynikłe z korzystania z niej.</p>
+      <h2 class="clause">8. Kontakt</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p data-store-note="ios">Zakupy dokonane w App Store podlegają dodatkowo standardowej Umowie licencyjnej użytkownika końcowego firmy Apple:<br><span class="url"><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></span></p>
+      <p><a class="showall" href="#all" data-showall>Pokaż wszystkie języki</a></p>
+      <hr class="sep">
+  </article>
+</main>
+<footer>© 임한수 (Hansoo Lim) · Flag Master. All rights reserved.</footer>
+<script>window.__UI__ = {"en":{"language":"Language","store":"Your store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Show every language","home":"Home","termsDesc":"Pro upgrade, Flag Points, rankings, content and liability","privacyDesc":"What we never collect, what stays on your device, rankings, ads and deletion","supportDesc":"Contact, frequently asked questions, refunds and data deletion","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Platforms","metaDev":"Developer","metaContact":"Contact","metaUpdated":"Last updated","storeNoteIos":"Showing the wording for iOS. On an Android device, switch above.","storeNoteAndroid":"Showing the wording for Android. On an iPhone or iPad, switch above.","__appName":"Flag Master","appName":"Flag Master","termsTitle":"Terms of Use","privacyTitle":"Privacy Policy","supportTitle":"Support & FAQ","__lastUpdated":"27 August 2026","__updatedLabel":"Last updated","__sep":":"},"ko":{"language":"언어","store":"이용 중인 스토어","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"모든 언어 보기","home":"홈","termsDesc":"Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임","privacyDesc":"수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제","supportDesc":"문의, 자주 묻는 질문, 환불과 데이터 삭제","metaApp":"앱","metaBundle":"번들 ID","metaPlatform":"지원 플랫폼","metaDev":"개발자","metaContact":"문의","metaUpdated":"최종 수정일","storeNoteIos":"iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.","storeNoteAndroid":"Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.","__appName":"국기의 주인","appName":"국기의 주인","termsTitle":"이용약관","privacyTitle":"개인정보 처리방침","supportTitle":"고객 지원 · 자주 묻는 질문","__lastUpdated":"2026년 8월 27일","__updatedLabel":"최종 업데이트","__sep":":"},"ja":{"language":"言語","store":"ご利用のストア","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"すべての言語を表示","home":"ホーム","termsDesc":"Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項","privacyDesc":"収集しない情報、端末内にとどまる情報、ランキング、広告、削除について","supportDesc":"お問い合わせ、よくある質問、返金とデータの削除","metaApp":"アプリ","metaBundle":"バンドルID","metaPlatform":"対応プラットフォーム","metaDev":"開発者","metaContact":"お問い合わせ先","metaUpdated":"最終更新日","storeNoteIos":"iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。","storeNoteAndroid":"Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。","__appName":"国旗マスター","appName":"国旗マスター","termsTitle":"利用規約","privacyTitle":"プライバシーポリシー","supportTitle":"サポート・よくある質問","__lastUpdated":"2026年8月27日","__updatedLabel":"最終更新日","__sep":":"},"de":{"language":"Sprache","store":"Ihr Store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Alle Sprachen anzeigen","home":"Startseite","termsDesc":"Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung","privacyDesc":"Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung","supportDesc":"Kontakt, häufige Fragen, Erstattungen und Datenlöschung","metaApp":"App","metaBundle":"Bundle-ID","metaPlatform":"Plattformen","metaDev":"Entwickler","metaContact":"Kontakt","metaUpdated":"Zuletzt aktualisiert","storeNoteIos":"Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.","storeNoteAndroid":"Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.","__appName":"Flaggenmeister","appName":"Flaggenmeister","termsTitle":"Nutzungsbedingungen","privacyTitle":"Datenschutzerklärung","supportTitle":"Support & FAQ","__lastUpdated":"27. August 2026","__updatedLabel":"Zuletzt aktualisiert","__sep":":"},"fr":{"language":"Langue","store":"Votre boutique","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Afficher toutes les langues","home":"Accueil","termsDesc":"Passage à Pro, Points Drapeau, classements, contenu et responsabilité","privacyDesc":"Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression","supportDesc":"Contact, questions fréquentes, remboursements et suppression des données","metaApp":"Application","metaBundle":"Identifiant du bundle","metaPlatform":"Plateformes","metaDev":"Développeur","metaContact":"Contact","metaUpdated":"Dernière mise à jour","storeNoteIos":"Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.","storeNoteAndroid":"Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.","__appName":"Maître des Drapeaux","appName":"Maître des Drapeaux","termsTitle":"Conditions d’utilisation","privacyTitle":"Politique de confidentialité","supportTitle":"Assistance et FAQ","__lastUpdated":"27 août 2026","__updatedLabel":"Dernière mise à jour","__sep":" :"},"it":{"language":"Lingua","store":"Il tuo store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostra tutte le lingue","home":"Home","termsDesc":"Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità","privacyDesc":"Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione","supportDesc":"Contatti, domande frequenti, rimborsi ed eliminazione dei dati","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Piattaforme","metaDev":"Sviluppatore","metaContact":"Contatti","metaUpdated":"Ultimo aggiornamento","storeNoteIos":"Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.","storeNoteAndroid":"Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.","__appName":"Maestro delle Bandiere","appName":"Maestro delle Bandiere","termsTitle":"Termini d’uso","privacyTitle":"Informativa sulla privacy","supportTitle":"Assistenza e FAQ","__lastUpdated":"27 agosto 2026","__updatedLabel":"Ultimo aggiornamento","__sep":":"},"zh-Hant":{"language":"語言","store":"您使用的商店","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"顯示所有語言","home":"首頁","termsDesc":"Pro 升級、國旗點數、排行榜、內容與責任","privacyDesc":"我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式","supportDesc":"聯絡方式、常見問題、退款與資料刪除","metaApp":"應用程式","metaBundle":"Bundle ID","metaPlatform":"支援平台","metaDev":"開發者","metaContact":"聯絡方式","metaUpdated":"最後更新","storeNoteIos":"目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。","storeNoteAndroid":"目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。","__appName":"國旗大師","appName":"國旗大師","termsTitle":"使用條款","privacyTitle":"隱私權政策","supportTitle":"支援與常見問題","__lastUpdated":"2026年8月27日","__updatedLabel":"最後更新","__sep":"："},"es":{"language":"Idioma","store":"Tu tienda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos los idiomas","home":"Inicio","termsDesc":"Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad","privacyDesc":"Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación","supportDesc":"Contacto, preguntas frecuentes, reembolsos y eliminación de datos","metaApp":"Aplicación","metaBundle":"ID del paquete","metaPlatform":"Plataformas","metaDev":"Desarrollador","metaContact":"Contacto","metaUpdated":"Última actualización","storeNoteIos":"Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.","storeNoteAndroid":"Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.","__appName":"Maestro de Banderas","appName":"Maestro de Banderas","termsTitle":"Términos de uso","privacyTitle":"Política de privacidad","supportTitle":"Soporte y preguntas frecuentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última actualización","__sep":":"},"pt":{"language":"Idioma","store":"Sua loja","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos os idiomas","home":"Início","termsDesc":"Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade","privacyDesc":"O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão","supportDesc":"Contato, perguntas frequentes, reembolsos e exclusão de dados","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Plataformas","metaDev":"Desenvolvedor","metaContact":"Contato","metaUpdated":"Última atualização","storeNoteIos":"Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.","storeNoteAndroid":"Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.","__appName":"Mestre das Bandeiras","appName":"Mestre das Bandeiras","termsTitle":"Termos de uso","privacyTitle":"Política de privacidade","supportTitle":"Suporte e perguntas frequentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última atualização","__sep":":"},"ar":{"language":"اللغة","store":"متجرك","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"عرض جميع اللغات","home":"الرئيسية","termsDesc":"ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية","privacyDesc":"ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف","supportDesc":"التواصل والأسئلة الشائعة والاسترداد وحذف البيانات","metaApp":"التطبيق","metaBundle":"معرّف الحزمة","metaPlatform":"المنصات","metaDev":"المطوّر","metaContact":"التواصل","metaUpdated":"آخر تحديث","storeNoteIos":"النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.","storeNoteAndroid":"النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.","__appName":"سيد الأعلام","appName":"سيد الأعلام","termsTitle":"شروط الاستخدام","privacyTitle":"سياسة الخصوصية","supportTitle":"الدعم والأسئلة الشائعة","__lastUpdated":"27 أغسطس 2026","__updatedLabel":"آخر تحديث","__sep":":"},"id":{"language":"Bahasa","store":"Toko aplikasi Anda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Tampilkan semua bahasa","home":"Beranda","termsDesc":"Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum","privacyDesc":"Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data","supportDesc":"Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data","metaApp":"Aplikasi","metaBundle":"Bundle ID","metaPlatform":"Platform","metaDev":"Pengembang","metaContact":"Kontak","metaUpdated":"Terakhir diperbarui","storeNoteIos":"Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.","storeNoteAndroid":"Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.","__appName":"Master Bendera","appName":"Master Bendera","termsTitle":"Ketentuan Penggunaan","privacyTitle":"Kebijakan Privasi","supportTitle":"Dukungan & FAQ","__lastUpdated":"27 Agustus 2026","__updatedLabel":"Pembaruan terakhir","__sep":":"},"vi":{"language":"Ngôn ngữ","store":"Cửa hàng của bạn","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Hiện tất cả ngôn ngữ","home":"Trang chủ","termsDesc":"Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý","privacyDesc":"Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu","supportDesc":"Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu","metaApp":"Ứng dụng","metaBundle":"Bundle ID","metaPlatform":"Nền tảng","metaDev":"Nhà phát triển","metaContact":"Liên hệ","metaUpdated":"Cập nhật lần cuối","storeNoteIos":"Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.","storeNoteAndroid":"Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.","__appName":"Bậc Thầy Quốc Kỳ","appName":"Bậc Thầy Quốc Kỳ","termsTitle":"Điều khoản sử dụng","privacyTitle":"Chính sách quyền riêng tư","supportTitle":"Hỗ trợ & FAQ","__lastUpdated":"27 tháng 8 năm 2026","__updatedLabel":"Cập nhật lần cuối","__sep":":"},"tr":{"language":"Dil","store":"Mağazanız","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Bütün dilleri göster","home":"Ana sayfa","termsDesc":"Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk","privacyDesc":"Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme","supportDesc":"İletişim, sık sorulan sorular, iadeler ve veri silme","metaApp":"Uygulama","metaBundle":"Paket kimliği","metaPlatform":"Platformlar","metaDev":"Geliştirici","metaContact":"İletişim","metaUpdated":"Son güncelleme","storeNoteIos":"iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.","storeNoteAndroid":"Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.","__appName":"Bayrak Ustası","appName":"Bayrak Ustası","termsTitle":"Kullanım Koşulları","privacyTitle":"Gizlilik Politikası","supportTitle":"Destek ve SSS","__lastUpdated":"27 Ağustos 2026","__updatedLabel":"Son güncelleme","__sep":":"},"pl":{"language":"Język","store":"Twój sklep","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Pokaż wszystkie języki","home":"Strona główna","termsDesc":"Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność","privacyDesc":"Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych","supportDesc":"Kontakt, najczęstsze pytania, zwroty i usuwanie danych","metaApp":"Aplikacja","metaBundle":"Bundle ID","metaPlatform":"Platformy","metaDev":"Deweloper","metaContact":"Kontakt","metaUpdated":"Ostatnia aktualizacja","storeNoteIos":"Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.","storeNoteAndroid":"Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.","__appName":"Mistrz Flag","appName":"Mistrz Flag","termsTitle":"Warunki korzystania","privacyTitle":"Polityka prywatności","supportTitle":"Pomoc i FAQ","__lastUpdated":"27 sierpnia 2026","__updatedLabel":"Ostatnia aktualizacja","__sep":":"}};window.__META__ = {"en":{"t":"Terms of Use — Flag Master","d":"Flag Master — Terms of Use: Pro upgrade, Flag Points, rankings, content and liability"},"ko":{"t":"이용약관 — 국기의 주인 (Flag Master)","d":"국기의 주인 (Flag Master) — 이용약관: Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임"},"ja":{"t":"利用規約 — 国旗マスター (Flag Master)","d":"国旗マスター (Flag Master) — 利用規約: Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項"},"de":{"t":"Nutzungsbedingungen — Flaggenmeister (Flag Master)","d":"Flaggenmeister (Flag Master) — Nutzungsbedingungen: Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung"},"fr":{"t":"Conditions d’utilisation — Maître des Drapeaux (Flag Master)","d":"Maître des Drapeaux (Flag Master) — Conditions d’utilisation : Passage à Pro, Points Drapeau, classements, contenu et responsabilité"},"it":{"t":"Termini d’uso — Maestro delle Bandiere (Flag Master)","d":"Maestro delle Bandiere (Flag Master) — Termini d’uso: Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità"},"zh-Hant":{"t":"使用條款 — 國旗大師 (Flag Master)","d":"國旗大師 (Flag Master) — 使用條款： Pro 升級、國旗點數、排行榜、內容與責任"},"es":{"t":"Términos de uso — Maestro de Banderas (Flag Master)","d":"Maestro de Banderas (Flag Master) — Términos de uso: Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad"},"pt":{"t":"Termos de uso — Mestre das Bandeiras (Flag Master)","d":"Mestre das Bandeiras (Flag Master) — Termos de uso: Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade"},"ar":{"t":"شروط الاستخدام — سيد الأعلام (Flag Master)","d":"سيد الأعلام (Flag Master) — شروط الاستخدام: ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية"},"id":{"t":"Ketentuan Penggunaan — Master Bendera (Flag Master)","d":"Master Bendera (Flag Master) — Ketentuan Penggunaan: Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum"},"vi":{"t":"Điều khoản sử dụng — Bậc Thầy Quốc Kỳ (Flag Master)","d":"Bậc Thầy Quốc Kỳ (Flag Master) — Điều khoản sử dụng: Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý"},"tr":{"t":"Kullanım Koşulları — Bayrak Ustası (Flag Master)","d":"Bayrak Ustası (Flag Master) — Kullanım Koşulları: Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk"},"pl":{"t":"Warunki korzystania — Mistrz Flag (Flag Master)","d":"Mistrz Flag (Flag Master) — Warunki korzystania: Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność"}};</script>
+<script>
+(function(){
+  window.__fmReady = true;
+  var docs = [].slice.call(document.querySelectorAll("[data-lang]"));
+  var navLinks = [].slice.call(document.querySelectorAll("#langs a"));
+  var LANGS = navLinks.map(function(a){ return a.getAttribute("data-go"); });
+  var RTL = { ar: 1 };
+
+  function paintChrome(lang){
+    var s = (window.__UI__ && (window.__UI__[lang] || window.__UI__.en)) || null;
+    if (!s) return;
+    [].slice.call(document.querySelectorAll("[data-ui]")).forEach(function(el){
+      var v = s[el.getAttribute("data-ui")];
+      if (v) el.textContent = v;
+    });
+    var m = window.__META__ && (window.__META__[lang] || window.__META__.en);
+    if (m) {
+      document.title = m.t;
+      var dsc = document.querySelector('meta[name="description"]');
+      if (dsc) dsc.setAttribute("content", m.d);
+    }
+  }
+  function applyLang(lang, remember){
+    if (LANGS.indexOf(lang) < 0) lang = "en";
+    docs.forEach(function(d){ d.classList.toggle("is-on", d.getAttribute("data-lang") === lang); });
+    navLinks.forEach(function(a){
+      a.setAttribute("aria-current", a.getAttribute("data-go") === lang ? "true" : "false");
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
+    paintChrome(lang);
+    if (remember) { try { localStorage.setItem("fm-lang", lang); } catch(e){} }
+  }
+  function showAll(){
+    docs.forEach(function(d){ d.classList.add("is-on"); });
+    document.documentElement.dir = "ltr";
+    // 한 언어에 "현재" 표시가 남아 있으면 스크린리더가 14개 구획을 그 언어라고 알린다.
+    navLinks.forEach(function(a){ a.setAttribute("aria-current", "false"); });
+  }
+
+  // 스토어 토글. 본문에 박힌 기본값은 iOS 이므로, 안드로이드일 때만 바꿔 끼운다.
+  var pf = [].slice.call(document.querySelectorAll(".pf"));
+  function applyStore(store, remember){
+    var key = store === "android" ? "data-android" : "data-ios";
+    pf.forEach(function(s){ s.textContent = s.getAttribute(key); });
+    [].slice.call(document.querySelectorAll("[data-store-btn]")).forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-store-btn") === store ? "true" : "false");
+    });
+    [].slice.call(document.querySelectorAll("[data-store-note]")).forEach(function(n){
+      n.hidden = n.getAttribute("data-store-note") !== store;
+    });
+    if (remember) { try { localStorage.setItem("fm-store", store); } catch(e){} }
+  }
+
+  var byNav = null;
+  try {
+    var want = (navigator.languages || [navigator.language || "en"]);
+    for (var i = 0; i < want.length && !byNav; i++) {
+      var w = String(want[i]);
+      if (/^zh\b/i.test(w) && /(Hant|TW|HK|MO)/i.test(w)) { byNav = "zh-Hant"; break; }
+      var base = w.split("-")[0].toLowerCase();
+      if (LANGS.indexOf(base) >= 0) byNav = base;
+    }
+  } catch(e){}
+
+  var hash = (location.hash || "").replace(/^#/, "");
+  var saved = null; try { saved = localStorage.getItem("fm-lang"); } catch(e){}
+  if (hash === "all") showAll();
+  else applyLang((LANGS.indexOf(hash) >= 0 ? hash : null) || saved || byNav || "en", false);
+  // 브라우저는 #ko 같은 조각으로 들어오면 **구획을 숨기기 전** 위치로 먼저 뛴다.
+  // 그 뒤 필터가 앞 구획들을 접으면 착지 지점이 빈 곳이 된다 — 문서 첫 줄로 되돌린다.
+  // ⚠ 한 번으로는 안 된다. 브라우저의 조각 스크롤은 이 스크립트가 끝난 **뒤**(파싱 완료·load 시점)에
+  //   일어나므로, 여기서 한 번 0 으로 되돌려도 곧바로 다시 끌려간다(375px 에서 scrollY=263 로 실측).
+  if (hash) {
+    var toTop = function () { try { window.scrollTo(0, 0); } catch (e) {} };
+    toTop();
+    if (window.requestAnimationFrame) requestAnimationFrame(toTop);
+    window.addEventListener("load", toTop);
+  }
+
+  var savedStore = null; try { savedStore = localStorage.getItem("fm-store"); } catch(e){}
+  var uaAndroid = /Android/i.test(navigator.userAgent || "");
+  applyStore(savedStore || (uaAndroid ? "android" : "ios"), false);
+
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("#langs a[data-go]");
+    if (a) { e.preventDefault(); applyLang(a.getAttribute("data-go"), true);
+             history.replaceState(null, "", "#" + a.getAttribute("data-go"));
+             window.scrollTo(0, 0); return; }
+    var all = e.target.closest && e.target.closest("[data-showall]");
+    if (all) { e.preventDefault(); showAll(); history.replaceState(null, "", "#all"); return; }
+    var b = e.target.closest && e.target.closest("[data-store-btn]");
+    if (b) { applyStore(b.getAttribute("data-store-btn"), true); }
+  });
+  window.addEventListener("hashchange", function(){
+    var h = (location.hash || "").replace(/^#/, "");
+    if (h === "all") showAll(); else if (LANGS.indexOf(h) >= 0) applyLang(h, true);
+  });
+})();
+</script>
+</body>
+</html>

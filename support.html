@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &amp; FAQ — Flag Master</title>
+<meta name="description" content="Support and FAQ for Flag Master — restoring the one-time Pro purchase, refunds, Flag Points, progress sync, ranking entry deletion and contact. Available in 14 languages.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F6EEDC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14293c" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://taiji1368-ui.github.io/flag-master/support.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flag Master">
+<meta property="og:url" content="https://taiji1368-ui.github.io/flag-master/support.html">
+<meta property="og:title" content="Support &amp; FAQ — Flag Master">
+<meta property="og:description" content="Support and FAQ for Flag Master — restoring the one-time Pro purchase, refunds, Flag Points, progress sync, ranking entry deletion and contact. Available in 14 languages.">
+<script>document.documentElement.className="js";setTimeout(function(){if(!window.__fmReady)document.documentElement.className=""},1500)</script>
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#F6EEDC; --bg-accent:#EDE0C6; --card:rgba(255,253,246,.78);
+  --text:#1C2A39; --muted:#6b5c42; --primary:#B03A28; --gold:#7f5e1c;
+  /* 앱의 스탬프 레드는 #C2412D 지만, 밝은 테마의 크림 바탕(#EDE0C6)에서 3.93:1 이라
+     본문 링크와 '현재 문서' 표시가 WCAG AA 에 못 미친다. 웹에서만 한 단계 낮춘다(4.62:1). */
+  --navy:#1C3F5E; --line:#e2d6bd; --divider:#ECE2CC;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14293c; --bg-accent:#0f2130; --card:rgba(255,255,255,.06);
+  --text:#EAE1CC; --muted:#9fb4c8; --primary:#E2725B; --gold:#E7B96b;
+  --navy:#dbe7f2; --line:rgba(234,225,204,.16); --divider:rgba(234,225,204,.12);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.65 "Avenir Next","Pretendard","Apple SD Gothic Neo","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--primary)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg-accent);border-bottom:1px solid var(--line)}
+/* 좁은 화면에서는 고정을 푼다. 브랜드+문서메뉴+스토어토글+14개 언어가 세로로 쌓이면 막대가
+   237px 까지 자라, 812px 짜리 화면의 3할을 긴 약관을 읽는 내내 차지한다(375x812 실측). */
+@media (max-width:760px){
+  .bar{position:static}
+  /* 좁은 화면에선 머리 막대가 첫 화면을 통째로 먹는다 — 14개 언어 목록이 세 줄이다.
+     읽을 글이 첫 화면에 조금이라도 걸리도록 여백과 줄높이를 줄인다. */
+  .bar-in{padding:8px 20px;gap:8px 12px}
+  .langs{padding:0 20px 8px;line-height:1.9;font-size:12.5px}
+  .docnav{gap:12px;font-size:13px}
+  main{padding-top:24px}
+}
+.bar-in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.brand{font-weight:700;letter-spacing:.01em;text-decoration:none;color:var(--navy);margin-inline-end:auto}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;
+  padding:6px 13px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--primary);color:#fff;font-weight:600}
+/* 다크에서 --primary(#E2725B) 위의 흰 글씨는 3.09:1 — 하필 "지금 어느 스토어인가" 를 알리는 글자다. */
+@media (prefers-color-scheme:dark){.seg button[aria-pressed="true"]{background:#B4432C}}
+:where(a,button,summary):focus-visible{outline:2px solid var(--navy);outline-offset:2px;border-radius:6px}
+.docnav{display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+.docnav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+.docnav a:hover{color:var(--primary)}
+.docnav a[aria-current="page"]{color:var(--primary);font-weight:600}
+.langs{max-width:760px;margin:0 auto;padding:0 20px 10px;font-size:13px;line-height:2.1}
+.langs a{color:var(--muted);text-decoration:none;padding:3px 8px;border-radius:8px;border:1px solid transparent}
+.langs a:hover{color:var(--primary)}
+.langs a[aria-current="true"]{color:var(--primary);font-weight:600;background:var(--card);border-color:var(--line)}
+main{max-width:760px;margin:0 auto;padding:34px 20px 96px}
+/* 언어 필터. html.js 는 <head> 인라인 스크립트가 붙인다 — 스크립트가 없으면
+   이 규칙이 통째로 죽어 14개 언어가 그대로 다 보인다. 법적 문서가 스크립트
+   하나 때문에 백지가 되는 쪽이 훨씬 큰 사고다. */
+html.js .doc{display:none}
+html.js .doc.is-on{display:block}
+h1{font-size:29px;line-height:1.28;margin:0 0 6px;color:var(--navy)}
+h2{font-size:20px;margin:34px 0 10px;color:var(--navy)}
+h2.clause{font-size:16.5px;margin:26px 0 6px;color:var(--gold);letter-spacing:.01em}
+.faq summary h3{display:inline;font:inherit;color:inherit;margin:0}
+p{margin:9px 0}
+ul{margin:9px 0;padding-inline-start:1.25em}
+li{margin:5px 0}
+.url{word-break:break-all}
+main a{overflow-wrap:break-word}
+.meta{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 17px;margin:16px 0 26px;font-size:13.5px;color:var(--muted)}
+.meta p{margin:3px 0}
+.meta strong{color:var(--text);font-weight:600}
+.note{font-size:13px;color:var(--muted);margin:0 0 22px}
+.cards{display:grid;gap:13px;margin:22px 0 30px}
+a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:17px 19px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+a.card:hover{border-color:var(--primary);transform:translateY(-1px)}
+a.card strong{display:block;font-size:17px;color:var(--primary);margin-bottom:3px}
+a.card span{color:var(--muted);font-size:14px}
+.faq{border-top:1px solid var(--divider);margin-top:8px}
+.faq details{border-bottom:1px solid var(--divider)}
+.faq summary{cursor:pointer;padding:14px 2px;font-weight:600;color:var(--navy);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:inline-end;color:var(--muted);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 2px 16px;color:var(--text)}
+footer{max-width:760px;margin:0 auto;padding:0 20px 60px;color:var(--muted);font-size:13px}
+.showall{display:inline-block;margin-top:34px;font-size:13px;color:var(--muted)}
+hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
+[dir="rtl"] .brand{letter-spacing:0}
+@media (max-width:520px){h1{font-size:24px}main{padding-top:26px}}
+</style>
+<noscript><style>.seg,[data-store-note]{display:none}</style></noscript>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html"><small>Flag Master</small><span data-ui="appName">Flag Master</span></a>
+    <nav class="docnav" aria-label="Documents">
+      <a href="terms.html" data-ui="termsTitle">Terms of Use</a>
+      <a href="privacy.html" data-ui="privacyTitle">Privacy Policy</a>
+      <a href="support.html" aria-current="page" data-ui="supportTitle">Support</a>
+    </nav>
+    <div class="seg" role="group" aria-label="Store">
+      <button type="button" data-store-btn="ios" aria-pressed="true" data-ui="storeIos">iOS · App Store</button>
+      <button type="button" data-store-btn="android" aria-pressed="false" data-ui="storeAndroid">Android · Google Play</button>
+    </div>
+  </div>
+  <nav class="langs" id="langs" aria-label="Language">
+      <a href="#en" hreflang="en" data-go="en" aria-current="false">English</a>
+      <a href="#ko" hreflang="ko" data-go="ko" aria-current="false">한국어</a>
+      <a href="#ja" hreflang="ja" data-go="ja" aria-current="false">日本語</a>
+      <a href="#de" hreflang="de" data-go="de" aria-current="false">Deutsch</a>
+      <a href="#fr" hreflang="fr" data-go="fr" aria-current="false">Français</a>
+      <a href="#it" hreflang="it" data-go="it" aria-current="false">Italiano</a>
+      <a href="#zh-Hant" hreflang="zh-Hant" data-go="zh-Hant" aria-current="false">繁體中文</a>
+      <a href="#es" hreflang="es" data-go="es" aria-current="false">Español</a>
+      <a href="#pt" hreflang="pt" data-go="pt" aria-current="false">Português</a>
+      <a href="#ar" hreflang="ar" data-go="ar" aria-current="false">العربية</a>
+      <a href="#id" hreflang="id" data-go="id" aria-current="false">Bahasa Indonesia</a>
+      <a href="#vi" hreflang="vi" data-go="vi" aria-current="false">Tiếng Việt</a>
+      <a href="#tr" hreflang="tr" data-go="tr" aria-current="false">Türkçe</a>
+      <a href="#pl" hreflang="pl" data-go="pl" aria-current="false">Polski</a>
+  </nav>
+</header>
+<main>
+  <article class="doc" id="en" lang="en" data-lang="en">
+      <h1>Support &amp; FAQ</h1>
+      <p>Write to us in your own language. There is no support account or ticket number — a plain email is enough, and it helps to say which device and app version you are on (Settings shows the version at the bottom).</p>
+      <h2>Contact</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>App</strong>: Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platforms</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Developer</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Showing the wording for iOS. On an Android device, switch above.</p>
+      <p class="note" data-store-note="android" hidden>Showing the wording for Android. On an iPhone or iPad, switch above.</p>
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>I reinstalled the app, or changed device. How do I get Pro back?</h3></summary>
+          <div class="a">Open the Pro screen and tap “Restore purchase”. Pro is a one-time purchase tied to your <span class="pf" data-ios="Apple ID" data-android="Google account">Apple ID</span>, so signing in with the same <span class="pf" data-ios="Apple ID" data-android="Google account">Apple ID</span> brings it back and you are never charged twice.</div>
+        </details>
+        <details>
+          <summary><h3>Is Pro a subscription?</h3></summary>
+          <div class="a">No. Pro is a single one-time purchase. It never renews and there is nothing to cancel.</div>
+        </details>
+        <details>
+          <summary><h3>How do I get a refund?</h3></summary>
+          <div class="a">Refunds are handled by <span class="pf" data-ios="Apple" data-android="Google">Apple</span> under its own policies, not by the developer. Request one through <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> using the receipt for the purchase.</div>
+        </details>
+        <details>
+          <summary><h3>Can I buy Flag Points?</h3></summary>
+          <div class="a">No. Flag Points are never sold. You earn them by playing, or by choosing to watch a rewarded ad. They have no cash value and cannot be transferred or exchanged. Pro removes ads and lets you enter every game mode without spending points.</div>
+        </details>
+        <details>
+          <summary><h3>My progress is gone, or I moved to a new device.</h3></summary>
+          <div class="a">On iOS, Settings → iCloud Sync (on by default) keeps a copy of your progress in your own iCloud account. Sign in with the same Apple ID, install the app, and your record comes back. On Android there is no such feature — progress lives on the device only, so uninstalling ends it. Note that Settings → Reset Progress is deliberate and permanent: it clears the iCloud copy as well.</div>
+        </details>
+        <details>
+          <summary><h3>How do I remove my entry from the rankings?</h3></summary>
+          <div class="a">Email the address above with the nickname shown on your row and roughly when you played, and the entry will be removed. Boards also roll over on their own — daily boards each day, weekly boards each week.</div>
+        </details>
+        <details>
+          <summary><h3>Can I change my ranking nickname?</h3></summary>
+          <div class="a">The nickname is chosen once, the first time you enter the rankings, and is then stored on your device. There is no rename button in the app; if you need a different name, write to us.</div>
+        </details>
+        <details>
+          <summary><h3>The daily reminder never arrives.</h3></summary>
+          <div class="a">Check Settings → Flag of the Day alert inside the app, and then the notification permission for the app in your device settings. The reminder is scheduled on your device for 10:00 — no server is involved — so it also needs the app to have been opened at least once after you turned it on. This reminder is an iPhone and iPad feature — the Android version has no daily reminder, and the setting does not appear there.</div>
+        </details>
+        <details>
+          <summary><h3>How do I change the app's language?</h3></summary>
+          <div class="a">The app follows your device language and supports 14: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe and Polski. There is no language switch inside the app — change your device language and reopen the app.</div>
+        </details>
+        <details>
+          <summary><h3>How do I change my ad privacy choices?</h3></summary>
+          <div class="a">Settings → Ad privacy choices reopens the consent form where it applies (for example in the EEA and the UK). The free version shows a rewarded ad only when you tap “Watch an ad” to earn Flag Points; there are no banner or full-screen ads, and Pro users see none at all.</div>
+        </details>
+        <details>
+          <summary><h3>Does the app work without a connection?</h3></summary>
+          <div class="a">Yes. Studying, quizzes, collections and the map all work offline. A connection is used only for the rankings, for playing a national anthem (streamed from the public-domain collection at archive.org), for rewarded ads and for purchases.</div>
+        </details>
+        <details>
+          <summary><h3>A flag, name or fact looks wrong.</h3></summary>
+          <div class="a">Please write to us — corrections are welcome and are the fastest way to fix the data. Country and region information comes from the open data sources credited in Settings → About / Licenses. Some territories have an internationally disputed status; the labels are educational and are not a political position.</div>
+        </details>
+        <details>
+          <summary><h3>How do I report a bug or suggest something?</h3></summary>
+          <div class="a">Settings → Send feedback opens an email to the address above with the app already identified. A screenshot and the steps you took are usually enough for us to reproduce it.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Show every language</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ko" lang="ko" data-lang="ko">
+      <h1>고객 지원 · 자주 묻는 질문</h1>
+      <p>편하신 언어로 메일을 보내 주세요. 별도의 지원 계정이나 접수 번호는 없으며, 평범한 메일 한 통이면 충분합니다. 사용 중인 기기와 앱 버전을 함께 적어 주시면 도움이 됩니다(버전은 ‘설정’ 화면 맨 아래에 표시됩니다).</p>
+      <h2>문의</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>앱</strong>: 국기의 주인 · Flag Master</p>
+        <p><strong>번들 ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>지원 플랫폼</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>개발자</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>문의</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.</p>
+      <p class="note" data-store-note="android" hidden>Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.</p>
+      <h2>자주 묻는 질문</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>앱을 다시 설치했거나 기기를 바꿨습니다. Pro는 어떻게 되찾나요?</h3></summary>
+          <div class="a">‘Pro로 업그레이드’ 화면을 열고 ‘구매 복원’을 누르세요. Pro는 <span class="pf" data-ios="Apple ID" data-android="Google 계정">Apple ID</span>에 연결된 일회성 구매라서, 같은 <span class="pf" data-ios="Apple ID" data-android="Google 계정">Apple ID</span>에 로그인되어 있으면 그대로 돌아오고 요금이 두 번 청구되는 일도 없습니다.</div>
+        </details>
+        <details>
+          <summary><h3>Pro는 구독인가요?</h3></summary>
+          <div class="a">아닙니다. Pro는 한 번만 결제하는 일회성 구매입니다. 자동으로 갱신되지 않고, 따로 해지할 것도 없습니다.</div>
+        </details>
+        <details>
+          <summary><h3>환불은 어떻게 받나요?</h3></summary>
+          <div class="a">환불은 개발자가 아니라 <span class="pf" data-ios="Apple" data-android="Google">Apple</span>에서 자체 정책에 따라 처리합니다. 구매 영수증을 가지고 <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>에서 환불을 요청해 주세요.</div>
+        </details>
+        <details>
+          <summary><h3>플레그 포인트를 살 수 있나요?</h3></summary>
+          <div class="a">아닙니다. 플레그 포인트는 판매하지 않습니다. 게임을 하면서 모으거나, 원하실 때 보상형 광고를 보고 받으실 수 있습니다. 현금 가치는 없으며 양도하거나 교환할 수도 없습니다. Pro를 구매하시면 광고가 사라지고, 포인트를 쓰지 않고도 모든 게임 모드에 들어갈 수 있습니다.</div>
+        </details>
+        <details>
+          <summary><h3>진행 상황이 사라졌습니다. 새 기기로 옮길 때는 어떻게 하나요?</h3></summary>
+          <div class="a">iOS에서는 ‘설정 → iCloud 동기화’를 켜 두면(기본값은 켜짐) 진행 상황 사본이 본인의 iCloud 계정에 저장됩니다. 같은 Apple ID로 로그인한 뒤 앱을 설치하면 기록이 돌아옵니다. Android에는 이 기능이 없어 진행 상황이 기기에만 남습니다. 앱을 삭제하면 기록도 함께 사라집니다. 다만 ‘설정 → 진행 초기화’는 되돌릴 수 없어, iCloud에 있는 사본까지 함께 지웁니다.</div>
+        </details>
+        <details>
+          <summary><h3>랭킹에 올라간 제 기록을 지우고 싶습니다.</h3></summary>
+          <div class="a">위 주소로 기록에 표시된 닉네임과 플레이한 대략적인 시점을 알려 주시면 해당 기록을 삭제해 드립니다. 순위표는 따로 요청하지 않아도 주기적으로 새로 시작합니다. 일간 순위표는 매일, 주간 순위표는 매주 초기화됩니다.</div>
+        </details>
+        <details>
+          <summary><h3>랭킹 닉네임을 바꿀 수 있나요?</h3></summary>
+          <div class="a">닉네임은 랭킹에 처음 등록할 때 한 번만 정하고, 그 뒤로는 기기에 저장됩니다. 앱 안에는 이름을 바꾸는 버튼이 없으니, 다른 이름이 필요하시면 메일로 알려 주세요.</div>
+        </details>
+        <details>
+          <summary><h3>매일 받던 ‘오늘의 국기 알림’이 오지 않습니다.</h3></summary>
+          <div class="a">먼저 앱에서 ‘설정 → 오늘의 국기 알림’이 켜져 있는지 보시고, 그다음 기기 설정에서 앱의 알림 권한을 확인해 주세요. 이 알림은 서버를 거치지 않고 기기 안에서 오전 10시로 예약되기 때문에, 기능을 켠 뒤 앱을 한 번 이상 실행해 주셔야 예약이 걸립니다. 이 기능은 iPhone과 iPad에서만 제공되며, Android 버전에는 오늘의 국기 알림이 없어 설정 항목도 나타나지 않습니다.</div>
+        </details>
+        <details>
+          <summary><h3>앱 언어는 어떻게 바꾸나요?</h3></summary>
+          <div class="a">앱은 기기 언어를 따릅니다. 지원하는 언어는 English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe, Polski, 이렇게 14가지입니다. 앱 안에는 언어를 바꾸는 기능이 없으니, 기기 언어를 바꾸고 앱을 다시 열어 주세요.</div>
+        </details>
+        <details>
+          <summary><h3>‘광고 개인정보 선택’은 어떻게 바꾸나요?</h3></summary>
+          <div class="a">동의가 필요한 지역(예: 유럽경제지역(EEA), 영국)에서는 ‘설정 → 광고 개인정보 선택’을 눌러 동의 양식을 다시 열 수 있습니다. 무료 버전에서는 플레그 포인트를 얻으려고 ‘광고 보고 충전’을 직접 누를 때만 보상형 광고가 나옵니다. 배너 광고나 전면 광고는 없으며, Pro 사용자에게는 광고가 전혀 표시되지 않습니다.</div>
+        </details>
+        <details>
+          <summary><h3>인터넷에 연결하지 않아도 쓸 수 있나요?</h3></summary>
+          <div class="a">네. 공부, 퀴즈, 도감, 지도는 모두 오프라인에서 동작합니다. 연결이 필요한 것은 랭킹, 국가(國歌) 재생(archive.org의 퍼블릭 도메인 컬렉션에서 스트리밍합니다), 보상형 광고, 구매뿐입니다.</div>
+        </details>
+        <details>
+          <summary><h3>국기나 이름, 설명이 잘못된 것 같습니다.</h3></summary>
+          <div class="a">메일로 알려 주세요. 제보가 데이터를 고치는 가장 빠른 방법이라 언제든 환영합니다. 국가·지역 정보는 ‘설정 → 정보 / 라이선스’에 출처를 밝혀 둔 공개 데이터를 바탕으로 합니다. 일부 지역은 그 지위를 두고 국제적으로 견해가 갈리며, 앱의 표기는 학습을 위한 것일 뿐 정치적 입장을 나타내지 않습니다.</div>
+        </details>
+        <details>
+          <summary><h3>오류를 신고하거나 의견을 보내려면 어떻게 하나요?</h3></summary>
+          <div class="a">‘설정 → 피드백 보내기’를 누르면 앱 정보가 미리 채워진 채로 위 주소로 보내는 메일 작성 화면이 열립니다. 스크린샷을 첨부하고 어떤 순서로 조작하셨는지만 알려 주셔도 대개 저희 쪽에서 재현할 수 있습니다.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>모든 언어 보기</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ja" lang="ja" data-lang="ja">
+      <h1>サポート・よくある質問</h1>
+      <p>お問い合わせは、お使いの言語のままで構いません。サポート用のアカウントや問い合わせ番号は必要なく、普通のメールで十分です。お使いの端末とアプリのバージョン（「設定」の一番下に表示されます）を書き添えていただけると、より早くお答えできます。</p>
+      <h2>お問い合わせ</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>アプリ</strong>: 国旗マスター · Flag Master</p>
+        <p><strong>バンドルID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>対応プラットフォーム</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開発者</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>お問い合わせ先</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。</p>
+      <p class="note" data-store-note="android" hidden>Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。</p>
+      <h2>よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>アプリを再インストールしたり、機種変更をしたりしました。Proを元に戻すには？</h3></summary>
+          <div class="a">「Proにアップグレード」の画面を開き、「購入を復元」をタップしてください。Proはお客様の<span class="pf" data-ios="Apple ID" data-android="Google アカウント">Apple ID</span>に紐づく買い切りの商品ですので、同じ<span class="pf" data-ios="Apple ID" data-android="Google アカウント">Apple ID</span>でサインインすれば元に戻ります。二重に請求されることはありません。</div>
+        </details>
+        <details>
+          <summary><h3>Proはサブスクリプションですか？</h3></summary>
+          <div class="a">いいえ。Proは一度かぎりの買い切りです。自動で更新されることはなく、解約の手続きも必要ありません。</div>
+        </details>
+        <details>
+          <summary><h3>返金してもらうには？</h3></summary>
+          <div class="a">返金は開発者ではなく、<span class="pf" data-ios="Apple" data-android="Google">Apple</span>が自社のポリシーに従って対応します。購入時の領収書をご用意のうえ、<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>からお申し込みください。</div>
+        </details>
+        <details>
+          <summary><h3>フラッグポイントは購入できますか？</h3></summary>
+          <div class="a">いいえ。フラッグポイントを販売することはありません。プレイして獲得するか、任意でリワード広告をご覧いただくと貯まります。現金としての価値はなく、譲渡や交換もできません。Proにすると広告は表示されなくなり、ポイントを使わずにすべてのゲームモードで遊べます。</div>
+        </details>
+        <details>
+          <summary><h3>進行状況が消えました／新しい端末に移行しました。</h3></summary>
+          <div class="a">iOSでは、「設定」→「iCloud 同期」（初期設定はオン）により、進行状況の控えがお客様ご自身のiCloudアカウントに保存されます。同じApple IDでサインインしてアプリをインストールすれば、記録が戻ります。Androidにはこの機能がなく、進行状況は端末内にのみ保存されるため、アンインストールすると失われます。なお、「設定」→「進行状況のリセット」は元に戻せない操作です。実行すると、iCloud側の控えも一緒に削除されます。</div>
+        </details>
+        <details>
+          <summary><h3>ランキングから自分の記録を削除するには？</h3></summary>
+          <div class="a">上記のアドレスまで、ランキングに表示されているニックネームと、おおよそのプレイ時期をお知らせください。該当の記録を削除いたします。ランキング自体も自動的に切り替わります（デイリーは毎日、ウィークリーは毎週）。</div>
+        </details>
+        <details>
+          <summary><h3>ランキングのニックネームは変更できますか？</h3></summary>
+          <div class="a">ニックネームは初めてランキングに参加するときに一度だけ決めるもので、その後は端末に保存されます。アプリ内に名前を変更するボタンはありませんので、別の名前をご希望の場合はご連絡ください。</div>
+        </details>
+        <details>
+          <summary><h3>毎日の通知が届きません。</h3></summary>
+          <div class="a">まずアプリ内の「設定」→「今日の国旗の通知」がオンになっているか、次に端末の設定でこのアプリの通知が許可されているかをご確認ください。この通知はサーバーを使わず、端末側で毎日10時に予約されます。そのため、オンにしたあとに一度アプリを開いておく必要があります。毎日の通知はiPhoneとiPad向けの機能です。Android版にはこの機能がなく、設定項目も表示されません。</div>
+        </details>
+        <details>
+          <summary><h3>アプリの表示言語を変えるには？</h3></summary>
+          <div class="a">アプリは端末の言語設定に従い、次の14言語に対応しています：English、한국어、日本語、繁體中文、Deutsch、Français、Italiano、Español、Português、العربية、Bahasa Indonesia、Tiếng Việt、Türkçe、Polski。アプリ内に言語の切り替えはありませんので、端末の言語を変更してからアプリを開き直してください。</div>
+        </details>
+        <details>
+          <summary><h3>広告のプライバシー設定を変えるには？</h3></summary>
+          <div class="a">対象となる地域（EEAや英国など）では、「設定」→「広告のプライバシー設定」から同意フォームをもう一度開けます。無料版で広告が表示されるのは、フラッグポイントを貯めるために「広告を見て充電」をタップしたときだけです。バナー広告や全画面広告はなく、Proをご利用の方には広告が一切表示されません。</div>
+        </details>
+        <details>
+          <summary><h3>インターネットに接続していなくても使えますか？</h3></summary>
+          <div class="a">はい。学習、クイズ、コレクション、地図はオフラインでもご利用いただけます。通信が必要なのは、ランキング、国歌の再生（archive.orgのパブリックドメイン音源からストリーミングします）、リワード広告、購入手続きのときだけです。</div>
+        </details>
+        <details>
+          <summary><h3>国旗や名称、説明に誤りがあるようです。</h3></summary>
+          <div class="a">ぜひご連絡ください。ご指摘はいつでも歓迎しております。データを直すには、それがいちばん早い方法です。国や地域の情報は、「設定」→「情報 / ライセンス」に記載しているオープンデータを出典としています。国際的に帰属が争われている地域もありますが、表記は学習を目的としたもので、政治的な立場を示すものではありません。</div>
+        </details>
+        <details>
+          <summary><h3>不具合の報告や要望を送るには？</h3></summary>
+          <div class="a">「設定」→「フィードバック」をタップすると、アプリの情報があらかじめ入力された状態で、上記のアドレス宛てのメールが開きます。スクリーンショットと、どのような操作をしたかを添えていただければ、たいていはこちらで再現できます。</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>すべての言語を表示</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="de" lang="de" data-lang="de">
+      <h1>Support &amp; FAQ</h1>
+      <p>Schreiben Sie uns gern in Ihrer eigenen Sprache. Es gibt weder ein Support-Konto noch eine Ticketnummer – eine ganz normale E-Mail genügt. Hilfreich ist, wenn Sie dazuschreiben, welches Gerät und welche App-Version Sie nutzen (die Version steht unten in den Einstellungen).</p>
+      <h2>Kontakt</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>App</strong>: Flaggenmeister · Flag Master</p>
+        <p><strong>Bundle-ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plattformen</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Entwickler</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.</p>
+      <p class="note" data-store-note="android" hidden>Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.</p>
+      <h2>Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>Ich habe die App neu installiert oder das Gerät gewechselt. Wie bekomme ich Pro zurück?</h3></summary>
+          <div class="a">Öffnen Sie in der App „Auf Pro upgraden“ und tippen Sie dort auf „Kauf wiederherstellen“. Pro ist ein einmaliger Kauf und an Ihr Konto (<span class="pf" data-ios="Apple ID" data-android="Google-Konto">Apple ID</span>) gebunden. Wenn Sie sich wieder per <span class="pf" data-ios="Apple ID" data-android="Google-Konto">Apple ID</span> anmelden, ist Pro zurück – und berechnet wird nichts ein zweites Mal.</div>
+        </details>
+        <details>
+          <summary><h3>Ist Pro ein Abo?</h3></summary>
+          <div class="a">Nein. Pro ist ein einmaliger Kauf. Es verlängert sich nichts, und es gibt nichts zu kündigen.</div>
+        </details>
+        <details>
+          <summary><h3>Wie bekomme ich eine Erstattung?</h3></summary>
+          <div class="a">Erstattungen wickelt <span class="pf" data-ios="Apple" data-android="Google">Apple</span> nach den eigenen Richtlinien ab, nicht der Entwickler. Bitte fordern Sie sie deshalb dort an, wo Sie gekauft haben (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>), und geben Sie dabei den Kaufbeleg an.</div>
+        </details>
+        <details>
+          <summary><h3>Kann ich Flag-Punkte kaufen?</h3></summary>
+          <div class="a">Nein. Flag-Punkte werden nicht verkauft. Sie verdienen sie beim Spielen oder indem Sie sich freiwillig ein Werbevideo ansehen und dafür Punkte bekommen. Sie haben keinen Geldwert und lassen sich weder übertragen noch eintauschen. Mit Pro entfällt die Werbung, und Sie können jeden Spielmodus starten, ohne Punkte auszugeben.</div>
+        </details>
+        <details>
+          <summary><h3>Mein Fortschritt ist weg – oder ich habe das Gerät gewechselt.</h3></summary>
+          <div class="a">Unter iOS bewahrt „Einstellungen → iCloud-Sync“ (standardmäßig eingeschaltet) eine Kopie Ihres Fortschritts in Ihrem eigenen iCloud-Konto auf. Melden Sie sich mit derselben Apple ID an, installieren Sie die App, und Ihr Stand ist wieder da. Unter Android gibt es diese Funktion nicht – der Fortschritt liegt allein auf dem Gerät, mit der Deinstallation ist er also endgültig weg. Beachten Sie außerdem: „Einstellungen → Fortschritt zurücksetzen“ ist bewusst endgültig und löscht auch die Kopie in iCloud.</div>
+        </details>
+        <details>
+          <summary><h3>Wie entferne ich meinen Eintrag aus der Rangliste?</h3></summary>
+          <div class="a">Schreiben Sie uns an die oben genannte Adresse und nennen Sie den Namen, der in Ihrer Zeile steht, und ungefähr, wann Sie gespielt haben – wir entfernen den Eintrag dann. Die Listen erneuern sich ohnehin von selbst: Tagesranglisten täglich, Wochenranglisten wöchentlich.</div>
+        </details>
+        <details>
+          <summary><h3>Kann ich meinen Namen in der Rangliste ändern?</h3></summary>
+          <div class="a">Der Name wird einmalig festgelegt, sobald Sie zum ersten Mal in die Rangliste kommen, und danach auf Ihrem Gerät gespeichert. In der App gibt es keine Schaltfläche zum Umbenennen; wenn Sie einen anderen Namen brauchen, schreiben Sie uns bitte.</div>
+        </details>
+        <details>
+          <summary><h3>Die tägliche Erinnerung kommt nicht an.</h3></summary>
+          <div class="a">Prüfen Sie zuerst in der App „Einstellungen → Flagge-des-Tages-Erinnerung“ und danach in den Geräteeinstellungen, ob die App Mitteilungen senden darf. Die Erinnerung wird auf Ihrem Gerät für 10:00 Uhr eingeplant – ein Server ist daran nicht beteiligt –, deshalb muss die App nach dem Einschalten auch mindestens einmal geöffnet worden sein. Diese Erinnerung gibt es nur auf iPhone und iPad – die Android-Fassung hat keine tägliche Erinnerung, und die Einstellung wird dort gar nicht erst angezeigt.</div>
+        </details>
+        <details>
+          <summary><h3>Wie stelle ich die Sprache der App um?</h3></summary>
+          <div class="a">Die App richtet sich nach der Sprache Ihres Geräts und unterstützt 14 Sprachen: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe und Polski. In der App selbst gibt es keine Sprachauswahl – stellen Sie die Sprache Ihres Geräts um und öffnen Sie die App erneut.</div>
+        </details>
+        <details>
+          <summary><h3>Wie ändere ich meine Datenschutzeinstellungen für Werbung?</h3></summary>
+          <div class="a">Über „Einstellungen → Datenschutz für Werbung“ öffnen Sie das Einwilligungsformular erneut – überall dort, wo es vorgeschrieben ist (zum Beispiel im EWR und im Vereinigten Königreich). In der kostenlosen Version erscheint ein Werbevideo nur, wenn Sie selbst auf „Werbung ansehen“ tippen, um Flag-Punkte zu verdienen; Banner oder Vollbildanzeigen gibt es nicht, und mit Pro sehen Sie überhaupt keine Werbung.</div>
+        </details>
+        <details>
+          <summary><h3>Funktioniert die App ohne Internetverbindung?</h3></summary>
+          <div class="a">Ja. Lernen, Quiz, Sammlungen und die Karte funktionieren offline. Eine Verbindung wird nur für die Ranglisten benötigt, für das Abspielen einer Nationalhymne (gestreamt aus der gemeinfreien Sammlung auf archive.org), für Werbevideos und für Käufe.</div>
+        </details>
+        <details>
+          <summary><h3>Eine Flagge, ein Name oder eine Angabe sieht falsch aus.</h3></summary>
+          <div class="a">Schreiben Sie uns bitte – Korrekturen sind willkommen und der schnellste Weg, die Daten zu verbessern. Die Angaben zu Ländern und Regionen stammen aus offenen Datenquellen, die unter „Einstellungen → Info / Lizenzen“ genannt sind. Bei einigen Gebieten ist der Status international umstritten; die Bezeichnungen dienen dem Lernen und sind keine politische Stellungnahme.</div>
+        </details>
+        <details>
+          <summary><h3>Wie melde ich einen Fehler oder schlage etwas vor?</h3></summary>
+          <div class="a">„Einstellungen → Feedback senden“ öffnet eine E-Mail an die oben genannte Adresse; die App ist darin schon eingetragen. Ein Screenshot und die Schritte, die dazu geführt haben, reichen uns meist, um den Fehler nachzuvollziehen.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Alle Sprachen anzeigen</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="fr" lang="fr" data-lang="fr">
+      <h1>Assistance et FAQ</h1>
+      <p>Écrivez-nous dans votre langue. Il n’y a ni compte d’assistance ni numéro de ticket : un simple e-mail suffit. Précisez si possible votre appareil et la version de l’application (elle est indiquée en bas de l’écran Réglages).</p>
+      <h2>Contact</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>Application</strong> : Maître des Drapeaux · Flag Master</p>
+        <p><strong>Identifiant du bundle</strong> : com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plateformes</strong> : iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Développeur</strong> : 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong> : <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.</p>
+      <p class="note" data-store-note="android" hidden>Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.</p>
+      <h2>Questions fréquentes</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>J’ai réinstallé l’application ou changé d’appareil. Comment récupérer Pro ?</h3></summary>
+          <div class="a">Ouvrez l’écran « Passer à Pro » et touchez « Restaurer l'achat ». Pro est un achat unique lié à votre <span class="pf" data-ios="Apple ID" data-android="compte Google">Apple ID</span> : il suffit de vous connecter avec le même <span class="pf" data-ios="Apple ID" data-android="compte Google">Apple ID</span> pour le retrouver, et vous n’êtes jamais débité deux fois.</div>
+        </details>
+        <details>
+          <summary><h3>Pro est-il un abonnement ?</h3></summary>
+          <div class="a">Non. Pro est un achat unique, payé une bonne fois pour toutes. Il ne se renouvelle jamais et il n’y a rien à résilier.</div>
+        </details>
+        <details>
+          <summary><h3>Comment obtenir un remboursement ?</h3></summary>
+          <div class="a">Les remboursements sont gérés par <span class="pf" data-ios="Apple" data-android="Google">Apple</span>, selon ses propres conditions, et non par le développeur. Faites votre demande via <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>, à l’aide du reçu de l’achat.</div>
+        </details>
+        <details>
+          <summary><h3>Puis-je acheter des Points Drapeau ?</h3></summary>
+          <div class="a">Non. Les Points Drapeau ne sont jamais vendus. Vous les gagnez en jouant ou en choisissant de regarder une publicité récompensée. Ils n’ont aucune valeur monétaire et ne peuvent être ni transférés ni échangés. Pro supprime les publicités et vous permet d’accéder à tous les modes de jeu sans dépenser de points.</div>
+        </details>
+        <details>
+          <summary><h3>Ma progression a disparu, ou j’ai changé d’appareil.</h3></summary>
+          <div class="a">Sur iOS, Réglages → Synchronisation iCloud (activée par défaut) conserve une copie de votre progression dans votre propre compte iCloud. Connectez-vous avec le même Apple ID, installez l’application, et vos données reviennent. Sur Android, cette fonction n’existe pas : la progression est enregistrée uniquement sur l’appareil, et la désinstallation l’efface. Attention : Réglages → Réinitialiser la progression est une action délibérée et irréversible, qui efface aussi la copie iCloud.</div>
+        </details>
+        <details>
+          <summary><h3>Comment supprimer mon score des classements ?</h3></summary>
+          <div class="a">Écrivez à l’adresse ci-dessus en indiquant le pseudonyme affiché sur votre ligne et la date approximative de votre partie ; votre score sera supprimé. Les classements se renouvellent aussi d’eux-mêmes : ceux du jour chaque jour, ceux de la semaine chaque semaine.</div>
+        </details>
+        <details>
+          <summary><h3>Puis-je changer mon pseudonyme de classement ?</h3></summary>
+          <div class="a">Le pseudonyme est choisi une seule fois, lors de votre première participation aux classements, puis conservé sur votre appareil. L’application ne propose aucun bouton pour le modifier ; s’il vous en faut un autre, écrivez-nous.</div>
+        </details>
+        <details>
+          <summary><h3>Le rappel quotidien n’arrive jamais.</h3></summary>
+          <div class="a">Vérifiez d’abord, dans l’application, Réglages → Notification du drapeau du jour, puis, dans les réglages de votre appareil, l’autorisation de notifications accordée à l’application. Le rappel est programmé sur votre appareil à 10 h 00 — aucun serveur n’intervient — et l’application doit donc avoir été ouverte au moins une fois depuis que vous avez activé l’option. Ce rappel n’existe que sur iPhone et iPad — la version Android ne propose pas de rappel quotidien, et l’option n’y apparaît pas.</div>
+        </details>
+        <details>
+          <summary><h3>Comment changer la langue de l’application ?</h3></summary>
+          <div class="a">L’application suit la langue de votre appareil et est disponible en 14 langues : English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe et Polski. Il n’existe aucun sélecteur de langue dans l’application : changez la langue de votre appareil, puis rouvrez l’application.</div>
+        </details>
+        <details>
+          <summary><h3>Comment modifier mes choix de confidentialité des annonces ?</h3></summary>
+          <div class="a">Réglages → Choix de confidentialité des annonces rouvre le formulaire de consentement là où il s’applique (par exemple dans l’EEE et au Royaume-Uni). La version gratuite n’affiche une publicité récompensée que lorsque vous touchez « Regarder une pub » pour gagner des Points Drapeau ; il n’y a ni bannière ni publicité plein écran, et les utilisateurs Pro n’en voient aucune.</div>
+        </details>
+        <details>
+          <summary><h3>L’application fonctionne-t-elle sans connexion ?</h3></summary>
+          <div class="a">Oui. Le mode Étude, les quiz, les collections et la carte fonctionnent tous hors ligne. Une connexion n’est nécessaire que pour les classements, pour écouter un hymne national (diffusé depuis la collection du domaine public d’archive.org), pour les publicités récompensées et pour les achats.</div>
+        </details>
+        <details>
+          <summary><h3>Un drapeau, un nom ou une information comporte une erreur.</h3></summary>
+          <div class="a">Écrivez-nous : les corrections sont les bienvenues et constituent le moyen le plus rapide de rectifier les données. Les informations sur les pays et les régions proviennent des sources de données ouvertes créditées dans Réglages → Infos / Licences. Le statut de certains territoires fait l’objet de différends internationaux ; les libellés ont une visée pédagogique et ne constituent pas une prise de position politique.</div>
+        </details>
+        <details>
+          <summary><h3>Comment signaler un bug ou proposer une idée ?</h3></summary>
+          <div class="a">Réglages → Envoyer un avis ouvre un e-mail déjà adressé à l’adresse ci-dessus, avec les informations sur l’application préremplies. Une capture d’écran et la description des étapes suivies nous suffisent généralement pour reproduire le problème.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Afficher toutes les langues</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="it" lang="it" data-lang="it">
+      <h1>Assistenza e FAQ</h1>
+      <p>Scrivici pure nella tua lingua. Non servono account di assistenza né numeri di ticket: basta una semplice email. Ci è utile sapere quale dispositivo usi e quale versione dell’app hai installato (la trovi in fondo a Impostazioni).</p>
+      <h2>Contatti</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>App</strong>: Maestro delle Bandiere · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Piattaforme</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Sviluppatore</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contatti</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.</p>
+      <p class="note" data-store-note="android" hidden>Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.</p>
+      <h2>Domande frequenti</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>Ho reinstallato l’app o cambiato dispositivo: come recupero Pro?</h3></summary>
+          <div class="a">Apri la schermata Pro e tocca “Ripristina acquisto”. Pro è un acquisto una tantum collegato al tuo <span class="pf" data-ios="Apple ID" data-android="account Google">Apple ID</span>: ti basta accedere con lo stesso <span class="pf" data-ios="Apple ID" data-android="account Google">Apple ID</span> per riaverlo, senza mai pagare due volte.</div>
+        </details>
+        <details>
+          <summary><h3>Pro è un abbonamento?</h3></summary>
+          <div class="a">No. Pro è un acquisto una tantum: non si rinnova e non c’è nulla da disdire.</div>
+        </details>
+        <details>
+          <summary><h3>Come posso chiedere un rimborso?</h3></summary>
+          <div class="a">I rimborsi sono gestiti da <span class="pf" data-ios="Apple" data-android="Google">Apple</span> secondo le sue politiche, non dallo sviluppatore. Puoi richiederne uno tramite <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>, usando la ricevuta dell’acquisto.</div>
+        </details>
+        <details>
+          <summary><h3>Posso acquistare i Punti Bandiera?</h3></summary>
+          <div class="a">No. I Punti Bandiera non sono mai in vendita. Si guadagnano giocando oppure scegliendo di guardare un annuncio con premio. Non hanno alcun valore in denaro e non possono essere trasferiti né convertiti. Pro elimina gli annunci e permette di accedere a tutte le modalità di gioco senza spendere punti.</div>
+        </details>
+        <details>
+          <summary><h3>Ho perso i progressi, oppure sono passato a un nuovo dispositivo.</h3></summary>
+          <div class="a">Su iOS, Impostazioni → Sincronizzazione iCloud (attiva per impostazione predefinita) conserva una copia dei tuoi progressi nel tuo account iCloud. Accedi con lo stesso Apple ID, installa l’app e i tuoi dati tornano al loro posto. Su Android questa funzione non esiste: i progressi restano solo sul dispositivo, quindi disinstallando l’app vanno persi. Tieni presente che Impostazioni → Azzera progressi è un’azione intenzionale e definitiva: cancella anche la copia su iCloud.</div>
+        </details>
+        <details>
+          <summary><h3>Come faccio a togliere il mio punteggio dalle classifiche?</h3></summary>
+          <div class="a">Scrivi all’indirizzo qui sopra indicando il nickname che compare accanto al tuo punteggio e all’incirca quando hai giocato: provvederemo a rimuoverlo. Le classifiche si azzerano anche da sole: quelle giornaliere ogni giorno, quelle settimanali ogni settimana.</div>
+        </details>
+        <details>
+          <summary><h3>Posso cambiare il nickname che compare in classifica?</h3></summary>
+          <div class="a">Il nickname si sceglie una sola volta, la prima volta che entri in classifica, e viene poi salvato sul dispositivo. Nell’app non c’è un pulsante per cambiarlo: se ti serve un nome diverso, scrivici.</div>
+        </details>
+        <details>
+          <summary><h3>Il promemoria giornaliero non arriva mai.</h3></summary>
+          <div class="a">Controlla Impostazioni → Notifica bandiera del giorno nell’app e poi, nelle impostazioni del dispositivo, l’autorizzazione alle notifiche. Il promemoria viene programmato direttamente sul dispositivo per le 10:00, senza passare da alcun server: perché arrivi devi anche aver aperto l’app almeno una volta dopo averlo attivato. Questo promemoria è una funzione di iPhone e iPad: nella versione Android il promemoria giornaliero non esiste e l’impostazione non compare.</div>
+        </details>
+        <details>
+          <summary><h3>Come cambio la lingua dell’app?</h3></summary>
+          <div class="a">L’app segue la lingua del dispositivo e ne supporta 14: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe e Polski. Nell’app non c’è alcun selettore della lingua: cambia la lingua del dispositivo e riapri l’app.</div>
+        </details>
+        <details>
+          <summary><h3>Come modifico le mie scelte sulla privacy degli annunci?</h3></summary>
+          <div class="a">Impostazioni → Privacy degli annunci riapre il modulo di consenso dove è previsto (per esempio nel SEE e nel Regno Unito). Nella versione gratuita un annuncio con premio compare solo quando tocchi “Guarda un annuncio” per guadagnare Punti Bandiera: non ci sono banner né annunci a schermo intero, e chi ha Pro non ne vede nessuno.</div>
+        </details>
+        <details>
+          <summary><h3>L’app funziona senza connessione?</h3></summary>
+          <div class="a">Sì. Lo studio, i quiz, le collezioni e la mappa funzionano tutti offline. La connessione serve solo per le classifiche, per riprodurre un inno nazionale (trasmesso in streaming dalla raccolta di pubblico dominio su archive.org), per gli annunci con premio e per gli acquisti.</div>
+        </details>
+        <details>
+          <summary><h3>Una bandiera, un nome o un’informazione sembrano sbagliati.</h3></summary>
+          <div class="a">Scrivici pure: le segnalazioni sono benvenute e sono il modo più rapido per correggere i dati. Le informazioni su Paesi e regioni provengono dalle fonti di dati aperti citate in Impostazioni → Info / Licenze. Alcuni territori hanno uno status conteso a livello internazionale: le diciture hanno finalità didattiche e non esprimono una posizione politica.</div>
+        </details>
+        <details>
+          <summary><h3>Come segnalo un problema o propongo un’idea?</h3></summary>
+          <div class="a">Impostazioni → Invia feedback apre un’email già pronta, indirizzata all’indirizzo qui sopra e con i dati dell’app compilati automaticamente. Di solito bastano uno screenshot e i passaggi che hai seguito perché possiamo riprodurre il problema.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Mostra tutte le lingue</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">
+      <h1>支援與常見問題</h1>
+      <p>歡迎用您慣用的語言寫信給我們。您不需要註冊任何帳號，也不需要工單編號，一封普通的電子郵件就足夠了；如果能一併告訴我們您使用的裝置與 App 版本，會很有幫助（版本顯示在「設定」畫面的最下方）。</p>
+      <h2>聯絡我們</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>應用程式</strong>： 國旗大師 · Flag Master</p>
+        <p><strong>Bundle ID</strong>： com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>支援平台</strong>： iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開發者</strong>： 임한수 (Hansoo Lim)</p>
+        <p><strong>聯絡方式</strong>： <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。</p>
+      <p class="note" data-store-note="android" hidden>目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。</p>
+      <h2>常見問題</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>我重新安裝了 App，或是換了新裝置，要怎麼取回 Pro？</h3></summary>
+          <div class="a">請開啟「升級至 Pro」畫面，點一下「回復購買」。Pro 是與您的 <span class="pf" data-ios="Apple ID" data-android="Google 帳戶">Apple ID</span> 綁定的一次性購買，只要用同一個 <span class="pf" data-ios="Apple ID" data-android="Google 帳戶">Apple ID</span> 登入就會回復，也不會重複扣款。</div>
+        </details>
+        <details>
+          <summary><h3>Pro 是訂閱制嗎？</h3></summary>
+          <div class="a">不是。Pro 只需購買一次，不會自動續訂，也沒有需要取消的項目。</div>
+        </details>
+        <details>
+          <summary><h3>要如何申請退款？</h3></summary>
+          <div class="a">退款由 <span class="pf" data-ios="Apple" data-android="Google">Apple</span> 依其自身政策處理，開發者無法代為辦理。請憑該筆購買的收據，透過 <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> 提出申請。</div>
+        </details>
+        <details>
+          <summary><h3>可以購買國旗點數嗎？</h3></summary>
+          <div class="a">無法購買。國旗點數一律不販售，只能靠遊玩累積，或由您主動選擇觀看獎勵廣告來獲得。點數沒有現金價值，也無法轉讓或兌換。升級 Pro 之後不會再看到廣告，並且不必花點數就能進入所有遊戲模式。</div>
+        </details>
+        <details>
+          <summary><h3>我的進度不見了，或是我換到新的裝置。</h3></summary>
+          <div class="a">在 iOS 上，「設定 → iCloud 同步」（預設為開啟）會把您的進度備份到您自己的 iCloud 帳戶。只要以同一個 Apple ID 登入並安裝 App，先前的進度就會回復。Android 沒有這項功能，進度只保存在裝置上，解除安裝後就會一併消失。另外請留意，「設定 → 重置進度」是永久性的操作，無法復原，連 iCloud 上的備份也會一併清除。</div>
+        </details>
+        <details>
+          <summary><h3>要如何把我的紀錄從排行榜移除？</h3></summary>
+          <div class="a">請寄信到上方的電子郵件地址，並附上您那一列顯示的暱稱，以及您大約是在什麼時候遊玩的，我們就會將該筆紀錄移除。此外，排行榜本身也會自動更替：每日榜每天重新開始，每週榜每週重新開始。</div>
+        </details>
+        <details>
+          <summary><h3>可以更改排行榜上的暱稱嗎？</h3></summary>
+          <div class="a">暱稱只會在您第一次進入排行榜時設定一次，之後便儲存在您的裝置上。App 內沒有改名的按鈕；如果您需要換一個名字，請來信告訴我們。</div>
+        </details>
+        <details>
+          <summary><h3>每日提醒一直沒有出現。</h3></summary>
+          <div class="a">請先確認 App 內的「設定 → 每日國旗通知」是否開啟，接著再到裝置的系統設定中確認本 App 的通知權限。這項提醒是直接在您的裝置上排定於每天 10:00 發出的，並不經過任何伺服器，因此在您開啟這項設定後，還必須至少再啟動一次 App 才會生效。這項提醒僅適用於 iPhone 與 iPad；Android 版沒有每日提醒功能，設定中也不會顯示這個選項。</div>
+        </details>
+        <details>
+          <summary><h3>要如何更改 App 的語言？</h3></summary>
+          <div class="a">App 會跟隨您裝置的語言設定，目前支援 14 種語言：English、한국어、日本語、繁體中文、Deutsch、Français、Italiano、Español、Português、العربية、Bahasa Indonesia、Tiếng Việt、Türkçe 與 Polski。App 內沒有切換語言的選項，請更改裝置的語言後再重新開啟 App。</div>
+        </details>
+        <details>
+          <summary><h3>要如何變更廣告隱私選項？</h3></summary>
+          <div class="a">在適用的地區（例如歐洲經濟區與英國），「設定 → 廣告隱私選項」會再次開啟同意聲明表單。免費版只有在您點選「觀看廣告」以賺取國旗點數時，才會播放一則獎勵廣告；不會出現橫幅廣告或全螢幕廣告，Pro 使用者則完全不會看到廣告。</div>
+        </details>
+        <details>
+          <summary><h3>沒有網路連線時可以使用嗎？</h3></summary>
+          <div class="a">可以。學習、測驗、圖鑑與地圖都能離線使用。只有在查看排行榜、播放國歌（從 archive.org 的公共領域典藏串流播放）、觀看獎勵廣告以及進行購買時，才需要連線。</div>
+        </details>
+        <details>
+          <summary><h3>國旗、名稱或說明看起來有誤。</h3></summary>
+          <div class="a">請寫信告訴我們，我們很歡迎指正，這也是修正資料最快的方式。國家與地區的資訊取自開放資料來源，出處列於「設定 → 資訊 / 授權」。部分地區在國際上的地位仍有爭議；App 內的標示僅供學習之用，並不代表任何政治立場。</div>
+        </details>
+        <details>
+          <summary><h3>要如何回報問題或提出建議？</h3></summary>
+          <div class="a">「設定 → 意見回饋」會開啟一封寄給上方地址的郵件，並自動帶入 App 的相關資訊。通常只要附上一張螢幕截圖與您操作的步驟，我們就能重現問題。</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>顯示所有語言</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="es" lang="es" data-lang="es">
+      <h1>Soporte y preguntas frecuentes</h1>
+      <p>Escríbenos en tu propio idioma. No hay cuenta de soporte ni número de ticket: basta con un correo normal, y nos ayuda mucho que nos digas qué dispositivo usas y qué versión de la aplicación tienes (la verás al final de la pantalla de Ajustes).</p>
+      <h2>Contacto</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>Aplicación</strong>: Maestro de Banderas · Flag Master</p>
+        <p><strong>ID del paquete</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desarrollador</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contacto</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.</p>
+      <p class="note" data-store-note="android" hidden>Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.</p>
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>He reinstalado la aplicación o he cambiado de dispositivo. ¿Cómo recupero Pro?</h3></summary>
+          <div class="a">Abre la pantalla «Hazte Pro» y toca «Restaurar compra». Pro es una compra única asociada a tu <span class="pf" data-ios="Apple ID" data-android="cuenta de Google">Apple ID</span>, así que, al iniciar sesión con tu <span class="pf" data-ios="Apple ID" data-android="cuenta de Google">Apple ID</span> de siempre, vuelve a activarse y nunca se te cobra dos veces.</div>
+        </details>
+        <details>
+          <summary><h3>¿Pro es una suscripción?</h3></summary>
+          <div class="a">No. Pro es una compra única. No se renueva nunca y no hay nada que cancelar.</div>
+        </details>
+        <details>
+          <summary><h3>¿Cómo pido un reembolso?</h3></summary>
+          <div class="a">Los reembolsos los gestiona <span class="pf" data-ios="Apple" data-android="Google">Apple</span> según sus propias políticas, no el desarrollador. Solicítalo a través de <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> con el recibo de la compra.</div>
+        </details>
+        <details>
+          <summary><h3>¿Puedo comprar Puntos de Bandera?</h3></summary>
+          <div class="a">No. Los Puntos de Bandera nunca se venden. Se consiguen jugando o eligiendo ver un anuncio recompensado. No tienen valor monetario y no se pueden transferir ni canjear. Pro quita los anuncios y te permite entrar en todos los modos de juego sin gastar puntos.</div>
+        </details>
+        <details>
+          <summary><h3>He perdido mi progreso o he cambiado de dispositivo.</h3></summary>
+          <div class="a">En iOS, Ajustes → Sincronización con iCloud (activada de forma predeterminada) guarda una copia de tu progreso en tu propia cuenta de iCloud. Inicia sesión con el mismo Apple ID, instala la aplicación y tu historial vuelve a aparecer. En Android no existe esta función: el progreso se guarda solo en el dispositivo, así que al desinstalar la aplicación se pierde. Ten en cuenta que Ajustes → Reiniciar progreso es una acción deliberada y definitiva: también borra la copia de iCloud.</div>
+        </details>
+        <details>
+          <summary><h3>¿Cómo elimino mi entrada de las clasificaciones?</h3></summary>
+          <div class="a">Escríbenos a la dirección de arriba indicando el nombre que aparece en tu fila y, más o menos, cuándo jugaste; eliminaremos la entrada. Las clasificaciones también se renuevan solas: las diarias, cada día; las semanales, cada semana.</div>
+        </details>
+        <details>
+          <summary><h3>¿Puedo cambiar mi nombre en las clasificaciones?</h3></summary>
+          <div class="a">El nombre se elige una sola vez, la primera vez que entras en las clasificaciones, y después se guarda en tu dispositivo. La aplicación no tiene ningún botón para cambiarlo; si necesitas otro nombre, escríbenos.</div>
+        </details>
+        <details>
+          <summary><h3>El recordatorio diario no llega nunca.</h3></summary>
+          <div class="a">Revisa, dentro de la aplicación, Ajustes → Aviso de la bandera del día y, después, el permiso de notificaciones en los ajustes de tu dispositivo. El recordatorio se programa en tu propio dispositivo a las 10:00 —no interviene ningún servidor—, así que también hace falta haber abierto la aplicación al menos una vez después de activarlo. Este recordatorio es una función de iPhone y iPad: la versión de Android no tiene recordatorio diario y ese ajuste no aparece en ella.</div>
+        </details>
+        <details>
+          <summary><h3>¿Cómo cambio el idioma de la aplicación?</h3></summary>
+          <div class="a">La aplicación sigue el idioma de tu dispositivo y está disponible en 14 idiomas: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe y Polski. Dentro de la aplicación no hay ningún selector de idioma: cambia el idioma del dispositivo y vuelve a abrirla.</div>
+        </details>
+        <details>
+          <summary><h3>¿Cómo cambio mis preferencias de privacidad de los anuncios?</h3></summary>
+          <div class="a">Ajustes → Privacidad de los anuncios vuelve a abrir el formulario de consentimiento allí donde corresponde (por ejemplo, en el EEE y el Reino Unido). La versión gratuita muestra un anuncio recompensado solo cuando tocas «Ver un anuncio» para ganar Puntos de Bandera; no hay anuncios de banner ni a pantalla completa, y quien tiene Pro no ve ninguno.</div>
+        </details>
+        <details>
+          <summary><h3>¿Funciona la aplicación sin conexión?</h3></summary>
+          <div class="a">Sí. El estudio, los cuestionarios, las colecciones y el mapa funcionan sin conexión. Solo se necesita conexión para las clasificaciones, para reproducir un himno nacional (que se transmite desde la colección de dominio público de archive.org), para los anuncios recompensados y para las compras.</div>
+        </details>
+        <details>
+          <summary><h3>Una bandera, un nombre o un dato parece incorrecto.</h3></summary>
+          <div class="a">Escríbenos, por favor: las correcciones son bienvenidas y son la forma más rápida de arreglar los datos. La información sobre países y regiones procede de las fuentes de datos abiertas que se acreditan en Ajustes → Acerca de / Licencias. Algunos territorios tienen un estatus disputado internacionalmente; las etiquetas tienen una finalidad educativa y no representan una postura política.</div>
+        </details>
+        <details>
+          <summary><h3>¿Cómo informo de un error o propongo una idea?</h3></summary>
+          <div class="a">Ajustes → Enviar comentarios abre un correo dirigido a la dirección de arriba con la aplicación ya identificada. Con una captura de pantalla y los pasos que seguiste solemos tener suficiente para reproducir el problema.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos los idiomas</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="pt" lang="pt" data-lang="pt">
+      <h1>Suporte e perguntas frequentes</h1>
+      <p>Escreva para nós no seu idioma. Não existe conta de suporte nem número de chamado — um e-mail comum já basta. Ajuda bastante dizer qual é o seu aparelho e a versão do app (a versão aparece no fim da tela de Ajustes).</p>
+      <h2>Contato</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>App</strong>: Mestre das Bandeiras · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desenvolvedor</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contato</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.</p>
+      <p class="note" data-store-note="android" hidden>Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.</p>
+      <h2>Perguntas frequentes</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>Reinstalei o app ou troquei de aparelho. Como recupero o Pro?</h3></summary>
+          <div class="a">Abra a tela “Virar Pro” e toque em “Restaurar compra”. O Pro é uma compra única, ligada à conta que você usa na loja (<span class="pf" data-ios="Apple ID" data-android="conta Google">Apple ID</span>). Ao entrar com essa mesma conta, ele volta — e você nunca é cobrado duas vezes.</div>
+        </details>
+        <details>
+          <summary><h3>O Pro é uma assinatura?</h3></summary>
+          <div class="a">Não. O Pro é uma compra única: você paga uma vez, não há renovação e não há nada para cancelar.</div>
+        </details>
+        <details>
+          <summary><h3>Como peço um reembolso?</h3></summary>
+          <div class="a">Os reembolsos são tratados pela operadora da loja (<span class="pf" data-ios="Apple" data-android="Google">Apple</span>), segundo as políticas dela, e não pelo desenvolvedor. Solicite o reembolso na própria loja (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>), apresentando o recibo da compra.</div>
+        </details>
+        <details>
+          <summary><h3>Posso comprar Pontos de Bandeira?</h3></summary>
+          <div class="a">Não. Os Pontos de Bandeira nunca são vendidos. Você ganha pontos jogando ou, se quiser, assistindo a um anúncio premiado. Eles não têm valor em dinheiro e não podem ser transferidos nem trocados. O Pro remove os anúncios e libera a entrada em todos os modos de jogo sem gastar pontos.</div>
+        </details>
+        <details>
+          <summary><h3>Meu progresso sumiu, ou troquei de aparelho.</h3></summary>
+          <div class="a">No iOS, Ajustes → Sincronização com iCloud (já vem ligada) guarda uma cópia do seu progresso na sua própria conta do iCloud. Entre com o mesmo Apple ID, instale o app e o seu progresso volta. No Android não existe esse recurso: o progresso fica só no aparelho, então desinstalar o app apaga tudo. Vale lembrar que Ajustes → Apagar Progresso é uma ação definitiva, sem volta: apaga também a cópia no iCloud.</div>
+        </details>
+        <details>
+          <summary><h3>Como removo meu nome dos rankings?</h3></summary>
+          <div class="a">Escreva para o endereço acima informando o apelido que aparece no ranking e mais ou menos quando você jogou; nós removemos o registro. Os rankings também se renovam sozinhos — os diários a cada dia, os semanais a cada semana.</div>
+        </details>
+        <details>
+          <summary><h3>Posso mudar o meu apelido nos rankings?</h3></summary>
+          <div class="a">Você escolhe o apelido uma única vez, ao entrar nos rankings pela primeira vez, e ele fica salvo no aparelho. Não existe botão para renomear dentro do app; se precisar de outro nome, escreva para nós.</div>
+        </details>
+        <details>
+          <summary><h3>O lembrete diário nunca chega.</h3></summary>
+          <div class="a">Confira Ajustes → Alerta da bandeira do dia dentro do app e, depois, a permissão de notificações do app nos ajustes do aparelho. O lembrete é agendado no próprio aparelho para as 10h — não há servidor envolvido — e, por isso, o app também precisa ter sido aberto pelo menos uma vez depois que você ativou o alerta. Esse lembrete é um recurso do iPhone e do iPad — a versão para Android não tem lembrete diário, e a opção nem aparece lá.</div>
+        </details>
+        <details>
+          <summary><h3>Como mudo o idioma do app?</h3></summary>
+          <div class="a">O app segue o idioma do seu aparelho e está disponível em 14 idiomas: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe e Polski. Não existe troca de idioma dentro do app — mude o idioma do aparelho e abra o app de novo.</div>
+        </details>
+        <details>
+          <summary><h3>Como mudo as minhas escolhas de privacidade dos anúncios?</h3></summary>
+          <div class="a">Ajustes → Privacidade dos anúncios reabre o formulário de consentimento nas regiões em que ele é exigido (por exemplo, no Espaço Econômico Europeu e no Reino Unido). Na versão gratuita, um anúncio premiado só aparece quando você toca em “Assistir a um anúncio” para ganhar Pontos de Bandeira; não há banners nem anúncios de tela cheia, e quem tem Pro não vê anúncio nenhum.</div>
+        </details>
+        <details>
+          <summary><h3>O app funciona sem internet?</h3></summary>
+          <div class="a">Sim. O modo de estudo, os quizzes, as coleções e o mapa funcionam off-line. A conexão é usada apenas para os rankings, para tocar um hino nacional (reproduzido a partir do acervo de domínio público do archive.org), para os anúncios premiados e para as compras.</div>
+        </details>
+        <details>
+          <summary><h3>Uma bandeira, um nome ou um dado parece errado.</h3></summary>
+          <div class="a">Escreva para nós — correções são bem-vindas e são o jeito mais rápido de acertar os dados. As informações sobre países e regiões vêm das fontes de dados abertos creditadas em Ajustes → Sobre / Licenças. Alguns territórios têm situação disputada internacionalmente; os nomes usados têm finalidade educativa e não representam uma posição política.</div>
+        </details>
+        <details>
+          <summary><h3>Como relato um erro ou envio uma sugestão?</h3></summary>
+          <div class="a">Ajustes → Enviar feedback abre um e-mail para o endereço acima já com os dados do app preenchidos. Uma captura de tela e os passos que você seguiu costumam bastar para reproduzirmos o problema.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos os idiomas</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ar" lang="ar" data-lang="ar" dir="rtl">
+      <h1>الدعم والأسئلة الشائعة</h1>
+      <p>راسِلنا بلغتك. لا يوجد حساب دعم ولا رقم تذكرة — تكفي رسالة بريد إلكتروني عادية، ويساعدنا أن تذكر جهازك وإصدار التطبيق (يظهر الإصدار في أسفل شاشة الإعدادات).</p>
+      <h2>التواصل معنا</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>التطبيق</strong>: سيد الأعلام · Flag Master</p>
+        <p><strong>معرّف الحزمة</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>المنصات</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>المطوّر</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>التواصل</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.</p>
+      <p class="note" data-store-note="android" hidden>النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.</p>
+      <h2>الأسئلة الشائعة</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>أعدت تثبيت التطبيق أو غيّرت جهازي. كيف أستعيد Pro؟</h3></summary>
+          <div class="a">افتح شاشة Pro واضغط «استعادة الشراء». Pro عملية شراء لمرة واحدة مرتبطة ب<span class="pf" data-ios="معرّف Apple" data-android="حساب Google">معرّف Apple</span> الخاص بك، لذا يكفي تسجيل الدخول ب<span class="pf" data-ios="معرّف Apple" data-android="حساب Google">معرّف Apple</span> نفسه ليعود إليك، ولن يُطلب منك الدفع مرة أخرى.</div>
+        </details>
+        <details>
+          <summary><h3>هل Pro اشتراك؟</h3></summary>
+          <div class="a">لا. Pro عملية شراء تُدفع مرة واحدة فقط. لا يتجدّد إطلاقًا، ولا شيء عليك إلغاؤه.</div>
+        </details>
+        <details>
+          <summary><h3>كيف أحصل على استرداد للمبلغ؟</h3></summary>
+          <div class="a">تتولّى <span class="pf" data-ios="Apple" data-android="Google">Apple</span> — لا المطوّر — عمليات الاسترداد وفق سياساتها الخاصة. اطلب الاسترداد من خلال <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> مستعينًا بإيصال عملية الشراء.</div>
+        </details>
+        <details>
+          <summary><h3>هل يمكنني شراء نقاط الأعلام؟</h3></summary>
+          <div class="a">لا. نقاط الأعلام لا تُباع أبدًا. تكسبها باللعب، أو باختيارك مشاهدة إعلان بمكافأة. وليست لها قيمة نقدية ولا يمكن تحويلها أو استبدالها. أما Pro فيزيل الإعلانات ويتيح لك دخول جميع أنماط اللعب دون إنفاق أي نقاط.</div>
+        </details>
+        <details>
+          <summary><h3>فقدت تقدّمي، أو انتقلت إلى جهاز جديد.</h3></summary>
+          <div class="a">على iOS، يوجد في الإعدادات خيار «مزامنة iCloud» وهو مفعّل افتراضيًا، ويحفظ نسخة من تقدّمك في حساب iCloud الخاص بك. سجّل الدخول بمعرّف Apple نفسه، وثبّت التطبيق، وسيعود تقدّمك كما كان. أما على Android فلا تتوفّر هذه الميزة — يبقى التقدّم على الجهاز وحده، ويزول عند إزالة التطبيق. وانتبه إلى أن «إعادة ضبط التقدّم» في الإعدادات خطوة مقصودة لا رجعة فيها: فهي تمسح نسخة iCloud أيضًا.</div>
+        </details>
+        <details>
+          <summary><h3>كيف أحذف مشاركتي من التصنيفات؟</h3></summary>
+          <div class="a">راسلنا على العنوان أعلاه مع ذكر الاسم المستعار الظاهر في صفّك ووقت لعبك تقريبًا، وسنحذف المشاركة. كما تتجدّد اللوحات من تلقاء نفسها — اللوحات اليومية كل يوم، والأسبوعية كل أسبوع.</div>
+        </details>
+        <details>
+          <summary><h3>هل يمكنني تغيير اسمي المستعار في التصنيفات؟</h3></summary>
+          <div class="a">يُختار الاسم المستعار مرة واحدة عند دخولك التصنيفات لأول مرة، ثم يُحفظ على جهازك. ولا يوجد زر لإعادة التسمية داخل التطبيق؛ فإن احتجت إلى اسم مختلف، فراسلنا.</div>
+        </details>
+        <details>
+          <summary><h3>التذكير اليومي لا يصلني.</h3></summary>
+          <div class="a">تحقّق من «تنبيه علم اليوم» في إعدادات التطبيق، ثم من إذن الإشعارات الممنوح للتطبيق في إعدادات جهازك. ويُضبط التذكير على جهازك نفسه في الساعة 10:00 — دون أي خادم — لذا يلزم أيضًا أن تكون قد فتحت التطبيق مرة واحدة على الأقل بعد تفعيل التنبيه. وهذا التذكير ميزة خاصة بـ iPhone و iPad — فنسخة Android لا تتضمّن تذكيرًا يوميًا، ولا يظهر فيها هذا الإعداد أصلًا.</div>
+        </details>
+        <details>
+          <summary><h3>كيف أغيّر لغة التطبيق؟</h3></summary>
+          <div class="a">يتبع التطبيق لغة جهازك، وهو يدعم 14 لغة: English، 한국어، 日本語، 繁體中文، Deutsch، Français، Italiano، Español، Português، العربية، Bahasa Indonesia، Tiếng Việt، Türkçe، Polski. ولا يوجد مبدّل لغة داخل التطبيق — غيّر لغة جهازك ثم أعد فتح التطبيق.</div>
+        </details>
+        <details>
+          <summary><h3>كيف أغيّر خيارات خصوصية الإعلانات؟</h3></summary>
+          <div class="a">يفتح «خيارات خصوصية الإعلانات» في الإعدادات نموذجَ الموافقة من جديد حيثما كان مطلوبًا (في المنطقة الاقتصادية الأوروبية والمملكة المتحدة مثلًا). ولا تعرض النسخة المجانية إعلانًا بمكافأة إلا عندما تضغط «شاهد إعلانًا» لكسب نقاط الأعلام؛ فليست هناك إعلانات بانر ولا إعلانات بملء الشاشة، ولا يرى مستخدمو Pro أي إعلان على الإطلاق.</div>
+        </details>
+        <details>
+          <summary><h3>هل يعمل التطبيق دون اتصال بالإنترنت؟</h3></summary>
+          <div class="a">نعم. تعمل الدراسة والاختبارات والمجموعات والخريطة كلها دون اتصال. ولا يُستخدم الاتصال إلا للتصنيفات، ولتشغيل النشيد الوطني (يُبثّ من مجموعة الملكية العامة على archive.org)، وللإعلانات بمكافأة وعمليات الشراء.</div>
+        </details>
+        <details>
+          <summary><h3>هناك علم أو اسم أو معلومة تبدو خاطئة.</h3></summary>
+          <div class="a">راسلنا من فضلك — نرحّب بالتصحيحات، وهي أسرع طريقة لإصلاح البيانات. وتأتي معلومات الدول والمناطق من مصادر البيانات المفتوحة المذكورة في «حول / التراخيص» ضمن الإعدادات. وبعض الأقاليم ذات وضع متنازع عليه دوليًا؛ والتسميات هنا لغرض تعليمي ولا تعبّر عن موقف سياسي.</div>
+        </details>
+        <details>
+          <summary><h3>كيف أبلّغ عن خلل أو أقترح فكرة؟</h3></summary>
+          <div class="a">يفتح «إرسال ملاحظات» في الإعدادات رسالة بريد إلكتروني إلى العنوان أعلاه، وقد كُتب فيها اسم التطبيق مسبقًا. وعادةً تكفينا لقطة شاشة مع الخطوات التي اتّبعتها كي نتمكّن من تكرار المشكلة لدينا.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>عرض جميع اللغات</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="id" lang="id" data-lang="id">
+      <h1>Dukungan &amp; FAQ</h1>
+      <p>Silakan hubungi kami lewat email dalam bahasa Anda sendiri. Tidak ada akun dukungan atau nomor tiket — email biasa sudah cukup, dan akan sangat membantu jika Anda menyebutkan perangkat serta versi aplikasi yang Anda pakai (versi tertera di bagian bawah layar Pengaturan).</p>
+      <h2>Kontak</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>Aplikasi</strong>: Master Bendera · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platform</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Pengembang</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontak</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.</p>
+      <p class="note" data-store-note="android" hidden>Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.</p>
+      <h2>Pertanyaan yang sering diajukan</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>Saya memasang ulang aplikasi atau berganti perangkat. Bagaimana cara mendapatkan Pro kembali?</h3></summary>
+          <div class="a">Buka layar Pro lalu ketuk “Pulihkan pembelian”. Pro adalah pembelian sekali bayar yang terkait dengan <span class="pf" data-ios="Apple ID" data-android="akun Google">Apple ID</span> Anda, jadi cukup masuk dengan <span class="pf" data-ios="Apple ID" data-android="akun Google">Apple ID</span> yang sama dan Pro akan kembali — Anda tidak akan pernah ditagih dua kali.</div>
+        </details>
+        <details>
+          <summary><h3>Apakah Pro itu langganan?</h3></summary>
+          <div class="a">Bukan. Pro adalah pembelian sekali bayar. Pro tidak pernah diperpanjang dan tidak ada yang perlu dibatalkan.</div>
+        </details>
+        <details>
+          <summary><h3>Bagaimana cara meminta pengembalian dana?</h3></summary>
+          <div class="a">Pengembalian dana ditangani oleh <span class="pf" data-ios="Apple" data-android="Google">Apple</span> sesuai kebijakannya sendiri, bukan oleh pengembang. Ajukan permintaan melalui <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> dengan menyertakan bukti pembelian Anda.</div>
+        </details>
+        <details>
+          <summary><h3>Bisakah saya membeli Poin Bendera?</h3></summary>
+          <div class="a">Tidak bisa. Poin Bendera tidak pernah dijual. Anda mengumpulkannya sambil bermain, atau dengan menonton iklan berhadiah kalau Anda mau. Poin ini tidak punya nilai uang dan tidak bisa dipindahkan atau ditukarkan. Pro menghapus iklan sekaligus membuka semua mode permainan tanpa perlu mengeluarkan poin.</div>
+        </details>
+        <details>
+          <summary><h3>Progres saya hilang, atau saya pindah ke perangkat baru.</h3></summary>
+          <div class="a">Di iOS, Pengaturan → Sinkronisasi iCloud (aktif secara bawaan) menyimpan salinan progres Anda di akun iCloud milik Anda sendiri. Masuk dengan Apple ID yang sama, pasang kembali aplikasinya, dan progres Anda akan kembali. Di Android tidak ada fitur semacam ini — progres hanya tersimpan di perangkat, jadi begitu aplikasi dicopot, progres ikut hilang. Perlu diingat, Pengaturan → Reset Progres bersifat permanen dan tidak bisa dibatalkan: salinan di iCloud ikut terhapus.</div>
+        </details>
+        <details>
+          <summary><h3>Bagaimana cara menghapus entri saya dari papan peringkat?</h3></summary>
+          <div class="a">Kirim email ke alamat di atas dengan menyebutkan nama panggilan yang tampil di baris Anda dan perkiraan waktu Anda bermain, lalu entri tersebut akan kami hapus. Papan peringkat juga berganti dengan sendirinya — papan harian setiap hari, papan mingguan setiap minggu.</div>
+        </details>
+        <details>
+          <summary><h3>Bisakah saya mengganti nama panggilan di papan peringkat?</h3></summary>
+          <div class="a">Nama panggilan dipilih satu kali, yaitu saat Anda pertama kali masuk ke papan peringkat, lalu disimpan di perangkat Anda. Tidak ada tombol ganti nama di dalam aplikasi; jika Anda memerlukan nama lain, silakan hubungi kami.</div>
+        </details>
+        <details>
+          <summary><h3>Pengingat harian tidak pernah muncul.</h3></summary>
+          <div class="a">Periksa Pengaturan → Notifikasi bendera hari ini di dalam aplikasi, lalu periksa izin notifikasi untuk aplikasi ini di pengaturan perangkat Anda. Pengingat dijadwalkan di perangkat Anda pada pukul 10.00 — tidak ada server yang terlibat — sehingga aplikasi juga perlu dibuka setidaknya sekali setelah Anda mengaktifkannya. Pengingat ini hanya tersedia di iPhone dan iPad — versi Android tidak memiliki pengingat harian, dan pengaturannya pun tidak muncul di sana.</div>
+        </details>
+        <details>
+          <summary><h3>Bagaimana cara mengubah bahasa aplikasi?</h3></summary>
+          <div class="a">Aplikasi mengikuti bahasa perangkat Anda dan mendukung 14 bahasa: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe, dan Polski. Tidak ada pilihan bahasa di dalam aplikasi — ubah bahasa perangkat Anda, lalu buka kembali aplikasinya.</div>
+        </details>
+        <details>
+          <summary><h3>Bagaimana cara mengubah pilihan privasi iklan saya?</h3></summary>
+          <div class="a">Pengaturan → Privasi iklan akan membuka kembali formulir persetujuan di wilayah yang mengharuskannya (misalnya di Wilayah Ekonomi Eropa dan Britania Raya). Versi gratis hanya menampilkan iklan berhadiah ketika Anda sendiri mengetuk “Tonton iklan” untuk mendapatkan Poin Bendera; tidak ada iklan banner maupun iklan layar penuh, dan pengguna Pro tidak melihat iklan sama sekali.</div>
+        </details>
+        <details>
+          <summary><h3>Apakah aplikasi ini bisa dipakai tanpa koneksi internet?</h3></summary>
+          <div class="a">Bisa. Belajar, kuis, koleksi, dan peta semuanya berfungsi secara offline. Koneksi hanya diperlukan untuk papan peringkat, untuk memutar lagu kebangsaan (streaming dari koleksi domain publik di archive.org), untuk iklan berhadiah, dan untuk pembelian.</div>
+        </details>
+        <details>
+          <summary><h3>Ada bendera, nama, atau fakta yang tampak keliru.</h3></summary>
+          <div class="a">Silakan hubungi kami — koreksi sangat kami hargai dan merupakan cara tercepat untuk memperbaiki datanya. Informasi negara dan wilayah berasal dari sumber data terbuka yang dicantumkan di Pengaturan → Tentang / Lisensi. Sebagian wilayah memiliki status yang disengketakan secara internasional; label yang kami pakai bersifat edukatif dan bukan merupakan sikap politik.</div>
+        </details>
+        <details>
+          <summary><h3>Bagaimana cara melaporkan bug atau menyampaikan saran?</h3></summary>
+          <div class="a">Pengaturan → Kirim masukan akan membuka email ke alamat di atas dengan keterangan aplikasi yang sudah terisi. Tangkapan layar beserta langkah-langkah yang Anda lakukan biasanya sudah cukup bagi kami untuk mereproduksi masalahnya.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Tampilkan semua bahasa</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="vi" lang="vi" data-lang="vi">
+      <h1>Hỗ trợ &amp; FAQ</h1>
+      <p>Bạn có thể viết thư cho chúng tôi bằng ngôn ngữ của mình. Không cần tài khoản hỗ trợ hay mã phiếu hỗ trợ — một email bình thường là đủ, và sẽ rất hữu ích nếu bạn cho biết mình đang dùng thiết bị nào và phiên bản ứng dụng nào (phiên bản nằm ở cuối màn hình Cài đặt).</p>
+      <h2>Liên hệ</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>Ứng dụng</strong>: Bậc Thầy Quốc Kỳ · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Nền tảng</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Nhà phát triển</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Liên hệ</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.</p>
+      <p class="note" data-store-note="android" hidden>Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.</p>
+      <h2>Câu hỏi thường gặp</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>Tôi cài lại ứng dụng hoặc đổi sang máy khác thì lấy lại Pro bằng cách nào?</h3></summary>
+          <div class="a">Bạn hãy mở màn hình Pro rồi chạm “Khôi phục mua hàng”. Pro là gói mua một lần gắn với <span class="pf" data-ios="Apple ID" data-android="tài khoản Google">Apple ID</span> của bạn, nên chỉ cần đăng nhập bằng đúng <span class="pf" data-ios="Apple ID" data-android="tài khoản Google">Apple ID</span> đó là Pro sẽ trở lại và bạn không bao giờ bị tính phí hai lần.</div>
+        </details>
+        <details>
+          <summary><h3>Pro có phải là gói thuê bao không?</h3></summary>
+          <div class="a">Không. Pro là một giao dịch mua một lần duy nhất. Gói này không bao giờ tự gia hạn và cũng không có gì để hủy.</div>
+        </details>
+        <details>
+          <summary><h3>Tôi muốn được hoàn tiền thì phải làm sao?</h3></summary>
+          <div class="a">Việc hoàn tiền do <span class="pf" data-ios="Apple" data-android="Google">Apple</span> xử lý theo chính sách riêng của họ, không phải do nhà phát triển. Bạn hãy gửi yêu cầu qua <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>, kèm theo biên nhận của giao dịch mua đó.</div>
+        </details>
+        <details>
+          <summary><h3>Tôi có thể mua Điểm Cờ không?</h3></summary>
+          <div class="a">Không. Chúng tôi không bao giờ bán Điểm Cờ. Bạn kiếm điểm bằng cách chơi, hoặc bằng cách chủ động xem quảng cáo có thưởng. Điểm Cờ không có giá trị quy đổi thành tiền và không thể chuyển nhượng hay trao đổi. Pro loại bỏ quảng cáo và cho phép bạn vào mọi chế độ chơi mà không tốn điểm.</div>
+        </details>
+        <details>
+          <summary><h3>Tôi bị mất tiến độ học hoặc vừa đổi sang máy mới thì phải làm sao?</h3></summary>
+          <div class="a">Trên iOS, Cài đặt → Đồng bộ iCloud (mặc định bật) giữ một bản sao tiến độ học của bạn ngay trong tài khoản iCloud của bạn. Bạn chỉ cần đăng nhập bằng đúng Apple ID đó rồi cài lại ứng dụng là dữ liệu sẽ trở lại. Trên Android không có tính năng này — tiến độ chỉ nằm trên máy, nên gỡ ứng dụng là mất. Xin lưu ý: Cài đặt → Đặt lại tiến trình là thao tác bạn phải tự xác nhận và không thể hoàn tác — thao tác này xóa luôn cả bản sao trên iCloud.</div>
+        </details>
+        <details>
+          <summary><h3>Làm sao để xóa tên tôi khỏi bảng xếp hạng?</h3></summary>
+          <div class="a">Bạn hãy gửi email tới địa chỉ ở trên, cho biết biệt danh hiển thị ở dòng của bạn và khoảng thời gian bạn đã chơi, chúng tôi sẽ xóa giúp bạn. Ngoài ra, các bảng cũng tự làm mới theo chu kỳ — bảng hằng ngày thì mỗi ngày, bảng hằng tuần thì mỗi tuần.</div>
+        </details>
+        <details>
+          <summary><h3>Tôi có thể đổi biệt danh trên bảng xếp hạng không?</h3></summary>
+          <div class="a">Bạn chỉ chọn biệt danh một lần, vào lần đầu tham gia bảng xếp hạng, và tên đó được lưu trên máy của bạn. Trong ứng dụng không có nút đổi tên, nên nếu bạn muốn dùng tên khác, hãy viết thư cho chúng tôi.</div>
+        </details>
+        <details>
+          <summary><h3>Tôi không hề nhận được lời nhắc hằng ngày.</h3></summary>
+          <div class="a">Trước hết hãy mở ứng dụng và kiểm tra mục Cài đặt → Thông báo quốc kỳ trong ngày, sau đó kiểm tra quyền thông báo của ứng dụng trong phần cài đặt của thiết bị. Lời nhắc được hẹn giờ ngay trên máy của bạn, vào lúc 10:00 — không đi qua máy chủ nào — nên bạn cũng cần mở ứng dụng ít nhất một lần sau khi bật tùy chọn này. Đây là tính năng chỉ có trên iPhone và iPad — bản Android không có lời nhắc hằng ngày, và mục cài đặt này cũng không xuất hiện ở đó.</div>
+        </details>
+        <details>
+          <summary><h3>Làm sao để đổi ngôn ngữ của ứng dụng?</h3></summary>
+          <div class="a">Ứng dụng chạy theo ngôn ngữ của thiết bị và hỗ trợ 14 ngôn ngữ: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe và Polski. Trong ứng dụng không có mục chọn ngôn ngữ — bạn hãy đổi ngôn ngữ của thiết bị rồi mở lại ứng dụng.</div>
+        </details>
+        <details>
+          <summary><h3>Làm sao để thay đổi tùy chọn quyền riêng tư về quảng cáo?</h3></summary>
+          <div class="a">Cài đặt → Quyền riêng tư quảng cáo sẽ mở lại biểu mẫu đồng ý ở những nơi có áp dụng (ví dụ tại Khu vực Kinh tế châu Âu và Vương quốc Anh). Bản miễn phí chỉ hiển thị quảng cáo có thưởng khi chính bạn chạm “Xem quảng cáo” để nhận Điểm Cờ; không có quảng cáo biểu ngữ hay quảng cáo toàn màn hình, còn người dùng Pro thì hoàn toàn không thấy quảng cáo nào.</div>
+        </details>
+        <details>
+          <summary><h3>Ứng dụng có dùng được khi không có kết nối mạng không?</h3></summary>
+          <div class="a">Có. Phần học, các bài trắc nghiệm, bộ sưu tập và bản đồ đều hoạt động ngoại tuyến. Bạn chỉ cần mạng khi xem bảng xếp hạng, khi nghe quốc ca (được phát trực tuyến từ kho tư liệu thuộc phạm vi công cộng trên archive.org), khi xem quảng cáo có thưởng và khi mua hàng.</div>
+        </details>
+        <details>
+          <summary><h3>Tôi thấy một lá cờ, tên gọi hoặc thông tin nào đó có vẻ chưa đúng.</h3></summary>
+          <div class="a">Bạn hãy viết thư cho chúng tôi — chúng tôi luôn hoan nghênh mọi góp ý đính chính, và đó là cách nhanh nhất để sửa dữ liệu. Thông tin về quốc gia và khu vực được lấy từ các nguồn dữ liệu mở ghi trong Cài đặt → Giới thiệu / Giấy phép. Một số vùng lãnh thổ có quy chế còn tranh chấp trên trường quốc tế; các tên gọi ở đây chỉ nhằm mục đích học tập, không thể hiện lập trường chính trị nào.</div>
+        </details>
+        <details>
+          <summary><h3>Tôi muốn báo lỗi hoặc góp ý thì làm thế nào?</h3></summary>
+          <div class="a">Cài đặt → Gửi góp ý sẽ mở một email gửi tới địa chỉ ở trên, kèm sẵn thông tin ứng dụng. Chỉ cần một ảnh chụp màn hình và các bước bạn đã làm là chúng tôi thường tái hiện được lỗi.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Hiện tất cả ngôn ngữ</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="tr" lang="tr" data-lang="tr">
+      <h1>Destek ve SSS</h1>
+      <p>Bize kendi dilinizde yazabilirsiniz. Destek hesabı ya da talep numarası yok; sıradan bir e-posta yeterli. Hangi cihazı ve hangi uygulama sürümünü kullandığınızı belirtirseniz işimiz kolaylaşır (sürüm numarası Ayarlar ekranının en altında yazar).</p>
+      <h2>İletişim</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>Uygulama</strong>: Bayrak Ustası · Flag Master</p>
+        <p><strong>Paket kimliği</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformlar</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Geliştirici</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>İletişim</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.</p>
+      <p class="note" data-store-note="android" hidden>Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.</p>
+      <h2>Sık sorulan sorular</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>Uygulamayı yeniden yükledim ya da cihaz değiştirdim. Pro'yu nasıl geri alırım?</h3></summary>
+          <div class="a">Pro ekranını açın ve “Satın almayı geri yükle” seçeneğine dokunun. Pro, <span class="pf" data-ios="Apple ID" data-android="Google">Apple ID</span> hesabınıza bağlı tek seferlik bir satın almadır; aynı <span class="pf" data-ios="Apple ID" data-android="Google">Apple ID</span> hesabıyla oturum açtığınızda geri gelir ve sizden ikinci kez ücret alınmaz.</div>
+        </details>
+        <details>
+          <summary><h3>Pro bir abonelik mi?</h3></summary>
+          <div class="a">Hayır. Pro, tek seferlik bir satın almadır. Asla yenilenmez; iptal etmeniz gereken bir şey yoktur.</div>
+        </details>
+        <details>
+          <summary><h3>Nasıl iade alabilirim?</h3></summary>
+          <div class="a">İadeleri geliştirici değil, <span class="pf" data-ios="Apple" data-android="Google">Apple</span> kendi politikaları uyarınca yürütür. Talebinizi, satın almaya ait makbuzla birlikte <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> üzerinden iletin.</div>
+        </details>
+        <details>
+          <summary><h3>Bayrak Puanı satın alabilir miyim?</h3></summary>
+          <div class="a">Hayır. Bayrak Puanı hiçbir zaman satılmaz. Puanları oyun oynayarak ya da dilerseniz ödüllü bir reklam izleyerek kazanırsınız. Puanların nakit karşılığı yoktur; devredilemez ve başka bir şeyle değiştirilemez. Pro, reklamları kaldırır ve puan harcamadan bütün oyun modlarına girmenizi sağlar.</div>
+        </details>
+        <details>
+          <summary><h3>İlerlemem kayboldu ya da yeni bir cihaza geçtim.</h3></summary>
+          <div class="a">iOS'ta Ayarlar → iCloud eşitleme (varsayılan olarak açıktır) ilerlemenizin bir kopyasını kendi iCloud hesabınızda saklar. Aynı Apple ID ile oturum açıp uygulamayı kurduğunuzda kayıtlarınız geri gelir. Android'de böyle bir özellik yoktur; ilerlemeniz yalnızca cihazda tutulur, dolayısıyla uygulamayı kaldırdığınızda silinir. Ayarlar → İlerlemeyi Sıfırla ise bilerek yapılan, kalıcı bir işlemdir: iCloud'daki kopyayı da siler.</div>
+        </details>
+        <details>
+          <summary><h3>Sıralamadaki kaydımı nasıl sildirebilirim?</h3></summary>
+          <div class="a">Satırınızda görünen takma adı ve aşağı yukarı ne zaman oynadığınızı yukarıdaki adrese e-postayla bildirin; kaydınız kaldırılır. Sıralamalar kendiliğinden de yenilenir: günlük sıralamalar her gün, haftalık sıralamalar her hafta başa döner.</div>
+        </details>
+        <details>
+          <summary><h3>Sıralamadaki takma adımı değiştirebilir miyim?</h3></summary>
+          <div class="a">Takma ad, sıralamaya ilk girdiğinizde bir kez seçilir ve sonrasında cihazınızda saklanır. Uygulamada adı değiştirmeye yarayan bir düğme yoktur; başka bir ad kullanmanız gerekiyorsa bize yazın.</div>
+        </details>
+        <details>
+          <summary><h3>Günlük hatırlatma hiç gelmiyor.</h3></summary>
+          <div class="a">Önce uygulamadaki Ayarlar → Günün bayrağı bildirimi seçeneğini, ardından cihaz ayarlarınızda uygulamaya verilen bildirim iznini kontrol edin. Hatırlatma, herhangi bir sunucu devreye girmeden doğrudan cihazınızda saat 10.00 için kurulur; bu nedenle bildirimi açtıktan sonra uygulamanın en az bir kez açılmış olması da gerekir. Bu hatırlatma yalnızca iPhone ve iPad'e özgü bir özelliktir; Android sürümünde günlük hatırlatma yoktur ve bu ayar da görünmez.</div>
+        </details>
+        <details>
+          <summary><h3>Uygulamanın dilini nasıl değiştiririm?</h3></summary>
+          <div class="a">Uygulama, cihazınızın dilini kullanır ve 14 dili destekler: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe ve Polski. Uygulamanın içinde dil seçeneği yoktur; cihazınızın dilini değiştirip uygulamayı yeniden açın.</div>
+        </details>
+        <details>
+          <summary><h3>Reklam gizlilik tercihlerimi nasıl değiştiririm?</h3></summary>
+          <div class="a">Ayarlar → Reklam gizlilik tercihleri, geçerli olduğu yerlerde (örneğin Avrupa Ekonomik Alanı ve Birleşik Krallık'ta) onay formunu yeniden açar. Ücretsiz sürümde reklam, yalnızca Bayrak Puanı kazanmak için “Reklam izle” seçeneğine dokunduğunuzda ödüllü reklam olarak gösterilir; banner veya tam ekran reklam yoktur, Pro kullanıcıları ise hiç reklam görmez.</div>
+        </details>
+        <details>
+          <summary><h3>Uygulama internet bağlantısı olmadan çalışır mı?</h3></summary>
+          <div class="a">Evet. Çalışma bölümü, testler, koleksiyonlar ve harita çevrimdışı çalışır. Bağlantı yalnızca sıralamalar, millî marş çalma (archive.org'daki kamu malı arşivinden akış yoluyla dinletilir), ödüllü reklamlar ve satın almalar için kullanılır.</div>
+        </details>
+        <details>
+          <summary><h3>Bir bayrak, ad ya da bilgi yanlış görünüyor.</h3></summary>
+          <div class="a">Lütfen bize yazın; düzeltmeleri memnuniyetle karşılıyoruz, verileri iyileştirmenin en hızlı yolu bu. Ülke ve bölge bilgileri, Ayarlar → Hakkında / Lisanslar bölümünde belirtilen açık veri kaynaklarından gelir. Bazı bölgelerin statüsü uluslararası alanda tartışmalıdır; buradaki adlandırmalar eğitim amaçlıdır ve siyasi bir tutum ifade etmez.</div>
+        </details>
+        <details>
+          <summary><h3>Hata bildirmek ya da öneride bulunmak için ne yapmalıyım?</h3></summary>
+          <div class="a">Ayarlar → Geri bildirim gönder, yukarıdaki adrese gönderilmek üzere, uygulama bilgileri önceden doldurulmuş bir e-posta taslağı hazırlar. Bir ekran görüntüsü ve izlediğiniz adımlar, sorunu yeniden oluşturmamız için genellikle yeterli olur.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Bütün dilleri göster</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="pl" lang="pl" data-lang="pl">
+      <h1>Pomoc i FAQ</h1>
+      <p>Napisz do nas w swoim języku. Nie ma tu konta pomocy ani numerów zgłoszeń — wystarczy zwykły e-mail. Pomoże nam, jeśli podasz, z jakiego urządzenia korzystasz i jaką masz wersję aplikacji (wersję znajdziesz na dole ekranu „Ustawienia”).</p>
+      <h2>Kontakt</h2>
+      <p><a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <div class="meta">
+        <p><strong>Aplikacja</strong>: Mistrz Flag · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformy</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Deweloper</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p class="note" data-store-note="ios">Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.</p>
+      <p class="note" data-store-note="android" hidden>Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.</p>
+      <h2>Najczęstsze pytania</h2>
+      <div class="faq">
+        <details>
+          <summary><h3>Jak odzyskać Pro po ponownej instalacji aplikacji lub zmianie urządzenia?</h3></summary>
+          <div class="a">Otwórz w aplikacji ekran „Kup Pro” i dotknij „Przywróć zakup”. Pro to zakup jednorazowy, przypisany do Twojego <span class="pf" data-ios="Apple ID" data-android="konta Google">Apple ID</span>, więc wystarczy zalogować się przy użyciu tego samego <span class="pf" data-ios="Apple ID" data-android="konta Google">Apple ID</span>, a Pro wróci. Opłata nigdy nie zostanie pobrana po raz drugi.</div>
+        </details>
+        <details>
+          <summary><h3>Czy Pro to subskrypcja?</h3></summary>
+          <div class="a">Nie. Pro to pojedynczy, jednorazowy zakup. Nic się nie odnawia i nie ma czego anulować.</div>
+        </details>
+        <details>
+          <summary><h3>Jak uzyskać zwrot pieniędzy?</h3></summary>
+          <div class="a">Zwrotami zajmuje się <span class="pf" data-ios="Apple" data-android="Google">Apple</span> na własnych zasadach, a nie deweloper aplikacji. Wniosek złóż w <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>, posługując się potwierdzeniem zakupu.</div>
+        </details>
+        <details>
+          <summary><h3>Czy mogę kupić Punkty Flag?</h3></summary>
+          <div class="a">Nie. Punkty Flag nigdy nie są na sprzedaż. Zdobywasz je, grając albo — jeśli zechcesz — oglądając reklamę z nagrodą. Nie mają wartości pieniężnej i nie można ich przekazać ani wymienić. Pro usuwa reklamy i pozwala wejść do każdego trybu gry bez wydawania punktów.</div>
+        </details>
+        <details>
+          <summary><h3>Mój postęp zniknął — albo przechodzę na nowe urządzenie.</h3></summary>
+          <div class="a">W systemie iOS opcja „Ustawienia → Synchronizacja iCloud” (domyślnie włączona) przechowuje kopię Twojego postępu na Twoim własnym koncie iCloud. Zaloguj się przy użyciu tego samego Apple ID, zainstaluj aplikację, a Twoje wyniki wrócą. W Androidzie takiej funkcji nie ma — postęp jest zapisany wyłącznie na urządzeniu, więc odinstalowanie aplikacji kasuje go bezpowrotnie. Pamiętaj też, że „Ustawienia → Zresetuj postęp” to świadoma decyzja, której nie da się cofnąć: usuwa również kopię w iCloud.</div>
+        </details>
+        <details>
+          <summary><h3>Jak usunąć swój wynik z rankingu?</h3></summary>
+          <div class="a">Napisz na powyższy adres, podając pseudonim widoczny przy Twoim wyniku oraz mniej więcej datę gry — wpis zostanie usunięty. Rankingi i tak zerują się same: dzienne każdego dnia, tygodniowe co tydzień.</div>
+        </details>
+        <details>
+          <summary><h3>Czy mogę zmienić swój pseudonim w rankingu?</h3></summary>
+          <div class="a">Pseudonim wybiera się raz, przy pierwszym wejściu do rankingu, i od tej pory jest przechowywany na Twoim urządzeniu. W aplikacji nie ma przycisku zmiany nazwy; jeśli potrzebujesz innej, napisz do nas.</div>
+        </details>
+        <details>
+          <summary><h3>Codzienne przypomnienie nie przychodzi.</h3></summary>
+          <div class="a">Sprawdź najpierw w aplikacji „Ustawienia → Powiadomienie o fladze dnia”, a potem uprawnienie do powiadomień dla tej aplikacji w ustawieniach urządzenia. Przypomnienie jest planowane na godzinę 10:00 na samym urządzeniu — nie bierze w tym udziału żaden serwer — więc po włączeniu tej opcji trzeba jeszcze choć raz otworzyć aplikację. Ta funkcja działa tylko na iPhonie i iPadzie — w wersji na Androida codziennego przypomnienia nie ma, a sama opcja w ogóle się tam nie pojawia.</div>
+        </details>
+        <details>
+          <summary><h3>Jak zmienić język aplikacji?</h3></summary>
+          <div class="a">Aplikacja korzysta z języka ustawionego na urządzeniu i obsługuje 14 języków: English, 한국어, 日本語, 繁體中文, Deutsch, Français, Italiano, Español, Português, العربية, Bahasa Indonesia, Tiếng Việt, Türkçe i Polski. W samej aplikacji nie ma przełącznika języka — zmień język urządzenia i otwórz aplikację ponownie.</div>
+        </details>
+        <details>
+          <summary><h3>Jak zmienić ustawienia prywatności reklam?</h3></summary>
+          <div class="a">„Ustawienia → Prywatność reklam” ponownie otwiera formularz zgody tam, gdzie ma on zastosowanie (na przykład w EOG i Wielkiej Brytanii). W wersji bezpłatnej reklama z nagrodą pojawia się tylko wtedy, gdy dotkniesz „Obejrzyj reklamę”, aby zdobyć Punkty Flag; nie ma reklam banerowych ani pełnoekranowych, a użytkownicy Pro nie widzą ich w ogóle.</div>
+        </details>
+        <details>
+          <summary><h3>Czy aplikacja działa bez połączenia z internetem?</h3></summary>
+          <div class="a">Tak. Nauka, quizy, kolekcje i mapa działają offline. Połączenie jest potrzebne tylko do rankingów, do odtworzenia hymnu (przesyłanego strumieniowo z kolekcji w domenie publicznej w serwisie archive.org), do reklam z nagrodą i do zakupów.</div>
+        </details>
+        <details>
+          <summary><h3>Flaga, nazwa albo informacja wygląda na błędną.</h3></summary>
+          <div class="a">Napisz do nas — chętnie przyjmujemy zgłoszenia i to najszybszy sposób na poprawienie danych. Informacje o krajach i regionach pochodzą z otwartych źródeł danych wymienionych w „Ustawienia → Informacje / Licencje”. Status niektórych terytoriów jest przedmiotem sporu międzynarodowego; użyte nazwy mają charakter edukacyjny i nie są stanowiskiem politycznym.</div>
+        </details>
+        <details>
+          <summary><h3>Jak zgłosić błąd albo zaproponować zmianę?</h3></summary>
+          <div class="a">„Ustawienia → Wyślij opinię” tworzy wiadomość e-mail na powyższy adres, z automatycznie wpisanymi informacjami o aplikacji. Zrzut ekranu i opis kroków, które do tego doprowadziły, zwykle wystarczą, żebyśmy odtworzyli problem.</div>
+        </details>
+      </div>
+      <p><a class="showall" href="#all" data-showall>Pokaż wszystkie języki</a></p>
+      <hr class="sep">
+  </article>
+</main>
+<footer>© 임한수 (Hansoo Lim) · Flag Master. All rights reserved.</footer>
+<script>window.__UI__ = {"en":{"language":"Language","store":"Your store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Show every language","home":"Home","termsDesc":"Pro upgrade, Flag Points, rankings, content and liability","privacyDesc":"What we never collect, what stays on your device, rankings, ads and deletion","supportDesc":"Contact, frequently asked questions, refunds and data deletion","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Platforms","metaDev":"Developer","metaContact":"Contact","metaUpdated":"Last updated","storeNoteIos":"Showing the wording for iOS. On an Android device, switch above.","storeNoteAndroid":"Showing the wording for Android. On an iPhone or iPad, switch above.","__appName":"Flag Master","appName":"Flag Master","termsTitle":"Terms of Use","privacyTitle":"Privacy Policy","supportTitle":"Support & FAQ","__lastUpdated":"27 August 2026","__updatedLabel":"Last updated","__sep":":"},"ko":{"language":"언어","store":"이용 중인 스토어","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"모든 언어 보기","home":"홈","termsDesc":"Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임","privacyDesc":"수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제","supportDesc":"문의, 자주 묻는 질문, 환불과 데이터 삭제","metaApp":"앱","metaBundle":"번들 ID","metaPlatform":"지원 플랫폼","metaDev":"개발자","metaContact":"문의","metaUpdated":"최종 수정일","storeNoteIos":"iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.","storeNoteAndroid":"Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.","__appName":"국기의 주인","appName":"국기의 주인","termsTitle":"이용약관","privacyTitle":"개인정보 처리방침","supportTitle":"고객 지원 · 자주 묻는 질문","__lastUpdated":"2026년 8월 27일","__updatedLabel":"최종 업데이트","__sep":":"},"ja":{"language":"言語","store":"ご利用のストア","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"すべての言語を表示","home":"ホーム","termsDesc":"Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項","privacyDesc":"収集しない情報、端末内にとどまる情報、ランキング、広告、削除について","supportDesc":"お問い合わせ、よくある質問、返金とデータの削除","metaApp":"アプリ","metaBundle":"バンドルID","metaPlatform":"対応プラットフォーム","metaDev":"開発者","metaContact":"お問い合わせ先","metaUpdated":"最終更新日","storeNoteIos":"iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。","storeNoteAndroid":"Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。","__appName":"国旗マスター","appName":"国旗マスター","termsTitle":"利用規約","privacyTitle":"プライバシーポリシー","supportTitle":"サポート・よくある質問","__lastUpdated":"2026年8月27日","__updatedLabel":"最終更新日","__sep":":"},"de":{"language":"Sprache","store":"Ihr Store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Alle Sprachen anzeigen","home":"Startseite","termsDesc":"Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung","privacyDesc":"Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung","supportDesc":"Kontakt, häufige Fragen, Erstattungen und Datenlöschung","metaApp":"App","metaBundle":"Bundle-ID","metaPlatform":"Plattformen","metaDev":"Entwickler","metaContact":"Kontakt","metaUpdated":"Zuletzt aktualisiert","storeNoteIos":"Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.","storeNoteAndroid":"Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.","__appName":"Flaggenmeister","appName":"Flaggenmeister","termsTitle":"Nutzungsbedingungen","privacyTitle":"Datenschutzerklärung","supportTitle":"Support & FAQ","__lastUpdated":"27. August 2026","__updatedLabel":"Zuletzt aktualisiert","__sep":":"},"fr":{"language":"Langue","store":"Votre boutique","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Afficher toutes les langues","home":"Accueil","termsDesc":"Passage à Pro, Points Drapeau, classements, contenu et responsabilité","privacyDesc":"Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression","supportDesc":"Contact, questions fréquentes, remboursements et suppression des données","metaApp":"Application","metaBundle":"Identifiant du bundle","metaPlatform":"Plateformes","metaDev":"Développeur","metaContact":"Contact","metaUpdated":"Dernière mise à jour","storeNoteIos":"Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.","storeNoteAndroid":"Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.","__appName":"Maître des Drapeaux","appName":"Maître des Drapeaux","termsTitle":"Conditions d’utilisation","privacyTitle":"Politique de confidentialité","supportTitle":"Assistance et FAQ","__lastUpdated":"27 août 2026","__updatedLabel":"Dernière mise à jour","__sep":" :"},"it":{"language":"Lingua","store":"Il tuo store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostra tutte le lingue","home":"Home","termsDesc":"Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità","privacyDesc":"Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione","supportDesc":"Contatti, domande frequenti, rimborsi ed eliminazione dei dati","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Piattaforme","metaDev":"Sviluppatore","metaContact":"Contatti","metaUpdated":"Ultimo aggiornamento","storeNoteIos":"Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.","storeNoteAndroid":"Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.","__appName":"Maestro delle Bandiere","appName":"Maestro delle Bandiere","termsTitle":"Termini d’uso","privacyTitle":"Informativa sulla privacy","supportTitle":"Assistenza e FAQ","__lastUpdated":"27 agosto 2026","__updatedLabel":"Ultimo aggiornamento","__sep":":"},"zh-Hant":{"language":"語言","store":"您使用的商店","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"顯示所有語言","home":"首頁","termsDesc":"Pro 升級、國旗點數、排行榜、內容與責任","privacyDesc":"我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式","supportDesc":"聯絡方式、常見問題、退款與資料刪除","metaApp":"應用程式","metaBundle":"Bundle ID","metaPlatform":"支援平台","metaDev":"開發者","metaContact":"聯絡方式","metaUpdated":"最後更新","storeNoteIos":"目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。","storeNoteAndroid":"目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。","__appName":"國旗大師","appName":"國旗大師","termsTitle":"使用條款","privacyTitle":"隱私權政策","supportTitle":"支援與常見問題","__lastUpdated":"2026年8月27日","__updatedLabel":"最後更新","__sep":"："},"es":{"language":"Idioma","store":"Tu tienda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos los idiomas","home":"Inicio","termsDesc":"Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad","privacyDesc":"Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación","supportDesc":"Contacto, preguntas frecuentes, reembolsos y eliminación de datos","metaApp":"Aplicación","metaBundle":"ID del paquete","metaPlatform":"Plataformas","metaDev":"Desarrollador","metaContact":"Contacto","metaUpdated":"Última actualización","storeNoteIos":"Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.","storeNoteAndroid":"Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.","__appName":"Maestro de Banderas","appName":"Maestro de Banderas","termsTitle":"Términos de uso","privacyTitle":"Política de privacidad","supportTitle":"Soporte y preguntas frecuentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última actualización","__sep":":"},"pt":{"language":"Idioma","store":"Sua loja","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos os idiomas","home":"Início","termsDesc":"Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade","privacyDesc":"O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão","supportDesc":"Contato, perguntas frequentes, reembolsos e exclusão de dados","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Plataformas","metaDev":"Desenvolvedor","metaContact":"Contato","metaUpdated":"Última atualização","storeNoteIos":"Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.","storeNoteAndroid":"Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.","__appName":"Mestre das Bandeiras","appName":"Mestre das Bandeiras","termsTitle":"Termos de uso","privacyTitle":"Política de privacidade","supportTitle":"Suporte e perguntas frequentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última atualização","__sep":":"},"ar":{"language":"اللغة","store":"متجرك","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"عرض جميع اللغات","home":"الرئيسية","termsDesc":"ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية","privacyDesc":"ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف","supportDesc":"التواصل والأسئلة الشائعة والاسترداد وحذف البيانات","metaApp":"التطبيق","metaBundle":"معرّف الحزمة","metaPlatform":"المنصات","metaDev":"المطوّر","metaContact":"التواصل","metaUpdated":"آخر تحديث","storeNoteIos":"النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.","storeNoteAndroid":"النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.","__appName":"سيد الأعلام","appName":"سيد الأعلام","termsTitle":"شروط الاستخدام","privacyTitle":"سياسة الخصوصية","supportTitle":"الدعم والأسئلة الشائعة","__lastUpdated":"27 أغسطس 2026","__updatedLabel":"آخر تحديث","__sep":":"},"id":{"language":"Bahasa","store":"Toko aplikasi Anda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Tampilkan semua bahasa","home":"Beranda","termsDesc":"Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum","privacyDesc":"Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data","supportDesc":"Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data","metaApp":"Aplikasi","metaBundle":"Bundle ID","metaPlatform":"Platform","metaDev":"Pengembang","metaContact":"Kontak","metaUpdated":"Terakhir diperbarui","storeNoteIos":"Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.","storeNoteAndroid":"Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.","__appName":"Master Bendera","appName":"Master Bendera","termsTitle":"Ketentuan Penggunaan","privacyTitle":"Kebijakan Privasi","supportTitle":"Dukungan & FAQ","__lastUpdated":"27 Agustus 2026","__updatedLabel":"Pembaruan terakhir","__sep":":"},"vi":{"language":"Ngôn ngữ","store":"Cửa hàng của bạn","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Hiện tất cả ngôn ngữ","home":"Trang chủ","termsDesc":"Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý","privacyDesc":"Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu","supportDesc":"Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu","metaApp":"Ứng dụng","metaBundle":"Bundle ID","metaPlatform":"Nền tảng","metaDev":"Nhà phát triển","metaContact":"Liên hệ","metaUpdated":"Cập nhật lần cuối","storeNoteIos":"Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.","storeNoteAndroid":"Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.","__appName":"Bậc Thầy Quốc Kỳ","appName":"Bậc Thầy Quốc Kỳ","termsTitle":"Điều khoản sử dụng","privacyTitle":"Chính sách quyền riêng tư","supportTitle":"Hỗ trợ & FAQ","__lastUpdated":"27 tháng 8 năm 2026","__updatedLabel":"Cập nhật lần cuối","__sep":":"},"tr":{"language":"Dil","store":"Mağazanız","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Bütün dilleri göster","home":"Ana sayfa","termsDesc":"Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk","privacyDesc":"Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme","supportDesc":"İletişim, sık sorulan sorular, iadeler ve veri silme","metaApp":"Uygulama","metaBundle":"Paket kimliği","metaPlatform":"Platformlar","metaDev":"Geliştirici","metaContact":"İletişim","metaUpdated":"Son güncelleme","storeNoteIos":"iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.","storeNoteAndroid":"Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.","__appName":"Bayrak Ustası","appName":"Bayrak Ustası","termsTitle":"Kullanım Koşulları","privacyTitle":"Gizlilik Politikası","supportTitle":"Destek ve SSS","__lastUpdated":"27 Ağustos 2026","__updatedLabel":"Son güncelleme","__sep":":"},"pl":{"language":"Język","store":"Twój sklep","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Pokaż wszystkie języki","home":"Strona główna","termsDesc":"Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność","privacyDesc":"Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych","supportDesc":"Kontakt, najczęstsze pytania, zwroty i usuwanie danych","metaApp":"Aplikacja","metaBundle":"Bundle ID","metaPlatform":"Platformy","metaDev":"Deweloper","metaContact":"Kontakt","metaUpdated":"Ostatnia aktualizacja","storeNoteIos":"Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.","storeNoteAndroid":"Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.","__appName":"Mistrz Flag","appName":"Mistrz Flag","termsTitle":"Warunki korzystania","privacyTitle":"Polityka prywatności","supportTitle":"Pomoc i FAQ","__lastUpdated":"27 sierpnia 2026","__updatedLabel":"Ostatnia aktualizacja","__sep":":"}};window.__META__ = {"en":{"t":"Support & FAQ — Flag Master","d":"Flag Master — Support & FAQ: Contact, frequently asked questions, refunds and data deletion"},"ko":{"t":"고객 지원 · 자주 묻는 질문 — 국기의 주인 (Flag Master)","d":"국기의 주인 (Flag Master) — 고객 지원 · 자주 묻는 질문: 문의, 자주 묻는 질문, 환불과 데이터 삭제"},"ja":{"t":"サポート・よくある質問 — 国旗マスター (Flag Master)","d":"国旗マスター (Flag Master) — サポート・よくある質問: お問い合わせ、よくある質問、返金とデータの削除"},"de":{"t":"Support & FAQ — Flaggenmeister (Flag Master)","d":"Flaggenmeister (Flag Master) — Support & FAQ: Kontakt, häufige Fragen, Erstattungen und Datenlöschung"},"fr":{"t":"Assistance et FAQ — Maître des Drapeaux (Flag Master)","d":"Maître des Drapeaux (Flag Master) — Assistance et FAQ : Contact, questions fréquentes, remboursements et suppression des données"},"it":{"t":"Assistenza e FAQ — Maestro delle Bandiere (Flag Master)","d":"Maestro delle Bandiere (Flag Master) — Assistenza e FAQ: Contatti, domande frequenti, rimborsi ed eliminazione dei dati"},"zh-Hant":{"t":"支援與常見問題 — 國旗大師 (Flag Master)","d":"國旗大師 (Flag Master) — 支援與常見問題： 聯絡方式、常見問題、退款與資料刪除"},"es":{"t":"Soporte y preguntas frecuentes — Maestro de Banderas (Flag Master)","d":"Maestro de Banderas (Flag Master) — Soporte y preguntas frecuentes: Contacto, preguntas frecuentes, reembolsos y eliminación de datos"},"pt":{"t":"Suporte e perguntas frequentes — Mestre das Bandeiras (Flag Master)","d":"Mestre das Bandeiras (Flag Master) — Suporte e perguntas frequentes: Contato, perguntas frequentes, reembolsos e exclusão de dados"},"ar":{"t":"الدعم والأسئلة الشائعة — سيد الأعلام (Flag Master)","d":"سيد الأعلام (Flag Master) — الدعم والأسئلة الشائعة: التواصل والأسئلة الشائعة والاسترداد وحذف البيانات"},"id":{"t":"Dukungan & FAQ — Master Bendera (Flag Master)","d":"Master Bendera (Flag Master) — Dukungan & FAQ: Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data"},"vi":{"t":"Hỗ trợ & FAQ — Bậc Thầy Quốc Kỳ (Flag Master)","d":"Bậc Thầy Quốc Kỳ (Flag Master) — Hỗ trợ & FAQ: Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu"},"tr":{"t":"Destek ve SSS — Bayrak Ustası (Flag Master)","d":"Bayrak Ustası (Flag Master) — Destek ve SSS: İletişim, sık sorulan sorular, iadeler ve veri silme"},"pl":{"t":"Pomoc i FAQ — Mistrz Flag (Flag Master)","d":"Mistrz Flag (Flag Master) — Pomoc i FAQ: Kontakt, najczęstsze pytania, zwroty i usuwanie danych"}};</script>
+<script>
+(function(){
+  window.__fmReady = true;
+  var docs = [].slice.call(document.querySelectorAll("[data-lang]"));
+  var navLinks = [].slice.call(document.querySelectorAll("#langs a"));
+  var LANGS = navLinks.map(function(a){ return a.getAttribute("data-go"); });
+  var RTL = { ar: 1 };
+
+  function paintChrome(lang){
+    var s = (window.__UI__ && (window.__UI__[lang] || window.__UI__.en)) || null;
+    if (!s) return;
+    [].slice.call(document.querySelectorAll("[data-ui]")).forEach(function(el){
+      var v = s[el.getAttribute("data-ui")];
+      if (v) el.textContent = v;
+    });
+    var m = window.__META__ && (window.__META__[lang] || window.__META__.en);
+    if (m) {
+      document.title = m.t;
+      var dsc = document.querySelector('meta[name="description"]');
+      if (dsc) dsc.setAttribute("content", m.d);
+    }
+  }
+  function applyLang(lang, remember){
+    if (LANGS.indexOf(lang) < 0) lang = "en";
+    docs.forEach(function(d){ d.classList.toggle("is-on", d.getAttribute("data-lang") === lang); });
+    navLinks.forEach(function(a){
+      a.setAttribute("aria-current", a.getAttribute("data-go") === lang ? "true" : "false");
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
+    paintChrome(lang);
+    if (remember) { try { localStorage.setItem("fm-lang", lang); } catch(e){} }
+  }
+  function showAll(){
+    docs.forEach(function(d){ d.classList.add("is-on"); });
+    document.documentElement.dir = "ltr";
+    // 한 언어에 "현재" 표시가 남아 있으면 스크린리더가 14개 구획을 그 언어라고 알린다.
+    navLinks.forEach(function(a){ a.setAttribute("aria-current", "false"); });
+  }
+
+  // 스토어 토글. 본문에 박힌 기본값은 iOS 이므로, 안드로이드일 때만 바꿔 끼운다.
+  var pf = [].slice.call(document.querySelectorAll(".pf"));
+  function applyStore(store, remember){
+    var key = store === "android" ? "data-android" : "data-ios";
+    pf.forEach(function(s){ s.textContent = s.getAttribute(key); });
+    [].slice.call(document.querySelectorAll("[data-store-btn]")).forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-store-btn") === store ? "true" : "false");
+    });
+    [].slice.call(document.querySelectorAll("[data-store-note]")).forEach(function(n){
+      n.hidden = n.getAttribute("data-store-note") !== store;
+    });
+    if (remember) { try { localStorage.setItem("fm-store", store); } catch(e){} }
+  }
+
+  var byNav = null;
+  try {
+    var want = (navigator.languages || [navigator.language || "en"]);
+    for (var i = 0; i < want.length && !byNav; i++) {
+      var w = String(want[i]);
+      if (/^zh\b/i.test(w) && /(Hant|TW|HK|MO)/i.test(w)) { byNav = "zh-Hant"; break; }
+      var base = w.split("-")[0].toLowerCase();
+      if (LANGS.indexOf(base) >= 0) byNav = base;
+    }
+  } catch(e){}
+
+  var hash = (location.hash || "").replace(/^#/, "");
+  var saved = null; try { saved = localStorage.getItem("fm-lang"); } catch(e){}
+  if (hash === "all") showAll();
+  else applyLang((LANGS.indexOf(hash) >= 0 ? hash : null) || saved || byNav || "en", false);
+  // 브라우저는 #ko 같은 조각으로 들어오면 **구획을 숨기기 전** 위치로 먼저 뛴다.
+  // 그 뒤 필터가 앞 구획들을 접으면 착지 지점이 빈 곳이 된다 — 문서 첫 줄로 되돌린다.
+  // ⚠ 한 번으로는 안 된다. 브라우저의 조각 스크롤은 이 스크립트가 끝난 **뒤**(파싱 완료·load 시점)에
+  //   일어나므로, 여기서 한 번 0 으로 되돌려도 곧바로 다시 끌려간다(375px 에서 scrollY=263 로 실측).
+  if (hash) {
+    var toTop = function () { try { window.scrollTo(0, 0); } catch (e) {} };
+    toTop();
+    if (window.requestAnimationFrame) requestAnimationFrame(toTop);
+    window.addEventListener("load", toTop);
+  }
+
+  var savedStore = null; try { savedStore = localStorage.getItem("fm-store"); } catch(e){}
+  var uaAndroid = /Android/i.test(navigator.userAgent || "");
+  applyStore(savedStore || (uaAndroid ? "android" : "ios"), false);
+
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("#langs a[data-go]");
+    if (a) { e.preventDefault(); applyLang(a.getAttribute("data-go"), true);
+             history.replaceState(null, "", "#" + a.getAttribute("data-go"));
+             window.scrollTo(0, 0); return; }
+    var all = e.target.closest && e.target.closest("[data-showall]");
+    if (all) { e.preventDefault(); showAll(); history.replaceState(null, "", "#all"); return; }
+    var b = e.target.closest && e.target.closest("[data-store-btn]");
+    if (b) { applyStore(b.getAttribute("data-store-btn"), true); }
+  });
+  window.addEventListener("hashchange", function(){
+    var h = (location.hash || "").replace(/^#/, "");
+    if (h === "all") showAll(); else if (LANGS.indexOf(h) >= 0) applyLang(h, true);
+  });
+})();
+</script>
+</body>
+</html>

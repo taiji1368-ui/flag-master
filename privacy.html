@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Flag Master</title>
+<meta name="description" content="Privacy Policy for Flag Master — no account, no personal data collected, on-device progress, optional rankings, rewarded ads only. Available in 14 languages.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F6EEDC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14293c" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://taiji1368-ui.github.io/flag-master/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flag Master">
+<meta property="og:url" content="https://taiji1368-ui.github.io/flag-master/privacy.html">
+<meta property="og:title" content="Privacy Policy — Flag Master">
+<meta property="og:description" content="Privacy Policy for Flag Master — no account, no personal data collected, on-device progress, optional rankings, rewarded ads only. Available in 14 languages.">
+<script>document.documentElement.className="js";setTimeout(function(){if(!window.__fmReady)document.documentElement.className=""},1500)</script>
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#F6EEDC; --bg-accent:#EDE0C6; --card:rgba(255,253,246,.78);
+  --text:#1C2A39; --muted:#6b5c42; --primary:#B03A28; --gold:#7f5e1c;
+  /* 앱의 스탬프 레드는 #C2412D 지만, 밝은 테마의 크림 바탕(#EDE0C6)에서 3.93:1 이라
+     본문 링크와 '현재 문서' 표시가 WCAG AA 에 못 미친다. 웹에서만 한 단계 낮춘다(4.62:1). */
+  --navy:#1C3F5E; --line:#e2d6bd; --divider:#ECE2CC;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14293c; --bg-accent:#0f2130; --card:rgba(255,255,255,.06);
+  --text:#EAE1CC; --muted:#9fb4c8; --primary:#E2725B; --gold:#E7B96b;
+  --navy:#dbe7f2; --line:rgba(234,225,204,.16); --divider:rgba(234,225,204,.12);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.65 "Avenir Next","Pretendard","Apple SD Gothic Neo","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--primary)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg-accent);border-bottom:1px solid var(--line)}
+/* 좁은 화면에서는 고정을 푼다. 브랜드+문서메뉴+스토어토글+14개 언어가 세로로 쌓이면 막대가
+   237px 까지 자라, 812px 짜리 화면의 3할을 긴 약관을 읽는 내내 차지한다(375x812 실측). */
+@media (max-width:760px){
+  .bar{position:static}
+  /* 좁은 화면에선 머리 막대가 첫 화면을 통째로 먹는다 — 14개 언어 목록이 세 줄이다.
+     읽을 글이 첫 화면에 조금이라도 걸리도록 여백과 줄높이를 줄인다. */
+  .bar-in{padding:8px 20px;gap:8px 12px}
+  .langs{padding:0 20px 8px;line-height:1.9;font-size:12.5px}
+  .docnav{gap:12px;font-size:13px}
+  main{padding-top:24px}
+}
+.bar-in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.brand{font-weight:700;letter-spacing:.01em;text-decoration:none;color:var(--navy);margin-inline-end:auto}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;
+  padding:6px 13px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--primary);color:#fff;font-weight:600}
+/* 다크에서 --primary(#E2725B) 위의 흰 글씨는 3.09:1 — 하필 "지금 어느 스토어인가" 를 알리는 글자다. */
+@media (prefers-color-scheme:dark){.seg button[aria-pressed="true"]{background:#B4432C}}
+:where(a,button,summary):focus-visible{outline:2px solid var(--navy);outline-offset:2px;border-radius:6px}
+.docnav{display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+.docnav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+.docnav a:hover{color:var(--primary)}
+.docnav a[aria-current="page"]{color:var(--primary);font-weight:600}
+.langs{max-width:760px;margin:0 auto;padding:0 20px 10px;font-size:13px;line-height:2.1}
+.langs a{color:var(--muted);text-decoration:none;padding:3px 8px;border-radius:8px;border:1px solid transparent}
+.langs a:hover{color:var(--primary)}
+.langs a[aria-current="true"]{color:var(--primary);font-weight:600;background:var(--card);border-color:var(--line)}
+main{max-width:760px;margin:0 auto;padding:34px 20px 96px}
+/* 언어 필터. html.js 는 <head> 인라인 스크립트가 붙인다 — 스크립트가 없으면
+   이 규칙이 통째로 죽어 14개 언어가 그대로 다 보인다. 법적 문서가 스크립트
+   하나 때문에 백지가 되는 쪽이 훨씬 큰 사고다. */
+html.js .doc{display:none}
+html.js .doc.is-on{display:block}
+h1{font-size:29px;line-height:1.28;margin:0 0 6px;color:var(--navy)}
+h2{font-size:20px;margin:34px 0 10px;color:var(--navy)}
+h2.clause{font-size:16.5px;margin:26px 0 6px;color:var(--gold);letter-spacing:.01em}
+.faq summary h3{display:inline;font:inherit;color:inherit;margin:0}
+p{margin:9px 0}
+ul{margin:9px 0;padding-inline-start:1.25em}
+li{margin:5px 0}
+.url{word-break:break-all}
+main a{overflow-wrap:break-word}
+.meta{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 17px;margin:16px 0 26px;font-size:13.5px;color:var(--muted)}
+.meta p{margin:3px 0}
+.meta strong{color:var(--text);font-weight:600}
+.note{font-size:13px;color:var(--muted);margin:0 0 22px}
+.cards{display:grid;gap:13px;margin:22px 0 30px}
+a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:17px 19px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+a.card:hover{border-color:var(--primary);transform:translateY(-1px)}
+a.card strong{display:block;font-size:17px;color:var(--primary);margin-bottom:3px}
+a.card span{color:var(--muted);font-size:14px}
+.faq{border-top:1px solid var(--divider);margin-top:8px}
+.faq details{border-bottom:1px solid var(--divider)}
+.faq summary{cursor:pointer;padding:14px 2px;font-weight:600;color:var(--navy);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:inline-end;color:var(--muted);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 2px 16px;color:var(--text)}
+footer{max-width:760px;margin:0 auto;padding:0 20px 60px;color:var(--muted);font-size:13px}
+.showall{display:inline-block;margin-top:34px;font-size:13px;color:var(--muted)}
+hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
+[dir="rtl"] .brand{letter-spacing:0}
+@media (max-width:520px){h1{font-size:24px}main{padding-top:26px}}
+</style>
+<noscript><style>.seg,[data-store-note]{display:none}</style></noscript>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html"><small>Flag Master</small><span data-ui="appName">Flag Master</span></a>
+    <nav class="docnav" aria-label="Documents">
+      <a href="terms.html" data-ui="termsTitle">Terms of Use</a>
+      <a href="privacy.html" aria-current="page" data-ui="privacyTitle">Privacy Policy</a>
+      <a href="support.html" data-ui="supportTitle">Support</a>
+    </nav>
+    <div class="seg" role="group" aria-label="Store">
+      <button type="button" data-store-btn="ios" aria-pressed="true" data-ui="storeIos">iOS · App Store</button>
+      <button type="button" data-store-btn="android" aria-pressed="false" data-ui="storeAndroid">Android · Google Play</button>
+    </div>
+  </div>
+  <nav class="langs" id="langs" aria-label="Language">
+      <a href="#en" hreflang="en" data-go="en" aria-current="false">English</a>
+      <a href="#ko" hreflang="ko" data-go="ko" aria-current="false">한국어</a>
+      <a href="#ja" hreflang="ja" data-go="ja" aria-current="false">日本語</a>
+      <a href="#de" hreflang="de" data-go="de" aria-current="false">Deutsch</a>
+      <a href="#fr" hreflang="fr" data-go="fr" aria-current="false">Français</a>
+      <a href="#it" hreflang="it" data-go="it" aria-current="false">Italiano</a>
+      <a href="#zh-Hant" hreflang="zh-Hant" data-go="zh-Hant" aria-current="false">繁體中文</a>
+      <a href="#es" hreflang="es" data-go="es" aria-current="false">Español</a>
+      <a href="#pt" hreflang="pt" data-go="pt" aria-current="false">Português</a>
+      <a href="#ar" hreflang="ar" data-go="ar" aria-current="false">العربية</a>
+      <a href="#id" hreflang="id" data-go="id" aria-current="false">Bahasa Indonesia</a>
+      <a href="#vi" hreflang="vi" data-go="vi" aria-current="false">Tiếng Việt</a>
+      <a href="#tr" hreflang="tr" data-go="tr" aria-current="false">Türkçe</a>
+      <a href="#pl" hreflang="pl" data-go="pl" aria-current="false">Polski</a>
+  </nav>
+</header>
+<main>
+  <article class="doc" id="en" lang="en" data-lang="en">
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platforms</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Developer</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Last updated</strong>: 27 August 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Showing the wording for iOS. On an Android device, switch above.</p>
+      <p class="note" data-store-note="android" hidden>Showing the wording for Android. On an iPhone or iPad, switch above.</p>
+      <p>The App has no sign-up and no login, and is built to work with as little personal data as possible.</p>
+      <h2 class="clause">1. What we never collect</h2>
+      <p>The App does not ask for or collect your name, email address, phone number, contacts, photos or location.</p>
+      <h2 class="clause">2. Data kept on your device</h2>
+      <p>Quiz progress, level, Flag Points, favourites, collected cards, settings and whether you own Pro are stored on your device. Settings → Reset Progress erases them. On iOS, when «iCloud Sync» is on (Settings; on by default), a copy of this record is also kept in your own iCloud account so it carries over to your other devices signed in with the same Apple ID. The developer cannot read or delete that copy — it lives inside your account. Android has no such feature.</p>
+      <h2 class="clause">3. Rankings (optional)</h2>
+      <p>Nothing is sent until you open the rankings and choose a nickname. From then on the App sends to Firebase (the game service): an anonymous player ID created for this app (not your <span class="pf" data-ios="Apple ID" data-android="Google account">Apple ID</span>), the nickname you chose, a country flag derived from your device’s region setting, the display colour and badge you chose for your row (cosmetic only), and your scores. That is the entire record. To have an entry deleted, write to the address in section 9.</p>
+      <h2 class="clause">4. Ads</h2>
+      <p>The free version shows a rewarded ad only when you tap “Watch an ad” to earn Flag Points. There are no banner ads and no full-screen ads. Ads are served by AdMob, which may use an advertising identifier to select and measure them.</p>
+      <ul>
+        <li>On iOS the App asks your permission before any tracking. If you decline, ads are non-personalised.</li>
+        <li>Where required (for example in the EEA and the UK) a consent form asks how your data may be used, and your choice is applied.</li>
+        <li>Pro users are shown no ads at all.</li>
+      </ul>
+      <p>How the ad provider handles this data: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Purchases</h2>
+      <p>Purchases are processed by <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. The developer never sees or stores your card number or billing address. The App keeps only a yes/no flag for whether Pro is owned, and checks it against the store.</p>
+      <h2 class="clause">6. Notifications (optional)</h2>
+      <p>If you turn on the daily flag reminder, the App asks for notification permission and then schedules the reminder on your device. Nothing is sent to a server and no push service is involved. You can turn it off at any time.</p>
+      <h2 class="clause">7. Children</h2>
+      <p>The App does not knowingly collect personal data from children. It has no chat, no messaging, and no user-supplied content other than a nickname you choose yourself.</p>
+      <h2 class="clause">8. Retention and deletion</h2>
+      <p>On-device data is kept until you reset it or uninstall the App. Ranking entries live as long as their board: daily boards roll over each day, weekly boards each week. Uninstalling removes the data on the device. If iCloud Sync was on, a copy stays in your own iCloud account and comes back when you reinstall with the same Apple ID; turning the setting off stops any further upload.</p>
+      <h2 class="clause">9. Contact and changes</h2>
+      <p>Questions, or a request to delete a ranking entry: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>This policy may change; changes are published with app updates.</p>
+      <p><a class="showall" href="#all" data-showall>Show every language</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ko" lang="ko" data-lang="ko">
+      <h1>개인정보 처리방침</h1>
+      <div class="meta">
+        <p><strong>앱</strong>: 국기의 주인 · Flag Master</p>
+        <p><strong>번들 ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>지원 플랫폼</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>개발자</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>문의</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>최종 업데이트</strong>: 2026년 8월 27일</p>
+      </div>
+      <p class="note" data-store-note="ios">iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.</p>
+      <p class="note" data-store-note="android" hidden>Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.</p>
+      <p>앱에는 회원가입도 로그인도 없으며, 개인정보를 최소한으로만 다루도록 만들었습니다.</p>
+      <h2 class="clause">1. 절대 수집하지 않는 것</h2>
+      <p>앱은 이름·이메일·전화번호·연락처·사진·위치를 묻지도, 수집하지도 않습니다.</p>
+      <h2 class="clause">2. 기기에 남는 정보</h2>
+      <p>퀴즈 진행도, 레벨, 국기 포인트, 즐겨찾기, 모은 카드, 설정, Pro 보유 여부는 기기에 저장됩니다. 설정 → 기록 초기화로 지울 수 있습니다. iOS에서는 «iCloud 동기화»(설정에서 끌 수 있고 기본은 켬)를 켜 두면 이 기록의 사본이 본인의 iCloud 계정에도 저장되어, 같은 Apple ID를 쓰는 다른 기기로 이어집니다. 개발자는 그 사본을 보지도 지우지도 못합니다 — 사용자 계정 안에 있기 때문입니다. 안드로이드에는 이 기능이 없습니다.</p>
+      <h2 class="clause">3. 순위표(선택)</h2>
+      <p>순위표를 열고 닉네임을 정하기 전까지는 아무것도 전송되지 않습니다. 그 이후 앱이 Firebase(게임 서비스)로 보내는 것은 이 앱을 위해 만들어진 익명 플레이어 ID(<span class="pf" data-ios="Apple ID" data-android="Google 계정">Apple ID</span> 아님), 직접 고른 닉네임, 기기의 지역 설정에서 얻은 국기, 점수, 그리고 내 행에 직접 고른 표시 색상과 배지(꾸미기용)뿐입니다. 기록 삭제를 원하시면 9항의 주소로 알려 주세요.</p>
+      <h2 class="clause">4. 광고</h2>
+      <p>무료 버전에서 광고는 «광고 보기»를 눌러 국기 포인트를 받을 때만 나옵니다. 배너 광고도, 전면 광고도 없습니다. 광고는 AdMob 이 제공하며, 광고 선택·측정을 위해 광고 식별자를 쓸 수 있습니다.</p>
+      <ul>
+        <li>iOS 에서는 추적 전에 반드시 사용자 허락을 먼저 구합니다. 거부하면 비개인화 광고가 표시됩니다.</li>
+        <li>필요한 지역(예: 유럽경제지역·영국)에서는 동의 양식이 데이터 이용 방식을 묻고, 선택하신 대로 적용됩니다.</li>
+        <li>Pro 사용자에게는 광고가 전혀 나오지 않습니다.</li>
+      </ul>
+      <p>광고 제공사의 데이터 처리 방식은 <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a> 에 설명돼 있습니다.</p>
+      <h2 class="clause">5. 결제</h2>
+      <p>결제는 <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> 가 처리합니다. 개발자는 카드번호나 청구 주소를 보지도, 저장하지도 않습니다. 앱은 Pro 보유 여부(예/아니오)만 들고 있으며 그 값을 스토어에 확인합니다.</p>
+      <h2 class="clause">6. 알림(선택)</h2>
+      <p>«오늘의 국기» 알림을 켜면 앱이 알림 권한을 요청한 뒤 기기 안에서 알림을 예약합니다. 서버로 보내는 것이 없고 푸시 서비스도 쓰지 않습니다. 언제든 끌 수 있습니다.</p>
+      <h2 class="clause">7. 아동</h2>
+      <p>앱은 아동의 개인정보를 알면서 수집하지 않습니다. 채팅도, 메시지 기능도 없으며, 사용자가 올리는 내용은 직접 고른 닉네임뿐입니다.</p>
+      <h2 class="clause">8. 보관과 삭제</h2>
+      <p>기기 안의 정보는 직접 초기화하거나 앱을 삭제할 때까지 남습니다. 순위 기록은 해당 순위표가 살아 있는 동안 유지됩니다 — 일간은 하루, 주간은 한 주 단위로 갱신됩니다. 앱을 삭제하면 기기의 정보는 사라집니다. iCloud 동기화를 켜 두었다면 사본이 본인의 iCloud 계정에 남아, 같은 Apple ID로 다시 설치할 때 되살아납니다 — 설정에서 동기화를 끄면 더 이상 올라가지 않습니다.</p>
+      <h2 class="clause">9. 문의와 변경</h2>
+      <p>문의 및 순위 기록 삭제 요청: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>이 방침은 변경될 수 있으며, 변경 사항은 앱 업데이트와 함께 알려 드립니다.</p>
+      <p><a class="showall" href="#all" data-showall>모든 언어 보기</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ja" lang="ja" data-lang="ja">
+      <h1>プライバシーポリシー</h1>
+      <div class="meta">
+        <p><strong>アプリ</strong>: 国旗マスター · Flag Master</p>
+        <p><strong>バンドルID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>対応プラットフォーム</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開発者</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>お問い合わせ先</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>最終更新日</strong>: 2026年8月27日</p>
+      </div>
+      <p class="note" data-store-note="ios">iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。</p>
+      <p class="note" data-store-note="android" hidden>Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。</p>
+      <p>本アプリには会員登録もログインもなく、個人データを可能な限り扱わない設計になっています。</p>
+      <h2 class="clause">1. 決して収集しないもの</h2>
+      <p>本アプリは氏名・メールアドレス・電話番号・連絡先・写真・位置情報を求めることも収集することもありません。</p>
+      <h2 class="clause">2. 端末に残る情報</h2>
+      <p>クイズの進捗、レベル、国旗ポイント、お気に入り、集めたカード、設定、Pro の保有状況は端末に保存されます。設定 → 記録をリセットで消去できます。 iOS では «iCloud 同期»(設定でオフにでき、既定はオン)をオンにしていると、この記録の複製がご自身の iCloud アカウントにも保存され、同じ Apple ID の他の端末へ引き継がれます。開発者はその複製を見ることも消すこともできません — ご自身のアカウントの中にあるためです。Android にこの機能はありません。</p>
+      <h2 class="clause">3. ランキング（任意）</h2>
+      <p>ランキングを開いてニックネームを決めるまで、何も送信されません。それ以降、本アプリが Firebase（ゲームサービス）へ送るのは、このアプリのために作られた匿名のプレイヤー ID（<span class="pf" data-ios="Apple ID" data-android="Google アカウント">Apple ID</span> ではありません）、ご自身で選んだニックネーム、端末の地域設定から得た国旗、ご自身の行に選んだ表示色とバッジ（見た目のみ）、スコアだけです。記録の削除をご希望の場合は第9条の連絡先までご連絡ください。</p>
+      <h2 class="clause">4. 広告</h2>
+      <p>無料版で広告が表示されるのは、「広告を見る」をタップして国旗ポイントを獲得するときだけです。バナー広告も全画面広告もありません。広告は AdMob が配信し、広告の選択と効果測定のために広告識別子を使用する場合があります。</p>
+      <ul>
+        <li>iOS では追跡の前に必ず許可を求めます。拒否された場合はパーソナライズされていない広告が表示されます。</li>
+        <li>必要な地域（欧州経済領域・英国など）では同意フォームがデータの利用方法を確認し、選択された内容が適用されます。</li>
+        <li>Pro ユーザーには広告は一切表示されません。</li>
+      </ul>
+      <p>広告事業者によるデータの取り扱いについては <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a> をご覧ください。</p>
+      <h2 class="clause">5. 購入</h2>
+      <p>購入手続きは <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> が行います。開発者がカード番号や請求先住所を見ることも保存することもありません。本アプリが保持するのは Pro を持っているかどうか（はい／いいえ）だけで、その値はストアに照会します。</p>
+      <h2 class="clause">6. 通知（任意）</h2>
+      <p>「今日の国旗」通知をオンにすると、本アプリは通知の許可を求めたうえで、端末内で通知を予約します。サーバーへ送信するものはなく、プッシュサービスも使用しません。いつでもオフにできます。</p>
+      <h2 class="clause">7. お子さまについて</h2>
+      <p>本アプリはお子さまの個人データを故意に収集しません。チャットもメッセージ機能もなく、ユーザーが入力する内容はご自身で選んだニックネームだけです。</p>
+      <h2 class="clause">8. 保管と削除</h2>
+      <p>端末内の情報は、ご自身がリセットするかアプリを削除するまで残ります。ランキングの記録はその集計期間のあいだ保持されます — デイリーは1日ごと、ウィークリーは1週ごとに切り替わります。アプリを削除すると端末内の情報は消えます。iCloud 同期をオンにしていた場合、複製はご自身の iCloud アカウントに残り、同じ Apple ID で再インストールすると復元されます — 設定で同期をオフにすれば以後アップロードされません。</p>
+      <h2 class="clause">9. お問い合わせと変更</h2>
+      <p>お問い合わせ、ランキング記録の削除依頼: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>本ポリシーは変更されることがあり、変更はアプリのアップデートとともにお知らせします。</p>
+      <p><a class="showall" href="#all" data-showall>すべての言語を表示</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="de" lang="de" data-lang="de">
+      <h1>Datenschutzerklärung</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Flaggenmeister · Flag Master</p>
+        <p><strong>Bundle-ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plattformen</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Entwickler</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Zuletzt aktualisiert</strong>: 27. August 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.</p>
+      <p class="note" data-store-note="android" hidden>Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.</p>
+      <p>Die App hat keine Registrierung und keine Anmeldung und ist so gebaut, dass sie mit so wenig personenbezogenen Daten wie möglich auskommt.</p>
+      <h2 class="clause">1. Was wir niemals erheben</h2>
+      <p>Die App fragt weder Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer, Kontakte, Fotos noch Ihren Standort ab und erhebt diese auch nicht.</p>
+      <h2 class="clause">2. Daten, die auf Ihrem Gerät bleiben</h2>
+      <p>Quizfortschritt, Level, Flaggenpunkte, Favoriten, gesammelte Karten, Einstellungen und der Pro-Besitz werden auf Ihrem Gerät gespeichert. Einstellungen → Fortschritt zurücksetzen löscht sie. Unter iOS wird bei aktivierter «iCloud-Synchronisierung» (in den Einstellungen abschaltbar, standardmäßig an) zusätzlich eine Kopie in Ihrem eigenen iCloud-Konto abgelegt, damit sie auf Ihre anderen Geräte mit derselben Apple-ID übergeht. Der Entwickler kann diese Kopie weder lesen noch löschen — sie liegt in Ihrem Konto. Unter Android gibt es diese Funktion nicht.</p>
+      <h2 class="clause">3. Ranglisten (optional)</h2>
+      <p>Es wird nichts gesendet, bis Sie die Ranglisten öffnen und einen Spitznamen wählen. Ab dann sendet die App an Firebase (den Spieldienst): eine anonyme, eigens für diese App erzeugte Spieler-ID (nicht die Kennung Ihres Store-Kontos – <span class="pf" data-ios="Apple ID" data-android="Google-Konto">Apple ID</span>), den von Ihnen gewählten Spitznamen, eine aus der Regionseinstellung Ihres Geräts abgeleitete Länderflagge, die von Ihnen für Ihre Zeile gewählte Anzeigefarbe und das Abzeichen (rein kosmetisch) sowie Ihre Punktzahlen. Mehr wird nicht gespeichert. Für die Löschung eines Eintrags schreiben Sie an die Adresse in Abschnitt 9.</p>
+      <h2 class="clause">4. Werbung</h2>
+      <p>Die kostenlose Version zeigt ein belohntes Video nur dann, wenn Sie auf „Video ansehen“ tippen, um Flaggenpunkte zu erhalten. Es gibt keine Banner- und keine Vollbildwerbung. Die Werbung liefert AdMob aus, das dafür einen Werbe-Identifier zur Auswahl und Messung verwenden kann.</p>
+      <ul>
+        <li>Unter iOS fragt die App vor jedem Tracking um Ihre Erlaubnis. Lehnen Sie ab, wird nicht personalisierte Werbung ausgeliefert.</li>
+        <li>Wo erforderlich (z. B. im EWR und im Vereinigten Königreich) fragt ein Einwilligungsformular, wie Ihre Daten verwendet werden dürfen; Ihre Auswahl wird umgesetzt.</li>
+        <li>Pro-Nutzern wird überhaupt keine Werbung angezeigt.</li>
+      </ul>
+      <p>Wie der Werbeanbieter mit diesen Daten umgeht: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Käufe</h2>
+      <p>Käufe werden über Ihren Store (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>) abgewickelt. Der Entwickler sieht und speichert weder Ihre Kartennummer noch Ihre Rechnungsadresse. Die App führt lediglich einen Ja/Nein-Vermerk darüber, ob Pro erworben wurde, und gleicht ihn mit dem Store ab.</p>
+      <h2 class="clause">6. Mitteilungen (optional)</h2>
+      <p>Wenn Sie die tägliche Flaggen-Erinnerung einschalten, fragt die App nach der Mitteilungsberechtigung und plant die Erinnerung anschließend auf Ihrem Gerät. Nichts wird an einen Server gesendet, ein Push-Dienst ist nicht beteiligt. Sie können sie jederzeit ausschalten.</p>
+      <h2 class="clause">7. Kinder</h2>
+      <p>Die App erhebt wissentlich keine personenbezogenen Daten von Kindern. Sie hat keinen Chat, keine Nachrichtenfunktion und keine von Nutzern eingestellten Inhalte außer einem selbst gewählten Spitznamen.</p>
+      <h2 class="clause">8. Aufbewahrung und Löschung</h2>
+      <p>Daten auf dem Gerät bleiben, bis Sie sie zurücksetzen oder die App deinstallieren. Ranglisteneinträge bestehen so lange wie ihre Liste: Tagesranglisten wechseln täglich, Wochenranglisten wöchentlich. Beim Deinstallieren werden die Daten auf dem Gerät entfernt. War die iCloud-Synchronisierung aktiv, bleibt eine Kopie in Ihrem eigenen iCloud-Konto und kehrt bei einer Neuinstallation mit derselben Apple-ID zurück; wird die Einstellung ausgeschaltet, wird nichts mehr hochgeladen.</p>
+      <h2 class="clause">9. Kontakt und Änderungen</h2>
+      <p>Fragen oder Löschung eines Ranglisteneintrags: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Diese Erklärung kann sich ändern; Änderungen werden mit App-Updates veröffentlicht.</p>
+      <p><a class="showall" href="#all" data-showall>Alle Sprachen anzeigen</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="fr" lang="fr" data-lang="fr">
+      <h1>Politique de confidentialité</h1>
+      <div class="meta">
+        <p><strong>Application</strong> : Maître des Drapeaux · Flag Master</p>
+        <p><strong>Identifiant du bundle</strong> : com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plateformes</strong> : iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Développeur</strong> : 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong> : <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Dernière mise à jour</strong> : 27 août 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.</p>
+      <p class="note" data-store-note="android" hidden>Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.</p>
+      <p>L’Application ne comporte ni inscription ni connexion, et elle est conçue pour fonctionner avec le moins de données personnelles possible.</p>
+      <h2 class="clause">1. Ce que nous ne collectons jamais</h2>
+      <p>L’Application ne demande ni ne collecte votre nom, votre adresse e-mail, votre numéro de téléphone, vos contacts, vos photos ou votre position.</p>
+      <h2 class="clause">2. Données conservées sur votre appareil</h2>
+      <p>La progression des quiz, le niveau, les Points Drapeau, les favoris, les cartes collectées, les réglages et la possession de Pro sont enregistrés sur votre appareil. Réglages → Réinitialiser la progression les efface. Sur iOS, si la «Synchronisation iCloud» est activée (désactivable dans les réglages, activée par défaut), une copie de ces données est aussi conservée dans votre propre compte iCloud afin de la retrouver sur vos autres appareils utilisant le même identifiant Apple. Le développeur ne peut ni lire ni supprimer cette copie — elle se trouve dans votre compte. Android ne propose pas cette fonction.</p>
+      <h2 class="clause">3. Classements (facultatif)</h2>
+      <p>Rien n’est envoyé tant que vous n’avez pas ouvert les classements et choisi un pseudonyme. À partir de là, l’Application envoie à Firebase (le service de jeu) : un identifiant de joueur anonyme créé pour cette application (et non votre <span class="pf" data-ios="Apple ID" data-android="compte Google">Apple ID</span>), le pseudonyme que vous avez choisi, un drapeau déduit du réglage de région de votre appareil, la couleur et le badge d’affichage que vous avez choisis pour votre ligne (purement décoratifs), et vos scores. C’est l’intégralité de l’enregistrement. Pour faire supprimer une entrée, écrivez à l’adresse indiquée à l’article 9.</p>
+      <h2 class="clause">4. Publicité</h2>
+      <p>La version gratuite n’affiche une publicité récompensée que lorsque vous touchez « Regarder une pub » pour gagner des Points Drapeau. Il n’y a ni bannière ni publicité plein écran. Les publicités sont diffusées par AdMob, qui peut utiliser un identifiant publicitaire pour les sélectionner et les mesurer.</p>
+      <ul>
+        <li>Sur iOS, l’Application demande votre autorisation avant tout suivi. Si vous refusez, les publicités sont non personnalisées.</li>
+        <li>Là où la loi l’exige (par exemple dans l’EEE et au Royaume-Uni), un formulaire de consentement vous demande comment vos données peuvent être utilisées, et votre choix est appliqué.</li>
+        <li>Les utilisateurs Pro ne voient aucune publicité.</li>
+      </ul>
+      <p>La régie publicitaire décrit le traitement de ces données sur <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Achats</h2>
+      <p>Les achats sont traités par la boutique d’applications (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>). Le développeur ne voit ni ne conserve jamais votre numéro de carte ni votre adresse de facturation. L’Application ne conserve qu’un indicateur oui/non indiquant si Pro est acquis, et le vérifie auprès de la boutique.</p>
+      <h2 class="clause">6. Notifications (facultatif)</h2>
+      <p>Si vous activez le rappel quotidien du drapeau, l’Application demande l’autorisation de notification puis planifie le rappel sur votre appareil. Rien n’est envoyé à un serveur et aucun service de notification push n’intervient. Vous pouvez le désactiver à tout moment.</p>
+      <h2 class="clause">7. Enfants</h2>
+      <p>L’Application ne collecte pas sciemment de données personnelles d’enfants. Elle ne comporte ni discussion, ni messagerie, ni contenu fourni par les utilisateurs autre qu’un pseudonyme que vous choisissez vous-même.</p>
+      <h2 class="clause">8. Conservation et suppression</h2>
+      <p>Les données présentes sur l’appareil sont conservées jusqu’à ce que vous les réinitialisiez ou désinstalliez l’Application. Les entrées de classement vivent le temps de leur tableau : les classements quotidiens sont renouvelés chaque jour, les hebdomadaires chaque semaine. La désinstallation supprime les données présentes sur l’appareil. Si la synchronisation iCloud était activée, une copie demeure dans votre propre compte iCloud et revient lors d’une réinstallation avec le même identifiant Apple ; désactiver le réglage arrête tout nouvel envoi.</p>
+      <h2 class="clause">9. Contact et modifications</h2>
+      <p>Questions ou demande de suppression d’une entrée de classement : <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Cette politique peut évoluer ; les modifications sont publiées avec les mises à jour de l’application.</p>
+      <p><a class="showall" href="#all" data-showall>Afficher toutes les langues</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="it" lang="it" data-lang="it">
+      <h1>Informativa sulla privacy</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Maestro delle Bandiere · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Piattaforme</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Sviluppatore</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contatti</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Ultimo aggiornamento</strong>: 27 agosto 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.</p>
+      <p class="note" data-store-note="android" hidden>Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.</p>
+      <p>L’App non prevede registrazione né accesso ed è progettata per funzionare con il minor numero possibile di dati personali.</p>
+      <h2 class="clause">1. Ciò che non raccogliamo mai</h2>
+      <p>L’App non chiede né raccoglie nome, indirizzo e-mail, numero di telefono, contatti, foto o posizione.</p>
+      <h2 class="clause">2. Dati che restano sul tuo dispositivo</h2>
+      <p>Progressi dei quiz, livello, Punti Bandiera, preferiti, carte raccolte, impostazioni e il possesso di Pro sono salvati sul tuo dispositivo. Impostazioni → Azzera progressi li cancella. Su iOS, se la «Sincronizzazione iCloud» è attiva (disattivabile nelle impostazioni, attiva per impostazione predefinita), una copia di questi dati viene conservata anche nel tuo account iCloud, così da ritrovarla sugli altri dispositivi con lo stesso ID Apple. Lo sviluppatore non può leggere né cancellare quella copia — si trova nel tuo account. Su Android questa funzione non esiste.</p>
+      <h2 class="clause">3. Classifiche (facoltative)</h2>
+      <p>Nulla viene inviato finché non apri le classifiche e scegli un soprannome. Da quel momento l’App invia a Firebase (il servizio di gioco): un ID giocatore anonimo creato per questa app (non il tuo <span class="pf" data-ios="Apple ID" data-android="account Google">Apple ID</span>), il soprannome che hai scelto, una bandiera ricavata dall’impostazione di regione del dispositivo, il colore e il distintivo che hai scelto per la tua riga (puramente estetici) e i tuoi punteggi. Questo è l’intero record. Per far cancellare una voce, scrivi all’indirizzo indicato al punto 9.</p>
+      <h2 class="clause">4. Pubblicità</h2>
+      <p>La versione gratuita mostra un annuncio con premio solo quando tocchi «Guarda un annuncio» per ottenere Punti Bandiera. Non ci sono banner né annunci a schermo intero. Gli annunci sono forniti da AdMob, che può usare un identificatore pubblicitario per selezionarli e misurarli.</p>
+      <ul>
+        <li>Su iOS l’App chiede il tuo permesso prima di qualsiasi tracciamento. Se rifiuti, gli annunci non sono personalizzati.</li>
+        <li>Dove richiesto (ad esempio nel SEE e nel Regno Unito) un modulo di consenso chiede come possono essere usati i tuoi dati e la tua scelta viene applicata.</li>
+        <li>Agli utenti Pro non viene mostrato alcun annuncio.</li>
+      </ul>
+      <p>Come il fornitore di annunci tratta questi dati: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Acquisti</h2>
+      <p>Gli acquisti sono gestiti da <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. Lo sviluppatore non vede né conserva il numero della tua carta o l’indirizzo di fatturazione. L’App conserva solo un indicatore sì/no sul possesso di Pro e lo verifica presso lo store.</p>
+      <h2 class="clause">6. Notifiche (facoltative)</h2>
+      <p>Se attivi il promemoria giornaliero della bandiera, l’App chiede il permesso per le notifiche e poi programma il promemoria sul tuo dispositivo. Nulla viene inviato a un server e non è coinvolto alcun servizio push. Puoi disattivarlo in qualsiasi momento.</p>
+      <h2 class="clause">7. Minori</h2>
+      <p>L’App non raccoglie consapevolmente dati personali di minori. Non ha chat, né messaggistica, né contenuti forniti dagli utenti oltre a un soprannome scelto da te.</p>
+      <h2 class="clause">8. Conservazione e cancellazione</h2>
+      <p>I dati sul dispositivo restano finché non li azzeri o disinstalli l’App. Le voci in classifica durano quanto la relativa classifica: quelle giornaliere cambiano ogni giorno, quelle settimanali ogni settimana. La disinstallazione rimuove i dati presenti sul dispositivo. Se la sincronizzazione iCloud era attiva, una copia resta nel tuo account iCloud e torna reinstallando con lo stesso ID Apple; disattivando l’impostazione non viene caricato altro.</p>
+      <h2 class="clause">9. Contatti e modifiche</h2>
+      <p>Domande o richiesta di cancellazione di una voce in classifica: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Questa informativa può cambiare; le modifiche sono pubblicate con gli aggiornamenti dell’app.</p>
+      <p><a class="showall" href="#all" data-showall>Mostra tutte le lingue</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">
+      <h1>隱私權政策</h1>
+      <div class="meta">
+        <p><strong>應用程式</strong>： 國旗大師 · Flag Master</p>
+        <p><strong>Bundle ID</strong>： com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>支援平台</strong>： iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開發者</strong>： 임한수 (Hansoo Lim)</p>
+        <p><strong>聯絡方式</strong>： <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>最後更新</strong>： 2026年8月27日</p>
+      </div>
+      <p class="note" data-store-note="ios">目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。</p>
+      <p class="note" data-store-note="android" hidden>目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。</p>
+      <p>本應用程式沒有註冊也沒有登入，並以盡可能少處理個人資料的方式設計。</p>
+      <h2 class="clause">1. 我們絕不收集的資料</h2>
+      <p>本應用程式不會索取或收集您的姓名、電子郵件地址、電話號碼、通訊錄、照片或位置資訊。</p>
+      <h2 class="clause">2. 保存在您裝置上的資料</h2>
+      <p>測驗進度、等級、國旗點數、收藏、蒐集的卡片、設定，以及是否擁有 Pro，都儲存在您的裝置上。可於設定 → 重設紀錄清除。 在 iOS 上，若開啟《iCloud 同步》(可於設定關閉，預設開啟)，這些紀錄的副本也會保存在您自己的 iCloud 帳戶中，並延續到使用相同 Apple ID 的其他裝置。開發者無法讀取或刪除該副本 — 它位於您的帳戶內。Android 沒有此功能。</p>
+      <h2 class="clause">3. 排行榜（選用）</h2>
+      <p>在您開啟排行榜並選定暱稱之前，不會傳送任何資料。此後本應用程式傳送至 Firebase（遊戲服務）的內容僅有：為本應用程式建立的匿名玩家 ID（並非您的<span class="pf" data-ios="Apple ID" data-android="Google 帳戶">Apple ID</span>）、您所選的暱稱、由裝置地區設定取得的國旗、您為自己的排名列所選的顯示顏色與徽章（僅供外觀），以及您的分數。若需刪除紀錄，請聯絡第9條所載地址。</p>
+      <h2 class="clause">4. 廣告</h2>
+      <p>免費版只有在您點選「觀看廣告」以取得國旗點數時才會顯示獎勵廣告。沒有橫幅廣告，也沒有全螢幕廣告。廣告由 AdMob 提供，其可能使用廣告識別碼來選擇及評估廣告成效。</p>
+      <ul>
+        <li>在 iOS 上，本應用程式會在任何追蹤之前先徵求您的同意。若您拒絕，將顯示非個人化廣告。</li>
+        <li>在法規要求的地區（例如歐洲經濟區與英國），同意表單會詢問您的資料可如何使用，並依您的選擇執行。</li>
+        <li>Pro 使用者完全不會看到廣告。</li>
+      </ul>
+      <p>廣告供應商對此類資料的處理方式：<a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. 購買</h2>
+      <p>購買由<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>處理。開發者絕不會看到或儲存您的卡號或帳單地址。本應用程式僅保存是否擁有 Pro 的「是／否」標記，並向商店查核該值。</p>
+      <h2 class="clause">6. 通知（選用）</h2>
+      <p>若您開啟「今日國旗」提醒，本應用程式會請求通知權限，然後在您的裝置上排定該提醒。不會傳送任何資料至伺服器，也不使用推播服務。您隨時可以關閉。</p>
+      <h2 class="clause">7. 兒童</h2>
+      <p>本應用程式不會在知情的情況下收集兒童的個人資料。本應用程式沒有聊天、沒有訊息功能，使用者提供的內容僅有您自行選擇的暱稱。</p>
+      <h2 class="clause">8. 保存與刪除</h2>
+      <p>裝置上的資料會保留至您重設或解除安裝本應用程式為止。排行榜紀錄於該榜單有效期間內保存 — 每日榜每天更替，每週榜每週更替。解除安裝會移除裝置上的資料。若曾開啟 iCloud 同步，副本仍留在您自己的 iCloud 帳戶中，以相同 Apple ID 重新安裝時會回復 — 於設定關閉同步後便不再上傳。</p>
+      <h2 class="clause">9. 聯絡方式與變更</h2>
+      <p>問題諮詢或排行榜紀錄刪除申請：<a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>本政策可能變更，變更內容將隨應用程式更新一併公告。</p>
+      <p><a class="showall" href="#all" data-showall>顯示所有語言</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="es" lang="es" data-lang="es">
+      <h1>Política de privacidad</h1>
+      <div class="meta">
+        <p><strong>Aplicación</strong>: Maestro de Banderas · Flag Master</p>
+        <p><strong>ID del paquete</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desarrollador</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contacto</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Última actualización</strong>: 27 de agosto de 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.</p>
+      <p class="note" data-store-note="android" hidden>Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.</p>
+      <p>La App no tiene registro ni inicio de sesión, y está diseñada para funcionar con los menos datos personales posibles.</p>
+      <h2 class="clause">1. Lo que nunca recopilamos</h2>
+      <p>La App no solicita ni recopila tu nombre, correo electrónico, número de teléfono, contactos, fotos ni ubicación.</p>
+      <h2 class="clause">2. Datos que se quedan en tu dispositivo</h2>
+      <p>El progreso de los cuestionarios, el nivel, los Puntos de Bandera, los favoritos, las cartas reunidas, los ajustes y si tienes Pro se guardan en tu dispositivo. Ajustes → Restablecer progreso los borra. En iOS, si la «Sincronización con iCloud» está activada (se puede desactivar en Ajustes; viene activada), también se guarda una copia en tu propia cuenta de iCloud para que continúe en tus otros dispositivos con el mismo ID de Apple. El desarrollador no puede leer ni borrar esa copia — está dentro de tu cuenta. En Android no existe esta función.</p>
+      <h2 class="clause">3. Clasificaciones (opcional)</h2>
+      <p>No se envía nada hasta que abres las clasificaciones y eliges un apodo. A partir de ahí, la App envía a Firebase (el servicio del juego): un identificador de jugador anónimo creado para esta app (no tu <span class="pf" data-ios="Apple ID" data-android="cuenta de Google">Apple ID</span>), el apodo que elegiste, una bandera derivada del ajuste de región de tu dispositivo, el color y la insignia que elegiste para tu fila (solo decorativos) y tus puntuaciones. Ese es todo el registro. Para eliminar una entrada, escribe a la dirección del apartado 9.</p>
+      <h2 class="clause">4. Publicidad</h2>
+      <p>La versión gratuita muestra un anuncio con recompensa solo cuando pulsas «Ver un anuncio» para ganar Puntos de Bandera. No hay banners ni anuncios a pantalla completa. Los anuncios los sirve AdMob, que puede usar un identificador publicitario para seleccionarlos y medirlos.</p>
+      <ul>
+        <li>En iOS la App pide tu permiso antes de cualquier seguimiento. Si lo rechazas, los anuncios no son personalizados.</li>
+        <li>Donde la ley lo exige (por ejemplo en el EEE y el Reino Unido), un formulario de consentimiento pregunta cómo pueden usarse tus datos y se aplica tu elección.</li>
+        <li>A los usuarios Pro no se les muestra ningún anuncio.</li>
+      </ul>
+      <p>Cómo trata estos datos el proveedor de anuncios: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Compras</h2>
+      <p>Las compras las procesa <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. El desarrollador nunca ve ni almacena tu número de tarjeta ni tu dirección de facturación. La App solo guarda un indicador sí/no de si Pro está adquirido, y lo comprueba con la tienda.</p>
+      <h2 class="clause">6. Notificaciones (opcional)</h2>
+      <p>Si activas el recordatorio diario de la bandera, la App pide permiso de notificaciones y luego programa el recordatorio en tu dispositivo. No se envía nada a un servidor y no interviene ningún servicio push. Puedes desactivarlo cuando quieras.</p>
+      <h2 class="clause">7. Menores</h2>
+      <p>La App no recopila conscientemente datos personales de menores. No tiene chat, ni mensajería, ni contenido aportado por los usuarios más allá de un apodo que tú mismo eliges.</p>
+      <h2 class="clause">8. Conservación y eliminación</h2>
+      <p>Los datos del dispositivo se conservan hasta que los restableces o desinstalas la App. Las entradas de clasificación duran lo que su tabla: las diarias cambian cada día y las semanales cada semana. Desinstalar elimina los datos del dispositivo. Si la sincronización con iCloud estaba activada, la copia permanece en tu propia cuenta de iCloud y vuelve al reinstalar con el mismo ID de Apple; al desactivar el ajuste deja de subirse nada.</p>
+      <h2 class="clause">9. Contacto y cambios</h2>
+      <p>Consultas o solicitud de eliminación de una entrada: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Esta política puede cambiar; los cambios se publican con las actualizaciones de la app.</p>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos los idiomas</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="pt" lang="pt" data-lang="pt">
+      <h1>Política de privacidade</h1>
+      <div class="meta">
+        <p><strong>App</strong>: Mestre das Bandeiras · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desenvolvedor</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contato</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Última atualização</strong>: 27 de agosto de 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.</p>
+      <p class="note" data-store-note="android" hidden>Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.</p>
+      <p>O App não tem cadastro nem login e foi feito para funcionar com o mínimo possível de dados pessoais.</p>
+      <h2 class="clause">1. O que nunca coletamos</h2>
+      <p>O App não pede nem coleta seu nome, e-mail, telefone, contatos, fotos ou localização.</p>
+      <h2 class="clause">2. Dados que ficam no seu dispositivo</h2>
+      <p>Progresso dos quizzes, nível, Pontos de Bandeira, favoritos, cartas colecionadas, ajustes e se você tem Pro ficam salvos no seu dispositivo. Ajustes → Redefinir progresso apaga tudo isso. No iOS, se a «Sincronização com iCloud» estiver ligada (pode ser desligada nos Ajustes; vem ligada), uma cópia também fica guardada na sua própria conta iCloud, para continuar nos seus outros aparelhos com o mesmo ID Apple. O desenvolvedor não consegue ler nem apagar essa cópia — ela está dentro da sua conta. No Android não existe esse recurso.</p>
+      <h2 class="clause">3. Rankings (opcional)</h2>
+      <p>Nada é enviado até você abrir os rankings e escolher um apelido. A partir daí, o App envia ao Firebase (o serviço do jogo): um ID de jogador anônimo criado para este app (não a sua <span class="pf" data-ios="Apple ID" data-android="conta Google">Apple ID</span>), o apelido que você escolheu, uma bandeira derivada da configuração de região do aparelho, a cor e o emblema de exibição que você escolheu para a sua linha (apenas visuais) e suas pontuações. Esse é o registro inteiro. Para excluir uma entrada, escreva para o endereço da seção 9.</p>
+      <h2 class="clause">4. Anúncios</h2>
+      <p>A versão gratuita exibe um anúncio premiado somente quando você toca em «Assistir a um anúncio» para ganhar Pontos de Bandeira. Não há banners nem anúncios em tela cheia. Os anúncios são veiculados pelo AdMob, que pode usar um identificador de publicidade para selecioná-los e medi-los.</p>
+      <ul>
+        <li>No iOS o App pede sua permissão antes de qualquer rastreamento. Se você recusar, os anúncios não serão personalizados.</li>
+        <li>Onde exigido (por exemplo no EEE e no Reino Unido), um formulário de consentimento pergunta como seus dados podem ser usados, e sua escolha é aplicada.</li>
+        <li>Usuários Pro não veem anúncio algum.</li>
+      </ul>
+      <p>Como o provedor de anúncios trata esses dados: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Compras</h2>
+      <p>As compras são processadas pela loja (<span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>). O desenvolvedor nunca vê nem armazena o número do seu cartão ou endereço de cobrança. O App guarda apenas um indicador sim/não de posse do Pro e o confere com a loja.</p>
+      <h2 class="clause">6. Notificações (opcional)</h2>
+      <p>Se você ativar o lembrete diário da bandeira, o App pede permissão de notificações e depois agenda o lembrete no seu dispositivo. Nada é enviado a um servidor e nenhum serviço de push é usado. Você pode desativar quando quiser.</p>
+      <h2 class="clause">7. Crianças</h2>
+      <p>O App não coleta conscientemente dados pessoais de crianças. Não há bate-papo, nem mensagens, nem conteúdo enviado por usuários além de um apelido escolhido por você.</p>
+      <h2 class="clause">8. Retenção e exclusão</h2>
+      <p>Os dados no dispositivo permanecem até você redefini-los ou desinstalar o App. As entradas de ranking duram o tempo da sua tabela: as diárias mudam a cada dia e as semanais a cada semana. Desinstalar remove os dados do aparelho. Se a sincronização com iCloud estava ligada, a cópia permanece na sua própria conta iCloud e volta ao reinstalar com o mesmo ID Apple; desligar o ajuste interrompe novos envios.</p>
+      <h2 class="clause">9. Contato e alterações</h2>
+      <p>Dúvidas ou pedido de exclusão de uma entrada de ranking: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Esta política pode mudar; as alterações são publicadas junto com as atualizações do app.</p>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos os idiomas</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="ar" lang="ar" data-lang="ar" dir="rtl">
+      <h1>سياسة الخصوصية</h1>
+      <div class="meta">
+        <p><strong>التطبيق</strong>: سيد الأعلام · Flag Master</p>
+        <p><strong>معرّف الحزمة</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>المنصات</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>المطوّر</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>التواصل</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>آخر تحديث</strong>: 27 أغسطس 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.</p>
+      <p class="note" data-store-note="android" hidden>النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.</p>
+      <p>لا يتضمن التطبيق تسجيلاً ولا تسجيل دخول، وقد صُمم ليعمل بأقل قدر ممكن من البيانات الشخصية.</p>
+      <h2 class="clause">1. ما لا نجمعه أبداً</h2>
+      <p>لا يطلب التطبيق ولا يجمع اسمك أو بريدك الإلكتروني أو رقم هاتفك أو جهات اتصالك أو صورك أو موقعك.</p>
+      <h2 class="clause">2. بيانات تبقى على جهازك</h2>
+      <p>يُحفظ تقدّم الاختبارات والمستوى ونقاط العلم والمفضلات والبطاقات المجمّعة والإعدادات وحالة امتلاك Pro على جهازك. ويمكن محوها من الإعدادات ← إعادة تعيين التقدّم. وفي iOS، عند تشغيل «مزامنة iCloud» (يمكن إيقافها من الإعدادات، وهي مفعّلة افتراضيًا) تُحفظ نسخة من هذه البيانات أيضًا في حساب iCloud الخاص بك لتنتقل إلى أجهزتك الأخرى التي تستخدم معرّف Apple نفسه. ولا يستطيع المطوّر قراءة تلك النسخة ولا حذفها — فهي داخل حسابك أنت. ولا تتوفر هذه الميزة على Android.</p>
+      <h2 class="clause">3. قوائم المتصدرين (اختيارية)</h2>
+      <p>لا يُرسَل أي شيء حتى تفتح قوائم المتصدرين وتختار لقباً. بعد ذلك يرسل التطبيق إلى Firebase (خدمة اللعبة): معرّف لاعب مجهول أُنشئ لهذا التطبيق (وليس <span class="pf" data-ios="معرّف Apple" data-android="حساب Google">معرّف Apple</span> الخاص بك)، واللقب الذي اخترته، وعَلَماً مستنتجاً من إعداد المنطقة في جهازك، ونتائجك، ولون العرض والشارة اللذين اخترتهما لصفّك (عناصر تجميلية فقط). هذا هو السجل بأكمله. ولحذف مدخلة، راسِلنا على العنوان الوارد في البند 9.</p>
+      <h2 class="clause">4. الإعلانات</h2>
+      <p>لا تعرض النسخة المجانية إعلان مكافأة إلا عندما تضغط «مشاهدة إعلان» لكسب نقاط العلم. لا توجد إعلانات بانر ولا إعلانات ملء الشاشة. تُعرض الإعلانات عبر AdMob، وقد يستخدم معرّف إعلانات لاختيارها وقياسها.</p>
+      <ul>
+        <li>على iOS يطلب التطبيق إذنك قبل أي تتبّع. وإذا رفضت، تكون الإعلانات غير مخصّصة.</li>
+        <li>حيثما يقتضي القانون (مثل المنطقة الاقتصادية الأوروبية والمملكة المتحدة) يسألك نموذج موافقة عن كيفية استخدام بياناتك، ويُطبَّق اختيارك.</li>
+        <li>لا تُعرض أي إعلانات لمستخدمي Pro.</li>
+      </ul>
+      <p>كيفية تعامل مزوّد الإعلانات مع هذه البيانات: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. المشتريات</h2>
+      <p>تُعالَج عمليات الشراء عبر <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. لا يرى المطوّر رقم بطاقتك أو عنوان الفوترة ولا يخزّنهما إطلاقاً. ولا يحتفظ التطبيق إلا بمؤشر «نعم/لا» لامتلاك Pro، ويتحقق منه لدى المتجر.</p>
+      <h2 class="clause">6. الإشعارات (اختيارية)</h2>
+      <p>إذا فعّلت تذكير «عَلَم اليوم»، يطلب التطبيق إذن الإشعارات ثم يجدول التذكير على جهازك. لا يُرسَل شيء إلى أي خادم ولا تُستخدم خدمة إشعارات فورية. ويمكنك إيقافه في أي وقت.</p>
+      <h2 class="clause">7. الأطفال</h2>
+      <p>لا يجمع التطبيق عن علم بيانات شخصية من الأطفال. ولا يتضمن دردشة ولا رسائل ولا محتوى يقدّمه المستخدمون سوى لقب تختاره بنفسك.</p>
+      <h2 class="clause">8. الاحتفاظ والحذف</h2>
+      <p>تبقى البيانات على الجهاز حتى تعيد تعيينها أو تحذف التطبيق. وتبقى مدخلات المتصدرين ما بقيت قائمتها: تتجدد القوائم اليومية كل يوم والأسبوعية كل أسبوع. وحذف التطبيق يزيل البيانات الموجودة على الجهاز. وإذا كانت مزامنة iCloud مفعّلة تبقى نسخة في حساب iCloud الخاص بك وتعود عند إعادة التثبيت بمعرّف Apple نفسه؛ وإيقاف الإعداد يوقف أي رفع لاحق.</p>
+      <h2 class="clause">9. التواصل والتغييرات</h2>
+      <p>للاستفسارات أو طلب حذف مدخلة من المتصدرين: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>قد تتغير هذه السياسة، وتُنشر التغييرات مع تحديثات التطبيق.</p>
+      <p><a class="showall" href="#all" data-showall>عرض جميع اللغات</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="id" lang="id" data-lang="id">
+      <h1>Kebijakan Privasi</h1>
+      <div class="meta">
+        <p><strong>Aplikasi</strong>: Master Bendera · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platform</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Pengembang</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontak</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Pembaruan terakhir</strong>: 27 Agustus 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.</p>
+      <p class="note" data-store-note="android" hidden>Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.</p>
+      <p>Aplikasi tidak memiliki pendaftaran maupun proses masuk, dan dirancang agar bekerja dengan data pribadi sesedikit mungkin.</p>
+      <h2 class="clause">1. Yang tidak pernah kami kumpulkan</h2>
+      <p>Aplikasi tidak meminta atau mengumpulkan nama, alamat email, nomor telepon, kontak, foto, atau lokasi Anda.</p>
+      <h2 class="clause">2. Data yang tetap di perangkat Anda</h2>
+      <p>Kemajuan kuis, level, Poin Bendera, favorit, kartu yang terkumpul, pengaturan, dan status kepemilikan Pro disimpan di perangkat Anda. Pengaturan → Atur ulang kemajuan akan menghapusnya. Di iOS, bila «Sinkronisasi iCloud» aktif (dapat dimatikan di Pengaturan; aktif secara bawaan), salinan data ini juga disimpan di akun iCloud Anda sendiri sehingga berlanjut ke perangkat lain dengan Apple ID yang sama. Pengembang tidak dapat membaca maupun menghapus salinan itu — salinan berada di dalam akun Anda. Android tidak memiliki fitur ini.</p>
+      <h2 class="clause">3. Papan peringkat (opsional)</h2>
+      <p>Tidak ada yang dikirim sampai Anda membuka papan peringkat dan memilih nama panggilan. Setelah itu Aplikasi mengirim ke Firebase (layanan gim): ID pemain anonim yang dibuat untuk aplikasi ini (bukan <span class="pf" data-ios="Apple ID" data-android="akun Google">Apple ID</span> Anda), nama panggilan pilihan Anda, bendera yang diturunkan dari pengaturan wilayah perangkat, warna tampilan dan lencana yang Anda pilih untuk baris Anda (sekadar hiasan), dan skor Anda. Hanya itu isi catatannya. Untuk menghapus entri, tulislah ke alamat pada bagian 9.</p>
+      <h2 class="clause">4. Iklan</h2>
+      <p>Versi gratis menampilkan iklan berhadiah hanya ketika Anda mengetuk “Tonton iklan” untuk mendapatkan Poin Bendera. Tidak ada iklan spanduk maupun iklan layar penuh. Iklan disajikan oleh AdMob, yang dapat memakai pengidentifikasi iklan untuk memilih dan mengukurnya.</p>
+      <ul>
+        <li>Di iOS, Aplikasi meminta izin Anda sebelum pelacakan apa pun. Jika Anda menolak, iklan tidak dipersonalisasi.</li>
+        <li>Di wilayah yang mewajibkannya (misalnya EEA dan Inggris), formulir persetujuan menanyakan bagaimana data Anda boleh digunakan, dan pilihan Anda diterapkan.</li>
+        <li>Pengguna Pro tidak melihat iklan sama sekali.</li>
+      </ul>
+      <p>Cara penyedia iklan menangani data ini: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Pembelian</h2>
+      <p>Pembelian diproses oleh <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. Pengembang tidak pernah melihat atau menyimpan nomor kartu maupun alamat penagihan Anda. Aplikasi hanya menyimpan penanda ya/tidak untuk kepemilikan Pro, dan memeriksanya ke toko.</p>
+      <h2 class="clause">6. Notifikasi (opsional)</h2>
+      <p>Jika Anda menyalakan pengingat bendera harian, Aplikasi meminta izin notifikasi lalu menjadwalkan pengingat itu di perangkat Anda. Tidak ada yang dikirim ke server dan tidak ada layanan push yang terlibat. Anda dapat mematikannya kapan saja.</p>
+      <h2 class="clause">7. Anak-anak</h2>
+      <p>Aplikasi tidak dengan sengaja mengumpulkan data pribadi anak. Tidak ada obrolan, tidak ada pesan, dan tidak ada konten dari pengguna selain nama panggilan yang Anda pilih sendiri.</p>
+      <h2 class="clause">8. Penyimpanan dan penghapusan</h2>
+      <p>Data di perangkat tersimpan sampai Anda mengatur ulang atau menghapus Aplikasi. Entri papan peringkat bertahan selama papannya berlaku: papan harian berganti setiap hari, papan mingguan setiap minggu. Menghapus instalasi akan menghapus data di perangkat. Jika Sinkronisasi iCloud aktif, salinannya tetap ada di akun iCloud Anda sendiri dan kembali saat Anda memasang ulang dengan Apple ID yang sama; mematikan pengaturan menghentikan unggahan berikutnya.</p>
+      <h2 class="clause">9. Kontak dan perubahan</h2>
+      <p>Pertanyaan atau permintaan penghapusan entri papan peringkat: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Kebijakan ini dapat berubah; perubahan diumumkan bersama pembaruan aplikasi.</p>
+      <p><a class="showall" href="#all" data-showall>Tampilkan semua bahasa</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="vi" lang="vi" data-lang="vi">
+      <h1>Chính sách quyền riêng tư</h1>
+      <div class="meta">
+        <p><strong>Ứng dụng</strong>: Bậc Thầy Quốc Kỳ · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Nền tảng</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Nhà phát triển</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Liên hệ</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Cập nhật lần cuối</strong>: 27 tháng 8 năm 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.</p>
+      <p class="note" data-store-note="android" hidden>Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.</p>
+      <p>Ứng dụng không có đăng ký và không có đăng nhập, và được xây dựng để hoạt động với càng ít dữ liệu cá nhân càng tốt.</p>
+      <h2 class="clause">1. Những gì chúng tôi không bao giờ thu thập</h2>
+      <p>Ứng dụng không hỏi và không thu thập tên, địa chỉ email, số điện thoại, danh bạ, ảnh hay vị trí của bạn.</p>
+      <h2 class="clause">2. Dữ liệu nằm trên thiết bị của bạn</h2>
+      <p>Tiến độ trắc nghiệm, cấp độ, Điểm Quốc Kỳ, mục yêu thích, thẻ đã sưu tầm, thiết lập và việc bạn có Pro hay không được lưu trên thiết bị của bạn. Cài đặt → Đặt lại tiến độ sẽ xóa chúng. Trên iOS, nếu «Đồng bộ iCloud» đang bật (có thể tắt trong Cài đặt; mặc định bật), một bản sao của các dữ liệu này cũng được lưu trong tài khoản iCloud của chính bạn để tiếp tục trên các thiết bị khác dùng cùng Apple ID. Nhà phát triển không thể đọc hay xóa bản sao đó — nó nằm trong tài khoản của bạn. Android không có tính năng này.</p>
+      <h2 class="clause">3. Bảng xếp hạng (tùy chọn)</h2>
+      <p>Không có gì được gửi đi cho tới khi bạn mở bảng xếp hạng và chọn một biệt danh. Từ đó trở đi, Ứng dụng gửi tới Firebase (dịch vụ trò chơi): một mã người chơi ẩn danh tạo riêng cho ứng dụng này (không phải <span class="pf" data-ios="Apple ID" data-android="tài khoản Google">Apple ID</span> của bạn), biệt danh bạn đã chọn, lá cờ suy ra từ thiết lập khu vực của thiết bị, màu hiển thị và huy hiệu bạn chọn cho hàng của mình (chỉ mang tính trang trí), và điểm số của bạn. Đó là toàn bộ bản ghi. Để xóa một mục, hãy viết thư tới địa chỉ ở mục 9.</p>
+      <h2 class="clause">4. Quảng cáo</h2>
+      <p>Bản miễn phí chỉ hiện quảng cáo có thưởng khi bạn chạm “Xem quảng cáo” để nhận Điểm Quốc Kỳ. Không có quảng cáo biểu ngữ và không có quảng cáo toàn màn hình. Quảng cáo do AdMob phân phối; dịch vụ này có thể dùng mã định danh quảng cáo để chọn và đo lường quảng cáo.</p>
+      <ul>
+        <li>Trên iOS, Ứng dụng xin phép bạn trước bất kỳ hoạt động theo dõi nào. Nếu bạn từ chối, quảng cáo sẽ không được cá nhân hóa.</li>
+        <li>Ở nơi luật yêu cầu (ví dụ EEA và Vương quốc Anh), một biểu mẫu đồng ý sẽ hỏi dữ liệu của bạn có thể được dùng ra sao, và lựa chọn của bạn được áp dụng.</li>
+        <li>Người dùng Pro hoàn toàn không thấy quảng cáo.</li>
+      </ul>
+      <p>Cách nhà cung cấp quảng cáo xử lý dữ liệu này: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Giao dịch mua</h2>
+      <p>Giao dịch do <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> xử lý. Nhà phát triển không bao giờ nhìn thấy hay lưu số thẻ và địa chỉ thanh toán của bạn. Ứng dụng chỉ giữ một dấu có/không về việc đã mua Pro, và đối chiếu dấu đó với cửa hàng.</p>
+      <h2 class="clause">6. Thông báo (tùy chọn)</h2>
+      <p>Nếu bạn bật lời nhắc quốc kỳ hằng ngày, Ứng dụng sẽ xin quyền thông báo rồi hẹn lời nhắc ngay trên thiết bị của bạn. Không có gì được gửi tới máy chủ và không dùng dịch vụ đẩy thông báo nào. Bạn có thể tắt bất cứ lúc nào.</p>
+      <h2 class="clause">7. Trẻ em</h2>
+      <p>Ứng dụng không cố ý thu thập dữ liệu cá nhân của trẻ em. Ứng dụng không có trò chuyện, không có nhắn tin, và không có nội dung do người dùng cung cấp ngoài biệt danh do chính bạn chọn.</p>
+      <h2 class="clause">8. Lưu giữ và xóa</h2>
+      <p>Dữ liệu trên thiết bị được giữ cho tới khi bạn đặt lại hoặc gỡ cài đặt Ứng dụng. Mục trong bảng xếp hạng tồn tại theo vòng đời của bảng: bảng hằng ngày đổi mỗi ngày, bảng hằng tuần đổi mỗi tuần. Gỡ cài đặt sẽ xóa dữ liệu trên thiết bị. Nếu Đồng bộ iCloud từng được bật, bản sao vẫn nằm trong tài khoản iCloud của bạn và trở lại khi bạn cài đặt lại bằng cùng Apple ID; tắt thiết lập này sẽ dừng mọi lần tải lên sau đó.</p>
+      <h2 class="clause">9. Liên hệ và thay đổi</h2>
+      <p>Thắc mắc hoặc yêu cầu xóa mục xếp hạng: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Chính sách này có thể thay đổi; các thay đổi được công bố cùng bản cập nhật ứng dụng.</p>
+      <p><a class="showall" href="#all" data-showall>Hiện tất cả ngôn ngữ</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="tr" lang="tr" data-lang="tr">
+      <h1>Gizlilik Politikası</h1>
+      <div class="meta">
+        <p><strong>Uygulama</strong>: Bayrak Ustası · Flag Master</p>
+        <p><strong>Paket kimliği</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformlar</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Geliştirici</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>İletişim</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Son güncelleme</strong>: 27 Ağustos 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.</p>
+      <p class="note" data-store-note="android" hidden>Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.</p>
+      <p>Uygulamada kayıt da giriş de yoktur; olabildiğince az kişisel veriyle çalışacak biçimde tasarlanmıştır.</p>
+      <h2 class="clause">1. Asla toplamadıklarımız</h2>
+      <p>Uygulama adınızı, e-posta adresinizi, telefon numaranızı, kişilerinizi, fotoğraflarınızı veya konumunuzu ne ister ne de toplar.</p>
+      <h2 class="clause">2. Cihazınızda kalan veriler</h2>
+      <p>Test ilerlemesi, seviye, Bayrak Puanı, favoriler, toplanan kartlar, ayarlar ve Pro’ya sahip olup olmadığınız cihazınızda saklanır. Ayarlar → İlerlemeyi sıfırla bunları siler. iOS’ta «iCloud eşitleme» açıksa (Ayarlar’dan kapatılabilir; varsayılan olarak açıktır) bu kayıtların bir kopyası kendi iCloud hesabınızda da tutulur; böylece aynı Apple Kimliği’ni kullanan diğer cihazlarınıza taşınır. Geliştirici bu kopyayı ne okuyabilir ne de silebilir — kopya sizin hesabınızın içindedir. Android’de bu özellik yoktur.</p>
+      <h2 class="clause">3. Sıralamalar (isteğe bağlı)</h2>
+      <p>Sıralamaları açıp bir takma ad seçene kadar hiçbir şey gönderilmez. Bundan sonra Uygulama Firebase’e (oyun servisi) şunları gönderir: bu uygulama için oluşturulmuş anonim bir oyuncu kimliği (<span class="pf" data-ios="Apple ID" data-android="Google">Apple ID</span> hesabınız değil), seçtiğiniz takma ad, cihazınızın bölge ayarından türetilen bir ülke bayrağı, puanlarınız ve satırınız için seçtiğiniz görüntü rengi ile rozet (yalnızca görsel). Kaydın tamamı budur. Bir kaydın silinmesi için 9. bölümdeki adrese yazın.</p>
+      <h2 class="clause">4. Reklamlar</h2>
+      <p>Ücretsiz sürüm, yalnızca Bayrak Puanı kazanmak için “Reklam izle”ye dokunduğunuzda ödüllü bir reklam gösterir. Banner reklam da tam ekran reklam da yoktur. Reklamlar AdMob tarafından sunulur; AdMob, reklamları seçmek ve ölçmek için bir reklam tanımlayıcısı kullanabilir.</p>
+      <ul>
+        <li>iOS’ta Uygulama, herhangi bir izlemeden önce izninizi ister. Reddederseniz reklamlar kişiselleştirilmez.</li>
+        <li>Gerekli olan yerlerde (örneğin AEA ve Birleşik Krallık) bir onay formu verilerinizin nasıl kullanılabileceğini sorar ve seçiminiz uygulanır.</li>
+        <li>Pro kullanıcılarına hiç reklam gösterilmez.</li>
+      </ul>
+      <p>Reklam sağlayıcısının bu verileri nasıl işlediği: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Satın alımlar</h2>
+      <p>Satın alımlar <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span> tarafından işlenir. Geliştirici kart numaranızı veya fatura adresinizi asla görmez ve saklamaz. Uygulama yalnızca Pro’ya sahip olunup olunmadığına dair evet/hayır bilgisini tutar ve bunu mağazayla doğrular.</p>
+      <h2 class="clause">6. Bildirimler (isteğe bağlı)</h2>
+      <p>Günlük bayrak hatırlatmasını açarsanız Uygulama bildirim izni ister ve hatırlatmayı cihazınızda zamanlar. Hiçbir şey sunucuya gönderilmez ve herhangi bir anlık bildirim hizmeti devreye girmez. İstediğiniz zaman kapatabilirsiniz.</p>
+      <h2 class="clause">7. Çocuklar</h2>
+      <p>Uygulama, çocuklardan bilerek kişisel veri toplamaz. Sohbet yoktur, mesajlaşma yoktur ve kendi seçtiğiniz takma ad dışında kullanıcı tarafından sağlanan içerik yoktur.</p>
+      <h2 class="clause">8. Saklama ve silme</h2>
+      <p>Cihazdaki veriler, siz sıfırlayana ya da Uygulamayı kaldırana kadar kalır. Sıralama kayıtları ait oldukları liste kadar yaşar: günlük listeler her gün, haftalık listeler her hafta yenilenir. Uygulamayı kaldırmak cihazdaki verileri siler. iCloud eşitleme açıksa kopya kendi iCloud hesabınızda kalır ve aynı Apple Kimliği ile yeniden kurduğunuzda geri gelir; ayarı kapatmak sonraki yüklemeleri durdurur.</p>
+      <h2 class="clause">9. İletişim ve değişiklikler</h2>
+      <p>Sorularınız veya bir sıralama kaydının silinmesi talebiniz için: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Bu politika değişebilir; değişiklikler uygulama güncellemeleriyle duyurulur.</p>
+      <p><a class="showall" href="#all" data-showall>Bütün dilleri göster</a></p>
+      <hr class="sep">
+  </article>
+  <article class="doc" id="pl" lang="pl" data-lang="pl">
+      <h1>Polityka prywatności</h1>
+      <div class="meta">
+        <p><strong>Aplikacja</strong>: Mistrz Flag · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformy</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Deweloper</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+        <p><strong>Ostatnia aktualizacja</strong>: 27 sierpnia 2026</p>
+      </div>
+      <p class="note" data-store-note="ios">Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.</p>
+      <p class="note" data-store-note="android" hidden>Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.</p>
+      <p>Aplikacja nie ma rejestracji ani logowania i została zbudowana tak, aby działać na jak najmniejszej ilości danych osobowych.</p>
+      <h2 class="clause">1. Czego nigdy nie zbieramy</h2>
+      <p>Aplikacja nie prosi o Twoje imię, adres e-mail, numer telefonu, kontakty, zdjęcia ani lokalizację i ich nie zbiera.</p>
+      <h2 class="clause">2. Dane pozostające na Twoim urządzeniu</h2>
+      <p>Postępy w quizach, poziom, Punkty Flagowe, ulubione, zebrane karty, ustawienia oraz informacja o posiadaniu Pro są zapisywane na Twoim urządzeniu. Ustawienia → Zresetuj postępy usuwa je. W systemie iOS, gdy «Synchronizacja iCloud» jest włączona (można ją wyłączyć w Ustawieniach; domyślnie włączona), kopia tych danych jest przechowywana także na Twoim własnym koncie iCloud, dzięki czemu przenosi się na inne urządzenia z tym samym Apple ID. Deweloper nie może odczytać ani usunąć tej kopii — znajduje się ona na Twoim koncie. Android nie ma tej funkcji.</p>
+      <h2 class="clause">3. Rankingi (opcjonalnie)</h2>
+      <p>Nic nie jest wysyłane, dopóki nie otworzysz rankingów i nie wybierzesz pseudonimu. Od tej chwili Aplikacja wysyła do Firebase (usługi gry): anonimowy identyfikator gracza utworzony na potrzeby tej aplikacji (niezależny od Twojego <span class="pf" data-ios="Apple ID" data-android="konta Google">Apple ID</span>), wybrany przez Ciebie pseudonim, flagę wywnioskowaną z ustawienia regionu urządzenia, Twoje wyniki oraz wybrany przez Ciebie kolor i odznakę wyświetlane przy Twoim wpisie (wyłącznie ozdobne). To cały zapis. Aby usunąć wpis, napisz na adres z punktu 9.</p>
+      <h2 class="clause">4. Reklamy</h2>
+      <p>Wersja bezpłatna wyświetla reklamę z nagrodą tylko wtedy, gdy dotkniesz „Obejrzyj reklamę”, aby zdobyć Punkty Flagowe. Nie ma reklam banerowych ani pełnoekranowych. Reklamy dostarcza AdMob, który może używać identyfikatora reklamowego do ich doboru i pomiaru.</p>
+      <ul>
+        <li>W systemie iOS Aplikacja prosi o Twoją zgodę przed jakimkolwiek śledzeniem. Jeśli odmówisz, reklamy nie będą spersonalizowane.</li>
+        <li>Tam, gdzie jest to wymagane (na przykład w EOG i Wielkiej Brytanii), formularz zgody pyta, jak mogą być wykorzystywane Twoje dane, a Twój wybór jest respektowany.</li>
+        <li>Użytkownicy Pro nie widzą żadnych reklam.</li>
+      </ul>
+      <p>Sposób przetwarzania tych danych przez dostawcę reklam: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">https://policies.google.com/technologies/partner-sites</a></p>
+      <h2 class="clause">5. Zakupy</h2>
+      <p>Zakupy obsługuje <span class="pf" data-ios="App Store" data-android="Google Play">App Store</span>. Deweloper nigdy nie widzi ani nie przechowuje numeru Twojej karty ani adresu rozliczeniowego. Aplikacja przechowuje wyłącznie znacznik tak/nie o posiadaniu Pro i weryfikuje go w sklepie.</p>
+      <h2 class="clause">6. Powiadomienia (opcjonalnie)</h2>
+      <p>Jeśli włączysz codzienne przypomnienie o fladze, Aplikacja poprosi o zgodę na powiadomienia, a następnie zaplanuje przypomnienie na Twoim urządzeniu. Nic nie jest wysyłane na serwer i nie bierze w tym udziału żadna usługa push. Możesz je wyłączyć w dowolnej chwili.</p>
+      <h2 class="clause">7. Dzieci</h2>
+      <p>Aplikacja nie zbiera świadomie danych osobowych dzieci. Nie ma czatu, nie ma wiadomości i nie ma treści dostarczanych przez użytkowników poza pseudonimem, który wybierasz samodzielnie.</p>
+      <h2 class="clause">8. Przechowywanie i usuwanie</h2>
+      <p>Dane na urządzeniu pozostają, dopóki ich nie zresetujesz lub nie odinstalujesz Aplikacji. Wpisy rankingowe żyją tak długo jak ich tabela: rankingi dzienne zmieniają się codziennie, tygodniowe co tydzień. Odinstalowanie usuwa dane z urządzenia. Jeśli synchronizacja iCloud była włączona, kopia pozostaje na Twoim koncie iCloud i wraca po ponownej instalacji z tym samym Apple ID; wyłączenie ustawienia zatrzymuje dalsze przesyłanie.</p>
+      <h2 class="clause">9. Kontakt i zmiany</h2>
+      <p>Pytania lub prośba o usunięcie wpisu rankingowego: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+      <p>Niniejsza polityka może ulec zmianie; zmiany są publikowane wraz z aktualizacjami aplikacji.</p>
+      <p><a class="showall" href="#all" data-showall>Pokaż wszystkie języki</a></p>
+      <hr class="sep">
+  </article>
+</main>
+<footer>© 임한수 (Hansoo Lim) · Flag Master. All rights reserved.</footer>
+<script>window.__UI__ = {"en":{"language":"Language","store":"Your store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Show every language","home":"Home","termsDesc":"Pro upgrade, Flag Points, rankings, content and liability","privacyDesc":"What we never collect, what stays on your device, rankings, ads and deletion","supportDesc":"Contact, frequently asked questions, refunds and data deletion","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Platforms","metaDev":"Developer","metaContact":"Contact","metaUpdated":"Last updated","storeNoteIos":"Showing the wording for iOS. On an Android device, switch above.","storeNoteAndroid":"Showing the wording for Android. On an iPhone or iPad, switch above.","__appName":"Flag Master","appName":"Flag Master","termsTitle":"Terms of Use","privacyTitle":"Privacy Policy","supportTitle":"Support & FAQ","__lastUpdated":"27 August 2026","__updatedLabel":"Last updated","__sep":":"},"ko":{"language":"언어","store":"이용 중인 스토어","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"모든 언어 보기","home":"홈","termsDesc":"Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임","privacyDesc":"수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제","supportDesc":"문의, 자주 묻는 질문, 환불과 데이터 삭제","metaApp":"앱","metaBundle":"번들 ID","metaPlatform":"지원 플랫폼","metaDev":"개발자","metaContact":"문의","metaUpdated":"최종 수정일","storeNoteIos":"iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.","storeNoteAndroid":"Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.","__appName":"국기의 주인","appName":"국기의 주인","termsTitle":"이용약관","privacyTitle":"개인정보 처리방침","supportTitle":"고객 지원 · 자주 묻는 질문","__lastUpdated":"2026년 8월 27일","__updatedLabel":"최종 업데이트","__sep":":"},"ja":{"language":"言語","store":"ご利用のストア","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"すべての言語を表示","home":"ホーム","termsDesc":"Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項","privacyDesc":"収集しない情報、端末内にとどまる情報、ランキング、広告、削除について","supportDesc":"お問い合わせ、よくある質問、返金とデータの削除","metaApp":"アプリ","metaBundle":"バンドルID","metaPlatform":"対応プラットフォーム","metaDev":"開発者","metaContact":"お問い合わせ先","metaUpdated":"最終更新日","storeNoteIos":"iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。","storeNoteAndroid":"Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。","__appName":"国旗マスター","appName":"国旗マスター","termsTitle":"利用規約","privacyTitle":"プライバシーポリシー","supportTitle":"サポート・よくある質問","__lastUpdated":"2026年8月27日","__updatedLabel":"最終更新日","__sep":":"},"de":{"language":"Sprache","store":"Ihr Store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Alle Sprachen anzeigen","home":"Startseite","termsDesc":"Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung","privacyDesc":"Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung","supportDesc":"Kontakt, häufige Fragen, Erstattungen und Datenlöschung","metaApp":"App","metaBundle":"Bundle-ID","metaPlatform":"Plattformen","metaDev":"Entwickler","metaContact":"Kontakt","metaUpdated":"Zuletzt aktualisiert","storeNoteIos":"Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.","storeNoteAndroid":"Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.","__appName":"Flaggenmeister","appName":"Flaggenmeister","termsTitle":"Nutzungsbedingungen","privacyTitle":"Datenschutzerklärung","supportTitle":"Support & FAQ","__lastUpdated":"27. August 2026","__updatedLabel":"Zuletzt aktualisiert","__sep":":"},"fr":{"language":"Langue","store":"Votre boutique","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Afficher toutes les langues","home":"Accueil","termsDesc":"Passage à Pro, Points Drapeau, classements, contenu et responsabilité","privacyDesc":"Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression","supportDesc":"Contact, questions fréquentes, remboursements et suppression des données","metaApp":"Application","metaBundle":"Identifiant du bundle","metaPlatform":"Plateformes","metaDev":"Développeur","metaContact":"Contact","metaUpdated":"Dernière mise à jour","storeNoteIos":"Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.","storeNoteAndroid":"Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.","__appName":"Maître des Drapeaux","appName":"Maître des Drapeaux","termsTitle":"Conditions d’utilisation","privacyTitle":"Politique de confidentialité","supportTitle":"Assistance et FAQ","__lastUpdated":"27 août 2026","__updatedLabel":"Dernière mise à jour","__sep":" :"},"it":{"language":"Lingua","store":"Il tuo store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostra tutte le lingue","home":"Home","termsDesc":"Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità","privacyDesc":"Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione","supportDesc":"Contatti, domande frequenti, rimborsi ed eliminazione dei dati","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Piattaforme","metaDev":"Sviluppatore","metaContact":"Contatti","metaUpdated":"Ultimo aggiornamento","storeNoteIos":"Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.","storeNoteAndroid":"Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.","__appName":"Maestro delle Bandiere","appName":"Maestro delle Bandiere","termsTitle":"Termini d’uso","privacyTitle":"Informativa sulla privacy","supportTitle":"Assistenza e FAQ","__lastUpdated":"27 agosto 2026","__updatedLabel":"Ultimo aggiornamento","__sep":":"},"zh-Hant":{"language":"語言","store":"您使用的商店","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"顯示所有語言","home":"首頁","termsDesc":"Pro 升級、國旗點數、排行榜、內容與責任","privacyDesc":"我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式","supportDesc":"聯絡方式、常見問題、退款與資料刪除","metaApp":"應用程式","metaBundle":"Bundle ID","metaPlatform":"支援平台","metaDev":"開發者","metaContact":"聯絡方式","metaUpdated":"最後更新","storeNoteIos":"目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。","storeNoteAndroid":"目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。","__appName":"國旗大師","appName":"國旗大師","termsTitle":"使用條款","privacyTitle":"隱私權政策","supportTitle":"支援與常見問題","__lastUpdated":"2026年8月27日","__updatedLabel":"最後更新","__sep":"："},"es":{"language":"Idioma","store":"Tu tienda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos los idiomas","home":"Inicio","termsDesc":"Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad","privacyDesc":"Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación","supportDesc":"Contacto, preguntas frecuentes, reembolsos y eliminación de datos","metaApp":"Aplicación","metaBundle":"ID del paquete","metaPlatform":"Plataformas","metaDev":"Desarrollador","metaContact":"Contacto","metaUpdated":"Última actualización","storeNoteIos":"Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.","storeNoteAndroid":"Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.","__appName":"Maestro de Banderas","appName":"Maestro de Banderas","termsTitle":"Términos de uso","privacyTitle":"Política de privacidad","supportTitle":"Soporte y preguntas frecuentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última actualización","__sep":":"},"pt":{"language":"Idioma","store":"Sua loja","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos os idiomas","home":"Início","termsDesc":"Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade","privacyDesc":"O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão","supportDesc":"Contato, perguntas frequentes, reembolsos e exclusão de dados","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Plataformas","metaDev":"Desenvolvedor","metaContact":"Contato","metaUpdated":"Última atualização","storeNoteIos":"Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.","storeNoteAndroid":"Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.","__appName":"Mestre das Bandeiras","appName":"Mestre das Bandeiras","termsTitle":"Termos de uso","privacyTitle":"Política de privacidade","supportTitle":"Suporte e perguntas frequentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última atualização","__sep":":"},"ar":{"language":"اللغة","store":"متجرك","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"عرض جميع اللغات","home":"الرئيسية","termsDesc":"ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية","privacyDesc":"ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف","supportDesc":"التواصل والأسئلة الشائعة والاسترداد وحذف البيانات","metaApp":"التطبيق","metaBundle":"معرّف الحزمة","metaPlatform":"المنصات","metaDev":"المطوّر","metaContact":"التواصل","metaUpdated":"آخر تحديث","storeNoteIos":"النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.","storeNoteAndroid":"النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.","__appName":"سيد الأعلام","appName":"سيد الأعلام","termsTitle":"شروط الاستخدام","privacyTitle":"سياسة الخصوصية","supportTitle":"الدعم والأسئلة الشائعة","__lastUpdated":"27 أغسطس 2026","__updatedLabel":"آخر تحديث","__sep":":"},"id":{"language":"Bahasa","store":"Toko aplikasi Anda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Tampilkan semua bahasa","home":"Beranda","termsDesc":"Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum","privacyDesc":"Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data","supportDesc":"Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data","metaApp":"Aplikasi","metaBundle":"Bundle ID","metaPlatform":"Platform","metaDev":"Pengembang","metaContact":"Kontak","metaUpdated":"Terakhir diperbarui","storeNoteIos":"Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.","storeNoteAndroid":"Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.","__appName":"Master Bendera","appName":"Master Bendera","termsTitle":"Ketentuan Penggunaan","privacyTitle":"Kebijakan Privasi","supportTitle":"Dukungan & FAQ","__lastUpdated":"27 Agustus 2026","__updatedLabel":"Pembaruan terakhir","__sep":":"},"vi":{"language":"Ngôn ngữ","store":"Cửa hàng của bạn","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Hiện tất cả ngôn ngữ","home":"Trang chủ","termsDesc":"Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý","privacyDesc":"Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu","supportDesc":"Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu","metaApp":"Ứng dụng","metaBundle":"Bundle ID","metaPlatform":"Nền tảng","metaDev":"Nhà phát triển","metaContact":"Liên hệ","metaUpdated":"Cập nhật lần cuối","storeNoteIos":"Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.","storeNoteAndroid":"Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.","__appName":"Bậc Thầy Quốc Kỳ","appName":"Bậc Thầy Quốc Kỳ","termsTitle":"Điều khoản sử dụng","privacyTitle":"Chính sách quyền riêng tư","supportTitle":"Hỗ trợ & FAQ","__lastUpdated":"27 tháng 8 năm 2026","__updatedLabel":"Cập nhật lần cuối","__sep":":"},"tr":{"language":"Dil","store":"Mağazanız","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Bütün dilleri göster","home":"Ana sayfa","termsDesc":"Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk","privacyDesc":"Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme","supportDesc":"İletişim, sık sorulan sorular, iadeler ve veri silme","metaApp":"Uygulama","metaBundle":"Paket kimliği","metaPlatform":"Platformlar","metaDev":"Geliştirici","metaContact":"İletişim","metaUpdated":"Son güncelleme","storeNoteIos":"iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.","storeNoteAndroid":"Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.","__appName":"Bayrak Ustası","appName":"Bayrak Ustası","termsTitle":"Kullanım Koşulları","privacyTitle":"Gizlilik Politikası","supportTitle":"Destek ve SSS","__lastUpdated":"27 Ağustos 2026","__updatedLabel":"Son güncelleme","__sep":":"},"pl":{"language":"Język","store":"Twój sklep","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Pokaż wszystkie języki","home":"Strona główna","termsDesc":"Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność","privacyDesc":"Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych","supportDesc":"Kontakt, najczęstsze pytania, zwroty i usuwanie danych","metaApp":"Aplikacja","metaBundle":"Bundle ID","metaPlatform":"Platformy","metaDev":"Deweloper","metaContact":"Kontakt","metaUpdated":"Ostatnia aktualizacja","storeNoteIos":"Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.","storeNoteAndroid":"Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.","__appName":"Mistrz Flag","appName":"Mistrz Flag","termsTitle":"Warunki korzystania","privacyTitle":"Polityka prywatności","supportTitle":"Pomoc i FAQ","__lastUpdated":"27 sierpnia 2026","__updatedLabel":"Ostatnia aktualizacja","__sep":":"}};window.__META__ = {"en":{"t":"Privacy Policy — Flag Master","d":"Flag Master — Privacy Policy: What we never collect, what stays on your device, rankings, ads and deletion"},"ko":{"t":"개인정보 처리방침 — 국기의 주인 (Flag Master)","d":"국기의 주인 (Flag Master) — 개인정보 처리방침: 수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제"},"ja":{"t":"プライバシーポリシー — 国旗マスター (Flag Master)","d":"国旗マスター (Flag Master) — プライバシーポリシー: 収集しない情報、端末内にとどまる情報、ランキング、広告、削除について"},"de":{"t":"Datenschutzerklärung — Flaggenmeister (Flag Master)","d":"Flaggenmeister (Flag Master) — Datenschutzerklärung: Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung"},"fr":{"t":"Politique de confidentialité — Maître des Drapeaux (Flag Master)","d":"Maître des Drapeaux (Flag Master) — Politique de confidentialité : Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression"},"it":{"t":"Informativa sulla privacy — Maestro delle Bandiere (Flag Master)","d":"Maestro delle Bandiere (Flag Master) — Informativa sulla privacy: Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione"},"zh-Hant":{"t":"隱私權政策 — 國旗大師 (Flag Master)","d":"國旗大師 (Flag Master) — 隱私權政策： 我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式"},"es":{"t":"Política de privacidad — Maestro de Banderas (Flag Master)","d":"Maestro de Banderas (Flag Master) — Política de privacidad: Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación"},"pt":{"t":"Política de privacidade — Mestre das Bandeiras (Flag Master)","d":"Mestre das Bandeiras (Flag Master) — Política de privacidade: O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão"},"ar":{"t":"سياسة الخصوصية — سيد الأعلام (Flag Master)","d":"سيد الأعلام (Flag Master) — سياسة الخصوصية: ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف"},"id":{"t":"Kebijakan Privasi — Master Bendera (Flag Master)","d":"Master Bendera (Flag Master) — Kebijakan Privasi: Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data"},"vi":{"t":"Chính sách quyền riêng tư — Bậc Thầy Quốc Kỳ (Flag Master)","d":"Bậc Thầy Quốc Kỳ (Flag Master) — Chính sách quyền riêng tư: Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu"},"tr":{"t":"Gizlilik Politikası — Bayrak Ustası (Flag Master)","d":"Bayrak Ustası (Flag Master) — Gizlilik Politikası: Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme"},"pl":{"t":"Polityka prywatności — Mistrz Flag (Flag Master)","d":"Mistrz Flag (Flag Master) — Polityka prywatności: Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych"}};</script>
+<script>
+(function(){
+  window.__fmReady = true;
+  var docs = [].slice.call(document.querySelectorAll("[data-lang]"));
+  var navLinks = [].slice.call(document.querySelectorAll("#langs a"));
+  var LANGS = navLinks.map(function(a){ return a.getAttribute("data-go"); });
+  var RTL = { ar: 1 };
+
+  function paintChrome(lang){
+    var s = (window.__UI__ && (window.__UI__[lang] || window.__UI__.en)) || null;
+    if (!s) return;
+    [].slice.call(document.querySelectorAll("[data-ui]")).forEach(function(el){
+      var v = s[el.getAttribute("data-ui")];
+      if (v) el.textContent = v;
+    });
+    var m = window.__META__ && (window.__META__[lang] || window.__META__.en);
+    if (m) {
+      document.title = m.t;
+      var dsc = document.querySelector('meta[name="description"]');
+      if (dsc) dsc.setAttribute("content", m.d);
+    }
+  }
+  function applyLang(lang, remember){
+    if (LANGS.indexOf(lang) < 0) lang = "en";
+    docs.forEach(function(d){ d.classList.toggle("is-on", d.getAttribute("data-lang") === lang); });
+    navLinks.forEach(function(a){
+      a.setAttribute("aria-current", a.getAttribute("data-go") === lang ? "true" : "false");
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
+    paintChrome(lang);
+    if (remember) { try { localStorage.setItem("fm-lang", lang); } catch(e){} }
+  }
+  function showAll(){
+    docs.forEach(function(d){ d.classList.add("is-on"); });
+    document.documentElement.dir = "ltr";
+    // 한 언어에 "현재" 표시가 남아 있으면 스크린리더가 14개 구획을 그 언어라고 알린다.
+    navLinks.forEach(function(a){ a.setAttribute("aria-current", "false"); });
+  }
+
+  // 스토어 토글. 본문에 박힌 기본값은 iOS 이므로, 안드로이드일 때만 바꿔 끼운다.
+  var pf = [].slice.call(document.querySelectorAll(".pf"));
+  function applyStore(store, remember){
+    var key = store === "android" ? "data-android" : "data-ios";
+    pf.forEach(function(s){ s.textContent = s.getAttribute(key); });
+    [].slice.call(document.querySelectorAll("[data-store-btn]")).forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-store-btn") === store ? "true" : "false");
+    });
+    [].slice.call(document.querySelectorAll("[data-store-note]")).forEach(function(n){
+      n.hidden = n.getAttribute("data-store-note") !== store;
+    });
+    if (remember) { try { localStorage.setItem("fm-store", store); } catch(e){} }
+  }
+
+  var byNav = null;
+  try {
+    var want = (navigator.languages || [navigator.language || "en"]);
+    for (var i = 0; i < want.length && !byNav; i++) {
+      var w = String(want[i]);
+      if (/^zh\b/i.test(w) && /(Hant|TW|HK|MO)/i.test(w)) { byNav = "zh-Hant"; break; }
+      var base = w.split("-")[0].toLowerCase();
+      if (LANGS.indexOf(base) >= 0) byNav = base;
+    }
+  } catch(e){}
+
+  var hash = (location.hash || "").replace(/^#/, "");
+  var saved = null; try { saved = localStorage.getItem("fm-lang"); } catch(e){}
+  if (hash === "all") showAll();
+  else applyLang((LANGS.indexOf(hash) >= 0 ? hash : null) || saved || byNav || "en", false);
+  // 브라우저는 #ko 같은 조각으로 들어오면 **구획을 숨기기 전** 위치로 먼저 뛴다.
+  // 그 뒤 필터가 앞 구획들을 접으면 착지 지점이 빈 곳이 된다 — 문서 첫 줄로 되돌린다.
+  // ⚠ 한 번으로는 안 된다. 브라우저의 조각 스크롤은 이 스크립트가 끝난 **뒤**(파싱 완료·load 시점)에
+  //   일어나므로, 여기서 한 번 0 으로 되돌려도 곧바로 다시 끌려간다(375px 에서 scrollY=263 로 실측).
+  if (hash) {
+    var toTop = function () { try { window.scrollTo(0, 0); } catch (e) {} };
+    toTop();
+    if (window.requestAnimationFrame) requestAnimationFrame(toTop);
+    window.addEventListener("load", toTop);
+  }
+
+  var savedStore = null; try { savedStore = localStorage.getItem("fm-store"); } catch(e){}
+  var uaAndroid = /Android/i.test(navigator.userAgent || "");
+  applyStore(savedStore || (uaAndroid ? "android" : "ios"), false);
+
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("#langs a[data-go]");
+    if (a) { e.preventDefault(); applyLang(a.getAttribute("data-go"), true);
+             history.replaceState(null, "", "#" + a.getAttribute("data-go"));
+             window.scrollTo(0, 0); return; }
+    var all = e.target.closest && e.target.closest("[data-showall]");
+    if (all) { e.preventDefault(); showAll(); history.replaceState(null, "", "#all"); return; }
+    var b = e.target.closest && e.target.closest("[data-store-btn]");
+    if (b) { applyStore(b.getAttribute("data-store-btn"), true); }
+  });
+  window.addEventListener("hashchange", function(){
+    var h = (location.hash || "").replace(/^#/, "");
+    if (h === "all") showAll(); else if (LANGS.indexOf(h) >= 0) applyLang(h, true);
+  });
+})();
+</script>
+</body>
+</html>

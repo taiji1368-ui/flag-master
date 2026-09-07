@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flag Master — Terms, Privacy &amp; Support</title>
+<meta name="description" content="Terms of Use, Privacy Policy and Support for Flag Master (국기의 주인), a flag-learning quiz app for iOS and Android. Available in 14 languages.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F6EEDC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14293c" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://taiji1368-ui.github.io/flag-master/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Flag Master">
+<meta property="og:url" content="https://taiji1368-ui.github.io/flag-master/">
+<meta property="og:title" content="Flag Master — Terms, Privacy &amp; Support">
+<meta property="og:description" content="Terms of Use, Privacy Policy and Support for Flag Master (국기의 주인), a flag-learning quiz app for iOS and Android. Available in 14 languages.">
+<script>document.documentElement.className="js";setTimeout(function(){if(!window.__fmReady)document.documentElement.className=""},1500)</script>
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#F6EEDC; --bg-accent:#EDE0C6; --card:rgba(255,253,246,.78);
+  --text:#1C2A39; --muted:#6b5c42; --primary:#B03A28; --gold:#7f5e1c;
+  /* 앱의 스탬프 레드는 #C2412D 지만, 밝은 테마의 크림 바탕(#EDE0C6)에서 3.93:1 이라
+     본문 링크와 '현재 문서' 표시가 WCAG AA 에 못 미친다. 웹에서만 한 단계 낮춘다(4.62:1). */
+  --navy:#1C3F5E; --line:#e2d6bd; --divider:#ECE2CC;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#14293c; --bg-accent:#0f2130; --card:rgba(255,255,255,.06);
+  --text:#EAE1CC; --muted:#9fb4c8; --primary:#E2725B; --gold:#E7B96b;
+  --navy:#dbe7f2; --line:rgba(234,225,204,.16); --divider:rgba(234,225,204,.12);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:16px/1.65 "Avenir Next","Pretendard","Apple SD Gothic Neo","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--primary)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg-accent);border-bottom:1px solid var(--line)}
+/* 좁은 화면에서는 고정을 푼다. 브랜드+문서메뉴+스토어토글+14개 언어가 세로로 쌓이면 막대가
+   237px 까지 자라, 812px 짜리 화면의 3할을 긴 약관을 읽는 내내 차지한다(375x812 실측). */
+@media (max-width:760px){
+  .bar{position:static}
+  /* 좁은 화면에선 머리 막대가 첫 화면을 통째로 먹는다 — 14개 언어 목록이 세 줄이다.
+     읽을 글이 첫 화면에 조금이라도 걸리도록 여백과 줄높이를 줄인다. */
+  .bar-in{padding:8px 20px;gap:8px 12px}
+  .langs{padding:0 20px 8px;line-height:1.9;font-size:12.5px}
+  .docnav{gap:12px;font-size:13px}
+  main{padding-top:24px}
+}
+.bar-in{max-width:760px;margin:0 auto;padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.brand{font-weight:700;letter-spacing:.01em;text-decoration:none;color:var(--navy);margin-inline-end:auto}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.seg button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;
+  padding:6px 13px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--primary);color:#fff;font-weight:600}
+/* 다크에서 --primary(#E2725B) 위의 흰 글씨는 3.09:1 — 하필 "지금 어느 스토어인가" 를 알리는 글자다. */
+@media (prefers-color-scheme:dark){.seg button[aria-pressed="true"]{background:#B4432C}}
+:where(a,button,summary):focus-visible{outline:2px solid var(--navy);outline-offset:2px;border-radius:6px}
+.docnav{display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+.docnav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+.docnav a:hover{color:var(--primary)}
+.docnav a[aria-current="page"]{color:var(--primary);font-weight:600}
+.langs{max-width:760px;margin:0 auto;padding:0 20px 10px;font-size:13px;line-height:2.1}
+.langs a{color:var(--muted);text-decoration:none;padding:3px 8px;border-radius:8px;border:1px solid transparent}
+.langs a:hover{color:var(--primary)}
+.langs a[aria-current="true"]{color:var(--primary);font-weight:600;background:var(--card);border-color:var(--line)}
+main{max-width:760px;margin:0 auto;padding:34px 20px 96px}
+/* 언어 필터. html.js 는 <head> 인라인 스크립트가 붙인다 — 스크립트가 없으면
+   이 규칙이 통째로 죽어 14개 언어가 그대로 다 보인다. 법적 문서가 스크립트
+   하나 때문에 백지가 되는 쪽이 훨씬 큰 사고다. */
+html.js .doc{display:none}
+html.js .doc.is-on{display:block}
+h1{font-size:29px;line-height:1.28;margin:0 0 6px;color:var(--navy)}
+h2{font-size:20px;margin:34px 0 10px;color:var(--navy)}
+h2.clause{font-size:16.5px;margin:26px 0 6px;color:var(--gold);letter-spacing:.01em}
+.faq summary h3{display:inline;font:inherit;color:inherit;margin:0}
+p{margin:9px 0}
+ul{margin:9px 0;padding-inline-start:1.25em}
+li{margin:5px 0}
+.url{word-break:break-all}
+main a{overflow-wrap:break-word}
+.meta{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 17px;margin:16px 0 26px;font-size:13.5px;color:var(--muted)}
+.meta p{margin:3px 0}
+.meta strong{color:var(--text);font-weight:600}
+.note{font-size:13px;color:var(--muted);margin:0 0 22px}
+.cards{display:grid;gap:13px;margin:22px 0 30px}
+a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:17px 19px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+a.card:hover{border-color:var(--primary);transform:translateY(-1px)}
+a.card strong{display:block;font-size:17px;color:var(--primary);margin-bottom:3px}
+a.card span{color:var(--muted);font-size:14px}
+.faq{border-top:1px solid var(--divider);margin-top:8px}
+.faq details{border-bottom:1px solid var(--divider)}
+.faq summary{cursor:pointer;padding:14px 2px;font-weight:600;color:var(--navy);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:inline-end;color:var(--muted);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 2px 16px;color:var(--text)}
+footer{max-width:760px;margin:0 auto;padding:0 20px 60px;color:var(--muted);font-size:13px}
+.showall{display:inline-block;margin-top:34px;font-size:13px;color:var(--muted)}
+hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
+[dir="rtl"] .brand{letter-spacing:0}
+@media (max-width:520px){h1{font-size:24px}main{padding-top:26px}}
+</style>
+<noscript><style>.seg,[data-store-note]{display:none}</style></noscript>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html"><small>Flag Master</small><span data-ui="appName">Flag Master</span></a>
+    <nav class="docnav" aria-label="Documents">
+      <a href="terms.html" data-ui="termsTitle">Terms of Use</a>
+      <a href="privacy.html" data-ui="privacyTitle">Privacy Policy</a>
+      <a href="support.html" data-ui="supportTitle">Support</a>
+    </nav>
+    <div class="seg" role="group" aria-label="Store">
+      <button type="button" data-store-btn="ios" aria-pressed="true" data-ui="storeIos">iOS · App Store</button>
+      <button type="button" data-store-btn="android" aria-pressed="false" data-ui="storeAndroid">Android · Google Play</button>
+    </div>
+  </div>
+  <nav class="langs" id="langs" aria-label="Language">
+      <a href="#en" hreflang="en" data-go="en" aria-current="false">English</a>
+      <a href="#ko" hreflang="ko" data-go="ko" aria-current="false">한국어</a>
+      <a href="#ja" hreflang="ja" data-go="ja" aria-current="false">日本語</a>
+      <a href="#de" hreflang="de" data-go="de" aria-current="false">Deutsch</a>
+      <a href="#fr" hreflang="fr" data-go="fr" aria-current="false">Français</a>
+      <a href="#it" hreflang="it" data-go="it" aria-current="false">Italiano</a>
+      <a href="#zh-Hant" hreflang="zh-Hant" data-go="zh-Hant" aria-current="false">繁體中文</a>
+      <a href="#es" hreflang="es" data-go="es" aria-current="false">Español</a>
+      <a href="#pt" hreflang="pt" data-go="pt" aria-current="false">Português</a>
+      <a href="#ar" hreflang="ar" data-go="ar" aria-current="false">العربية</a>
+      <a href="#id" hreflang="id" data-go="id" aria-current="false">Bahasa Indonesia</a>
+      <a href="#vi" hreflang="vi" data-go="vi" aria-current="false">Tiếng Việt</a>
+      <a href="#tr" hreflang="tr" data-go="tr" aria-current="false">Türkçe</a>
+      <a href="#pl" hreflang="pl" data-go="pl" aria-current="false">Polski</a>
+  </nav>
+</header>
+<main>
+  <article class="doc" id="en" lang="en" data-lang="en">
+      <h1>Flag Master</h1>
+      <p class="note">A learning game about the flags, emblems and geography of the world.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#en"><strong>Terms of Use →</strong><span>Pro upgrade, Flag Points, rankings, content and liability</span></a>
+        <a class="card" href="privacy.html#en"><strong>Privacy Policy →</strong><span>What we never collect, what stays on your device, rankings, ads and deletion</span></a>
+        <a class="card" href="support.html#en"><strong>Support &amp; FAQ →</strong><span>Contact, frequently asked questions, refunds and data deletion</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>App</strong>: Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platforms</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Developer</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Show every language</a></p>
+  </article>
+  <article class="doc" id="ko" lang="ko" data-lang="ko">
+      <h1>국기의 주인</h1>
+      <p class="note">세계의 국기와 문장, 지리를 배우는 게임입니다.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#ko"><strong>이용약관 →</strong><span>Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임</span></a>
+        <a class="card" href="privacy.html#ko"><strong>개인정보 처리방침 →</strong><span>수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제</span></a>
+        <a class="card" href="support.html#ko"><strong>고객 지원 · 자주 묻는 질문 →</strong><span>문의, 자주 묻는 질문, 환불과 데이터 삭제</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>앱</strong>: 국기의 주인 · Flag Master</p>
+        <p><strong>번들 ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>지원 플랫폼</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>개발자</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>문의</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>모든 언어 보기</a></p>
+  </article>
+  <article class="doc" id="ja" lang="ja" data-lang="ja">
+      <h1>国旗マスター</h1>
+      <p class="note">世界の国旗・紋章・地理を学べるゲームです。</p>
+      <div class="cards">
+        <a class="card" href="terms.html#ja"><strong>利用規約 →</strong><span>Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項</span></a>
+        <a class="card" href="privacy.html#ja"><strong>プライバシーポリシー →</strong><span>収集しない情報、端末内にとどまる情報、ランキング、広告、削除について</span></a>
+        <a class="card" href="support.html#ja"><strong>サポート・よくある質問 →</strong><span>お問い合わせ、よくある質問、返金とデータの削除</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>アプリ</strong>: 国旗マスター · Flag Master</p>
+        <p><strong>バンドルID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>対応プラットフォーム</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開発者</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>お問い合わせ先</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>すべての言語を表示</a></p>
+  </article>
+  <article class="doc" id="de" lang="de" data-lang="de">
+      <h1>Flaggenmeister</h1>
+      <p class="note">Ein Lernspiel rund um die Flaggen, Wappen und Geografie der Welt.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#de"><strong>Nutzungsbedingungen →</strong><span>Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung</span></a>
+        <a class="card" href="privacy.html#de"><strong>Datenschutzerklärung →</strong><span>Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung</span></a>
+        <a class="card" href="support.html#de"><strong>Support &amp; FAQ →</strong><span>Kontakt, häufige Fragen, Erstattungen und Datenlöschung</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>App</strong>: Flaggenmeister · Flag Master</p>
+        <p><strong>Bundle-ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plattformen</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Entwickler</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Alle Sprachen anzeigen</a></p>
+  </article>
+  <article class="doc" id="fr" lang="fr" data-lang="fr">
+      <h1>Maître des Drapeaux</h1>
+      <p class="note">Un jeu d’apprentissage consacré aux drapeaux, aux emblèmes et à la géographie du monde.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#fr"><strong>Conditions d’utilisation →</strong><span>Passage à Pro, Points Drapeau, classements, contenu et responsabilité</span></a>
+        <a class="card" href="privacy.html#fr"><strong>Politique de confidentialité →</strong><span>Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression</span></a>
+        <a class="card" href="support.html#fr"><strong>Assistance et FAQ →</strong><span>Contact, questions fréquentes, remboursements et suppression des données</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>Application</strong> : Maître des Drapeaux · Flag Master</p>
+        <p><strong>Identifiant du bundle</strong> : com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plateformes</strong> : iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Développeur</strong> : 임한수 (Hansoo Lim)</p>
+        <p><strong>Contact</strong> : <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Afficher toutes les langues</a></p>
+  </article>
+  <article class="doc" id="it" lang="it" data-lang="it">
+      <h1>Maestro delle Bandiere</h1>
+      <p class="note">Un gioco per imparare le bandiere, gli stemmi e la geografia del mondo.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#it"><strong>Termini d’uso →</strong><span>Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità</span></a>
+        <a class="card" href="privacy.html#it"><strong>Informativa sulla privacy →</strong><span>Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione</span></a>
+        <a class="card" href="support.html#it"><strong>Assistenza e FAQ →</strong><span>Contatti, domande frequenti, rimborsi ed eliminazione dei dati</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>App</strong>: Maestro delle Bandiere · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Piattaforme</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Sviluppatore</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contatti</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Mostra tutte le lingue</a></p>
+  </article>
+  <article class="doc" id="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">
+      <h1>國旗大師</h1>
+      <p class="note">認識世界各國國旗、紋章與地理的學習遊戲。</p>
+      <div class="cards">
+        <a class="card" href="terms.html#zh-Hant"><strong>使用條款 →</strong><span>Pro 升級、國旗點數、排行榜、內容與責任</span></a>
+        <a class="card" href="privacy.html#zh-Hant"><strong>隱私權政策 →</strong><span>我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式</span></a>
+        <a class="card" href="support.html#zh-Hant"><strong>支援與常見問題 →</strong><span>聯絡方式、常見問題、退款與資料刪除</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>應用程式</strong>： 國旗大師 · Flag Master</p>
+        <p><strong>Bundle ID</strong>： com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>支援平台</strong>： iOS (App Store) · Android (Google Play)</p>
+        <p><strong>開發者</strong>： 임한수 (Hansoo Lim)</p>
+        <p><strong>聯絡方式</strong>： <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>顯示所有語言</a></p>
+  </article>
+  <article class="doc" id="es" lang="es" data-lang="es">
+      <h1>Maestro de Banderas</h1>
+      <p class="note">Un juego para aprender las banderas, los emblemas y la geografía del mundo.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#es"><strong>Términos de uso →</strong><span>Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad</span></a>
+        <a class="card" href="privacy.html#es"><strong>Política de privacidad →</strong><span>Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación</span></a>
+        <a class="card" href="support.html#es"><strong>Soporte y preguntas frecuentes →</strong><span>Contacto, preguntas frecuentes, reembolsos y eliminación de datos</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>Aplicación</strong>: Maestro de Banderas · Flag Master</p>
+        <p><strong>ID del paquete</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desarrollador</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contacto</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos los idiomas</a></p>
+  </article>
+  <article class="doc" id="pt" lang="pt" data-lang="pt">
+      <h1>Mestre das Bandeiras</h1>
+      <p class="note">Um jogo para aprender as bandeiras, os brasões e a geografia do mundo.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#pt"><strong>Termos de uso →</strong><span>Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade</span></a>
+        <a class="card" href="privacy.html#pt"><strong>Política de privacidade →</strong><span>O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão</span></a>
+        <a class="card" href="support.html#pt"><strong>Suporte e perguntas frequentes →</strong><span>Contato, perguntas frequentes, reembolsos e exclusão de dados</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>App</strong>: Mestre das Bandeiras · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Plataformas</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Desenvolvedor</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Contato</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Mostrar todos os idiomas</a></p>
+  </article>
+  <article class="doc" id="ar" lang="ar" data-lang="ar" dir="rtl">
+      <h1>سيد الأعلام</h1>
+      <p class="note">لعبة تعليمية عن أعلام العالم وشعاراته وجغرافيته.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#ar"><strong>شروط الاستخدام →</strong><span>ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية</span></a>
+        <a class="card" href="privacy.html#ar"><strong>سياسة الخصوصية →</strong><span>ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف</span></a>
+        <a class="card" href="support.html#ar"><strong>الدعم والأسئلة الشائعة →</strong><span>التواصل والأسئلة الشائعة والاسترداد وحذف البيانات</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>التطبيق</strong>: سيد الأعلام · Flag Master</p>
+        <p><strong>معرّف الحزمة</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>المنصات</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>المطوّر</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>التواصل</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>عرض جميع اللغات</a></p>
+  </article>
+  <article class="doc" id="id" lang="id" data-lang="id">
+      <h1>Master Bendera</h1>
+      <p class="note">Game edukasi tentang bendera, lambang negara, dan geografi dunia.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#id"><strong>Ketentuan Penggunaan →</strong><span>Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum</span></a>
+        <a class="card" href="privacy.html#id"><strong>Kebijakan Privasi →</strong><span>Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data</span></a>
+        <a class="card" href="support.html#id"><strong>Dukungan &amp; FAQ →</strong><span>Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>Aplikasi</strong>: Master Bendera · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platform</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Pengembang</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontak</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Tampilkan semua bahasa</a></p>
+  </article>
+  <article class="doc" id="vi" lang="vi" data-lang="vi">
+      <h1>Bậc Thầy Quốc Kỳ</h1>
+      <p class="note">Trò chơi học về quốc kỳ, huy hiệu và địa lý thế giới.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#vi"><strong>Điều khoản sử dụng →</strong><span>Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý</span></a>
+        <a class="card" href="privacy.html#vi"><strong>Chính sách quyền riêng tư →</strong><span>Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu</span></a>
+        <a class="card" href="support.html#vi"><strong>Hỗ trợ &amp; FAQ →</strong><span>Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>Ứng dụng</strong>: Bậc Thầy Quốc Kỳ · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Nền tảng</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Nhà phát triển</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Liên hệ</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Hiện tất cả ngôn ngữ</a></p>
+  </article>
+  <article class="doc" id="tr" lang="tr" data-lang="tr">
+      <h1>Bayrak Ustası</h1>
+      <p class="note">Dünyanın bayrakları, armaları ve coğrafyası üzerine bir öğrenme oyunu.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#tr"><strong>Kullanım Koşulları →</strong><span>Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk</span></a>
+        <a class="card" href="privacy.html#tr"><strong>Gizlilik Politikası →</strong><span>Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme</span></a>
+        <a class="card" href="support.html#tr"><strong>Destek ve SSS →</strong><span>İletişim, sık sorulan sorular, iadeler ve veri silme</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>Uygulama</strong>: Bayrak Ustası · Flag Master</p>
+        <p><strong>Paket kimliği</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformlar</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Geliştirici</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>İletişim</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Bütün dilleri göster</a></p>
+  </article>
+  <article class="doc" id="pl" lang="pl" data-lang="pl">
+      <h1>Mistrz Flag</h1>
+      <p class="note">Gra edukacyjna o flagach, herbach i geografii świata.</p>
+      <div class="cards">
+        <a class="card" href="terms.html#pl"><strong>Warunki korzystania →</strong><span>Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność</span></a>
+        <a class="card" href="privacy.html#pl"><strong>Polityka prywatności →</strong><span>Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych</span></a>
+        <a class="card" href="support.html#pl"><strong>Pomoc i FAQ →</strong><span>Kontakt, najczęstsze pytania, zwroty i usuwanie danych</span></a>
+      </div>
+      <div class="meta">
+        <p><strong>Aplikacja</strong>: Mistrz Flag · Flag Master</p>
+        <p><strong>Bundle ID</strong>: com.limhansoo.worldflags (iOS) · com.worldflags.app (Android)</p>
+        <p><strong>Platformy</strong>: iOS (App Store) · Android (Google Play)</p>
+        <p><strong>Deweloper</strong>: 임한수 (Hansoo Lim)</p>
+        <p><strong>Kontakt</strong>: <a href="mailto:ddontti_studio@outlook.kr">ddontti_studio@outlook.kr</a></p>
+
+      </div>
+      <p><a class="showall" href="#all" data-showall>Pokaż wszystkie języki</a></p>
+  </article>
+</main>
+<footer>© 임한수 (Hansoo Lim) · Flag Master. All rights reserved.</footer>
+<script>window.__UI__ = {"en":{"language":"Language","store":"Your store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Show every language","home":"Home","termsDesc":"Pro upgrade, Flag Points, rankings, content and liability","privacyDesc":"What we never collect, what stays on your device, rankings, ads and deletion","supportDesc":"Contact, frequently asked questions, refunds and data deletion","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Platforms","metaDev":"Developer","metaContact":"Contact","metaUpdated":"Last updated","storeNoteIos":"Showing the wording for iOS. On an Android device, switch above.","storeNoteAndroid":"Showing the wording for Android. On an iPhone or iPad, switch above.","__appName":"Flag Master","appName":"Flag Master","termsTitle":"Terms of Use","privacyTitle":"Privacy Policy","supportTitle":"Support & FAQ","__lastUpdated":"27 August 2026","__updatedLabel":"Last updated","__sep":":"},"ko":{"language":"언어","store":"이용 중인 스토어","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"모든 언어 보기","home":"홈","termsDesc":"Pro 업그레이드, 플레그 포인트, 랭킹, 콘텐츠와 책임","privacyDesc":"수집하지 않는 정보, 기기에만 남는 정보, 랭킹, 광고와 삭제","supportDesc":"문의, 자주 묻는 질문, 환불과 데이터 삭제","metaApp":"앱","metaBundle":"번들 ID","metaPlatform":"지원 플랫폼","metaDev":"개발자","metaContact":"문의","metaUpdated":"최종 수정일","storeNoteIos":"iOS 기준으로 안내하고 있습니다. Android 기기를 쓰고 계시다면 위에서 전환해 주세요.","storeNoteAndroid":"Android 기준으로 안내하고 있습니다. iPhone이나 iPad를 쓰고 계시다면 위에서 전환해 주세요.","__appName":"국기의 주인","appName":"국기의 주인","termsTitle":"이용약관","privacyTitle":"개인정보 처리방침","supportTitle":"고객 지원 · 자주 묻는 질문","__lastUpdated":"2026년 8월 27일","__updatedLabel":"최종 업데이트","__sep":":"},"ja":{"language":"言語","store":"ご利用のストア","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"すべての言語を表示","home":"ホーム","termsDesc":"Proへのアップグレード、フラッグポイント、ランキング、コンテンツと免責事項","privacyDesc":"収集しない情報、端末内にとどまる情報、ランキング、広告、削除について","supportDesc":"お問い合わせ、よくある質問、返金とデータの削除","metaApp":"アプリ","metaBundle":"バンドルID","metaPlatform":"対応プラットフォーム","metaDev":"開発者","metaContact":"お問い合わせ先","metaUpdated":"最終更新日","storeNoteIos":"iOS向けの内容を表示しています。Android端末をお使いの場合は、上で切り替えてください。","storeNoteAndroid":"Android向けの内容を表示しています。iPhoneまたはiPadをお使いの場合は、上で切り替えてください。","__appName":"国旗マスター","appName":"国旗マスター","termsTitle":"利用規約","privacyTitle":"プライバシーポリシー","supportTitle":"サポート・よくある質問","__lastUpdated":"2026年8月27日","__updatedLabel":"最終更新日","__sep":":"},"de":{"language":"Sprache","store":"Ihr Store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Alle Sprachen anzeigen","home":"Startseite","termsDesc":"Pro-Upgrade, Flag-Punkte, Ranglisten, Inhalte und Haftung","privacyDesc":"Was wir nie erheben, was auf Ihrem Gerät bleibt, Ranglisten, Werbung und Löschung","supportDesc":"Kontakt, häufige Fragen, Erstattungen und Datenlöschung","metaApp":"App","metaBundle":"Bundle-ID","metaPlatform":"Plattformen","metaDev":"Entwickler","metaContact":"Kontakt","metaUpdated":"Zuletzt aktualisiert","storeNoteIos":"Angezeigt wird die Fassung für iOS. Wenn Sie ein Android-Gerät nutzen, schalten Sie oben bitte um.","storeNoteAndroid":"Angezeigt wird die Fassung für Android. Wenn Sie ein iPhone oder iPad nutzen, schalten Sie oben bitte um.","__appName":"Flaggenmeister","appName":"Flaggenmeister","termsTitle":"Nutzungsbedingungen","privacyTitle":"Datenschutzerklärung","supportTitle":"Support & FAQ","__lastUpdated":"27. August 2026","__updatedLabel":"Zuletzt aktualisiert","__sep":":"},"fr":{"language":"Langue","store":"Votre boutique","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Afficher toutes les langues","home":"Accueil","termsDesc":"Passage à Pro, Points Drapeau, classements, contenu et responsabilité","privacyDesc":"Ce que nous ne collectons jamais, ce qui reste sur votre appareil, classements, publicité et suppression","supportDesc":"Contact, questions fréquentes, remboursements et suppression des données","metaApp":"Application","metaBundle":"Identifiant du bundle","metaPlatform":"Plateformes","metaDev":"Développeur","metaContact":"Contact","metaUpdated":"Dernière mise à jour","storeNoteIos":"Le texte affiché est celui d’iOS. Sur un appareil Android, changez de boutique ci-dessus.","storeNoteAndroid":"Le texte affiché est celui d’Android. Sur un iPhone ou un iPad, changez de boutique ci-dessus.","__appName":"Maître des Drapeaux","appName":"Maître des Drapeaux","termsTitle":"Conditions d’utilisation","privacyTitle":"Politique de confidentialité","supportTitle":"Assistance et FAQ","__lastUpdated":"27 août 2026","__updatedLabel":"Dernière mise à jour","__sep":" :"},"it":{"language":"Lingua","store":"Il tuo store","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostra tutte le lingue","home":"Home","termsDesc":"Passaggio a Pro, Punti Bandiera, classifiche, contenuti e responsabilità","privacyDesc":"Ciò che non raccogliamo mai, ciò che resta sul dispositivo, classifiche, annunci ed eliminazione","supportDesc":"Contatti, domande frequenti, rimborsi ed eliminazione dei dati","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Piattaforme","metaDev":"Sviluppatore","metaContact":"Contatti","metaUpdated":"Ultimo aggiornamento","storeNoteIos":"Stai leggendo la versione per iOS. Se usi un dispositivo Android, puoi cambiarla qui sopra.","storeNoteAndroid":"Stai leggendo la versione per Android. Se usi un iPhone o un iPad, puoi cambiarla qui sopra.","__appName":"Maestro delle Bandiere","appName":"Maestro delle Bandiere","termsTitle":"Termini d’uso","privacyTitle":"Informativa sulla privacy","supportTitle":"Assistenza e FAQ","__lastUpdated":"27 agosto 2026","__updatedLabel":"Ultimo aggiornamento","__sep":":"},"zh-Hant":{"language":"語言","store":"您使用的商店","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"顯示所有語言","home":"首頁","termsDesc":"Pro 升級、國旗點數、排行榜、內容與責任","privacyDesc":"我們絕不收集的資料、留在裝置上的資料、排行榜、廣告與刪除方式","supportDesc":"聯絡方式、常見問題、退款與資料刪除","metaApp":"應用程式","metaBundle":"Bundle ID","metaPlatform":"支援平台","metaDev":"開發者","metaContact":"聯絡方式","metaUpdated":"最後更新","storeNoteIos":"目前顯示的是 iOS 版本的說明。若您使用 Android 裝置，請由上方切換。","storeNoteAndroid":"目前顯示的是 Android 版本的說明。若您使用 iPhone 或 iPad，請由上方切換。","__appName":"國旗大師","appName":"國旗大師","termsTitle":"使用條款","privacyTitle":"隱私權政策","supportTitle":"支援與常見問題","__lastUpdated":"2026年8月27日","__updatedLabel":"最後更新","__sep":"："},"es":{"language":"Idioma","store":"Tu tienda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos los idiomas","home":"Inicio","termsDesc":"Versión Pro, Puntos de Bandera, clasificaciones, contenido y responsabilidad","privacyDesc":"Lo que nunca recopilamos, lo que se queda en tu dispositivo, clasificaciones, anuncios y eliminación","supportDesc":"Contacto, preguntas frecuentes, reembolsos y eliminación de datos","metaApp":"Aplicación","metaBundle":"ID del paquete","metaPlatform":"Plataformas","metaDev":"Desarrollador","metaContact":"Contacto","metaUpdated":"Última actualización","storeNoteIos":"Se muestra el texto para iOS. Si usas un dispositivo Android, cambia la opción de arriba.","storeNoteAndroid":"Se muestra el texto para Android. Si usas un iPhone o un iPad, cambia la opción de arriba.","__appName":"Maestro de Banderas","appName":"Maestro de Banderas","termsTitle":"Términos de uso","privacyTitle":"Política de privacidad","supportTitle":"Soporte y preguntas frecuentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última actualización","__sep":":"},"pt":{"language":"Idioma","store":"Sua loja","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Mostrar todos os idiomas","home":"Início","termsDesc":"Virar Pro, Pontos de Bandeira, rankings, conteúdo e responsabilidade","privacyDesc":"O que nunca coletamos, o que fica no seu aparelho, rankings, anúncios e exclusão","supportDesc":"Contato, perguntas frequentes, reembolsos e exclusão de dados","metaApp":"App","metaBundle":"Bundle ID","metaPlatform":"Plataformas","metaDev":"Desenvolvedor","metaContact":"Contato","metaUpdated":"Última atualização","storeNoteIos":"Mostrando o texto da versão para iOS. Se você estiver em um aparelho Android, use o seletor acima.","storeNoteAndroid":"Mostrando o texto da versão para Android. Se você estiver em um iPhone ou iPad, use o seletor acima.","__appName":"Mestre das Bandeiras","appName":"Mestre das Bandeiras","termsTitle":"Termos de uso","privacyTitle":"Política de privacidade","supportTitle":"Suporte e perguntas frequentes","__lastUpdated":"27 de agosto de 2026","__updatedLabel":"Última atualização","__sep":":"},"ar":{"language":"اللغة","store":"متجرك","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"عرض جميع اللغات","home":"الرئيسية","termsDesc":"ترقية Pro ونقاط الأعلام والتصنيفات والمحتوى والمسؤولية","privacyDesc":"ما لا نجمعه أبدًا، وما يبقى على جهازك، والتصنيفات والإعلانات والحذف","supportDesc":"التواصل والأسئلة الشائعة والاسترداد وحذف البيانات","metaApp":"التطبيق","metaBundle":"معرّف الحزمة","metaPlatform":"المنصات","metaDev":"المطوّر","metaContact":"التواصل","metaUpdated":"آخر تحديث","storeNoteIos":"النص المعروض هنا خاص بـ iOS. إن كنت تستخدم جهاز Android، فبدّل المنصّة من الأعلى.","storeNoteAndroid":"النص المعروض هنا خاص بـ Android. إن كنت تستخدم iPhone أو iPad، فبدّل المنصّة من الأعلى.","__appName":"سيد الأعلام","appName":"سيد الأعلام","termsTitle":"شروط الاستخدام","privacyTitle":"سياسة الخصوصية","supportTitle":"الدعم والأسئلة الشائعة","__lastUpdated":"27 أغسطس 2026","__updatedLabel":"آخر تحديث","__sep":":"},"id":{"language":"Bahasa","store":"Toko aplikasi Anda","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Tampilkan semua bahasa","home":"Beranda","termsDesc":"Upgrade ke Pro, Poin Bendera, papan peringkat, konten, dan tanggung jawab hukum","privacyDesc":"Apa yang tidak pernah kami kumpulkan, apa yang tetap di perangkat Anda, papan peringkat, iklan, dan penghapusan data","supportDesc":"Kontak, pertanyaan yang sering diajukan, pengembalian dana, dan penghapusan data","metaApp":"Aplikasi","metaBundle":"Bundle ID","metaPlatform":"Platform","metaDev":"Pengembang","metaContact":"Kontak","metaUpdated":"Terakhir diperbarui","storeNoteIos":"Teks yang ditampilkan berlaku untuk iOS. Jika Anda memakai perangkat Android, ganti pilihan di atas.","storeNoteAndroid":"Teks yang ditampilkan berlaku untuk Android. Jika Anda memakai iPhone atau iPad, ganti pilihan di atas.","__appName":"Master Bendera","appName":"Master Bendera","termsTitle":"Ketentuan Penggunaan","privacyTitle":"Kebijakan Privasi","supportTitle":"Dukungan & FAQ","__lastUpdated":"27 Agustus 2026","__updatedLabel":"Pembaruan terakhir","__sep":":"},"vi":{"language":"Ngôn ngữ","store":"Cửa hàng của bạn","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Hiện tất cả ngôn ngữ","home":"Trang chủ","termsDesc":"Nâng cấp Pro, Điểm Cờ, bảng xếp hạng, nội dung và trách nhiệm pháp lý","privacyDesc":"Những gì chúng tôi không bao giờ thu thập, những gì chỉ nằm trên máy của bạn, bảng xếp hạng, quảng cáo và việc xóa dữ liệu","supportDesc":"Liên hệ, câu hỏi thường gặp, hoàn tiền và xóa dữ liệu","metaApp":"Ứng dụng","metaBundle":"Bundle ID","metaPlatform":"Nền tảng","metaDev":"Nhà phát triển","metaContact":"Liên hệ","metaUpdated":"Cập nhật lần cuối","storeNoteIos":"Nội dung đang hiển thị là bản dành cho iOS. Nếu bạn dùng thiết bị Android, hãy chuyển sang bản Android ở phía trên.","storeNoteAndroid":"Nội dung đang hiển thị là bản dành cho Android. Nếu bạn dùng iPhone hoặc iPad, hãy chuyển sang bản iOS ở phía trên.","__appName":"Bậc Thầy Quốc Kỳ","appName":"Bậc Thầy Quốc Kỳ","termsTitle":"Điều khoản sử dụng","privacyTitle":"Chính sách quyền riêng tư","supportTitle":"Hỗ trợ & FAQ","__lastUpdated":"27 tháng 8 năm 2026","__updatedLabel":"Cập nhật lần cuối","__sep":":"},"tr":{"language":"Dil","store":"Mağazanız","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Bütün dilleri göster","home":"Ana sayfa","termsDesc":"Pro yükseltmesi, Bayrak Puanı, sıralamalar, içerik ve sorumluluk","privacyDesc":"Hiçbir zaman toplamadıklarımız, cihazınızda kalanlar, sıralamalar, reklamlar ve silme","supportDesc":"İletişim, sık sorulan sorular, iadeler ve veri silme","metaApp":"Uygulama","metaBundle":"Paket kimliği","metaPlatform":"Platformlar","metaDev":"Geliştirici","metaContact":"İletişim","metaUpdated":"Son güncelleme","storeNoteIos":"iOS için hazırlanan metin gösteriliyor. Android cihaz kullanıyorsanız yukarıdan değiştirin.","storeNoteAndroid":"Android için hazırlanan metin gösteriliyor. iPhone veya iPad kullanıyorsanız yukarıdan değiştirin.","__appName":"Bayrak Ustası","appName":"Bayrak Ustası","termsTitle":"Kullanım Koşulları","privacyTitle":"Gizlilik Politikası","supportTitle":"Destek ve SSS","__lastUpdated":"27 Ağustos 2026","__updatedLabel":"Son güncelleme","__sep":":"},"pl":{"language":"Język","store":"Twój sklep","storeIos":"iOS · App Store","storeAndroid":"Android · Google Play","showAll":"Pokaż wszystkie języki","home":"Strona główna","termsDesc":"Ulepszenie Pro, Punkty Flag, rankingi, treści i odpowiedzialność","privacyDesc":"Czego nigdy nie zbieramy, co zostaje na urządzeniu, rankingi, reklamy i usuwanie danych","supportDesc":"Kontakt, najczęstsze pytania, zwroty i usuwanie danych","metaApp":"Aplikacja","metaBundle":"Bundle ID","metaPlatform":"Platformy","metaDev":"Deweloper","metaContact":"Kontakt","metaUpdated":"Ostatnia aktualizacja","storeNoteIos":"Pokazujemy wersję dla systemu iOS. Na urządzeniu z Androidem przełącz powyżej.","storeNoteAndroid":"Pokazujemy wersję dla Androida. Na iPhonie lub iPadzie przełącz powyżej.","__appName":"Mistrz Flag","appName":"Mistrz Flag","termsTitle":"Warunki korzystania","privacyTitle":"Polityka prywatności","supportTitle":"Pomoc i FAQ","__lastUpdated":"27 sierpnia 2026","__updatedLabel":"Ostatnia aktualizacja","__sep":":"}};window.__META__ = {"en":{"t":"Flag Master — Terms of Use · Privacy Policy · Support & FAQ","d":"Flag Master: A learning game about the flags, emblems and geography of the world. Terms of Use · Privacy Policy · Support & FAQ."},"ko":{"t":"국기의 주인 (Flag Master) — 이용약관 · 개인정보 처리방침 · 고객 지원 · 자주 묻는 질문","d":"국기의 주인 (Flag Master): 세계의 국기와 문장, 지리를 배우는 게임입니다. 이용약관 · 개인정보 처리방침 · 고객 지원 · 자주 묻는 질문."},"ja":{"t":"国旗マスター (Flag Master) — 利用規約 · プライバシーポリシー · サポート・よくある質問","d":"国旗マスター (Flag Master): 世界の国旗・紋章・地理を学べるゲームです。 利用規約 · プライバシーポリシー · サポート・よくある質問."},"de":{"t":"Flaggenmeister (Flag Master) — Nutzungsbedingungen · Datenschutzerklärung · Support & FAQ","d":"Flaggenmeister (Flag Master): Ein Lernspiel rund um die Flaggen, Wappen und Geografie der Welt. Nutzungsbedingungen · Datenschutzerklärung · Support & FAQ."},"fr":{"t":"Maître des Drapeaux (Flag Master) — Conditions d’utilisation · Politique de confidentialité · Assistance et FAQ","d":"Maître des Drapeaux (Flag Master) : Un jeu d’apprentissage consacré aux drapeaux, aux emblèmes et à la géographie du monde. Conditions d’utilisation · Politique de confidentialité · Assistance et FAQ."},"it":{"t":"Maestro delle Bandiere (Flag Master) — Termini d’uso · Informativa sulla privacy · Assistenza e FAQ","d":"Maestro delle Bandiere (Flag Master): Un gioco per imparare le bandiere, gli stemmi e la geografia del mondo. Termini d’uso · Informativa sulla privacy · Assistenza e FAQ."},"zh-Hant":{"t":"國旗大師 (Flag Master) — 使用條款 · 隱私權政策 · 支援與常見問題","d":"國旗大師 (Flag Master)： 認識世界各國國旗、紋章與地理的學習遊戲。 使用條款 · 隱私權政策 · 支援與常見問題."},"es":{"t":"Maestro de Banderas (Flag Master) — Términos de uso · Política de privacidad · Soporte y preguntas frecuentes","d":"Maestro de Banderas (Flag Master): Un juego para aprender las banderas, los emblemas y la geografía del mundo. Términos de uso · Política de privacidad · Soporte y preguntas frecuentes."},"pt":{"t":"Mestre das Bandeiras (Flag Master) — Termos de uso · Política de privacidade · Suporte e perguntas frequentes","d":"Mestre das Bandeiras (Flag Master): Um jogo para aprender as bandeiras, os brasões e a geografia do mundo. Termos de uso · Política de privacidade · Suporte e perguntas frequentes."},"ar":{"t":"سيد الأعلام (Flag Master) — شروط الاستخدام · سياسة الخصوصية · الدعم والأسئلة الشائعة","d":"سيد الأعلام (Flag Master): لعبة تعليمية عن أعلام العالم وشعاراته وجغرافيته. شروط الاستخدام · سياسة الخصوصية · الدعم والأسئلة الشائعة."},"id":{"t":"Master Bendera (Flag Master) — Ketentuan Penggunaan · Kebijakan Privasi · Dukungan & FAQ","d":"Master Bendera (Flag Master): Game edukasi tentang bendera, lambang negara, dan geografi dunia. Ketentuan Penggunaan · Kebijakan Privasi · Dukungan & FAQ."},"vi":{"t":"Bậc Thầy Quốc Kỳ (Flag Master) — Điều khoản sử dụng · Chính sách quyền riêng tư · Hỗ trợ & FAQ","d":"Bậc Thầy Quốc Kỳ (Flag Master): Trò chơi học về quốc kỳ, huy hiệu và địa lý thế giới. Điều khoản sử dụng · Chính sách quyền riêng tư · Hỗ trợ & FAQ."},"tr":{"t":"Bayrak Ustası (Flag Master) — Kullanım Koşulları · Gizlilik Politikası · Destek ve SSS","d":"Bayrak Ustası (Flag Master): Dünyanın bayrakları, armaları ve coğrafyası üzerine bir öğrenme oyunu. Kullanım Koşulları · Gizlilik Politikası · Destek ve SSS."},"pl":{"t":"Mistrz Flag (Flag Master) — Warunki korzystania · Polityka prywatności · Pomoc i FAQ","d":"Mistrz Flag (Flag Master): Gra edukacyjna o flagach, herbach i geografii świata. Warunki korzystania · Polityka prywatności · Pomoc i FAQ."}};</script>
+<script>
+(function(){
+  window.__fmReady = true;
+  var docs = [].slice.call(document.querySelectorAll("[data-lang]"));
+  var navLinks = [].slice.call(document.querySelectorAll("#langs a"));
+  var LANGS = navLinks.map(function(a){ return a.getAttribute("data-go"); });
+  var RTL = { ar: 1 };
+
+  function paintChrome(lang){
+    var s = (window.__UI__ && (window.__UI__[lang] || window.__UI__.en)) || null;
+    if (!s) return;
+    [].slice.call(document.querySelectorAll("[data-ui]")).forEach(function(el){
+      var v = s[el.getAttribute("data-ui")];
+      if (v) el.textContent = v;
+    });
+    var m = window.__META__ && (window.__META__[lang] || window.__META__.en);
+    if (m) {
+      document.title = m.t;
+      var dsc = document.querySelector('meta[name="description"]');
+      if (dsc) dsc.setAttribute("content", m.d);
+    }
+  }
+  function applyLang(lang, remember){
+    if (LANGS.indexOf(lang) < 0) lang = "en";
+    docs.forEach(function(d){ d.classList.toggle("is-on", d.getAttribute("data-lang") === lang); });
+    navLinks.forEach(function(a){
+      a.setAttribute("aria-current", a.getAttribute("data-go") === lang ? "true" : "false");
+    });
+    document.documentElement.lang = lang;
+    document.documentElement.dir = RTL[lang] ? "rtl" : "ltr";
+    paintChrome(lang);
+    if (remember) { try { localStorage.setItem("fm-lang", lang); } catch(e){} }
+  }
+  function showAll(){
+    docs.forEach(function(d){ d.classList.add("is-on"); });
+    document.documentElement.dir = "ltr";
+    // 한 언어에 "현재" 표시가 남아 있으면 스크린리더가 14개 구획을 그 언어라고 알린다.
+    navLinks.forEach(function(a){ a.setAttribute("aria-current", "false"); });
+  }
+
+  // 스토어 토글. 본문에 박힌 기본값은 iOS 이므로, 안드로이드일 때만 바꿔 끼운다.
+  var pf = [].slice.call(document.querySelectorAll(".pf"));
+  function applyStore(store, remember){
+    var key = store === "android" ? "data-android" : "data-ios";
+    pf.forEach(function(s){ s.textContent = s.getAttribute(key); });
+    [].slice.call(document.querySelectorAll("[data-store-btn]")).forEach(function(b){
+      b.setAttribute("aria-pressed", b.getAttribute("data-store-btn") === store ? "true" : "false");
+    });
+    [].slice.call(document.querySelectorAll("[data-store-note]")).forEach(function(n){
+      n.hidden = n.getAttribute("data-store-note") !== store;
+    });
+    if (remember) { try { localStorage.setItem("fm-store", store); } catch(e){} }
+  }
+
+  var byNav = null;
+  try {
+    var want = (navigator.languages || [navigator.language || "en"]);
+    for (var i = 0; i < want.length && !byNav; i++) {
+      var w = String(want[i]);
+      if (/^zh\b/i.test(w) && /(Hant|TW|HK|MO)/i.test(w)) { byNav = "zh-Hant"; break; }
+      var base = w.split("-")[0].toLowerCase();
+      if (LANGS.indexOf(base) >= 0) byNav = base;
+    }
+  } catch(e){}
+
+  var hash = (location.hash || "").replace(/^#/, "");
+  var saved = null; try { saved = localStorage.getItem("fm-lang"); } catch(e){}
+  if (hash === "all") showAll();
+  else applyLang((LANGS.indexOf(hash) >= 0 ? hash : null) || saved || byNav || "en", false);
+  // 브라우저는 #ko 같은 조각으로 들어오면 **구획을 숨기기 전** 위치로 먼저 뛴다.
+  // 그 뒤 필터가 앞 구획들을 접으면 착지 지점이 빈 곳이 된다 — 문서 첫 줄로 되돌린다.
+  // ⚠ 한 번으로는 안 된다. 브라우저의 조각 스크롤은 이 스크립트가 끝난 **뒤**(파싱 완료·load 시점)에
+  //   일어나므로, 여기서 한 번 0 으로 되돌려도 곧바로 다시 끌려간다(375px 에서 scrollY=263 로 실측).
+  if (hash) {
+    var toTop = function () { try { window.scrollTo(0, 0); } catch (e) {} };
+    toTop();
+    if (window.requestAnimationFrame) requestAnimationFrame(toTop);
+    window.addEventListener("load", toTop);
+  }
+
+  var savedStore = null; try { savedStore = localStorage.getItem("fm-store"); } catch(e){}
+  var uaAndroid = /Android/i.test(navigator.userAgent || "");
+  applyStore(savedStore || (uaAndroid ? "android" : "ios"), false);
+
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("#langs a[data-go]");
+    if (a) { e.preventDefault(); applyLang(a.getAttribute("data-go"), true);
+             history.replaceState(null, "", "#" + a.getAttribute("data-go"));
+             window.scrollTo(0, 0); return; }
+    var all = e.target.closest && e.target.closest("[data-showall]");
+    if (all) { e.preventDefault(); showAll(); history.replaceState(null, "", "#all"); return; }
+    var b = e.target.closest && e.target.closest("[data-store-btn]");
+    if (b) { applyStore(b.getAttribute("data-store-btn"), true); }
+  });
+  window.addEventListener("hashchange", function(){
+    var h = (location.hash || "").replace(/^#/, "");
+    if (h === "all") showAll(); else if (LANGS.indexOf(h) >= 0) applyLang(h, true);
+  });
+})();
+</script>
+</body>
+</html>
