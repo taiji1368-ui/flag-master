@@ -171,7 +171,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>My progress is gone, or I moved to a new device.</h3></summary>
-          <div class="a">On iOS, Settings → iCloud Sync (on by default) keeps a copy of your progress in your own iCloud account. Sign in with the same Apple ID, install the app, and your record comes back. On Android there is no such feature — progress lives on the device only, so uninstalling ends it. Note that Settings → Reset Progress is deliberate and permanent: it clears the iCloud copy as well.</div>
+          <div class="a">On iOS, Settings → iCloud Sync (on by default) keeps a copy of your progress in your own iCloud account. Sign in with the same Apple ID, install the app, and your record comes back. On Android, if backup is turned on in your device settings, a copy of your progress goes into your Google account's device backup and comes back when you reinstall the app or set up a new device with the same Google account (Pro status is not in the copy — it is always checked with the store). Note that Settings → Reset Progress is deliberate and permanent: it clears the iCloud copy as well.</div>
         </details>
         <details>
           <summary><h3>How do I remove my entry from the rankings?</h3></summary>
@@ -183,7 +183,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>The daily reminder never arrives.</h3></summary>
-          <div class="a">Check Settings → Flag of the Day alert inside the app, and then the notification permission for the app in your device settings. The reminder is scheduled on your device for 10:00 — no server is involved — so it also needs the app to have been opened at least once after you turned it on. This reminder is an iPhone and iPad feature — the Android version has no daily reminder, and the setting does not appear there.</div>
+          <div class="a">Check Settings → Flag of the Day alert inside the app, and then the notification permission for the app in your device settings. The reminder is scheduled on your device for 10:00 — no server is involved — so it also needs the app to have been opened at least once after you turned it on.</div>
         </details>
         <details>
           <summary><h3>How do I change the app's language?</h3></summary>
@@ -244,7 +244,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>진행 상황이 사라졌습니다. 새 기기로 옮길 때는 어떻게 하나요?</h3></summary>
-          <div class="a">iOS에서는 ‘설정 → iCloud 동기화’를 켜 두면(기본값은 켜짐) 진행 상황 사본이 본인의 iCloud 계정에 저장됩니다. 같은 Apple ID로 로그인한 뒤 앱을 설치하면 기록이 돌아옵니다. Android에는 이 기능이 없어 진행 상황이 기기에만 남습니다. 앱을 삭제하면 기록도 함께 사라집니다. 다만 ‘설정 → 진행 초기화’는 되돌릴 수 없어, iCloud에 있는 사본까지 함께 지웁니다.</div>
+          <div class="a">iOS에서는 ‘설정 → iCloud 동기화’를 켜 두면(기본값은 켜짐) 진행 상황 사본이 본인의 iCloud 계정에 저장됩니다. 같은 Apple ID로 로그인한 뒤 앱을 설치하면 기록이 돌아옵니다. Android에서는 기기 설정에서 백업을 켜 두면 진행 상황 사본이 본인의 Google 계정 기기 백업에 함께 들어가, 앱을 다시 설치하거나 같은 Google 계정으로 새 기기를 설정할 때 돌아옵니다(Pro 보유 여부는 사본에 넣지 않고 언제나 스토어에 확인합니다). 다만 ‘설정 → 진행 초기화’는 되돌릴 수 없어, iCloud에 있는 사본까지 함께 지웁니다.</div>
         </details>
         <details>
           <summary><h3>랭킹에 올라간 제 기록을 지우고 싶습니다.</h3></summary>
@@ -256,7 +256,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>매일 받던 ‘오늘의 국기 알림’이 오지 않습니다.</h3></summary>
-          <div class="a">먼저 앱에서 ‘설정 → 오늘의 국기 알림’이 켜져 있는지 보시고, 그다음 기기 설정에서 앱의 알림 권한을 확인해 주세요. 이 알림은 서버를 거치지 않고 기기 안에서 오전 10시로 예약되기 때문에, 기능을 켠 뒤 앱을 한 번 이상 실행해 주셔야 예약이 걸립니다. 이 기능은 iPhone과 iPad에서만 제공되며, Android 버전에는 오늘의 국기 알림이 없어 설정 항목도 나타나지 않습니다.</div>
+          <div class="a">먼저 앱에서 ‘설정 → 오늘의 국기 알림’이 켜져 있는지 보시고, 그다음 기기 설정에서 앱의 알림 권한을 확인해 주세요. 이 알림은 서버를 거치지 않고 기기 안에서 오전 10시로 예약되기 때문에, 기능을 켠 뒤 앱을 한 번 이상 실행해 주셔야 예약이 걸립니다.</div>
         </details>
         <details>
           <summary><h3>앱 언어는 어떻게 바꾸나요?</h3></summary>
@@ -317,7 +317,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>進行状況が消えました／新しい端末に移行しました。</h3></summary>
-          <div class="a">iOSでは、「設定」→「iCloud 同期」（初期設定はオン）により、進行状況の控えがお客様ご自身のiCloudアカウントに保存されます。同じApple IDでサインインしてアプリをインストールすれば、記録が戻ります。Androidにはこの機能がなく、進行状況は端末内にのみ保存されるため、アンインストールすると失われます。なお、「設定」→「進行状況のリセット」は元に戻せない操作です。実行すると、iCloud側の控えも一緒に削除されます。</div>
+          <div class="a">iOSでは、「設定」→「iCloud 同期」（初期設定はオン）により、進行状況の控えがお客様ご自身のiCloudアカウントに保存されます。同じApple IDでサインインしてアプリをインストールすれば、記録が戻ります。Androidでは、端末の設定でバックアップをオンにしていれば、進行状況の控えがご自身のGoogleアカウントの端末バックアップに含まれ、アプリを再インストールしたときや同じGoogleアカウントで新しい端末を設定したときに戻ります（Proの購入状況は控えに含めず、常にストアで確認します）。なお、「設定」→「進行状況のリセット」は元に戻せない操作です。実行すると、iCloud側の控えも一緒に削除されます。</div>
         </details>
         <details>
           <summary><h3>ランキングから自分の記録を削除するには？</h3></summary>
@@ -329,7 +329,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>毎日の通知が届きません。</h3></summary>
-          <div class="a">まずアプリ内の「設定」→「今日の国旗の通知」がオンになっているか、次に端末の設定でこのアプリの通知が許可されているかをご確認ください。この通知はサーバーを使わず、端末側で毎日10時に予約されます。そのため、オンにしたあとに一度アプリを開いておく必要があります。毎日の通知はiPhoneとiPad向けの機能です。Android版にはこの機能がなく、設定項目も表示されません。</div>
+          <div class="a">まずアプリ内の「設定」→「今日の国旗の通知」がオンになっているか、次に端末の設定でこのアプリの通知が許可されているかをご確認ください。この通知はサーバーを使わず、端末側で毎日10時に予約されます。そのため、オンにしたあとに一度アプリを開いておく必要があります。</div>
         </details>
         <details>
           <summary><h3>アプリの表示言語を変えるには？</h3></summary>
@@ -390,7 +390,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Mein Fortschritt ist weg – oder ich habe das Gerät gewechselt.</h3></summary>
-          <div class="a">Unter iOS bewahrt „Einstellungen → iCloud-Sync“ (standardmäßig eingeschaltet) eine Kopie Ihres Fortschritts in Ihrem eigenen iCloud-Konto auf. Melden Sie sich mit derselben Apple ID an, installieren Sie die App, und Ihr Stand ist wieder da. Unter Android gibt es diese Funktion nicht – der Fortschritt liegt allein auf dem Gerät, mit der Deinstallation ist er also endgültig weg. Beachten Sie außerdem: „Einstellungen → Fortschritt zurücksetzen“ ist bewusst endgültig und löscht auch die Kopie in iCloud.</div>
+          <div class="a">Unter iOS bewahrt „Einstellungen → iCloud-Sync“ (standardmäßig eingeschaltet) eine Kopie Ihres Fortschritts in Ihrem eigenen iCloud-Konto auf. Melden Sie sich mit derselben Apple ID an, installieren Sie die App, und Ihr Stand ist wieder da. Unter Android landet eine Kopie Ihres Fortschritts in der Gerätesicherung Ihres Google-Kontos, sofern die Sicherung in den Geräteeinstellungen eingeschaltet ist; nach einer Neuinstallation oder beim Einrichten eines neuen Geräts mit demselben Google-Konto ist Ihr Stand wieder da (der Pro-Status gehört nicht dazu – er wird immer beim Store abgefragt). Beachten Sie außerdem: „Einstellungen → Fortschritt zurücksetzen“ ist bewusst endgültig und löscht auch die Kopie in iCloud.</div>
         </details>
         <details>
           <summary><h3>Wie entferne ich meinen Eintrag aus der Rangliste?</h3></summary>
@@ -402,7 +402,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Die tägliche Erinnerung kommt nicht an.</h3></summary>
-          <div class="a">Prüfen Sie zuerst in der App „Einstellungen → Flagge-des-Tages-Erinnerung“ und danach in den Geräteeinstellungen, ob die App Mitteilungen senden darf. Die Erinnerung wird auf Ihrem Gerät für 10:00 Uhr eingeplant – ein Server ist daran nicht beteiligt –, deshalb muss die App nach dem Einschalten auch mindestens einmal geöffnet worden sein. Diese Erinnerung gibt es nur auf iPhone und iPad – die Android-Fassung hat keine tägliche Erinnerung, und die Einstellung wird dort gar nicht erst angezeigt.</div>
+          <div class="a">Prüfen Sie zuerst in der App „Einstellungen → Flagge-des-Tages-Erinnerung“ und danach in den Geräteeinstellungen, ob die App Mitteilungen senden darf. Die Erinnerung wird auf Ihrem Gerät für 10:00 Uhr eingeplant – ein Server ist daran nicht beteiligt –, deshalb muss die App nach dem Einschalten auch mindestens einmal geöffnet worden sein.</div>
         </details>
         <details>
           <summary><h3>Wie stelle ich die Sprache der App um?</h3></summary>
@@ -463,7 +463,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Ma progression a disparu, ou j’ai changé d’appareil.</h3></summary>
-          <div class="a">Sur iOS, Réglages → Synchronisation iCloud (activée par défaut) conserve une copie de votre progression dans votre propre compte iCloud. Connectez-vous avec le même Apple ID, installez l’application, et vos données reviennent. Sur Android, cette fonction n’existe pas : la progression est enregistrée uniquement sur l’appareil, et la désinstallation l’efface. Attention : Réglages → Réinitialiser la progression est une action délibérée et irréversible, qui efface aussi la copie iCloud.</div>
+          <div class="a">Sur iOS, Réglages → Synchronisation iCloud (activée par défaut) conserve une copie de votre progression dans votre propre compte iCloud. Connectez-vous avec le même Apple ID, installez l’application, et vos données reviennent. Sur Android, si la sauvegarde est activée dans les réglages de l’appareil, une copie de votre progression est incluse dans la sauvegarde de votre compte Google et revient quand vous réinstallez l’application ou configurez un nouvel appareil avec le même compte Google (le statut Pro n’y figure pas : il est toujours vérifié auprès du Store). Attention : Réglages → Réinitialiser la progression est une action délibérée et irréversible, qui efface aussi la copie iCloud.</div>
         </details>
         <details>
           <summary><h3>Comment supprimer mon score des classements ?</h3></summary>
@@ -475,7 +475,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Le rappel quotidien n’arrive jamais.</h3></summary>
-          <div class="a">Vérifiez d’abord, dans l’application, Réglages → Notification du drapeau du jour, puis, dans les réglages de votre appareil, l’autorisation de notifications accordée à l’application. Le rappel est programmé sur votre appareil à 10 h 00 — aucun serveur n’intervient — et l’application doit donc avoir été ouverte au moins une fois depuis que vous avez activé l’option. Ce rappel n’existe que sur iPhone et iPad — la version Android ne propose pas de rappel quotidien, et l’option n’y apparaît pas.</div>
+          <div class="a">Vérifiez d’abord, dans l’application, Réglages → Notification du drapeau du jour, puis, dans les réglages de votre appareil, l’autorisation de notifications accordée à l’application. Le rappel est programmé sur votre appareil à 10 h 00 — aucun serveur n’intervient — et l’application doit donc avoir été ouverte au moins une fois depuis que vous avez activé l’option.</div>
         </details>
         <details>
           <summary><h3>Comment changer la langue de l’application ?</h3></summary>
@@ -536,7 +536,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Ho perso i progressi, oppure sono passato a un nuovo dispositivo.</h3></summary>
-          <div class="a">Su iOS, Impostazioni → Sincronizzazione iCloud (attiva per impostazione predefinita) conserva una copia dei tuoi progressi nel tuo account iCloud. Accedi con lo stesso Apple ID, installa l’app e i tuoi dati tornano al loro posto. Su Android questa funzione non esiste: i progressi restano solo sul dispositivo, quindi disinstallando l’app vanno persi. Tieni presente che Impostazioni → Azzera progressi è un’azione intenzionale e definitiva: cancella anche la copia su iCloud.</div>
+          <div class="a">Su iOS, Impostazioni → Sincronizzazione iCloud (attiva per impostazione predefinita) conserva una copia dei tuoi progressi nel tuo account iCloud. Accedi con lo stesso Apple ID, installa l’app e i tuoi dati tornano al loro posto. Su Android, se il backup è attivo nelle impostazioni del dispositivo, una copia dei tuoi progressi finisce nel backup del tuo account Google e torna quando reinstalli l’app o configuri un nuovo dispositivo con lo stesso account Google (lo stato Pro non è incluso: viene sempre verificato con lo store). Tieni presente che Impostazioni → Azzera progressi è un’azione intenzionale e definitiva: cancella anche la copia su iCloud.</div>
         </details>
         <details>
           <summary><h3>Come faccio a togliere il mio punteggio dalle classifiche?</h3></summary>
@@ -548,7 +548,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Il promemoria giornaliero non arriva mai.</h3></summary>
-          <div class="a">Controlla Impostazioni → Notifica bandiera del giorno nell’app e poi, nelle impostazioni del dispositivo, l’autorizzazione alle notifiche. Il promemoria viene programmato direttamente sul dispositivo per le 10:00, senza passare da alcun server: perché arrivi devi anche aver aperto l’app almeno una volta dopo averlo attivato. Questo promemoria è una funzione di iPhone e iPad: nella versione Android il promemoria giornaliero non esiste e l’impostazione non compare.</div>
+          <div class="a">Controlla Impostazioni → Notifica bandiera del giorno nell’app e poi, nelle impostazioni del dispositivo, l’autorizzazione alle notifiche. Il promemoria viene programmato direttamente sul dispositivo per le 10:00, senza passare da alcun server: perché arrivi devi anche aver aperto l’app almeno una volta dopo averlo attivato.</div>
         </details>
         <details>
           <summary><h3>Come cambio la lingua dell’app?</h3></summary>
@@ -609,7 +609,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>我的進度不見了，或是我換到新的裝置。</h3></summary>
-          <div class="a">在 iOS 上，「設定 → iCloud 同步」（預設為開啟）會把您的進度備份到您自己的 iCloud 帳戶。只要以同一個 Apple ID 登入並安裝 App，先前的進度就會回復。Android 沒有這項功能，進度只保存在裝置上，解除安裝後就會一併消失。另外請留意，「設定 → 重置進度」是永久性的操作，無法復原，連 iCloud 上的備份也會一併清除。</div>
+          <div class="a">在 iOS 上，「設定 → iCloud 同步」（預設為開啟）會把您的進度備份到您自己的 iCloud 帳戶。只要以同一個 Apple ID 登入並安裝 App，先前的進度就會回復。在 Android 上，只要在裝置設定中開啟備份，進度的副本就會隨裝置備份存入您自己的 Google 帳戶；重新安裝 App 或以同一個 Google 帳戶設定新裝置時，進度就會回復（Pro 購買狀態不在副本中，一律向商店確認）。另外請留意，「設定 → 重置進度」是永久性的操作，無法復原，連 iCloud 上的備份也會一併清除。</div>
         </details>
         <details>
           <summary><h3>要如何把我的紀錄從排行榜移除？</h3></summary>
@@ -621,7 +621,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>每日提醒一直沒有出現。</h3></summary>
-          <div class="a">請先確認 App 內的「設定 → 每日國旗通知」是否開啟，接著再到裝置的系統設定中確認本 App 的通知權限。這項提醒是直接在您的裝置上排定於每天 10:00 發出的，並不經過任何伺服器，因此在您開啟這項設定後，還必須至少再啟動一次 App 才會生效。這項提醒僅適用於 iPhone 與 iPad；Android 版沒有每日提醒功能，設定中也不會顯示這個選項。</div>
+          <div class="a">請先確認 App 內的「設定 → 每日國旗通知」是否開啟，接著再到裝置的系統設定中確認本 App 的通知權限。這項提醒是直接在您的裝置上排定於每天 10:00 發出的，並不經過任何伺服器，因此在您開啟這項設定後，還必須至少再啟動一次 App 才會生效。</div>
         </details>
         <details>
           <summary><h3>要如何更改 App 的語言？</h3></summary>
@@ -682,7 +682,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>He perdido mi progreso o he cambiado de dispositivo.</h3></summary>
-          <div class="a">En iOS, Ajustes → Sincronización con iCloud (activada de forma predeterminada) guarda una copia de tu progreso en tu propia cuenta de iCloud. Inicia sesión con el mismo Apple ID, instala la aplicación y tu historial vuelve a aparecer. En Android no existe esta función: el progreso se guarda solo en el dispositivo, así que al desinstalar la aplicación se pierde. Ten en cuenta que Ajustes → Reiniciar progreso es una acción deliberada y definitiva: también borra la copia de iCloud.</div>
+          <div class="a">En iOS, Ajustes → Sincronización con iCloud (activada de forma predeterminada) guarda una copia de tu progreso en tu propia cuenta de iCloud. Inicia sesión con el mismo Apple ID, instala la aplicación y tu historial vuelve a aparecer. En Android, si la copia de seguridad está activada en los ajustes del dispositivo, una copia de tu progreso se incluye en la copia de seguridad de tu cuenta de Google y vuelve cuando reinstalas la aplicación o configuras un dispositivo nuevo con la misma cuenta de Google (el estado Pro no se incluye: siempre se comprueba con la tienda). Ten en cuenta que Ajustes → Reiniciar progreso es una acción deliberada y definitiva: también borra la copia de iCloud.</div>
         </details>
         <details>
           <summary><h3>¿Cómo elimino mi entrada de las clasificaciones?</h3></summary>
@@ -694,7 +694,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>El recordatorio diario no llega nunca.</h3></summary>
-          <div class="a">Revisa, dentro de la aplicación, Ajustes → Aviso de la bandera del día y, después, el permiso de notificaciones en los ajustes de tu dispositivo. El recordatorio se programa en tu propio dispositivo a las 10:00 —no interviene ningún servidor—, así que también hace falta haber abierto la aplicación al menos una vez después de activarlo. Este recordatorio es una función de iPhone y iPad: la versión de Android no tiene recordatorio diario y ese ajuste no aparece en ella.</div>
+          <div class="a">Revisa, dentro de la aplicación, Ajustes → Aviso de la bandera del día y, después, el permiso de notificaciones en los ajustes de tu dispositivo. El recordatorio se programa en tu propio dispositivo a las 10:00 —no interviene ningún servidor—, así que también hace falta haber abierto la aplicación al menos una vez después de activarlo.</div>
         </details>
         <details>
           <summary><h3>¿Cómo cambio el idioma de la aplicación?</h3></summary>
@@ -755,7 +755,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Meu progresso sumiu, ou troquei de aparelho.</h3></summary>
-          <div class="a">No iOS, Ajustes → Sincronização com iCloud (já vem ligada) guarda uma cópia do seu progresso na sua própria conta do iCloud. Entre com o mesmo Apple ID, instale o app e o seu progresso volta. No Android não existe esse recurso: o progresso fica só no aparelho, então desinstalar o app apaga tudo. Vale lembrar que Ajustes → Apagar Progresso é uma ação definitiva, sem volta: apaga também a cópia no iCloud.</div>
+          <div class="a">No iOS, Ajustes → Sincronização com iCloud (já vem ligada) guarda uma cópia do seu progresso na sua própria conta do iCloud. Entre com o mesmo Apple ID, instale o app e o seu progresso volta. No Android, se o backup estiver ativado nos ajustes do aparelho, uma cópia do seu progresso entra no backup da sua conta Google e volta quando você reinstala o app ou configura um aparelho novo com a mesma conta Google (o status Pro não vai na cópia: ele é sempre conferido na loja). Vale lembrar que Ajustes → Apagar Progresso é uma ação definitiva, sem volta: apaga também a cópia no iCloud.</div>
         </details>
         <details>
           <summary><h3>Como removo meu nome dos rankings?</h3></summary>
@@ -767,7 +767,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>O lembrete diário nunca chega.</h3></summary>
-          <div class="a">Confira Ajustes → Alerta da bandeira do dia dentro do app e, depois, a permissão de notificações do app nos ajustes do aparelho. O lembrete é agendado no próprio aparelho para as 10h — não há servidor envolvido — e, por isso, o app também precisa ter sido aberto pelo menos uma vez depois que você ativou o alerta. Esse lembrete é um recurso do iPhone e do iPad — a versão para Android não tem lembrete diário, e a opção nem aparece lá.</div>
+          <div class="a">Confira Ajustes → Alerta da bandeira do dia dentro do app e, depois, a permissão de notificações do app nos ajustes do aparelho. O lembrete é agendado no próprio aparelho para as 10h — não há servidor envolvido — e, por isso, o app também precisa ter sido aberto pelo menos uma vez depois que você ativou o alerta.</div>
         </details>
         <details>
           <summary><h3>Como mudo o idioma do app?</h3></summary>
@@ -828,7 +828,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>فقدت تقدّمي، أو انتقلت إلى جهاز جديد.</h3></summary>
-          <div class="a">على iOS، يوجد في الإعدادات خيار «مزامنة iCloud» وهو مفعّل افتراضيًا، ويحفظ نسخة من تقدّمك في حساب iCloud الخاص بك. سجّل الدخول بمعرّف Apple نفسه، وثبّت التطبيق، وسيعود تقدّمك كما كان. أما على Android فلا تتوفّر هذه الميزة — يبقى التقدّم على الجهاز وحده، ويزول عند إزالة التطبيق. وانتبه إلى أن «إعادة ضبط التقدّم» في الإعدادات خطوة مقصودة لا رجعة فيها: فهي تمسح نسخة iCloud أيضًا.</div>
+          <div class="a">على iOS، يوجد في الإعدادات خيار «مزامنة iCloud» وهو مفعّل افتراضيًا، ويحفظ نسخة من تقدّمك في حساب iCloud الخاص بك. سجّل الدخول بمعرّف Apple نفسه، وثبّت التطبيق، وسيعود تقدّمك كما كان. أما على Android، فإذا كان النسخ الاحتياطي مفعّلًا في إعدادات الجهاز، تُضاف نسخة من تقدّمك إلى النسخة الاحتياطية لحساب Google الخاص بك، وتعود عند إعادة تثبيت التطبيق أو إعداد جهاز جديد بحساب Google نفسه (ولا تشمل النسخة حالة Pro، إذ يُتحقّق منها دائمًا عبر المتجر). وانتبه إلى أن «إعادة ضبط التقدّم» في الإعدادات خطوة مقصودة لا رجعة فيها: فهي تمسح نسخة iCloud أيضًا.</div>
         </details>
         <details>
           <summary><h3>كيف أحذف مشاركتي من التصنيفات؟</h3></summary>
@@ -840,7 +840,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>التذكير اليومي لا يصلني.</h3></summary>
-          <div class="a">تحقّق من «تنبيه علم اليوم» في إعدادات التطبيق، ثم من إذن الإشعارات الممنوح للتطبيق في إعدادات جهازك. ويُضبط التذكير على جهازك نفسه في الساعة 10:00 — دون أي خادم — لذا يلزم أيضًا أن تكون قد فتحت التطبيق مرة واحدة على الأقل بعد تفعيل التنبيه. وهذا التذكير ميزة خاصة بـ iPhone و iPad — فنسخة Android لا تتضمّن تذكيرًا يوميًا، ولا يظهر فيها هذا الإعداد أصلًا.</div>
+          <div class="a">تحقّق من «تنبيه علم اليوم» في إعدادات التطبيق، ثم من إذن الإشعارات الممنوح للتطبيق في إعدادات جهازك. ويُضبط التذكير على جهازك نفسه في الساعة 10:00 — دون أي خادم — لذا يلزم أيضًا أن تكون قد فتحت التطبيق مرة واحدة على الأقل بعد تفعيل التنبيه.</div>
         </details>
         <details>
           <summary><h3>كيف أغيّر لغة التطبيق؟</h3></summary>
@@ -901,7 +901,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Progres saya hilang, atau saya pindah ke perangkat baru.</h3></summary>
-          <div class="a">Di iOS, Pengaturan → Sinkronisasi iCloud (aktif secara bawaan) menyimpan salinan progres Anda di akun iCloud milik Anda sendiri. Masuk dengan Apple ID yang sama, pasang kembali aplikasinya, dan progres Anda akan kembali. Di Android tidak ada fitur semacam ini — progres hanya tersimpan di perangkat, jadi begitu aplikasi dicopot, progres ikut hilang. Perlu diingat, Pengaturan → Reset Progres bersifat permanen dan tidak bisa dibatalkan: salinan di iCloud ikut terhapus.</div>
+          <div class="a">Di iOS, Pengaturan → Sinkronisasi iCloud (aktif secara bawaan) menyimpan salinan progres Anda di akun iCloud milik Anda sendiri. Masuk dengan Apple ID yang sama, pasang kembali aplikasinya, dan progres Anda akan kembali. Di Android, jika pencadangan diaktifkan di pengaturan perangkat, salinan progres Anda ikut masuk ke cadangan akun Google Anda dan kembali saat Anda memasang ulang aplikasi atau menyiapkan perangkat baru dengan akun Google yang sama (status Pro tidak ikut disalin — status itu selalu dicek ke toko). Perlu diingat, Pengaturan → Reset Progres bersifat permanen dan tidak bisa dibatalkan: salinan di iCloud ikut terhapus.</div>
         </details>
         <details>
           <summary><h3>Bagaimana cara menghapus entri saya dari papan peringkat?</h3></summary>
@@ -913,7 +913,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Pengingat harian tidak pernah muncul.</h3></summary>
-          <div class="a">Periksa Pengaturan → Notifikasi bendera hari ini di dalam aplikasi, lalu periksa izin notifikasi untuk aplikasi ini di pengaturan perangkat Anda. Pengingat dijadwalkan di perangkat Anda pada pukul 10.00 — tidak ada server yang terlibat — sehingga aplikasi juga perlu dibuka setidaknya sekali setelah Anda mengaktifkannya. Pengingat ini hanya tersedia di iPhone dan iPad — versi Android tidak memiliki pengingat harian, dan pengaturannya pun tidak muncul di sana.</div>
+          <div class="a">Periksa Pengaturan → Notifikasi bendera hari ini di dalam aplikasi, lalu periksa izin notifikasi untuk aplikasi ini di pengaturan perangkat Anda. Pengingat dijadwalkan di perangkat Anda pada pukul 10.00 — tidak ada server yang terlibat — sehingga aplikasi juga perlu dibuka setidaknya sekali setelah Anda mengaktifkannya.</div>
         </details>
         <details>
           <summary><h3>Bagaimana cara mengubah bahasa aplikasi?</h3></summary>
@@ -974,7 +974,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Tôi bị mất tiến độ học hoặc vừa đổi sang máy mới thì phải làm sao?</h3></summary>
-          <div class="a">Trên iOS, Cài đặt → Đồng bộ iCloud (mặc định bật) giữ một bản sao tiến độ học của bạn ngay trong tài khoản iCloud của bạn. Bạn chỉ cần đăng nhập bằng đúng Apple ID đó rồi cài lại ứng dụng là dữ liệu sẽ trở lại. Trên Android không có tính năng này — tiến độ chỉ nằm trên máy, nên gỡ ứng dụng là mất. Xin lưu ý: Cài đặt → Đặt lại tiến trình là thao tác bạn phải tự xác nhận và không thể hoàn tác — thao tác này xóa luôn cả bản sao trên iCloud.</div>
+          <div class="a">Trên iOS, Cài đặt → Đồng bộ iCloud (mặc định bật) giữ một bản sao tiến độ học của bạn ngay trong tài khoản iCloud của bạn. Bạn chỉ cần đăng nhập bằng đúng Apple ID đó rồi cài lại ứng dụng là dữ liệu sẽ trở lại. Trên Android, nếu bạn bật sao lưu trong cài đặt thiết bị, một bản sao tiến độ sẽ nằm trong bản sao lưu thiết bị thuộc tài khoản Google của bạn và trở lại khi bạn cài lại ứng dụng hoặc thiết lập máy mới bằng cùng tài khoản Google (trạng thái Pro không nằm trong bản sao — luôn được kiểm tra với cửa hàng). Xin lưu ý: Cài đặt → Đặt lại tiến trình là thao tác bạn phải tự xác nhận và không thể hoàn tác — thao tác này xóa luôn cả bản sao trên iCloud.</div>
         </details>
         <details>
           <summary><h3>Làm sao để xóa tên tôi khỏi bảng xếp hạng?</h3></summary>
@@ -986,7 +986,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Tôi không hề nhận được lời nhắc hằng ngày.</h3></summary>
-          <div class="a">Trước hết hãy mở ứng dụng và kiểm tra mục Cài đặt → Thông báo quốc kỳ trong ngày, sau đó kiểm tra quyền thông báo của ứng dụng trong phần cài đặt của thiết bị. Lời nhắc được hẹn giờ ngay trên máy của bạn, vào lúc 10:00 — không đi qua máy chủ nào — nên bạn cũng cần mở ứng dụng ít nhất một lần sau khi bật tùy chọn này. Đây là tính năng chỉ có trên iPhone và iPad — bản Android không có lời nhắc hằng ngày, và mục cài đặt này cũng không xuất hiện ở đó.</div>
+          <div class="a">Trước hết hãy mở ứng dụng và kiểm tra mục Cài đặt → Thông báo quốc kỳ trong ngày, sau đó kiểm tra quyền thông báo của ứng dụng trong phần cài đặt của thiết bị. Lời nhắc được hẹn giờ ngay trên máy của bạn, vào lúc 10:00 — không đi qua máy chủ nào — nên bạn cũng cần mở ứng dụng ít nhất một lần sau khi bật tùy chọn này.</div>
         </details>
         <details>
           <summary><h3>Làm sao để đổi ngôn ngữ của ứng dụng?</h3></summary>
@@ -1047,7 +1047,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>İlerlemem kayboldu ya da yeni bir cihaza geçtim.</h3></summary>
-          <div class="a">iOS'ta Ayarlar → iCloud eşitleme (varsayılan olarak açıktır) ilerlemenizin bir kopyasını kendi iCloud hesabınızda saklar. Aynı Apple ID ile oturum açıp uygulamayı kurduğunuzda kayıtlarınız geri gelir. Android'de böyle bir özellik yoktur; ilerlemeniz yalnızca cihazda tutulur, dolayısıyla uygulamayı kaldırdığınızda silinir. Ayarlar → İlerlemeyi Sıfırla ise bilerek yapılan, kalıcı bir işlemdir: iCloud'daki kopyayı da siler.</div>
+          <div class="a">iOS'ta Ayarlar → iCloud eşitleme (varsayılan olarak açıktır) ilerlemenizin bir kopyasını kendi iCloud hesabınızda saklar. Aynı Apple ID ile oturum açıp uygulamayı kurduğunuzda kayıtlarınız geri gelir. Android'de cihaz ayarlarında yedekleme açıksa ilerlemenizin bir kopyası Google hesabınızın cihaz yedeğine girer; uygulamayı yeniden kurduğunuzda veya aynı Google hesabıyla yeni bir cihaz kurduğunuzda geri gelir (Pro durumu kopyaya dahil değildir, her zaman mağazadan doğrulanır). Ayarlar → İlerlemeyi Sıfırla ise bilerek yapılan, kalıcı bir işlemdir: iCloud'daki kopyayı da siler.</div>
         </details>
         <details>
           <summary><h3>Sıralamadaki kaydımı nasıl sildirebilirim?</h3></summary>
@@ -1059,7 +1059,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Günlük hatırlatma hiç gelmiyor.</h3></summary>
-          <div class="a">Önce uygulamadaki Ayarlar → Günün bayrağı bildirimi seçeneğini, ardından cihaz ayarlarınızda uygulamaya verilen bildirim iznini kontrol edin. Hatırlatma, herhangi bir sunucu devreye girmeden doğrudan cihazınızda saat 10.00 için kurulur; bu nedenle bildirimi açtıktan sonra uygulamanın en az bir kez açılmış olması da gerekir. Bu hatırlatma yalnızca iPhone ve iPad'e özgü bir özelliktir; Android sürümünde günlük hatırlatma yoktur ve bu ayar da görünmez.</div>
+          <div class="a">Önce uygulamadaki Ayarlar → Günün bayrağı bildirimi seçeneğini, ardından cihaz ayarlarınızda uygulamaya verilen bildirim iznini kontrol edin. Hatırlatma, herhangi bir sunucu devreye girmeden doğrudan cihazınızda saat 10.00 için kurulur; bu nedenle bildirimi açtıktan sonra uygulamanın en az bir kez açılmış olması da gerekir.</div>
         </details>
         <details>
           <summary><h3>Uygulamanın dilini nasıl değiştiririm?</h3></summary>
@@ -1120,7 +1120,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Mój postęp zniknął — albo przechodzę na nowe urządzenie.</h3></summary>
-          <div class="a">W systemie iOS opcja „Ustawienia → Synchronizacja iCloud” (domyślnie włączona) przechowuje kopię Twojego postępu na Twoim własnym koncie iCloud. Zaloguj się przy użyciu tego samego Apple ID, zainstaluj aplikację, a Twoje wyniki wrócą. W Androidzie takiej funkcji nie ma — postęp jest zapisany wyłącznie na urządzeniu, więc odinstalowanie aplikacji kasuje go bezpowrotnie. Pamiętaj też, że „Ustawienia → Zresetuj postęp” to świadoma decyzja, której nie da się cofnąć: usuwa również kopię w iCloud.</div>
+          <div class="a">W systemie iOS opcja „Ustawienia → Synchronizacja iCloud” (domyślnie włączona) przechowuje kopię Twojego postępu na Twoim własnym koncie iCloud. Zaloguj się przy użyciu tego samego Apple ID, zainstaluj aplikację, a Twoje wyniki wrócą. W Androidzie, jeśli kopia zapasowa jest włączona w ustawieniach urządzenia, kopia Twojego postępu trafia do kopii zapasowej Twojego konta Google i wraca po ponownej instalacji aplikacji lub skonfigurowaniu nowego urządzenia na tym samym koncie Google (status Pro nie jest w niej zapisany — zawsze sprawdzamy go w sklepie). Pamiętaj też, że „Ustawienia → Zresetuj postęp” to świadoma decyzja, której nie da się cofnąć: usuwa również kopię w iCloud.</div>
         </details>
         <details>
           <summary><h3>Jak usunąć swój wynik z rankingu?</h3></summary>
@@ -1132,7 +1132,7 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
         </details>
         <details>
           <summary><h3>Codzienne przypomnienie nie przychodzi.</h3></summary>
-          <div class="a">Sprawdź najpierw w aplikacji „Ustawienia → Powiadomienie o fladze dnia”, a potem uprawnienie do powiadomień dla tej aplikacji w ustawieniach urządzenia. Przypomnienie jest planowane na godzinę 10:00 na samym urządzeniu — nie bierze w tym udziału żaden serwer — więc po włączeniu tej opcji trzeba jeszcze choć raz otworzyć aplikację. Ta funkcja działa tylko na iPhonie i iPadzie — w wersji na Androida codziennego przypomnienia nie ma, a sama opcja w ogóle się tam nie pojawia.</div>
+          <div class="a">Sprawdź najpierw w aplikacji „Ustawienia → Powiadomienie o fladze dnia”, a potem uprawnienie do powiadomień dla tej aplikacji w ustawieniach urządzenia. Przypomnienie jest planowane na godzinę 10:00 na samym urządzeniu — nie bierze w tym udziału żaden serwer — więc po włączeniu tej opcji trzeba jeszcze choć raz otworzyć aplikację.</div>
         </details>
         <details>
           <summary><h3>Jak zmienić język aplikacji?</h3></summary>
@@ -1212,6 +1212,11 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
     [].slice.call(document.querySelectorAll("[data-store-note]")).forEach(function(n){
       n.hidden = n.getAttribute("data-store-note") !== store;
     });
+    // 플랫폼별 본문 문단(legal.js 의 ios/android 블록). 안내문(store-note)과 따로 두는 이유:
+    // noscript 규칙이 store-note 를 통째로 숨기는데, 본문 문단은 스크립트 없이도 기본 스토어 것이 보여야 한다.
+    [].slice.call(document.querySelectorAll("[data-store-only]")).forEach(function(n){
+      n.hidden = n.getAttribute("data-store-only") !== store;
+    });
     if (remember) { try { localStorage.setItem("fm-store", store); } catch(e){} }
   }
 
@@ -1241,9 +1246,16 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
     window.addEventListener("load", toTop);
   }
 
+  // 우선순위: ?store= > 페이지 기본(html[data-store], *-android.html) > 저장된 선택 > UA.
+  // 페이지 기본이 저장된 선택보다 앞서는 이유: Play Console 에 넣은 privacy-android.html 을 연 사람이
+  // 예전에 iOS 를 눌러 둔 적이 있다고 iOS 판을 먼저 보게 되면, 그 주소를 따로 만든 뜻이 없어진다.
+  var qStore = null;
+  try { var qm = String(location.search || "").match(/[?&]store=(ios|android)(?:&|$)/); if (qm) qStore = qm[1]; } catch(e){}
+  var pageStore = document.documentElement.getAttribute("data-store");
   var savedStore = null; try { savedStore = localStorage.getItem("fm-store"); } catch(e){}
+  if (savedStore !== "ios" && savedStore !== "android") savedStore = null;
   var uaAndroid = /Android/i.test(navigator.userAgent || "");
-  applyStore(savedStore || (uaAndroid ? "android" : "ios"), false);
+  applyStore(qStore || pageStore || savedStore || (uaAndroid ? "android" : "ios"), false);
 
   document.addEventListener("click", function(e){
     var a = e.target.closest && e.target.closest("#langs a[data-go]");

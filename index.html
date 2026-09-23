@@ -442,6 +442,11 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
     [].slice.call(document.querySelectorAll("[data-store-note]")).forEach(function(n){
       n.hidden = n.getAttribute("data-store-note") !== store;
     });
+    // 플랫폼별 본문 문단(legal.js 의 ios/android 블록). 안내문(store-note)과 따로 두는 이유:
+    // noscript 규칙이 store-note 를 통째로 숨기는데, 본문 문단은 스크립트 없이도 기본 스토어 것이 보여야 한다.
+    [].slice.call(document.querySelectorAll("[data-store-only]")).forEach(function(n){
+      n.hidden = n.getAttribute("data-store-only") !== store;
+    });
     if (remember) { try { localStorage.setItem("fm-store", store); } catch(e){} }
   }
 
@@ -471,9 +476,16 @@ hr.sep{border:0;border-top:1px solid var(--divider);margin:52px 0 0}
     window.addEventListener("load", toTop);
   }
 
+  // 우선순위: ?store= > 페이지 기본(html[data-store], *-android.html) > 저장된 선택 > UA.
+  // 페이지 기본이 저장된 선택보다 앞서는 이유: Play Console 에 넣은 privacy-android.html 을 연 사람이
+  // 예전에 iOS 를 눌러 둔 적이 있다고 iOS 판을 먼저 보게 되면, 그 주소를 따로 만든 뜻이 없어진다.
+  var qStore = null;
+  try { var qm = String(location.search || "").match(/[?&]store=(ios|android)(?:&|$)/); if (qm) qStore = qm[1]; } catch(e){}
+  var pageStore = document.documentElement.getAttribute("data-store");
   var savedStore = null; try { savedStore = localStorage.getItem("fm-store"); } catch(e){}
+  if (savedStore !== "ios" && savedStore !== "android") savedStore = null;
   var uaAndroid = /Android/i.test(navigator.userAgent || "");
-  applyStore(savedStore || (uaAndroid ? "android" : "ios"), false);
+  applyStore(qStore || pageStore || savedStore || (uaAndroid ? "android" : "ios"), false);
 
   document.addEventListener("click", function(e){
     var a = e.target.closest && e.target.closest("#langs a[data-go]");
